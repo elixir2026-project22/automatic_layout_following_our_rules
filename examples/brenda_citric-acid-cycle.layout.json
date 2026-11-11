@@ -1309,7 +1309,7 @@
  "format": "sbml-pathway-layout",
  "model": "citric acid cycle",
  "settings": {
-  "escher": false,
+  "escher": true,
   "hide": "",
   "legend": false,
   "max_cluster": 60,

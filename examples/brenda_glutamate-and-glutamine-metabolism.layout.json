@@ -2334,7 +2334,7 @@
  "format": "sbml-pathway-layout",
  "model": "glutamate and glutamine metabolism",
  "settings": {
-  "escher": false,
+  "escher": true,
   "hide": "",
   "legend": false,
   "max_cluster": 60,

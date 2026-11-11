@@ -925,7 +925,7 @@
  "format": "sbml-pathway-layout",
  "model": "glycolysis",
  "settings": {
-  "escher": false,
+  "escher": true,
   "hide": "",
   "legend": false,
   "max_cluster": 60,

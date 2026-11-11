@@ -270,7 +270,7 @@
  "format": "sbml-pathway-layout",
  "model": "coenzyme A metabolism",
  "settings": {
-  "escher": false,
+  "escher": true,
   "hide": "",
   "legend": false,
   "max_cluster": 60,
