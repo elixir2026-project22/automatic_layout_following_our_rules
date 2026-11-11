@@ -24,7 +24,9 @@ design reimplemented, no code copied):
     network communities when the file has none), one drawing per part.
 Nothing is random; the hash seed is pinned and SVGs are written without a date.
 
-Usage: python3 sbml_pathway_layout.py model.xml[.gz] [--out NAME] [--max-cluster 60] [--side "x,y"] [--keep "x,y"]
+Usage: python3 sbml_pathway_layout.py model.xml[.gz] [--out NAME] [--max-cluster 60] [--show "NH3,CO2"] [--hide "x,y"]
+       --show  draw these compounds as shared boxes connected to all their reactions (like main compounds)
+       --hide  always write these compounds inside the reaction box (like cofactors)
        python3 sbml_pathway_layout.py [model.xml] --from-layout NAME.layout.json   # redraw a saved layout
 Writes NAME.svg/.png per drawing, NAME.layout.json (reusable layout) and, for SBML Level 3 models,
 NAME.layout.sbml (the model plus the SBML Layout package, readable by other SBML tools).
@@ -168,6 +170,7 @@ def read_sbml(path):
     return (model.get('name') or model.get('id') or 'model'),F,reactions
 
 # ============================================================ primary-compound reduction
+SHOW=set()                                                     # normalised names given with --show
 def reduce(reactions,F,extra,keep):
     deg={}
     for r in reactions:
@@ -182,7 +185,8 @@ def reduce(reactions,F,extra,keep):
         S=[n for n,_ in r['subs'] if n not in cof]; P=[n for n,_ in r['prods'] if n not in cof]
         r['main']=None
         if S and P:
-            cand=[(similarity(s,p,F),s,p) for s in S for p in P if s!=p]
+            Sm=[n for n in S if _norm(n) not in SHOW]; Pm=[n for n in P if _norm(n) not in SHOW]   # shown compounds
+            cand=[(similarity(s,p,F),s,p) for s in Sm for p in Pm if s!=p]                         # are never the backbone
             if cand:
                 top=max(c[0] for c in cand)
                 near=[c for c in cand if c[0]>=top-0.05]
@@ -457,11 +461,12 @@ def layout_cluster(rxns):
         if r['main']:
             for n in r['main']: uf[find('M:'+n)]=find('R:'+r['id'])
     mains={n for r in rxns for n in (r['main'] or ())}
-    joins=set()
-    cands=sorted(((n,r['id']) for r in rxns for n,_ in r['secondary'] if appear[n]>=2 or n in mains),
+    joins=set()                                                   # decided as if --show were not given
+    cands=sorted(((n,r['id']) for r in rxns for n,_ in r['secondary'] if (appear[n]>=2 or n in mains) and _norm(n) not in SHOW),
                  key=lambda t:(-appear[t[0]],t[0],t[1]))
     for n,rid in cands:
         if find('M:'+n)!=find('R:'+rid): uf[find('M:'+n)]=find('R:'+rid); joins.add((n,rid))
+    joins|={(n,r['id']) for r in rxns for n,_ in r['secondary'] if _norm(n) in SHOW}   # then: shown compounds
     real=mains|{n for n,_ in joins}
     for n in sorted(real):
         if 'M:'+n not in D.info: D.add('M:'+n,'core' if n in ringof else 'met',n)
@@ -581,6 +586,14 @@ def layout_cluster(rxns):
                 t=math.atan2(sy,sx); dmin=min(d for d,_ in ds)
                 r=rad+55+75*(dmin-1)+(12 if D.info[n]['kind']=='rxn' else 0)
                 D.P[n]=(cx+r*math.cos(t),cy+r*math.sin(t))
+            spots={}                                              # nodes with identical connections land on
+            for n in comp: spots.setdefault((round(D.P[n][0],3),round(D.P[n][1],3)),[]).append(n)   # one spot:
+            for (px,py),grp in sorted(spots.items()):             # spread them along the ring's tangent
+                if len(grp)<2: continue
+                t=math.atan2(py-cy,px-cx); tx,ty=-math.sin(t),math.cos(t)
+                step=max(D.size(n)[0] for n in grp)+24
+                for j,n in enumerate(sorted(grp)):
+                    o=(j-(len(grp)-1)/2)*step; D.P[n]=(px+tx*o,py+ty*o)
             for (ea,eb),(ma,mb),sd in zip(edges,emeta,eside):           # straight links for the piece
                 if ea in cs or eb in cs: D.link(ma,mb); D.links[-1]['side']=sd
     # ---- reactions without a main pair, and secondary participants: side boxes
@@ -646,6 +659,46 @@ def violations_local(D,node,li,margin=3):
     return c
 
 # ============================================================ enforcing the rules
+def place_hubs(D,hubs,grid=26):
+    """Move each shared compound box to the spot where its own lines cross nothing and pass through no
+    box, preferring short lines: a grid search over the drawing (vectorised)."""
+    for h in hubs:
+        inc=[i for i,L in enumerate(D.links) if h in (L['a'],L['b'])]
+        if not inc or any(D.links[i]['chain'] is not None or D.links[i]['ring'] is not None for i in inc): continue
+        nbr=[D.links[i]['b'] if D.links[i]['a']==h else D.links[i]['a'] for i in inc]
+        others=[]
+        for i,L in enumerate(D.links):
+            if i in inc: continue
+            p=D.path(L)
+            for a,b in zip(p,p[1:]): others.append((a,b,L['a'],L['b']))
+        A=np.array([o[0] for o in others]) if others else np.zeros((0,2)); B=np.array([o[1] for o in others]) if others else np.zeros((0,2))
+        names=[n for n in D.real() if n!=h]; Bx=np.array([D.box(n) for n in names]); w,hh=D.size(h)
+        xs=[b[0] for b in Bx]+[b[2] for b in Bx]; ys=[b[1] for b in Bx]+[b[3] for b in Bx]
+        cand=[(x,y) for x in np.linspace(min(xs)-w,max(xs)+w,grid) for y in np.linspace(min(ys)-hh*3,max(ys)+hh*3,grid)]
+        cand+=[D.P[h]]+[(D.P[r][0]+dx,D.P[r][1]+dy) for r in nbr for dx in (-90,0,90) for dy in (-60,0,60) if dx or dy]
+        best=None
+        for c in cand:
+            cr=0; thr=0
+            for r in nbr:
+                q=D.P[r]
+                if len(A):
+                    mask=np.array([r not in (o[2],o[3]) for o in others])
+                    cr+=int(_segx(np.array(c)[None],np.array(q)[None],A[mask],B[mask]).sum())
+                ts=np.linspace(0.05,0.95,14); X=c[0]+(q[0]-c[0])*ts; Y=c[1]+(q[1]-c[1])*ts
+                hit=(X[None]>Bx[:,0,None]-3)&(X[None]<Bx[:,2,None]+3)&(Y[None]>Bx[:,1,None]-3)&(Y[None]<Bx[:,3,None]+3)
+                thr+=sum(1 for k in np.where(hit.any(1))[0] if names[k]!=r)
+            bx=(c[0]-w/2,c[1]-hh/2,c[0]+w/2,c[1]+hh/2)
+            ov=int(((Bx[:,0]<bx[2]+6)&(bx[0]<Bx[:,2]+6)&(Bx[:,1]<bx[3]+6)&(bx[1]<Bx[:,3]+6)).sum())
+            # boxes crossed by OTHER lines at this spot
+            if len(A):
+                ts=np.linspace(0,1,8); SX=A[:,None,0]+(B[:,None,0]-A[:,None,0])*ts; SY=A[:,None,1]+(B[:,None,1]-A[:,None,1])*ts
+                thr+=int(((SX>bx[0]-3)&(SX<bx[2]+3)&(SY>bx[1]-3)&(SY<bx[3]+3)).any(1).sum())
+            ln=sum(math.dist(c,D.P[r]) for r in nbr)
+            key=(cr,thr+ov,round(ln,3),round(c[0],3),round(c[1],3))
+            if best is None or key<best: best=key
+        D.P[h]=(best[3],best[4])
+
+
 def remove_crossings(D):
     """Cut a crossing line at its metabolite end and give that end its own copy (dashed box)."""
     n_cut=0
@@ -911,7 +964,9 @@ def main():
     import json
     ap=argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('sbml',nargs='?'); ap.add_argument('--out',default=None); ap.add_argument('--max-cluster',type=int,default=60)
-    ap.add_argument('--side',default=''); ap.add_argument('--keep',default='')
+    ap.add_argument('--show',default='',help='compounds to draw as shared boxes connected to all their reactions, e.g. "NH3,CO2"')
+    ap.add_argument('--hide',default='',help='compounds to always write inside the reaction box')
+    ap.add_argument('--side',default='',help=argparse.SUPPRESS); ap.add_argument('--keep',default='',help=argparse.SUPPRESS)  # old names
     ap.add_argument('--from-layout',default=None,help='redraw a saved NAME.layout.json (positions may have been edited) instead of computing a layout')
     ap.add_argument('--no-sbml-layout',action='store_true',help='do not write NAME.layout.sbml')
     a=ap.parse_args()
@@ -930,16 +985,27 @@ def main():
         sys.exit(0 if ok else 1)
     if not a.sbml: ap.error('an SBML file is required unless --from-layout is given')
     name,F,reactions=read_sbml(a.sbml)
-    cof=reduce(reactions,F,{_norm(x) for x in a.side.split(',') if x},{_norm(x) for x in a.keep.split(',') if x})
+    names=lambda t:{_norm(x) for x in t.split(',') if x.strip()}
+    SHOW.update(names(a.show)); hide=names(a.hide)|names(a.side); keep=names(a.keep)|SHOW
+    known={_norm(n) for n in F}
+    for x in sorted((SHOW|hide)-known): log(f'warning: no compound named "{x}" in this model')
+    cof=reduce(reactions,F,hide,keep)
     out=a.out or os.path.splitext(os.path.splitext(os.path.basename(a.sbml))[0])[0]+'_layout'
     parts=clusters(reactions,a.max_cluster)
     log(f'{len(reactions)} reactions, {sum(1 for f in F.values() if f)}/{len(F)} formulas, {len(cof)} cofactors, {len(parts)} drawing(s)')
     ok=True; saved=[]; drawings=[]
     for k,(cname,rx) in enumerate(parts):
-        D,rings=layout_cluster(rx); cuts=remove_crossings(D)
-        fixed={n for n in D.P if D.info[n]['kind'] in ('core','dummy')}|{e for L in D.links if L['ring'] is not None for e in (L['a'],L['b'])}
-        repair(D,fixed)                                           # ring members and ring-arc reactions never move
-        v=scale_until_clean(D)
+        D,rings=layout_cluster(rx); cuts=0
+        side_ends={e for L in D.links if L.get('side') for e in (L['a'],L['b'])}
+        hubs=sorted((n for n in D.P if D.info[n]['kind']=='met' and (_norm(D.info[n]['label']) in SHOW or n in side_ends)),
+                    key=lambda n:(_norm(D.info[n]['label']) not in SHOW,n))
+        place_hubs(D,hubs)                                        # shared compounds: best free spot
+        for _ in range(6):                                        # repeat until all three checks hold together
+            cuts+=remove_crossings(D)                             # (a near-touch can tip into a crossing when scaled)
+            fixed={n for n in D.P if D.info[n]['kind'] in ('core','dummy')}|{e for L in D.links if L['ring'] is not None for e in (L['a'],L['b'])}
+            repair(D,fixed)                                       # ring members and ring-arc reactions never move
+            v=scale_until_clean(D)
+            if not any(v.values()): break
         fn=out if len(parts)==1 else f"{out}_{k+1:02d}_{re.sub(r'[^A-Za-z0-9]+','_',cname).strip('_')[:40]}"
         bends=sum(1 for L in D.links if L['ring'] is None and D.info[L['b']]['kind']=='dummy')
         print(f'{fn}: {len(rx)} reactions, rings {[len(r) for r in rings]}, {sum(1 for n in D.P if D.info[n]["kind"]=="alias")} side boxes ({cuts} added to avoid crossings), {bends} bends, {v}')
@@ -948,7 +1014,7 @@ def main():
         render(D,fn+'.svg',title); render(D,fn+'.png',title)
         saved.append(drawing_to_dict(D,cname,title,v)); drawings.append((D,cname,title))
     meta=dict(format='sbml-pathway-layout',version=1,source=os.path.basename(a.sbml),model=name,
-              settings=dict(max_cluster=a.max_cluster,side=a.side,keep=a.keep),
+              settings=dict(max_cluster=a.max_cluster,show=a.show,hide=','.join(x for x in (a.hide,a.side) if x)),
               units='points; x right, y up; boxes are centred on (x, y)',drawings=saved)
     with open(out+'.layout.json','w') as fh: json.dump(meta,fh,indent=1,sort_keys=True)
     print('wrote',out+'.layout.json')
