@@ -27,6 +27,7 @@ Nothing is random; the hash seed is pinned and SVGs are written without a date.
 Usage: python3 sbml_pathway_layout.py model.xml[.gz] [--out NAME] [--max-cluster 60] [--show "NH3,CO2"] [--hide "x,y"]
        --show  draw these compounds as shared boxes connected to all their reactions (like main compounds)
        --hide  always write these compounds inside the reaction box (like cofactors)
+       --legend  add a legend (only the elements used) at the bottom right of each drawing
        python3 sbml_pathway_layout.py [model.xml] --from-layout NAME.layout.json   # redraw a saved layout
 Writes NAME.svg/.png per drawing, NAME.layout.json (reusable layout) and, for SBML Level 3 models,
 NAME.layout.sbml (the model plus the SBML Layout package, readable by other SBML tools).
@@ -324,7 +325,7 @@ def pava(y,w=None):
     for v,_,ix in blocks:
         for i in ix: out[i]=v
     return out
-def sugiyama(nodes,edges,size,gap_x=34,gap_y=34):
+def sugiyama(nodes,edges,size,gap_x=34,gap_y=34,tag=''):
     """nodes: list; edges: list of (u,v); size: n->(w,h). Returns positions, dummy chains."""
     order=greedy_fas_order(nodes,edges); rank={n:i for i,n in enumerate(order)}
     E=[]; rev=[]
@@ -341,7 +342,7 @@ def sugiyama(nodes,edges,size,gap_x=34,gap_y=34):
     for k,(u,v) in enumerate(E):
         pts=[u]
         for l in range(layer[u]+1,layer[v]):
-            d=f'__d{k}_{l}'; layer[d]=l; dsize[d]=(8.0,0.0); pts.append(d)
+            d=f'__d{tag}{k}_{l}'; layer[d]=l; dsize[d]=(8.0,0.0); pts.append(d)
         pts.append(v); chains.append((pts,rev[k]))
         for a,b in zip(pts,pts[1:]): adj.add_edge(a,b)
     sz=lambda n: dsize.get(n) or size[n]
@@ -398,7 +399,7 @@ def sugiyama(nodes,edges,size,gap_x=34,gap_y=34):
     return pos,chains
 
 # ============================================================ cluster layout
-def layout_cluster(rxns):
+def layout_cluster(rxns,ring_scale=1.0):
     D=Drawing()
     M=nx.Graph()
     for r in rxns:
@@ -443,6 +444,7 @@ def layout_cluster(rxns):
             return tot/(2*math.pi)
         rad=70.0
         for _ in range(4): rad=max(70.0,need(rad))
+        rad*=ring_scale
         mw=max(max(D.size('M:'+m)[0] for m in ring),max([D.size('R:'+r['id'])[0] for k in steps for r in steps[k]],default=0))
         ring_steps[i]=dict(ring=ring,steps=steps,chords=chords,rad=rad,box=(2*rad*1.5+mw,2*rad*1.5+40))
     # ---- which compounds get a real (shared) box: every main compound, and every secondary
@@ -513,6 +515,22 @@ def layout_cluster(rxns):
             cid=len(D.links)
             for a,b in zip(pts,pts[1:]):
                 D.link(a,b,arrow=(b==pts[-1]),own=set(ends),chain=cid); D.links[-1]['side']=sd
+    # ---- side pathways: parts of the network that attach to exactly one ring
+    Gc=nx.Graph(); Gc.add_nodes_from(nodes); Gc.add_edges_from(edges)
+    ringnodes={i:{'M:'+m for m in rings[i]}|{'R:'+rid for rid,k in rring.items() if k==i} for i in ring_steps}
+    att={}                                                        # piece node -> ring nodes it attaches to
+    for (a,b),(ma,mb) in zip(edges,emeta):
+        if a.startswith('RING'): att.setdefault(b,set()).add(ma)
+        if b.startswith('RING'): att.setdefault(a,set()).add(mb)
+    pieces=[]
+    for i in sorted(ring_steps):
+        X=f'RING{i}'
+        if X not in Gc: continue
+        H=Gc.copy(); H.remove_node(X)
+        for comp in sorted((sorted(c) for c in nx.connected_components(H)),key=lambda c:c):
+            cs=set(comp); outside={m for n in cs for m in Gc[n] if m not in cs}
+            if outside=={X} and not any(n.startswith('RING') for n in cs): pieces.append((i,comp))
+    piece_of_ring={i:set().union(*[set(c) for j,c in pieces if j==i]) if any(j==i for j,_ in pieces) else set() for i in ring_steps}
     # ---- expand rings, rotated towards their outside connections
     for i,rs in ring_steps.items():
         (cx,cy),rad=D.rings[i]; ring=rs['ring']; n=len(ring)
@@ -521,8 +539,10 @@ def layout_cluster(rxns):
             for j,r in enumerate(lst): slot['R:'+r['id']]=(k+0.5,1.0 if j==0 else 1+(0.24 if j%2 else -0.24)*((j+1)//2))
         ext=[]
         for L in D.links:
+            if L['own'] & piece_of_ring[i]: continue
             for end,other in ((L['a'],L['b']),(L['b'],L['a'])):
                 if end in slot and other in D.P and other not in slot: ext.append((end,D.P[other]))
+        anchors=sorted({x for n in piece_of_ring[i] for x in att.get(n,()) if x in slot})
         best=None
         for mir in (1,-1):
             for k in range(72):
@@ -530,6 +550,7 @@ def layout_cluster(rxns):
                 p={m:(cx+rad*math.cos(th+mir*2*math.pi*j/n),cy+rad*math.sin(th+mir*2*math.pi*j/n)) for j,m in enumerate(ring)}
                 at=lambda e:(cx+rad*slot[e][1]*math.cos(th+mir*2*math.pi*slot[e][0]/n),cy+rad*slot[e][1]*math.sin(th+mir*2*math.pi*slot[e][0]/n))
                 sc=sum(math.dist(at(e),q) for e,q in ext)
+                sc+=sum(0.8*rad*abs(math.cos(th+mir*2*math.pi*slot[e][0]/n)) for e in anchors)   # anchors at top/bottom
                 if best is None or sc<best[0]-1e-6: best=(sc,p,th,mir)
         _,p,th,mir=best
         for m in ring: D.P['M:'+m]=p[m]
@@ -550,52 +571,61 @@ def layout_cluster(rxns):
             D.P[R]=((D.P[s][0]+D.P[pp][0])/2*0.82+cx*0.18,(D.P[s][1]+D.P[pp][1])/2*0.82+cy*0.18)
             D.link(s,R); D.link(R,pp)
     for a,b in ring_side: D.link(a,b); D.links[-1]['side']=True
-    # ---- pieces attached only to one ring: place them radially outside that ring
-    Gc=nx.Graph(); Gc.add_nodes_from(nodes); Gc.add_edges_from(edges)
-    ringnodes={i:{'M:'+m for m in rings[i]}|{'R:'+rid for rid,k in rring.items() if k==i} for i in ring_steps}
-    att={}                                                        # (piece node, ring) -> ring members
-    for (a,b),(ma,mb) in zip(edges,emeta):
-        if a.startswith('RING'): att.setdefault(b,set()).add(ma)
-        if b.startswith('RING'): att.setdefault(a,set()).add(mb)
-    for i in sorted(ring_steps):
-        X=f'RING{i}'
-        if X not in Gc: continue
-        H=Gc.copy(); H.remove_node(X)
-        for comp in sorted((sorted(c) for c in nx.connected_components(H)),key=lambda c:c):
-            cs=set(comp); outside={m for n in cs for m in Gc[n] if m not in cs}
-            if outside!={X} or any(n.startswith('RING') for n in cs): continue
-            # drop the layered drawing of this piece
-            keep=[]
-            for L in D.links:
-                own=L['own']
-                if L['ring'] is None and own & cs and own <= cs|ringnodes[i]: 
-                    for e in (L['a'],L['b']):
-                        if D.info.get(e,{}).get('kind')=='dummy': D.P.pop(e,None)
-                    continue
-                keep.append(L)
-            D.links=keep
-            (cx,cy),rad=D.rings[i]
-            ang={x:math.atan2(D.P[x][1]-cy,D.P[x][0]-cx) for x in sorted(ringnodes[i])}
-            PG=nx.Graph(); PG.add_edges_from((a,b) for a,b in edges if a in cs or b in cs)
-            for n in cs:
-                for m in att.get(n,()): PG.add_edge(n,m)
-            dist={x:nx.single_source_shortest_path_length(PG,x) for x in sorted(ringnodes[i]) if x in PG}
-            for n in comp:
-                ds=[(dist[x][n],x) for x in dist if n in dist[x]] or [(1,'M:'+rings[i][0])]
-                sx=sum(math.cos(ang[m])/(d*d) for d,m in ds); sy=sum(math.sin(ang[m])/(d*d) for d,m in ds)
-                t=math.atan2(sy,sx); dmin=min(d for d,_ in ds)
-                r=rad+55+75*(dmin-1)+(12 if D.info[n]['kind']=='rxn' else 0)
-                D.P[n]=(cx+r*math.cos(t),cy+r*math.sin(t))
-            spots={}                                              # nodes with identical connections land on
-            for n in comp: spots.setdefault((round(D.P[n][0],3),round(D.P[n][1],3)),[]).append(n)   # one spot:
-            for (px,py),grp in sorted(spots.items()):             # spread them along the ring's tangent
-                if len(grp)<2: continue
-                t=math.atan2(py-cy,px-cx); tx,ty=-math.sin(t),math.cos(t)
-                step=max(D.size(n)[0] for n in grp)+24
-                for j,n in enumerate(sorted(grp)):
-                    o=(j-(len(grp)-1)/2)*step; D.P[n]=(px+tx*o,py+ty*o)
-            for (ea,eb),(ma,mb),sd in zip(edges,emeta,eside):           # straight links for the piece
-                if ea in cs or eb in cs: D.link(ma,mb); D.links[-1]['side']=sd
+    # ---- side pathways: own top-to-bottom layout, above or below the ring, aligned with their anchor
+    unplaced=set().union(*[set(c) for _,c in pieces]) if pieces else set()
+    for pi,(i,comp) in enumerate(pieces):
+        cs=set(comp); unplaced-=cs
+        keep=[]
+        for L in D.links:                                         # drop the provisional drawing of this piece
+            if L['ring'] is None and L['own'] & cs and L['own'] <= cs|ringnodes[i]:
+                for e in (L['a'],L['b']):
+                    if D.info.get(e,{}).get('kind')=='dummy': D.P.pop(e,None)
+                continue
+            keep.append(L)
+        D.links=keep
+        (cx,cy),rad=D.rings[i]
+        ce=[(e,m,sd) for e,m,sd in zip(edges,emeta,eside) if e[0] in cs and e[1] in cs]
+        pos,chains=sugiyama(comp,[e for e,_,_ in ce],size,tag=f'p{pi}_')
+        anc=[(n,x) for n in comp for x in sorted(att.get(n,())) if x in ringnodes[i]]
+        ax=float(np.mean([D.P[x][0] for _,x in anc])); ay=float(np.mean([D.P[x][1] for _,x in anc]))
+        an=[n for n,_ in anc]
+        sz=lambda k:(8.0,0.0) if k.startswith('__d') else size[k]
+        def boxes(P): return [(v[0]-sz(k)[0]/2,v[1]-sz(k)[1]/2,v[0]+sz(k)[0]/2,v[1]+sz(k)[1]/2) for k,v in P.items()]
+        others=[D.box(n) for n in D.P if n not in cs and n not in unplaced and D.info[n]['kind']!='dummy']
+        hit=lambda bx,dx,dy:any(b[0]+dx<o[2]+24 and o[0]<b[2]+dx+24 and b[1]+dy<o[3]+24 and o[1]<b[3]+dy+24 for b in bx for o in others)
+        vertical=abs(ay-cy)>=abs(ax-cx)                           # anchor at the top/bottom vs. at a side
+        if vertical:                                              # above/below, anchor end facing the ring,
+            up=ay>=cy                                             # lined up with the anchor -> vertical link
+            my=float(np.mean([pos[n][1] for n in an])); oy=float(np.mean([v[1] for v in pos.values()]))
+            if (up and my>oy+1e-6) or ((not up) and my<oy-1e-6): pos={k:(v[0],-v[1]) for k,v in pos.items()}
+            dx=ax-float(np.mean([pos[n][0] for n in an])); pos={k:(v[0]+dx,v[1]) for k,v in pos.items()}
+            bx=boxes(pos); x0,x1=min(b[0] for b in bx),max(b[2] for b in bx)
+            clear=max(math.sqrt(max(0.0,(rad+38)**2-(x-cx)**2)) for x in np.linspace(x0,x1,25))
+            shift=(max(cy+clear,ay+40)-min(b[1] for b in bx)) if up else (min(cy-clear,ay-40)-max(b[3] for b in bx))
+            for _ in range(400):
+                if not hit(bx,0,shift): break
+                shift+=30 if up else -30
+            sx,sy=0.0,shift
+        else:                                                     # beside the ring, still top-to-bottom,
+            right=ax>=cx                                          # anchor end level with the anchor -> horizontal link
+            dy=ay-float(np.mean([pos[n][1] for n in an])); pos={k:(v[0],v[1]+dy) for k,v in pos.items()}
+            bx=boxes(pos); y0,y1=min(b[1] for b in bx),max(b[3] for b in bx)
+            clear=max(math.sqrt(max(0.0,(rad+38)**2-(y-cy)**2)) for y in np.linspace(y0,y1,25))
+            mx=float(np.mean([pos[n][0] for n in an]))
+            shift=(max(cx+clear,ax+50)-min(b[0] for b in bx)) if right else (min(cx-clear,ax-50)-max(b[2] for b in bx))
+            for _ in range(400):
+                if not hit(bx,shift,0): break
+                shift+=30 if right else -30
+            sx,sy=shift,0.0
+        for k,v in pos.items():
+            if k.startswith('__d'): D.add(k,'dummy')
+            D.P[k]=(v[0]+sx,v[1]+sy)
+        for (pts,rv),(e,m,sd) in zip(chains,ce):
+            pts=list(pts)[::-1] if rv else list(pts); cid=len(D.links)+100000*(pi+1)
+            for a_,b_ in zip(pts,pts[1:]):
+                D.link(a_,b_,arrow=(b_==pts[-1]),own={pts[0],pts[-1]},chain=cid); D.links[-1]['side']=sd
+        for e,m,sd in zip(edges,emeta,eside):                     # links from the piece to the ring
+            if (e[0] in cs)!=(e[1] in cs) and (e[0] in cs or e[1] in cs): D.link(m[0],m[1]); D.links[-1]['side']=sd
     # ---- reactions without a main pair, and secondary participants: side boxes
     pending=[]
     k=0
@@ -694,7 +724,8 @@ def place_hubs(D,hubs,grid=26):
                 ts=np.linspace(0,1,8); SX=A[:,None,0]+(B[:,None,0]-A[:,None,0])*ts; SY=A[:,None,1]+(B[:,None,1]-A[:,None,1])*ts
                 thr+=int(((SX>bx[0]-3)&(SX<bx[2]+3)&(SY>bx[1]-3)&(SY<bx[3]+3)).any(1).sum())
             ln=sum(math.dist(c,D.P[r]) for r in nbr)
-            key=(cr,thr+ov,round(ln,3),round(c[0],3),round(c[1],3))
+            skew=sum(min(abs(c[0]-D.P[r][0]),abs(c[1]-D.P[r][1])) for r in nbr)   # 0 for straight vertical/horizontal
+            key=(cr,thr+ov,round(ln+2.0*skew,3),round(c[0],3),round(c[1],3))
             if best is None or key<best: best=key
         D.P[h]=(best[3],best[4])
 
@@ -767,19 +798,76 @@ def repair(D,fixed,rounds=20):
             if cur==0: return
         if not moved: return
 def scale_until_clean(D,maxit=40):
+    D.scaled=getattr(D,'scaled',1.0)
     for _ in range(maxit):
         v=violations(D)
         if v['line_through_box']==0 and v['box_overlaps']==0: return v
         f=1.1; D.P={n:(p[0]*f,p[1]*f) for n,p in D.P.items()}; D.rings={i:((c[0]*f,c[1]*f),r*f) for i,(c,r) in D.rings.items()}
+        D.scaled*=f
     return violations(D)
 
 # ============================================================ rendering
-def render(D,path,title):
+LEG_FS=8.0
+def legend_entries(D):
+    kinds={D.info[n]['kind'] for n in D.real()}
+    ring=any(L['ring'] is not None for L in D.links)
+    side=any(L['ring'] is None and (L.get('side') or any(D.info[x]['kind']=='alias' for x in (L['a'],L['b']))) for L in D.links)
+    main=any(L['ring'] is None and not L.get('side') and not any(D.info[x]['kind']=='alias' for x in (L['a'],L['b'])) for L in D.links)
+    cof=any(D.info[n]['sub'] for n in D.real() if D.info[n]['kind']=='rxn')
+    E=[]
+    if 'core' in kinds: E.append(('box','core','cycle intermediate'))
+    if 'met' in kinds: E.append(('box','met','metabolite'))
+    if 'alias' in kinds: E.append(('box','alias','copy of a compound drawn elsewhere or used once'))
+    if 'rxn' in kinds: E.append(('rxn',cof,'reaction (enzyme)' + ('; second line: cofactors consumed → released' if cof else '')))
+    if ring: E.append(('line','ring','cycle step'))
+    if main: E.append(('line','main','main substrate → product'))
+    if side: E.append(('line','side','secondary compound'))
+    return E
+def legend_size(E):
+    sw=74; tw=max(text_w(t,dict(fs=LEG_FS,weight='normal',style='normal')) for *_,t in E)
+    return sw+12+tw+24, 22*len(E)+34
+def draw_legend(ax,E,x0,y0):
+    """Legend box with its lower-left corner at (x0, y0); swatches use the drawing's own styles."""
+    w,h=legend_size(E)
+    ax.add_patch(FancyBboxPatch((x0,y0),w,h,boxstyle='round,pad=0,rounding_size=4',fc='#ffffff',ec='#b0b0b0',lw=0.8,zorder=5))
+    ax.text(x0+10,y0+h-12,'Legend',fontsize=9,weight='bold',va='center',zorder=6)
+    for k,(typ,what,text) in enumerate(E):
+        cy=y0+h-34-22*k; sx=x0+10
+        if typ=='box':
+            st=STYLE[what]; bw,bh=58,15
+            ax.add_patch(FancyBboxPatch((sx+8,cy-bh/2),bw,bh,boxstyle='round,pad=0,rounding_size=%g'%(bh/2),fc=st['fc'],ec=st['ec'],lw=0.9,ls=st.get('ls','-'),zorder=6))
+            ax.text(sx+8+bw/2,cy,'name',ha='center',va='center_baseline',fontsize=st['fs']*0.8,weight=st['weight'],color=st['tc'],zorder=7)
+        elif typ=='rxn':
+            st=STYLE['rxn']; bw,bh=(66,20) if what else (58,14)
+            ax.add_patch(FancyBboxPatch((sx+4,cy-bh/2),bw,bh,boxstyle='round,pad=0,rounding_size=2',fc=st['fc'],ec=st['ec'],lw=0.9,zorder=6))
+            ax.text(sx+4+bw/2,cy+(3.5 if what else 0),'enzyme',ha='center',va='center_baseline',fontsize=6.5,style='italic',color=st['tc'],zorder=7)
+            if what: ax.text(sx+4+bw/2,cy-4.5,'cofactors',ha='center',va='center_baseline',fontsize=5.2,color=SUB['tc'],zorder=7)
+        else:
+            col,lw={'ring':('#b23b36',1.8),'main':('#4a4a4a',1.1),'side':('#9aa6bd',0.8)}[what]
+            ax.add_patch(FancyArrowPatch((sx+6,cy),(sx+68,cy),arrowstyle='-|>',mutation_scale=9 if what=='ring' else 7,color=col,lw=lw,zorder=6))
+        ax.text(sx+86,cy,text,fontsize=LEG_FS,va='center_baseline',color='#222222',zorder=7)
+
+def render(D,path,title,legend=False):
     names=D.real(); B=[D.box(n) for n in names]
     xs=[b[0] for b in B]+[b[2] for b in B]; ys=[b[1] for b in B]+[b[3] for b in B]
     for L in D.links:
         for q in D.path(L): xs.append(q[0]); ys.append(q[1])
     x0,x1,y0,y1=min(xs)-30,max(xs)+30,min(ys)-30,max(ys)+50
+    leg=None
+    if legend:
+        E=legend_entries(D); lw_,lh=legend_size(E)
+        lx,ly=x1-12-lw_,y0+12                                     # bottom-right corner of the drawing
+        pts=[q for L in D.links for q in D.path(L)]
+        for L in D.links:                                         # sample the lines, not just their ends
+            p=D.path(L)
+            for a,b in zip(p,p[1:]):
+                for t in np.linspace(0,1,12): pts.append((a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t))
+        free=not any(lx-8<q[0]<lx+lw_+8 and ly-8<q[1]<ly+lh+8 for q in pts) and \
+             not any(b[0]<lx+lw_+8 and lx-8<b[2] and b[1]<ly+lh+8 and ly-8<b[3] for b in B)
+        if not free:                                              # corner in use: extend the canvas downwards
+            ly=y0-lh-10; y0=ly-12
+            if x1-x0<lw_+24: x0=x1-lw_-24; lx=x1-12-lw_
+        leg=(E,lx,ly)
     fig=plt.figure(figsize=((x1-x0)/72,(y1-y0)/72)); ax=fig.add_axes([0,0,1,1])
     ax.set_xlim(x0,x1); ax.set_ylim(y0,y1); ax.set_aspect('equal'); ax.axis('off')
     for i,((cx,cy),r) in sorted(D.rings.items()): ax.add_patch(Circle((cx,cy),r,fc='#fbf6f5',ec='none',zorder=0))
@@ -812,6 +900,7 @@ def render(D,path,title):
             sub=sub if len(sub)<=60 else sub[:58]+'\u2026'
             ax.text(x,y-st['fs']*0.62,sub,ha='center',va='center_baseline',fontsize=SUB['fs'],color=SUB['tc'],zorder=3)
     ax.text(x0+12,y1-14,title,fontsize=12,va='top')
+    if leg: draw_legend(ax,leg[0],leg[1],leg[2])
     fig.savefig(path,**({'metadata':{'Date':None}} if path.endswith('.svg') else {'dpi':min(110.0,7000*72/max(x1-x0,y1-y0))}))
     plt.close(fig)
 
@@ -969,6 +1058,7 @@ def main():
     ap.add_argument('--side',default='',help=argparse.SUPPRESS); ap.add_argument('--keep',default='',help=argparse.SUPPRESS)  # old names
     ap.add_argument('--from-layout',default=None,help='redraw a saved NAME.layout.json (positions may have been edited) instead of computing a layout')
     ap.add_argument('--no-sbml-layout',action='store_true',help='do not write NAME.layout.sbml')
+    ap.add_argument('--legend',action='store_true',help='add a legend at the bottom right of each drawing')
     a=ap.parse_args()
     if a.from_layout:                                             # ---- reuse a saved layout
         saved=json.load(open(a.from_layout)); out=a.out or a.from_layout.replace('.layout.json','')+'_redrawn'
@@ -978,7 +1068,7 @@ def main():
             fn=out if len(saved['drawings'])==1 else f'{out}_{k+1:02d}'
             print(f'{fn}: {v}')
             if any(v.values()): ok=False; print('  rules not met (was the layout edited?) - drawn anyway for inspection')
-            render(D,fn+'.svg',d['title']); render(D,fn+'.png',d['title']); drawings.append((D,d['name'],d['title']))
+            render(D,fn+'.svg',d['title'],a.legend); render(D,fn+'.png',d['title'],a.legend); drawings.append((D,d['name'],d['title']))
         if a.sbml and not a.no_sbml_layout:
             read_sbml(a.sbml)
             if export_sbml_layout(a.sbml,out+'.layout.sbml',drawings): print('wrote',out+'.layout.sbml')
@@ -995,26 +1085,32 @@ def main():
     log(f'{len(reactions)} reactions, {sum(1 for f in F.values() if f)}/{len(F)} formulas, {len(cof)} cofactors, {len(parts)} drawing(s)')
     ok=True; saved=[]; drawings=[]
     for k,(cname,rx) in enumerate(parts):
-        D,rings=layout_cluster(rx); cuts=0
-        side_ends={e for L in D.links if L.get('side') for e in (L['a'],L['b'])}
-        hubs=sorted((n for n in D.P if D.info[n]['kind']=='met' and (_norm(D.info[n]['label']) in SHOW or n in side_ends)),
-                    key=lambda n:(_norm(D.info[n]['label']) not in SHOW,n))
-        place_hubs(D,hubs)                                        # shared compounds: best free spot
-        for _ in range(6):                                        # repeat until all three checks hold together
-            cuts+=remove_crossings(D)                             # (a near-touch can tip into a crossing when scaled)
-            fixed={n for n in D.P if D.info[n]['kind'] in ('core','dummy')}|{e for L in D.links if L['ring'] is not None for e in (L['a'],L['b'])}
-            repair(D,fixed)                                       # ring members and ring-arc reactions never move
-            v=scale_until_clean(D)
-            if not any(v.values()): break
+        best=None
+        for ring_scale in (1.0,1.3,1.6,2.0):                      # crowded rings: retry with a larger ring
+            D,rings=layout_cluster(rx,ring_scale); cuts=0
+            side_ends={e for L in D.links if L.get('side') for e in (L['a'],L['b'])}
+            hubs=sorted((n for n in D.P if D.info[n]['kind']=='met' and (_norm(D.info[n]['label']) in SHOW or n in side_ends)),
+                        key=lambda n:(_norm(D.info[n]['label']) not in SHOW,n))
+            place_hubs(D,hubs)                                    # shared compounds: best free spot
+            for _ in range(6):                                    # repeat until all three checks hold together
+                cuts+=remove_crossings(D)                         # (a near-touch can tip into a crossing when scaled)
+                fixed={n for n in D.P if D.info[n]['kind'] in ('core','dummy')}|{e for L in D.links if L['ring'] is not None for e in (L['a'],L['b'])}
+                repair(D,fixed)                                   # ring members and ring-arc reactions never move
+                v=scale_until_clean(D)
+                if not any(v.values()): break
+            key=(any(v.values()),D.scaled>1.35,cuts,D.scaled)
+            if best is None or key<best[0]: best=(key,D,rings,cuts,v)
+            if not rings or (not any(v.values()) and D.scaled<=1.35): break
+        _,D,rings,cuts,v=best
         fn=out if len(parts)==1 else f"{out}_{k+1:02d}_{re.sub(r'[^A-Za-z0-9]+','_',cname).strip('_')[:40]}"
         bends=sum(1 for L in D.links if L['ring'] is None and D.info[L['b']]['kind']=='dummy')
         print(f'{fn}: {len(rx)} reactions, rings {[len(r) for r in rings]}, {sum(1 for n in D.P if D.info[n]["kind"]=="alias")} side boxes ({cuts} added to avoid crossings), {bends} bends, {v}')
         if any(v.values()): ok=False; print('  rules not met - drawing not written'); continue
         title=name+(f' \u2014 {cname}' if cname else '')
-        render(D,fn+'.svg',title); render(D,fn+'.png',title)
+        render(D,fn+'.svg',title,a.legend); render(D,fn+'.png',title,a.legend)
         saved.append(drawing_to_dict(D,cname,title,v)); drawings.append((D,cname,title))
     meta=dict(format='sbml-pathway-layout',version=1,source=os.path.basename(a.sbml),model=name,
-              settings=dict(max_cluster=a.max_cluster,show=a.show,hide=','.join(x for x in (a.hide,a.side) if x)),
+              settings=dict(max_cluster=a.max_cluster,show=a.show,hide=','.join(x for x in (a.hide,a.side) if x),legend=a.legend),
               units='points; x right, y up; boxes are centred on (x, y)',drawings=saved)
     with open(out+'.layout.json','w') as fh: json.dump(meta,fh,indent=1,sort_keys=True)
     print('wrote',out+'.layout.json')
