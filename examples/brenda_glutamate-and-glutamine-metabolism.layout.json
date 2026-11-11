@@ -1,0 +1,2346 @@
+{
+ "drawings": [
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0
+   },
+   "links": [
+    {
+     "arrow": false,
+     "chain": 0,
+     "own": [
+      "M:L-aspartate",
+      "R:R_rx_028c1c2a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:L-aspartate",
+     "target": "__d0_1"
+    },
+    {
+     "arrow": false,
+     "chain": 0,
+     "own": [
+      "M:L-aspartate",
+      "R:R_rx_028c1c2a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d0_1",
+     "target": "__d0_2"
+    },
+    {
+     "arrow": false,
+     "chain": 0,
+     "own": [
+      "M:L-aspartate",
+      "R:R_rx_028c1c2a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d0_2",
+     "target": "__d0_3"
+    },
+    {
+     "arrow": false,
+     "chain": 0,
+     "own": [
+      "M:L-aspartate",
+      "R:R_rx_028c1c2a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d0_3",
+     "target": "__d0_4"
+    },
+    {
+     "arrow": false,
+     "chain": 0,
+     "own": [
+      "M:L-aspartate",
+      "R:R_rx_028c1c2a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d0_4",
+     "target": "__d0_5"
+    },
+    {
+     "arrow": false,
+     "chain": 0,
+     "own": [
+      "M:L-aspartate",
+      "R:R_rx_028c1c2a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d0_5",
+     "target": "__d0_6"
+    },
+    {
+     "arrow": true,
+     "chain": 0,
+     "own": [
+      "M:L-aspartate",
+      "R:R_rx_028c1c2a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d0_6",
+     "target": "R:R_rx_028c1c2a2f"
+    },
+    {
+     "arrow": true,
+     "chain": 7,
+     "own": [
+      "M:oxaloacetate",
+      "R:R_rx_028c1c2a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_028c1c2a2f",
+     "target": "M:oxaloacetate"
+    },
+    {
+     "arrow": true,
+     "chain": 8,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_028c1c2a2f"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:2-oxoglutarate",
+     "target": "R:R_rx_028c1c2a2f"
+    },
+    {
+     "arrow": true,
+     "chain": 9,
+     "own": [
+      "M:glutaconyl-CoA",
+      "R:R_rx_08b3253feb"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:glutaconyl-CoA",
+     "target": "R:R_rx_08b3253feb"
+    },
+    {
+     "arrow": true,
+     "chain": 10,
+     "own": [
+      "M:crotonyl-CoA",
+      "R:R_rx_08b3253feb"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_08b3253feb",
+     "target": "M:crotonyl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": 11,
+     "own": [
+      "M:crotonyl-CoA",
+      "R:R_rx_0e10fa96aa"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:crotonyl-CoA",
+     "target": "R:R_rx_0e10fa96aa"
+    },
+    {
+     "arrow": true,
+     "chain": 12,
+     "own": [
+      "M:butyryl-CoA",
+      "R:R_rx_0e10fa96aa"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_0e10fa96aa",
+     "target": "M:butyryl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": 13,
+     "own": [
+      "M:(+)-citramalate",
+      "R:R_rx_11d5d6fa68"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(+)-citramalate",
+     "target": "R:R_rx_11d5d6fa68"
+    },
+    {
+     "arrow": true,
+     "chain": 14,
+     "own": [
+      "M:pyruvate",
+      "R:R_rx_11d5d6fa68"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_11d5d6fa68",
+     "target": "M:pyruvate"
+    },
+    {
+     "arrow": true,
+     "chain": 15,
+     "own": [
+      "M:acetate",
+      "R:R_rx_11d5d6fa68"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_11d5d6fa68",
+     "target": "M:acetate"
+    },
+    {
+     "arrow": true,
+     "chain": 16,
+     "own": [
+      "M:4-hydroxybutyrate",
+      "R:R_rx_1f1b0bb0a1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:4-hydroxybutyrate",
+     "target": "R:R_rx_1f1b0bb0a1"
+    },
+    {
+     "arrow": false,
+     "chain": 17,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_1f1b0bb0a1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_1f1b0bb0a1",
+     "target": "__d11_2"
+    },
+    {
+     "arrow": false,
+     "chain": 17,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_1f1b0bb0a1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d11_2",
+     "target": "__d11_3"
+    },
+    {
+     "arrow": false,
+     "chain": 17,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_1f1b0bb0a1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d11_3",
+     "target": "__d11_4"
+    },
+    {
+     "arrow": false,
+     "chain": 17,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_1f1b0bb0a1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d11_4",
+     "target": "__d11_5"
+    },
+    {
+     "arrow": false,
+     "chain": 17,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_1f1b0bb0a1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d11_5",
+     "target": "__d11_6"
+    },
+    {
+     "arrow": false,
+     "chain": 17,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_1f1b0bb0a1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d11_6",
+     "target": "__d11_7"
+    },
+    {
+     "arrow": true,
+     "chain": 17,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_1f1b0bb0a1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d11_7",
+     "target": "M:succinate semialdehyde"
+    },
+    {
+     "arrow": true,
+     "chain": 24,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_248a5cc869"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_248a5cc869",
+     "target": "M:2-oxoglutarate"
+    },
+    {
+     "arrow": true,
+     "chain": 25,
+     "own": [
+      "M:tRNAMet",
+      "R:R_rx_27889e7c6e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:tRNAMet",
+     "target": "R:R_rx_27889e7c6e"
+    },
+    {
+     "arrow": true,
+     "chain": 26,
+     "own": [
+      "M:Glu-tRNAGln",
+      "R:R_rx_27889e7c6e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_27889e7c6e",
+     "target": "M:Glu-tRNAGln"
+    },
+    {
+     "arrow": true,
+     "chain": 27,
+     "own": [
+      "M:L-glutamine",
+      "R:R_rx_359808fee2"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:L-glutamine",
+     "target": "R:R_rx_359808fee2"
+    },
+    {
+     "arrow": true,
+     "chain": 28,
+     "own": [
+      "M:(+)-citramalate",
+      "R:R_rx_4d979971d7"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(+)-citramalate",
+     "target": "R:R_rx_4d979971d7"
+    },
+    {
+     "arrow": true,
+     "chain": 30,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_62f4f7c387"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_62f4f7c387",
+     "target": "M:2-oxoglutarate"
+    },
+    {
+     "arrow": true,
+     "chain": 31,
+     "own": [
+      "M:L-glutamine",
+      "R:R_rx_7437c01e49"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_7437c01e49",
+     "target": "M:L-glutamine"
+    },
+    {
+     "arrow": true,
+     "chain": 32,
+     "own": [
+      "M:L-aspartate",
+      "R:R_rx_7761ebea74"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:L-aspartate",
+     "target": "R:R_rx_7761ebea74"
+    },
+    {
+     "arrow": true,
+     "chain": 33,
+     "own": [
+      "M:fumarate",
+      "R:R_rx_7761ebea74"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_7761ebea74",
+     "target": "M:fumarate"
+    },
+    {
+     "arrow": true,
+     "chain": 34,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_7768911592"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_7768911592",
+     "target": "M:2-oxoglutarate"
+    },
+    {
+     "arrow": true,
+     "chain": 35,
+     "own": [
+      "M:acetate",
+      "R:R_rx_9409463a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:acetate",
+     "target": "R:R_rx_9409463a2f"
+    },
+    {
+     "arrow": true,
+     "chain": 36,
+     "own": [
+      "M:acetyl-CoA",
+      "R:R_rx_9409463a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_9409463a2f",
+     "target": "M:acetyl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": 37,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_NODE_5366"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:2-oxoglutarate",
+     "target": "R:R_rx_NODE_5366"
+    },
+    {
+     "arrow": true,
+     "chain": 38,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_NODE_5409"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_NODE_5409",
+     "target": "M:2-oxoglutarate"
+    },
+    {
+     "arrow": true,
+     "chain": 39,
+     "own": [
+      "M:(R)-2-hydroxyglutarate",
+      "R:R_rx_a010c418aa"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(R)-2-hydroxyglutarate",
+     "target": "R:R_rx_a010c418aa"
+    },
+    {
+     "arrow": false,
+     "chain": 40,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_a010c418aa"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_a010c418aa",
+     "target": "__d28_2"
+    },
+    {
+     "arrow": false,
+     "chain": 40,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_a010c418aa"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d28_2",
+     "target": "__d28_3"
+    },
+    {
+     "arrow": false,
+     "chain": 40,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_a010c418aa"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d28_3",
+     "target": "__d28_4"
+    },
+    {
+     "arrow": false,
+     "chain": 40,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_a010c418aa"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d28_4",
+     "target": "__d28_5"
+    },
+    {
+     "arrow": true,
+     "chain": 40,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_a010c418aa"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d28_5",
+     "target": "M:2-oxoglutarate"
+    },
+    {
+     "arrow": true,
+     "chain": 45,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_a59751411f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:succinate semialdehyde",
+     "target": "R:R_rx_a59751411f"
+    },
+    {
+     "arrow": true,
+     "chain": 46,
+     "own": [
+      "M:succinate",
+      "R:R_rx_a59751411f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_a59751411f",
+     "target": "M:succinate"
+    },
+    {
+     "arrow": false,
+     "chain": 47,
+     "own": [
+      "M:4-aminobutanoate",
+      "R:R_rx_b927f80c91"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:4-aminobutanoate",
+     "target": "__d31_2"
+    },
+    {
+     "arrow": false,
+     "chain": 47,
+     "own": [
+      "M:4-aminobutanoate",
+      "R:R_rx_b927f80c91"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d31_2",
+     "target": "__d31_3"
+    },
+    {
+     "arrow": false,
+     "chain": 47,
+     "own": [
+      "M:4-aminobutanoate",
+      "R:R_rx_b927f80c91"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d31_3",
+     "target": "__d31_4"
+    },
+    {
+     "arrow": false,
+     "chain": 47,
+     "own": [
+      "M:4-aminobutanoate",
+      "R:R_rx_b927f80c91"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d31_4",
+     "target": "__d31_5"
+    },
+    {
+     "arrow": false,
+     "chain": 47,
+     "own": [
+      "M:4-aminobutanoate",
+      "R:R_rx_b927f80c91"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d31_5",
+     "target": "__d31_6"
+    },
+    {
+     "arrow": true,
+     "chain": 47,
+     "own": [
+      "M:4-aminobutanoate",
+      "R:R_rx_b927f80c91"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d31_6",
+     "target": "R:R_rx_b927f80c91"
+    },
+    {
+     "arrow": true,
+     "chain": 53,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_b927f80c91"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b927f80c91",
+     "target": "M:succinate semialdehyde"
+    },
+    {
+     "arrow": true,
+     "chain": 55,
+     "own": [
+      "M:Glu-tRNAGln",
+      "R:R_rx_bb1032f118"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:Glu-tRNAGln",
+     "target": "R:R_rx_bb1032f118"
+    },
+    {
+     "arrow": true,
+     "chain": 56,
+     "own": [
+      "M:Gln-tRNAGln",
+      "R:R_rx_bb1032f118"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_bb1032f118",
+     "target": "M:Gln-tRNAGln"
+    },
+    {
+     "arrow": false,
+     "chain": 57,
+     "own": [
+      "M:L-glutamine",
+      "R:R_rx_bb1032f118"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:L-glutamine",
+     "target": "__d36_2"
+    },
+    {
+     "arrow": true,
+     "chain": 57,
+     "own": [
+      "M:L-glutamine",
+      "R:R_rx_bb1032f118"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "__d36_2",
+     "target": "R:R_rx_bb1032f118"
+    },
+    {
+     "arrow": true,
+     "chain": 59,
+     "own": [
+      "M:L-threo-3-methylaspartate",
+      "R:R_rx_c9332e8eb5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:L-threo-3-methylaspartate",
+     "target": "R:R_rx_c9332e8eb5"
+    },
+    {
+     "arrow": true,
+     "chain": 60,
+     "own": [
+      "M:mesaconate",
+      "R:R_rx_c9332e8eb5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_c9332e8eb5",
+     "target": "M:mesaconate"
+    },
+    {
+     "arrow": true,
+     "chain": 63,
+     "own": [
+      "M:2-Oxoglutaramate",
+      "R:R_rx_ce82dba4c6"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_ce82dba4c6",
+     "target": "M:2-Oxoglutaramate"
+    },
+    {
+     "arrow": true,
+     "chain": 65,
+     "own": [
+      "M:L-alanine",
+      "R:R_rx_ce82dba4c6"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_ce82dba4c6",
+     "target": "M:L-alanine"
+    },
+    {
+     "arrow": true,
+     "chain": 66,
+     "own": [
+      "M:4-aminobutanoate",
+      "R:R_rx_cf43eadbe1"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_cf43eadbe1",
+     "target": "M:4-aminobutanoate"
+    },
+    {
+     "arrow": true,
+     "chain": 67,
+     "own": [
+      "M:2-Oxoglutaramate",
+      "R:R_rx_d757b6fb69"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2-Oxoglutaramate",
+     "target": "R:R_rx_d757b6fb69"
+    },
+    {
+     "arrow": true,
+     "chain": 68,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_d757b6fb69"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_d757b6fb69",
+     "target": "M:2-oxoglutarate"
+    },
+    {
+     "arrow": true,
+     "chain": 69,
+     "own": [
+      "M:(R)-2-hydroxyglutaryl-1-CoA",
+      "R:R_rx_d96f9831b3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(R)-2-hydroxyglutaryl-1-CoA",
+     "target": "R:R_rx_d96f9831b3"
+    },
+    {
+     "arrow": true,
+     "chain": 70,
+     "own": [
+      "M:glutaconyl-CoA",
+      "R:R_rx_d96f9831b3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_d96f9831b3",
+     "target": "M:glutaconyl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": 71,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_f0e279da5c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:succinate semialdehyde",
+     "target": "R:R_rx_f0e279da5c"
+    },
+    {
+     "arrow": true,
+     "chain": 72,
+     "own": [
+      "M:succinate",
+      "R:R_rx_f0e279da5c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_f0e279da5c",
+     "target": "M:succinate"
+    },
+    {
+     "arrow": true,
+     "chain": 73,
+     "own": [
+      "M:acetyl-CoA",
+      "R:R_rx_f151cad328"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:acetyl-CoA",
+     "target": "R:R_rx_f151cad328"
+    },
+    {
+     "arrow": false,
+     "chain": 74,
+     "own": [
+      "M:acetate",
+      "R:R_rx_f151cad328"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_f151cad328",
+     "target": "__d51_4"
+    },
+    {
+     "arrow": false,
+     "chain": 74,
+     "own": [
+      "M:acetate",
+      "R:R_rx_f151cad328"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d51_4",
+     "target": "__d51_3"
+    },
+    {
+     "arrow": true,
+     "chain": 74,
+     "own": [
+      "M:acetate",
+      "R:R_rx_f151cad328"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d51_3",
+     "target": "M:acetate"
+    },
+    {
+     "arrow": true,
+     "chain": 77,
+     "own": [
+      "M:(R)-2-hydroxyglutaryl-1-CoA",
+      "R:R_rx_f151cad328"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_f151cad328",
+     "target": "M:(R)-2-hydroxyglutaryl-1-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": 78,
+     "own": [
+      "M:4-aminobutanoate",
+      "R:R_rx_f24ef4d974"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:4-aminobutanoate",
+     "target": "R:R_rx_f24ef4d974"
+    },
+    {
+     "arrow": false,
+     "chain": 79,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_f24ef4d974"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_f24ef4d974",
+     "target": "__d54_3"
+    },
+    {
+     "arrow": false,
+     "chain": 79,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_f24ef4d974"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d54_3",
+     "target": "__d54_4"
+    },
+    {
+     "arrow": false,
+     "chain": 79,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_f24ef4d974"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d54_4",
+     "target": "__d54_5"
+    },
+    {
+     "arrow": false,
+     "chain": 79,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_f24ef4d974"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d54_5",
+     "target": "__d54_6"
+    },
+    {
+     "arrow": false,
+     "chain": 79,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_f24ef4d974"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d54_6",
+     "target": "__d54_7"
+    },
+    {
+     "arrow": true,
+     "chain": 79,
+     "own": [
+      "M:succinate semialdehyde",
+      "R:R_rx_f24ef4d974"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d54_7",
+     "target": "M:succinate semialdehyde"
+    },
+    {
+     "arrow": true,
+     "chain": 85,
+     "own": [
+      "M:L-threo-3-methylaspartate",
+      "R:R_rx_f6abbe6449"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:L-threo-3-methylaspartate",
+     "target": "R:R_rx_f6abbe6449"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_0e10fa96aa:0",
+      "R:R_rx_0e10fa96aa"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_0e10fa96aa",
+     "target": "A:R_rx_0e10fa96aa:0"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_62f4f7c387:1",
+      "R:R_rx_62f4f7c387"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_62f4f7c387",
+     "target": "A:R_rx_62f4f7c387:1"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_7768911592:1",
+      "R:R_rx_7768911592"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_7768911592",
+     "target": "A:R_rx_7768911592:1"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_9409463a2f:0",
+      "R:R_rx_9409463a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_9409463a2f:0",
+     "target": "R:R_rx_9409463a2f"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_9409463a2f:1",
+      "R:R_rx_9409463a2f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_9409463a2f",
+     "target": "A:R_rx_9409463a2f:1"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_NODE_5366:1",
+      "R:R_rx_NODE_5366"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_NODE_5366:1",
+     "target": "R:R_rx_NODE_5366"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_b8f00045da:0",
+      "R:R_rx_b8f00045da"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b8f00045da",
+     "target": "A:R_rx_b8f00045da:0"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_f151cad328:0",
+      "R:R_rx_f151cad328"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_f151cad328:0",
+     "target": "R:R_rx_f151cad328"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_f24ef4d974:0",
+      "R:R_rx_f24ef4d974"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_f24ef4d974:0",
+     "target": "R:R_rx_f24ef4d974"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_f24ef4d974:1",
+      "R:R_rx_f24ef4d974"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_f24ef4d974",
+     "target": "A:R_rx_f24ef4d974:1"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:cut0",
+      "R:R_rx_4d979971d7"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_4d979971d7",
+     "target": "A:cut0"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:cut1",
+      "R:R_rx_ce82dba4c6"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:cut1",
+     "target": "R:R_rx_ce82dba4c6"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:cut2",
+      "R:R_rx_b927f80c91"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:cut2",
+     "target": "R:R_rx_b927f80c91"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:cut3",
+      "R:R_rx_ce82dba4c6"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:cut3",
+     "target": "R:R_rx_ce82dba4c6"
+    }
+   ],
+   "name": "",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_0e10fa96aa:0",
+     "kind": "alias",
+     "label": "oxidized acceptor",
+     "sbml_id": "M_mt_NAME_00000036",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 75.841,
+     "x": 550.0838525148686,
+     "y": -585.7407737420235
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_62f4f7c387:1",
+     "kind": "alias",
+     "label": "L-glutamine",
+     "sbml_id": "M_mt_ee694b7701",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 53.509,
+     "x": 375.5985444714993,
+     "y": -261.1928292748093
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_7768911592:1",
+     "kind": "alias",
+     "label": "L-glutamine",
+     "sbml_id": "M_mt_ee694b7701",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 53.509,
+     "x": 820.9580987158499,
+     "y": -177.19463646448264
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_9409463a2f:0",
+     "kind": "alias",
+     "label": "butyryl-CoA",
+     "sbml_id": "M_mt_cc8291cf5b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 53.419,
+     "x": 459.15030543771564,
+     "y": -153.5133313678159
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_9409463a2f:1",
+     "kind": "alias",
+     "label": "Butyrate",
+     "sbml_id": "M_mt_1c13e33d43",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 41.377,
+     "x": 331.4516047153074,
+     "y": -203.64514678784346
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_NODE_5366:1",
+     "kind": "alias",
+     "label": "L-glutamine",
+     "sbml_id": "M_mt_ee694b7701",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 53.509,
+     "x": 807.0624256059709,
+     "y": -509.446640625
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_b8f00045da:0",
+     "kind": "alias",
+     "label": "D-glutamate",
+     "sbml_id": "M_mt_459536c4ed",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 55.936,
+     "x": 1542.2215232612946,
+     "y": 217.704375
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_f151cad328:0",
+     "kind": "alias",
+     "label": "(R)-2-hydroxyglutarate",
+     "sbml_id": "M_mt_6bfc36c381",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 94.68,
+     "x": 415.6166319002365,
+     "y": -298.3283076776144
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_f24ef4d974:0",
+     "kind": "alias",
+     "label": "pyruvate",
+     "sbml_id": "M_mt_7dd2d3b76f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 42.546,
+     "x": 99.87779819923881,
+     "y": -93.02586612920649
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_f24ef4d974:1",
+     "kind": "alias",
+     "label": "L-alanine",
+     "sbml_id": "M_mt_28ca947420",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 43.098,
+     "x": 234.8749687426391,
+     "y": -144.22413387079348
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut0",
+     "kind": "alias",
+     "label": "mesaconate",
+     "sbml_id": "M_mt_68eee253b0",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 54.96,
+     "x": 492.51778384060873,
+     "y": 42.91052334101592
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut1",
+     "kind": "alias",
+     "label": "pyruvate",
+     "sbml_id": "M_mt_7dd2d3b76f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 42.546,
+     "x": 684.2187963191403,
+     "y": -103.92316655157452
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut2",
+     "kind": "alias",
+     "label": "2-oxoglutarate",
+     "sbml_id": "M_mt_ea23b49b7a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 64.192,
+     "x": 348.75892624649265,
+     "y": -430.3580823489472
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut3",
+     "kind": "alias",
+     "label": "L-glutamine",
+     "sbml_id": "M_mt_ee694b7701",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 53.509,
+     "x": 615.5824103491007,
+     "y": -144.00394155478597
+    },
+    {
+     "h": 16.5,
+     "id": "M:(+)-citramalate",
+     "kind": "met",
+     "label": "(+)-citramalate",
+     "sbml_id": "M_mt_44d08ff649",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 76.33,
+     "x": 383.33053224502476,
+     "y": -10.125
+    },
+    {
+     "h": 16.5,
+     "id": "M:(R)-2-hydroxyglutarate",
+     "kind": "met",
+     "label": "(R)-2-hydroxyglutarate",
+     "sbml_id": "M_mt_6bfc36c381",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 107.97,
+     "x": 557.2455322450248,
+     "y": -10.125
+    },
+    {
+     "h": 16.5,
+     "id": "M:(R)-2-hydroxyglutaryl-1-CoA",
+     "kind": "met",
+     "label": "(R)-2-hydroxyglutaryl-1-CoA",
+     "sbml_id": "M_mt_ade0d70f0d",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 130.466,
+     "x": 373.33121208667706,
+     "y": -330.0
+    },
+    {
+     "h": 16.5,
+     "id": "M:2-Oxoglutaramate",
+     "kind": "met",
+     "label": "2-Oxoglutaramate",
+     "sbml_id": "M_mt_e9aa8d4228",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 88.736,
+     "x": 730.0248316063111,
+     "y": -225.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:2-oxoglutarate",
+     "kind": "met",
+     "label": "2-oxoglutarate",
+     "sbml_id": "M_mt_ea23b49b7a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 73.418,
+     "x": 807.0624256059709,
+     "y": -330.0
+    },
+    {
+     "h": 16.5,
+     "id": "M:4-aminobutanoate",
+     "kind": "met",
+     "label": "4-aminobutanoate",
+     "sbml_id": "M_mt_8476d0a90e",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 89.727,
+     "x": 217.2396728700248,
+     "y": -64.375
+    },
+    {
+     "h": 16.5,
+     "id": "M:4-hydroxybutyrate",
+     "kind": "met",
+     "label": "4-hydroxybutyrate",
+     "sbml_id": "M_mt_3399929cd1",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 90.14,
+     "x": 67.90999999999997,
+     "y": -10.125
+    },
+    {
+     "h": 16.5,
+     "id": "M:Gln-tRNAGln",
+     "kind": "met",
+     "label": "Gln-tRNAGln",
+     "sbml_id": "M_mt_95d97ae52b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 63.801,
+     "x": 1057.730464480966,
+     "y": -225.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:Glu-tRNAGln",
+     "kind": "met",
+     "label": "Glu-tRNAGln",
+     "sbml_id": "M_mt_59411ea6e0",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 63.801,
+     "x": 925.1051419323053,
+     "y": -118.625
+    },
+    {
+     "h": 16.5,
+     "id": "M:L-alanine",
+     "kind": "met",
+     "label": "L-alanine",
+     "sbml_id": "M_mt_28ca947420",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 49.512,
+     "x": 626.900847231311,
+     "y": -225.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:L-aspartate",
+     "kind": "met",
+     "label": "L-aspartate",
+     "sbml_id": "M_mt_0de283c3a3",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 59.207,
+     "x": 1370.4751560737946,
+     "y": -10.125
+    },
+    {
+     "h": 16.5,
+     "id": "M:L-glutamine",
+     "kind": "met",
+     "label": "L-glutamine",
+     "sbml_id": "M_mt_ee694b7701",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 61.311,
+     "x": 1114.375172870025,
+     "y": -64.375
+    },
+    {
+     "h": 16.5,
+     "id": "M:L-threo-3-methylaspartate",
+     "kind": "met",
+     "label": "L-threo-3-methylaspartate",
+     "sbml_id": "M_mt_b5f144d688",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 122.985,
+     "x": 771.0791259950249,
+     "y": -10.125
+    },
+    {
+     "h": 16.5,
+     "id": "M:acetate",
+     "kind": "met",
+     "label": "acetate",
+     "sbml_id": "M_mt_ddadea339f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 43.253,
+     "x": 332.63146159593896,
+     "y": -118.625
+    },
+    {
+     "h": 16.5,
+     "id": "M:acetyl-CoA",
+     "kind": "met",
+     "label": "acetyl-CoA",
+     "sbml_id": "M_mt_4cb0ce6646",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 57.274,
+     "x": 367.08212492059624,
+     "y": -225.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:butyryl-CoA",
+     "kind": "met",
+     "label": "butyryl-CoA",
+     "sbml_id": "M_mt_cc8291cf5b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 61.208,
+     "x": 446.3087827622054,
+     "y": -644.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:crotonyl-CoA",
+     "kind": "met",
+     "label": "crotonyl-CoA",
+     "sbml_id": "M_mt_4db5d73987",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 65.972,
+     "x": 440.2342125505206,
+     "y": -539.5
+    },
+    {
+     "h": 16.5,
+     "id": "M:fumarate",
+     "kind": "met",
+     "label": "fumarate",
+     "sbml_id": "M_mt_6ea7392d87",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 50.485,
+     "x": 1415.9765468841604,
+     "y": -118.625
+    },
+    {
+     "h": 16.5,
+     "id": "M:glutaconyl-CoA",
+     "kind": "met",
+     "label": "glutaconyl-CoA",
+     "sbml_id": "M_mt_12580d2e8b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 75.818,
+     "x": 426.64238225927784,
+     "y": -434.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:mesaconate",
+     "kind": "met",
+     "label": "mesaconate",
+     "sbml_id": "M_mt_68eee253b0",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 62.955,
+     "x": 610.8893863837023,
+     "y": -118.625
+    },
+    {
+     "h": 16.5,
+     "id": "M:oxaloacetate",
+     "kind": "met",
+     "label": "oxaloacetate",
+     "sbml_id": "M_mt_e7c775ae46",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 66.036,
+     "x": 971.3765662308647,
+     "y": -434.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:pyruvate",
+     "kind": "met",
+     "label": "pyruvate",
+     "sbml_id": "M_mt_7dd2d3b76f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 48.886,
+     "x": 478.9689566962023,
+     "y": -118.625
+    },
+    {
+     "h": 16.5,
+     "id": "M:succinate",
+     "kind": "met",
+     "label": "succinate",
+     "sbml_id": "M_mt_92e136de2e",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 51.768,
+     "x": 155.28196883646348,
+     "y": -539.5
+    },
+    {
+     "h": 16.5,
+     "id": "M:succinate semialdehyde",
+     "kind": "met",
+     "label": "succinate semialdehyde",
+     "sbml_id": "M_mt_c20619d98d",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 114.009,
+     "x": 152.41228856103226,
+     "y": -434.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:tRNAMet",
+     "kind": "met",
+     "label": "tRNAMet",
+     "sbml_id": "M_mt_e022ea62bb",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 48.877,
+     "x": 985.6083369325249,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_028c1c2a2f",
+     "kind": "rxn",
+     "label": "aspartate transaminase",
+     "sbml_id": "R_rx_028c1c2a2f",
+     "sbml_type": "reaction",
+     "sub": " \u2192 L-glutamate",
+     "w": 90.985,
+     "x": 971.3765662309709,
+     "y": -382.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_08b3253feb",
+     "kind": "rxn",
+     "label": "methylcrotonoyl-CoA carboxylase",
+     "sbml_id": "R_rx_08b3253feb",
+     "sbml_type": "reaction",
+     "sub": " \u2192 CO2",
+     "w": 125.608,
+     "x": 434.31028845752337,
+     "y": -487.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0e10fa96aa",
+     "kind": "rxn",
+     "label": "acyl-CoA dehydrogenase (NADP+)",
+     "sbml_id": "R_rx_0e10fa96aa",
+     "sbml_type": "reaction",
+     "sub": "reduced acceptor \u2192 ",
+     "w": 127.489,
+     "x": 444.26705157341235,
+     "y": -591.875
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_11d5d6fa68",
+     "kind": "rxn",
+     "label": "citramalate lyase",
+     "sbml_id": "R_rx_11d5d6fa68",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 68.022,
+     "x": 330.1141259950248,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_1f1b0bb0a1",
+     "kind": "rxn",
+     "label": "succinate semialdehyde reductase (NADPH)",
+     "sbml_id": "R_rx_1f1b0bb0a1",
+     "sbml_type": "reaction",
+     "sub": "NADP+ \u2192 NADPH + H+",
+     "w": 135.82,
+     "x": 67.90999999999997,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_248a5cc869",
+     "kind": "rxn",
+     "label": "glutamate synthase (NADH)",
+     "sbml_id": "R_rx_248a5cc869",
+     "sbml_type": "reaction",
+     "sub": "H2O + L-glutamate + NAD+ \u2192 NADH + NH3 + H+",
+     "w": 153.614,
+     "x": 1153.9238018888586,
+     "y": -277.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_27889e7c6e",
+     "kind": "rxn",
+     "label": "glutamate-tRNAGln ligase",
+     "sbml_id": "R_rx_27889e7c6e",
+     "sbml_type": "reaction",
+     "sub": "L-glutamate + ATP \u2192 AMP + diphosphate",
+     "w": 126.831,
+     "x": 986.3042978700249,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_359808fee2",
+     "kind": "rxn",
+     "label": "glutamate synthase (NADH)",
+     "sbml_id": "R_rx_359808fee2",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 L-glutamate + NH3",
+     "w": 105.32,
+     "x": 1146.799662321908,
+     "y": -118.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_4d979971d7",
+     "kind": "rxn",
+     "label": "fumarate hydratase",
+     "sbml_id": "R_rx_4d979971d7",
+     "sbml_type": "reaction",
+     "sub": " \u2192 H2O",
+     "w": 76.844,
+     "x": 436.5469384950248,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_62f4f7c387",
+     "kind": "rxn",
+     "label": "glutamate synthase (NADPH)",
+     "sbml_id": "R_rx_62f4f7c387",
+     "sbml_type": "reaction",
+     "sub": "2 L-glutamate + NADP+ \u2192 NADPH + H+",
+     "w": 124.184,
+     "x": 478.63850501385843,
+     "y": -277.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_7437c01e49",
+     "kind": "rxn",
+     "label": "glutamine synthetase",
+     "sbml_id": "R_rx_7437c01e49",
+     "sbml_type": "reaction",
+     "sub": "L-glutamate + ATP + NH3 \u2192 phosphate + ADP",
+     "w": 142.049,
+     "x": 1115.0711338075248,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_7761ebea74",
+     "kind": "rxn",
+     "label": "aspartate ammonia-lyase",
+     "sbml_id": "R_rx_7761ebea74",
+     "sbml_type": "reaction",
+     "sub": " \u2192 NH3",
+     "w": 96.995,
+     "x": 1413.7239451362946,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_7768911592",
+     "kind": "rxn",
+     "label": "glutamate synthase (NADH)",
+     "sbml_id": "R_rx_7768911592",
+     "sbml_type": "reaction",
+     "sub": "2 L-glutamate + NAD+ \u2192 NADH + H+",
+     "w": 117.19,
+     "x": 811.8252550138585,
+     "y": -277.625
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_9409463a2f",
+     "kind": "rxn",
+     "label": "acetate CoA-transferase",
+     "sbml_id": "R_rx_9409463a2f",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 92.528,
+     "x": 379.7116468392582,
+     "y": -172.875
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_5366",
+     "kind": "rxn",
+     "label": "glutamate synthase (ferredoxin)",
+     "sbml_id": "R_rx_NODE_5366",
+     "sbml_type": "reaction",
+     "sub": "oxidized ferredoxin \u2192 L-glutamate + reduced ferredoxin",
+     "w": 169.643,
+     "x": 807.0624256059709,
+     "y": -382.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_5409",
+     "kind": "rxn",
+     "label": "glutamate dehydrogenase [NAD(P)+]",
+     "sbml_id": "R_rx_NODE_5409",
+     "sbml_type": "reaction",
+     "sub": "L-glutamate + NADPH \u2192 NADP+ + NH3",
+     "w": 138.697,
+     "x": 973.7683018888586,
+     "y": -277.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_a010c418aa",
+     "kind": "rxn",
+     "label": "2-oxoglutarate reductase",
+     "sbml_id": "R_rx_a010c418aa",
+     "sbml_type": "reaction",
+     "sub": "NAD+ \u2192 NADH + H+",
+     "w": 96.553,
+     "x": 557.2455322450248,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_a59751411f",
+     "kind": "rxn",
+     "label": "succinate-semialdehyde dehydrogenase (NADP+)",
+     "sbml_id": "R_rx_a59751411f",
+     "sbml_type": "reaction",
+     "sub": "H2O + NADP+ \u2192 NADPH + H+",
+     "w": 138.905,
+     "x": 79.85497244874784,
+     "y": -487.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_b8f00045da",
+     "kind": "rxn",
+     "label": "glutamate racemase",
+     "sbml_id": "R_rx_b8f00045da",
+     "sbml_type": "reaction",
+     "sub": "L-glutamate \u2192 ",
+     "w": 80.091,
+     "x": 1542.2215232612946,
+     "y": 300.0
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_b927f80c91",
+     "kind": "rxn",
+     "label": "beta-alanine-2-oxoglutarate transaminase",
+     "sbml_id": "R_rx_b927f80c91",
+     "sbml_type": "reaction",
+     "sub": " \u2192 L-glutamate",
+     "w": 128.583,
+     "x": 253.63438468684535,
+     "y": -382.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_bb1032f118",
+     "kind": "rxn",
+     "label": "glutaminyl-tRNA synthase (glutamine-hydrolysing)",
+     "sbml_id": "R_rx_bb1032f118",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 L-glutamate + phosphate + ADP",
+     "w": 134.599,
+     "x": 1057.730464480966,
+     "y": -172.875
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_c9332e8eb5",
+     "kind": "rxn",
+     "label": "methylaspartate ammonia-lyase",
+     "sbml_id": "R_rx_c9332e8eb5",
+     "sbml_type": "reaction",
+     "sub": " \u2192 NH3",
+     "w": 121.431,
+     "x": 700.2374853700248,
+     "y": -64.375
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_ce82dba4c6",
+     "kind": "rxn",
+     "label": "glutamine-pyruvate transaminase",
+     "sbml_id": "R_rx_ce82dba4c6",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 126.69,
+     "x": 678.4628394188111,
+     "y": -172.875
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_cf43eadbe1",
+     "kind": "rxn",
+     "label": "glutamate decarboxylase",
+     "sbml_id": "R_rx_cf43eadbe1",
+     "sbml_type": "reaction",
+     "sub": "L-glutamate \u2192 CO2",
+     "w": 96.675,
+     "x": 217.23967287002478,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_d757b6fb69",
+     "kind": "rxn",
+     "label": "2-oxoglutaramate amidase",
+     "sbml_id": "R_rx_d757b6fb69",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 NH3",
+     "w": 102.5,
+     "x": 687.9804893888585,
+     "y": -277.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_d96f9831b3",
+     "kind": "rxn",
+     "label": "(R)-2-hydroxyglutaryl-CoA dehydratase",
+     "sbml_id": "R_rx_d96f9831b3",
+     "sbml_type": "reaction",
+     "sub": " \u2192 H2O",
+     "w": 131.959,
+     "x": 417.9052440618454,
+     "y": -382.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_f0e279da5c",
+     "kind": "rxn",
+     "label": "BR29388-a",
+     "sbml_id": "R_rx_f0e279da5c",
+     "sbml_type": "reaction",
+     "sub": "H2O + NAD+ \u2192 NADH + H+",
+     "w": 89.063,
+     "x": 227.83928494874783,
+     "y": -487.125
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_f151cad328",
+     "kind": "rxn",
+     "label": "glutaconate CoA-transferase",
+     "sbml_id": "R_rx_f151cad328",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 107.828,
+     "x": 328.6326925138585,
+     "y": -277.625
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_f24ef4d974",
+     "kind": "rxn",
+     "label": "beta-alanine-pyruvate transaminase",
+     "sbml_id": "R_rx_f24ef4d974",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 135.257,
+     "x": 167.37638347093895,
+     "y": -118.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_f6abbe6449",
+     "kind": "rxn",
+     "label": "methylaspartate mutase",
+     "sbml_id": "R_rx_f6abbe6449",
+     "sbml_type": "reaction",
+     "sub": " \u2192 L-glutamate",
+     "w": 93.936,
+     "x": 841.9207666200249,
+     "y": -64.375
+    },
+    {
+     "h": 0.0,
+     "id": "__d0_1",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 1327.2263670112945,
+     "y": -64.375
+    },
+    {
+     "h": 0.0,
+     "id": "__d0_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 1315.3140654311433,
+     "y": -118.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d0_3",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 1301.149162103126,
+     "y": -172.875
+    },
+    {
+     "h": 0.0,
+     "id": "__d0_4",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 1285.4456377079557,
+     "y": -225.25
+    },
+    {
+     "h": 0.0,
+     "id": "__d0_5",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 1268.7310206388586,
+     "y": -277.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d0_6",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 1120.11603723374,
+     "y": -330.0
+    },
+    {
+     "h": 0.0,
+     "id": "__d11_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 61.748024095938945,
+     "y": -118.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d11_3",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 75.48146557233838,
+     "y": -172.875
+    },
+    {
+     "h": 0.0,
+     "id": "__d11_4",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 87.32221811592325,
+     "y": -225.25
+    },
+    {
+     "h": 0.0,
+     "id": "__d11_5",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 96.68873476948716,
+     "y": -277.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d11_6",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 103.90080021000733,
+     "y": -330.0
+    },
+    {
+     "h": 0.0,
+     "id": "__d11_7",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 109.34305656184534,
+     "y": -382.375
+    },
+    {
+     "h": 0.0,
+     "id": "__d28_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 541.4119645087023,
+     "y": -118.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d28_3",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 553.236388724515,
+     "y": -172.875
+    },
+    {
+     "h": 0.0,
+     "id": "__d28_4",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 564.1450659813111,
+     "y": -225.25
+    },
+    {
+     "h": 0.0,
+     "id": "__d28_5",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 578.7304893888585,
+     "y": -277.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d31_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 273.00474284593895,
+     "y": -118.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d31_3",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 253.4475062142582,
+     "y": -172.875
+    },
+    {
+     "h": 0.0,
+     "id": "__d31_4",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 245.7405624205962,
+     "y": -225.25
+    },
+    {
+     "h": 0.0,
+     "id": "__d31_5",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 236.71886438885846,
+     "y": -277.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d31_6",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 245.23886833667706,
+     "y": -330.0
+    },
+    {
+     "h": 0.0,
+     "id": "__d36_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 1056.1398185719079,
+     "y": -118.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d51_3",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 295.44750621425817,
+     "y": -172.875
+    },
+    {
+     "h": 0.0,
+     "id": "__d51_4",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 300.4448983580962,
+     "y": -225.25
+    },
+    {
+     "h": 0.0,
+     "id": "__d54_3",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 168.3691847860921,
+     "y": -172.875
+    },
+    {
+     "h": 0.0,
+     "id": "__d54_4",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 167.46929716843076,
+     "y": -225.25
+    },
+    {
+     "h": 0.0,
+     "id": "__d54_5",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 164.10802551246053,
+     "y": -277.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d54_6",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 158.60606426025282,
+     "y": -330.0
+    },
+    {
+     "h": 0.0,
+     "id": "__d54_7",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 151.34305656184534,
+     "y": -382.375
+    }
+   ],
+   "rings": [],
+   "title": "glutamate and glutamine metabolism"
+  }
+ ],
+ "format": "sbml-pathway-layout",
+ "model": "glutamate and glutamine metabolism",
+ "settings": {
+  "escher": false,
+  "hide": "",
+  "legend": false,
+  "max_cluster": 60,
+  "show": ""
+ },
+ "source": "brenda_glutamate-and-glutamine-metabolism.xml",
+ "units": "points; x right, y up; boxes are centred on (x, y)",
+ "version": 1
+}

@@ -28,6 +28,7 @@ Usage: python3 sbml_pathway_layout.py model.xml[.gz] [--out NAME] [--max-cluster
        --show  draw these compounds as shared boxes connected to all their reactions (like main compounds)
        --hide  always write these compounds inside the reaction box (like cofactors)
        --legend  add a legend (only the elements used) at the bottom right of each drawing
+       --escher  also write each drawing as an Escher map, NAME.escher.json (https://escher.github.io)
        python3 sbml_pathway_layout.py [model.xml] --from-layout NAME.layout.json   # redraw a saved layout
 Writes NAME.svg/.png per drawing, NAME.layout.json (reusable layout) and, for SBML Level 3 models,
 NAME.layout.sbml (the model plus the SBML Layout package, readable by other SBML tools).
@@ -1022,6 +1023,75 @@ def export_sbml_layout(src,dst,drawings):
     tree.write(dst,xml_declaration=True,encoding='UTF-8')
     return True
 
+ESCHER_SCHEMA='https://escher.github.io/escher/jsonschema/1-0-0#'
+def _bigg(sid,prefix):
+    """SBML ids of BiGG-style models carry M_/R_ prefixes that Escher (and BiGG) ids do not."""
+    return sid[len(prefix):] if sid and sid.startswith(prefix) else (sid or '')
+def export_escher(D,title,rxn_by_id,path,map_id):
+    """One Escher map (schema 1-0-0) for one drawing. Metabolite boxes -> metabolite nodes (copies:
+    node_is_primary false); reaction boxes -> midmarkers; bend points -> multimarkers; ring arcs ->
+    cubic Bezier segments. Escher's y axis points down."""
+    names=D.real(); B={n:D.box(n) for n in names}
+    xs=[b[0] for b in B.values()]+[b[2] for b in B.values()]; ys=[b[1] for b in B.values()]+[b[3] for b in B.values()]
+    for L in D.links:
+        for q in D.path(L): xs.append(q[0]); ys.append(q[1])
+    X0,Y1=min(xs)-60,max(ys)+60
+    ex=lambda p:(round(p[0]-X0,3),round(Y1-p[1],3))
+    nid=itertools.count(1); node_id={}; nodes={}; reactions={}
+    def new_node(key,d): node_id[key]=str(next(nid)); nodes[node_id[key]]=d; return node_id[key]
+    for n in names:                                               # metabolites
+        k=D.info[n]['kind']
+        if k not in ('core','met','alias'): continue
+        x,y=ex(D.P[n]); w,h=D.size(n)
+        new_node(n,dict(node_type='metabolite',x=x,y=y,bigg_id=_bigg(SPECIES_ID.get(D.info[n]['label'],D.info[n]['label']),'M_'),
+                        name=D.info[n]['label'],label_x=round(x-w/2+4,3),label_y=round(y+h/2+12,3),node_is_primary=(k!='alias')))
+    for n in names:                                               # reactions: midmarker + stoichiometry
+        if not n.startswith('R:'): continue
+        rid=n[2:]; r=rxn_by_id.get(rid,{}); x,y=ex(D.P[n]); w,h=D.size(n)
+        mid=new_node(n,dict(node_type='midmarker',x=x,y=y))
+        mets=[dict(bigg_id=_bigg(SPECIES_ID.get(m,m),'M_'),coefficient=-st) for m,st in r.get('subs',[])]+\
+             [dict(bigg_id=_bigg(SPECIES_ID.get(m,m),'M_'),coefficient=st) for m,st in r.get('prods',[])]
+        label=D.info[n]['label']+(' ('+D.info[n]['sub']+')' if D.info[n]['sub'] else '')
+        reactions[str(len(reactions)+1)]=dict(name=label,bigg_id=_bigg(rid,'R_'),reversibility=bool(r.get('reversible',True)),
+            label_x=round(x-w/2+3,3),label_y=round(y+3,3),gene_reaction_rule='',genes=[],metabolites=mets,segments={},_mid=mid,_key=n)
+    by_key={v['_key']:v for v in reactions.values()}
+    seg=itertools.count(1)
+    conns={}
+    for L in D.links:
+        conns.setdefault(L['chain'] if L['chain'] is not None else id(L),[]).append(L)
+    for key,Ls in conns.items():
+        own=sorted(Ls[0]['own']); R=[x for x in own if x.startswith('R:')]; M=[x for x in own if x in node_id and not x.startswith('R:')]
+        if not R or not M or R[0] not in by_key: continue
+        rx=by_key[R[0]]
+        for L in Ls:                                              # one Escher segment per drawn piece
+            a,b=L['a'],L['b']
+            for e in (a,b):
+                if e not in node_id:                              # bend point -> multimarker of this reaction
+                    x,y=ex(D.P[e]); new_node(e,dict(node_type='multimarker',x=x,y=y))
+            pieces=[(a,b,None,None)]
+            if L['ring'] is not None:                             # arc -> Bezier(s) of <= 90 degrees
+                (cx,cy),r=D.rings[L['ring']]; pa,pb=D.P[a],D.P[b]
+                t1=math.atan2(pa[1]-cy,pa[0]-cx); t2=math.atan2(pb[1]-cy,pb[0]-cx); dt=(t2-t1+math.pi)%(2*math.pi)-math.pi
+                m=max(1,int(math.ceil(abs(dt)/(math.pi/2)))); hstep=dt/m; kk=4/3*math.tan(hstep/4)*r; pieces=[]; prev=a
+                for j in range(m):
+                    u,v=t1+hstep*j,t1+hstep*(j+1)
+                    P0=(cx+r*math.cos(u),cy+r*math.sin(u)); P3=(cx+r*math.cos(v),cy+r*math.sin(v))
+                    P1=(P0[0]-kk*math.sin(u),P0[1]+kk*math.cos(u)); P2=(P3[0]+kk*math.sin(v),P3[1]-kk*math.cos(v))
+                    nxt=b if j==m-1 else f'{a}|{b}|{j}'
+                    if nxt not in node_id: x,y=ex(P3); new_node(nxt,dict(node_type='multimarker',x=x,y=y))
+                    pieces.append((prev,nxt,P1,P2)); prev=nxt
+            for u,v,c1,c2 in pieces:
+                rx['segments'][str(next(seg))]=dict(from_node_id=node_id[u],to_node_id=node_id[v],
+                    b1=None if c1 is None else dict(zip('xy',ex(c1))),b2=None if c2 is None else dict(zip('xy',ex(c2))))
+    for r in reactions.values(): r.pop('_mid'); r.pop('_key')
+    tx,ty=ex((min(xs)+12,max(ys)+30))
+    body=dict(nodes=nodes,reactions=reactions,text_labels={'1':dict(x=tx,y=ty,text=title)},
+              canvas=dict(x=0.0,y=0.0,width=round(max(xs)+60-X0,3),height=round(Y1-(min(ys)-60),3)))
+    head=dict(map_name=title,map_id=map_id,map_description=f'Generated by sbml_pathway_layout.py from {title}',
+              homepage='https://escher.github.io',schema=ESCHER_SCHEMA)
+    import json
+    with open(path,'w') as fh: json.dump([head,body],fh,indent=1,sort_keys=True)
+
 # ============================================================ clustering and main
 def clusters(reactions,max_size):
     if len(reactions)<=max_size: return [('',reactions)]
@@ -1059,6 +1129,7 @@ def main():
     ap.add_argument('--from-layout',default=None,help='redraw a saved NAME.layout.json (positions may have been edited) instead of computing a layout')
     ap.add_argument('--no-sbml-layout',action='store_true',help='do not write NAME.layout.sbml')
     ap.add_argument('--legend',action='store_true',help='add a legend at the bottom right of each drawing')
+    ap.add_argument('--escher',action='store_true',help='also write each drawing as an Escher map (NAME.escher.json)')
     a=ap.parse_args()
     if a.from_layout:                                             # ---- reuse a saved layout
         saved=json.load(open(a.from_layout)); out=a.out or a.from_layout.replace('.layout.json','')+'_redrawn'
@@ -1068,10 +1139,14 @@ def main():
             fn=out if len(saved['drawings'])==1 else f'{out}_{k+1:02d}'
             print(f'{fn}: {v}')
             if any(v.values()): ok=False; print('  rules not met (was the layout edited?) - drawn anyway for inspection')
-            render(D,fn+'.svg',d['title'],a.legend); render(D,fn+'.png',d['title'],a.legend); drawings.append((D,d['name'],d['title']))
-        if a.sbml and not a.no_sbml_layout:
-            read_sbml(a.sbml)
-            if export_sbml_layout(a.sbml,out+'.layout.sbml',drawings): print('wrote',out+'.layout.sbml')
+            render(D,fn+'.svg',d['title'],a.legend); render(D,fn+'.png',d['title'],a.legend); drawings.append((D,d['name'],d['title'],fn))
+        if a.escher and not a.sbml: print('--escher with --from-layout needs the SBML file too (for the stoichiometry)')
+        if a.sbml:
+            _,_,rxs=read_sbml(a.sbml); byid={r['id']:r for r in rxs}
+            if a.escher:
+                for D,_,title,fn in drawings:
+                    export_escher(D,title,byid,fn+'.escher.json',re.sub(r'[^A-Za-z0-9]+','_',os.path.basename(fn))); print('wrote',fn+'.escher.json')
+            if not a.no_sbml_layout and export_sbml_layout(a.sbml,out+'.layout.sbml',[d[:3] for d in drawings]): print('wrote',out+'.layout.sbml')
         sys.exit(0 if ok else 1)
     if not a.sbml: ap.error('an SBML file is required unless --from-layout is given')
     name,F,reactions=read_sbml(a.sbml)
@@ -1109,8 +1184,11 @@ def main():
         title=name+(f' \u2014 {cname}' if cname else '')
         render(D,fn+'.svg',title,a.legend); render(D,fn+'.png',title,a.legend)
         saved.append(drawing_to_dict(D,cname,title,v)); drawings.append((D,cname,title))
+        if a.escher:
+            export_escher(D,title,{r['id']:r for r in reactions},fn+'.escher.json',re.sub(r'[^A-Za-z0-9]+','_',os.path.basename(fn)))
+            print('wrote',fn+'.escher.json')
     meta=dict(format='sbml-pathway-layout',version=1,source=os.path.basename(a.sbml),model=name,
-              settings=dict(max_cluster=a.max_cluster,show=a.show,hide=','.join(x for x in (a.hide,a.side) if x),legend=a.legend),
+              settings=dict(max_cluster=a.max_cluster,show=a.show,hide=','.join(x for x in (a.hide,a.side) if x),legend=a.legend,escher=a.escher),
               units='points; x right, y up; boxes are centred on (x, y)',drawings=saved)
     with open(out+'.layout.json','w') as fh: json.dump(meta,fh,indent=1,sort_keys=True)
     print('wrote',out+'.layout.json')

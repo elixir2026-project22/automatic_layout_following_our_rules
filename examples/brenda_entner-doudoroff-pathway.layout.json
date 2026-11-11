@@ -1,0 +1,757 @@
+{
+ "drawings": [
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-keto-3-deoxy phosphogluconate",
+      "R:R_rx_139ed80125"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:2-keto-3-deoxy phosphogluconate",
+     "target": "R:R_rx_139ed80125"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glyceraldehyde 3-phosphate",
+      "R:R_rx_139ed80125"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_139ed80125",
+     "target": "M:D-glyceraldehyde 3-phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-dehydro-3-deoxy-D-gluconate",
+      "R:R_rx_691dd5f2e0"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:2-dehydro-3-deoxy-D-gluconate",
+     "target": "R:R_rx_691dd5f2e0"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-keto-3-deoxy phosphogluconate",
+      "R:R_rx_691dd5f2e0"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_691dd5f2e0",
+     "target": "M:2-keto-3-deoxy phosphogluconate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:DL-glyceraldehyde",
+      "R:R_rx_NODE_10018"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:DL-glyceraldehyde",
+     "target": "R:R_rx_NODE_10018"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glycerate",
+      "R:R_rx_NODE_10018"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_NODE_10018",
+     "target": "M:D-glycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:DL-glyceraldehyde",
+      "R:R_rx_NODE_8287"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:DL-glyceraldehyde",
+     "target": "R:R_rx_NODE_8287"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glycerate",
+      "R:R_rx_NODE_8287"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_8287",
+     "target": "M:D-glycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:DL-glyceraldehyde",
+      "R:R_rx_NODE_11298"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:DL-glyceraldehyde",
+     "target": "R:R_rx_NODE_11298"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glycerate",
+      "R:R_rx_NODE_11298"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_11298",
+     "target": "M:D-glycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:DL-glyceraldehyde",
+      "R:R_rx_NODE_2957"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:DL-glyceraldehyde",
+     "target": "R:R_rx_NODE_2957"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glycerate",
+      "R:R_rx_NODE_2957"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_2957",
+     "target": "M:D-glycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phosphoglycerate",
+      "R:R_rx_NODE_11370"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:3-phosphoglycerate",
+     "target": "R:R_rx_NODE_11370"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-phospho-D-glycerate",
+      "R:R_rx_NODE_11370"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_NODE_11370",
+     "target": "M:2-phospho-D-glycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glyceraldehyde 3-phosphate",
+      "R:R_rx_NODE_8726"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:D-glyceraldehyde 3-phosphate",
+     "target": "R:R_rx_NODE_8726"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phosphoglycerate",
+      "R:R_rx_NODE_8726"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_NODE_8726",
+     "target": "M:3-phosphoglycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glycerate",
+      "R:R_rx_cbc2670356"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:D-glycerate",
+     "target": "R:R_rx_cbc2670356"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-phospho-D-glycerate",
+      "R:R_rx_cbc2670356"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_cbc2670356",
+     "target": "M:2-phospho-D-glycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-dehydro-3-deoxy-D-gluconate",
+      "R:R_rx_f577fb18c1"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:2-dehydro-3-deoxy-D-gluconate",
+     "target": "R:R_rx_f577fb18c1"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:DL-glyceraldehyde",
+      "R:R_rx_f577fb18c1"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_f577fb18c1",
+     "target": "M:DL-glyceraldehyde"
+    },
+    {
+     "arrow": true,
+     "chain": 100029,
+     "own": [
+      "M:6-phosphogluconate",
+      "R:R_rx_22845319ee"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:6-phosphogluconate",
+     "target": "R:R_rx_22845319ee"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-keto-3-deoxy phosphogluconate",
+      "R:R_rx_22845319ee"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_22845319ee",
+     "target": "M:2-keto-3-deoxy phosphogluconate"
+    },
+    {
+     "arrow": true,
+     "chain": 200023,
+     "own": [
+      "M:D-glucose",
+      "R:R_rx_48192a666d"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-glucose",
+     "target": "R:R_rx_48192a666d"
+    },
+    {
+     "arrow": true,
+     "chain": 200024,
+     "own": [
+      "M:D-glucono-1,5-lactone",
+      "R:R_rx_48192a666d"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_48192a666d",
+     "target": "M:D-glucono-1,5-lactone"
+    },
+    {
+     "arrow": true,
+     "chain": 200025,
+     "own": [
+      "M:D-glucose",
+      "R:R_rx_627809f435"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-glucose",
+     "target": "R:R_rx_627809f435"
+    },
+    {
+     "arrow": true,
+     "chain": 200026,
+     "own": [
+      "M:D-glucono-1,5-lactone",
+      "R:R_rx_627809f435"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_627809f435",
+     "target": "M:D-glucono-1,5-lactone"
+    },
+    {
+     "arrow": true,
+     "chain": 200027,
+     "own": [
+      "M:D-glucono-1,5-lactone",
+      "R:R_rx_832f1e61b1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-glucono-1,5-lactone",
+     "target": "R:R_rx_832f1e61b1"
+    },
+    {
+     "arrow": true,
+     "chain": 200028,
+     "own": [
+      "M:D-gluconate",
+      "R:R_rx_832f1e61b1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_832f1e61b1",
+     "target": "M:D-gluconate"
+    },
+    {
+     "arrow": true,
+     "chain": 200029,
+     "own": [
+      "M:D-gluconate",
+      "R:R_rx_bed4579fed"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-gluconate",
+     "target": "R:R_rx_bed4579fed"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-dehydro-3-deoxy-D-gluconate",
+      "R:R_rx_bed4579fed"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_bed4579fed",
+     "target": "M:2-dehydro-3-deoxy-D-gluconate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:pyruvate",
+      "R:R_rx_139ed80125"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_139ed80125",
+     "target": "M:pyruvate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_f577fb18c1:0",
+      "R:R_rx_f577fb18c1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_f577fb18c1",
+     "target": "A:R_rx_f577fb18c1:0"
+    }
+   ],
+   "name": "",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_f577fb18c1:0",
+     "kind": "alias",
+     "label": "pyruvate",
+     "sbml_id": "M_mt_7dd2d3b76f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 42.546,
+     "x": 847.789044183713,
+     "y": -794.401142916063
+    },
+    {
+     "h": 19.5,
+     "id": "M:2-dehydro-3-deoxy-D-gluconate",
+     "kind": "core",
+     "label": "2-dehydro-3-deoxy-D-gluconate",
+     "sbml_id": "M_mt_31c9b8dab7",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 183.222,
+     "x": 700.9763754728152,
+     "y": -882.179897550554
+    },
+    {
+     "h": 19.5,
+     "id": "M:2-keto-3-deoxy phosphogluconate",
+     "kind": "core",
+     "label": "2-keto-3-deoxy phosphogluconate",
+     "sbml_id": "M_mt_bdfc186b9b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 195.777,
+     "x": 500.206782799941,
+     "y": -988.2897253585754
+    },
+    {
+     "h": 19.5,
+     "id": "M:2-phospho-D-glycerate",
+     "kind": "core",
+     "label": "2-phospho-D-glycerate",
+     "sbml_id": "M_mt_2e9e6d89f7",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 135.527,
+     "x": 368.1428134234935,
+     "y": -495.42028179645285
+    },
+    {
+     "h": 19.5,
+     "id": "M:3-phosphoglycerate",
+     "kind": "core",
+     "label": "3-phosphoglycerate",
+     "sbml_id": "M_mt_1137269b50",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 119.695,
+     "x": 233.29498965024885,
+     "y": -678.1325947999824
+    },
+    {
+     "h": 16.5,
+     "id": "M:6-phosphogluconate",
+     "kind": "met",
+     "label": "6-phosphogluconate",
+     "sbml_id": "M_mt_4defa8de25",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 98.001,
+     "x": 500.206782799941,
+     "y": -1090.7897253585754
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-gluconate",
+     "kind": "met",
+     "label": "D-gluconate",
+     "sbml_id": "M_mt_b0096e08ce",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 62.502,
+     "x": 996.7784397834971,
+     "y": -829.804897550554
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-glucono-1,5-lactone",
+     "kind": "met",
+     "label": "D-glucono-1,5-lactone",
+     "sbml_id": "M_mt_d419d96edb",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 105.135,
+     "x": 996.7784397061507,
+     "y": -725.054897550554
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-glucose",
+     "kind": "met",
+     "label": "D-glucose",
+     "sbml_id": "M_mt_5dbc9a97f4",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 53.002,
+     "x": 996.7785391655518,
+     "y": -620.304897550554
+    },
+    {
+     "h": 19.5,
+     "id": "M:D-glyceraldehyde 3-phosphate",
+     "kind": "core",
+     "label": "D-glyceraldehyde 3-phosphate",
+     "sbml_id": "M_mt_4d404b9e9f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 177.354,
+     "x": 292.0689852654993,
+     "y": -897.4801325999274
+    },
+    {
+     "h": 19.5,
+     "id": "M:D-glycerate",
+     "kind": "core",
+     "label": "D-glycerate",
+     "sbml_id": "M_mt_996ef3e8d7",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 75.078,
+     "x": 595.0692948896675,
+     "y": -486.9292919329548
+    },
+    {
+     "h": 19.5,
+     "id": "M:DL-glyceraldehyde",
+     "kind": "core",
+     "label": "DL-glyceraldehyde",
+     "sbml_id": "M_mt_7476acb4c8",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 112.669,
+     "x": 743.1941650481115,
+     "y": -659.0535137613306
+    },
+    {
+     "h": 16.5,
+     "id": "M:pyruvate",
+     "kind": "met",
+     "label": "pyruvate",
+     "sbml_id": "M_mt_7dd2d3b76f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 48.886,
+     "x": 385.775,
+     "y": -1026.638
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_139ed80125",
+     "kind": "rxn",
+     "label": "2-dehydro-3-deoxy-phosphogluconate aldolase",
+     "sbml_id": "R_rx_139ed80125",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 140.657,
+     "x": 385.7745355531259,
+     "y": -966.6379760098387
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_22845319ee",
+     "kind": "rxn",
+     "label": "phosphogluconate dehydratase",
+     "sbml_id": "R_rx_22845319ee",
+     "sbml_type": "reaction",
+     "sub": " \u2192 H2O",
+     "w": 118.57,
+     "x": 500.206782799941,
+     "y": -1038.4147253585754
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_48192a666d",
+     "kind": "rxn",
+     "label": "glucose 1-dehydrogenase (NAD+)",
+     "sbml_id": "R_rx_48192a666d",
+     "sbml_type": "reaction",
+     "sub": "NAD+ \u2192 NADH",
+     "w": 126.509,
+     "x": 1078.088187603052,
+     "y": -672.679897550554
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_627809f435",
+     "kind": "rxn",
+     "label": "glucose 1-dehydrogenase (NADP+)",
+     "sbml_id": "R_rx_627809f435",
+     "sbml_type": "reaction",
+     "sub": "NADP+ \u2192 NADPH",
+     "w": 130.73,
+     "x": 915.4688907280519,
+     "y": -672.679897550554
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_691dd5f2e0",
+     "kind": "rxn",
+     "label": "2-dehydro-3-deoxygluconokinase",
+     "sbml_id": "R_rx_691dd5f2e0",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 124.755,
+     "x": 612.7010170192996,
+     "y": -958.1469861463409
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_832f1e61b1",
+     "kind": "rxn",
+     "label": "gluconolactonase",
+     "sbml_id": "R_rx_832f1e61b1",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 ",
+     "w": 68.93,
+     "x": 996.7784397061507,
+     "y": -777.429897550554
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_10018",
+     "kind": "rxn",
+     "label": "aldehyde dehydrogenase (NAD+)",
+     "sbml_id": "R_rx_NODE_10018",
+     "sbml_type": "reaction",
+     "sub": "NAD+ \u2192 NADH",
+     "w": 124.873,
+     "x": 688.7748451772941,
+     "y": -556.0871353428661
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_11298",
+     "kind": "rxn",
+     "label": "D-glyceraldehyde dehydrogenase (NADP+)",
+     "sbml_id": "R_rx_NODE_11298",
+     "sbml_type": "reaction",
+     "sub": "NADP+ \u2192 NADPH",
+     "w": 137.168,
+     "x": 627.0280063641478,
+     "y": -582.9121593899825
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_NODE_11370",
+     "kind": "rxn",
+     "label": "phosphoglycerate mutase (2,3-diphosphoglycerate-dependent)",
+     "sbml_id": "R_rx_NODE_11370",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 134.826,
+     "x": 279.8674549699781,
+     "y": -571.3873703922395
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_2957",
+     "kind": "rxn",
+     "label": "glyceraldehyde dehydrogenase (FAD-containing)",
+     "sbml_id": "R_rx_NODE_2957",
+     "sbml_type": "reaction",
+     "sub": "acceptor \u2192 reduced acceptor",
+     "w": 137.619,
+     "x": 863.984251556125,
+     "y": -474.15281600117146
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_8287",
+     "kind": "rxn",
+     "label": "aldehyde ferredoxin oxidoreductase",
+     "sbml_id": "R_rx_NODE_8287",
+     "sbml_type": "reaction",
+     "sub": "oxidized ferredoxin \u2192 reduced ferredoxin",
+     "w": 134.25,
+     "x": 773.334729667161,
+     "y": -499.81263837741517
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_8726",
+     "kind": "rxn",
+     "label": "aldehyde dehydrogenase (NAD+)",
+     "sbml_id": "R_rx_NODE_8726",
+     "sbml_type": "reaction",
+     "sub": "NAD+ \u2192 NADH",
+     "w": 124.873,
+     "x": 237.649665394682,
+     "y": -794.5137541814629
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_bed4579fed",
+     "kind": "rxn",
+     "label": "gluconate dehydratase",
+     "sbml_id": "R_rx_bed4579fed",
+     "sbml_type": "reaction",
+     "sub": " \u2192 H2O",
+     "w": 88.351,
+     "x": 996.7784398438874,
+     "y": -882.179897550554
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_cbc2670356",
+     "kind": "rxn",
+     "label": "glycerate 2-kinase",
+     "sbml_id": "R_rx_cbc2670356",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 72.251,
+     "x": 480.63704764285234,
+     "y": -465.27754258421805
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_f577fb18c1",
+     "kind": "rxn",
+     "label": "2-dehydro-3-deoxyglucarate aldolase",
+     "sbml_id": "R_rx_f577fb18c1",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 133.038,
+     "x": 747.5488407925445,
+     "y": -775.4346731428111
+    }
+   ],
+   "rings": [
+    {
+     "cx": 490.4219152213967,
+     "cy": -726.7836339713967,
+     "id": 0,
+     "r": 261.6890893142645
+    }
+   ],
+   "title": "Entner Doudoroff pathway"
+  }
+ ],
+ "format": "sbml-pathway-layout",
+ "model": "Entner Doudoroff pathway",
+ "settings": {
+  "escher": false,
+  "hide": "",
+  "legend": false,
+  "max_cluster": 60,
+  "show": ""
+ },
+ "source": "brenda_entner-doudoroff-pathway.xml",
+ "units": "points; x right, y up; boxes are centred on (x, y)",
+ "version": 1
+}

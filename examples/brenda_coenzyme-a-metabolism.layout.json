@@ -1,0 +1,282 @@
+{
+ "drawings": [
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "chain": 0,
+     "own": [
+      "M:4-phosphopantothenoyl-L-Cys",
+      "R:R_rx_6accf4db5b"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:4-phosphopantothenoyl-L-Cys",
+     "target": "R:R_rx_6accf4db5b"
+    },
+    {
+     "arrow": true,
+     "chain": 1,
+     "own": [
+      "M:4'-phosphopantetheine",
+      "R:R_rx_6accf4db5b"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_6accf4db5b",
+     "target": "M:4'-phosphopantetheine"
+    },
+    {
+     "arrow": true,
+     "chain": 2,
+     "own": [
+      "M:(R)-4'-phosphopantothenate",
+      "R:R_rx_7966130d64"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(R)-4'-phosphopantothenate",
+     "target": "R:R_rx_7966130d64"
+    },
+    {
+     "arrow": true,
+     "chain": 3,
+     "own": [
+      "M:4-phosphopantothenoyl-L-Cys",
+      "R:R_rx_7966130d64"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_7966130d64",
+     "target": "M:4-phosphopantothenoyl-L-Cys"
+    },
+    {
+     "arrow": true,
+     "chain": 4,
+     "own": [
+      "M:3'-dephospho-CoA",
+      "R:R_rx_9872bc6566"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:3'-dephospho-CoA",
+     "target": "R:R_rx_9872bc6566"
+    },
+    {
+     "arrow": true,
+     "chain": 5,
+     "own": [
+      "M:pantothenate",
+      "R:R_rx_b3c051aa44"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:pantothenate",
+     "target": "R:R_rx_b3c051aa44"
+    },
+    {
+     "arrow": true,
+     "chain": 6,
+     "own": [
+      "M:(R)-4'-phosphopantothenate",
+      "R:R_rx_b3c051aa44"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b3c051aa44",
+     "target": "M:(R)-4'-phosphopantothenate"
+    },
+    {
+     "arrow": true,
+     "chain": 7,
+     "own": [
+      "M:4'-phosphopantetheine",
+      "R:R_rx_d7cfc385b4"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:4'-phosphopantetheine",
+     "target": "R:R_rx_d7cfc385b4"
+    },
+    {
+     "arrow": true,
+     "chain": 8,
+     "own": [
+      "M:3'-dephospho-CoA",
+      "R:R_rx_d7cfc385b4"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_d7cfc385b4",
+     "target": "M:3'-dephospho-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_7966130d64:0",
+      "R:R_rx_7966130d64"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_7966130d64:0",
+     "target": "R:R_rx_7966130d64"
+    }
+   ],
+   "name": "",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_7966130d64:0",
+     "kind": "alias",
+     "label": "L-cysteine",
+     "sbml_id": "M_mt_637605909b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 47.095,
+     "x": -39.72360692768274,
+     "y": -165.37880336470775
+    },
+    {
+     "h": 16.5,
+     "id": "M:(R)-4'-phosphopantothenate",
+     "kind": "met",
+     "label": "(R)-4'-phosphopantothenate",
+     "sbml_id": "M_mt_d7c3ed87a4",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 131.262,
+     "x": 69.48970894049792,
+     "y": -113.0
+    },
+    {
+     "h": 16.5,
+     "id": "M:3'-dephospho-CoA",
+     "kind": "met",
+     "label": "3'-dephospho-CoA",
+     "sbml_id": "M_mt_f1ced368a9",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 89.29,
+     "x": 69.50001143157743,
+     "y": -427.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:4'-phosphopantetheine",
+     "kind": "met",
+     "label": "4'-phosphopantetheine",
+     "sbml_id": "M_mt_e9e7556073",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 109.82,
+     "x": 69.49728988150773,
+     "y": -322.5
+    },
+    {
+     "h": 16.5,
+     "id": "M:4-phosphopantothenoyl-L-Cys",
+     "kind": "met",
+     "label": "4-phosphopantothenoyl-L-Cys",
+     "sbml_id": "M_mt_f71cddb700",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 138.61,
+     "x": 69.49335681353166,
+     "y": -217.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:pantothenate",
+     "kind": "met",
+     "label": "pantothenate",
+     "sbml_id": "M_mt_e64c807c73",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 68.408,
+     "x": 69.48849296384567,
+     "y": -8.25
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_6accf4db5b",
+     "kind": "rxn",
+     "label": "phosphopantothenoylcysteine decarboxylase",
+     "sbml_id": "R_rx_6accf4db5b",
+     "sbml_type": "reaction",
+     "sub": " \u2192 CO2",
+     "w": 138.991,
+     "x": 69.495390625,
+     "y": -270.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_7966130d64",
+     "kind": "rxn",
+     "label": "phosphopantothenate-cysteine ligase (CTP)",
+     "sbml_id": "R_rx_7966130d64",
+     "sbml_type": "reaction",
+     "sub": "CTP \u2192 CMP + diphosphate",
+     "w": 133.93,
+     "x": 69.49139300609201,
+     "y": -165.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_9872bc6566",
+     "kind": "rxn",
+     "label": "dephospho-CoA kinase",
+     "sbml_id": "R_rx_9872bc6566",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP + CoA",
+     "w": 87.478,
+     "x": 69.50060211021463,
+     "y": -479.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_b3c051aa44",
+     "kind": "rxn",
+     "label": "pantothenate kinase",
+     "sbml_id": "R_rx_b3c051aa44",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 80.074,
+     "x": 69.48849296384567,
+     "y": -60.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_d7cfc385b4",
+     "kind": "rxn",
+     "label": "pantetheine-phosphate adenylyltransferase",
+     "sbml_id": "R_rx_d7cfc385b4",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 diphosphate",
+     "w": 133.486,
+     "x": 69.49887634959943,
+     "y": -374.875
+    }
+   ],
+   "rings": [],
+   "title": "coenzyme A metabolism"
+  }
+ ],
+ "format": "sbml-pathway-layout",
+ "model": "coenzyme A metabolism",
+ "settings": {
+  "escher": false,
+  "hide": "",
+  "legend": false,
+  "max_cluster": 60,
+  "show": ""
+ },
+ "source": "brenda_coenzyme-a-metabolism.xml",
+ "units": "points; x right, y up; boxes are centred on (x, y)",
+ "version": 1
+}

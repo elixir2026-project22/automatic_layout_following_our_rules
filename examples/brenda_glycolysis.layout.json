@@ -1,0 +1,937 @@
+{
+ "drawings": [
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glyceraldehyde 3-phosphate",
+      "R:R_rx_NODE_8708"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:D-glyceraldehyde 3-phosphate",
+     "target": "R:R_rx_NODE_8708"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phosphoglycerate",
+      "R:R_rx_NODE_8708"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_NODE_8708",
+     "target": "M:3-phosphoglycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glyceraldehyde 3-phosphate",
+      "R:R_rx_NODE_2304"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-glyceraldehyde 3-phosphate",
+     "target": "R:R_rx_NODE_2304"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phosphoglycerate",
+      "R:R_rx_NODE_2304"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_2304",
+     "target": "M:3-phosphoglycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glyceraldehyde 3-phosphate",
+      "R:R_rx_NODE_8284"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-glyceraldehyde 3-phosphate",
+     "target": "R:R_rx_NODE_8284"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phosphoglycerate",
+      "R:R_rx_NODE_8284"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_8284",
+     "target": "M:3-phosphoglycerate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glyceraldehyde 3-phosphate",
+      "R:R_rx_d81e1761ef"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:D-glyceraldehyde 3-phosphate",
+     "target": "R:R_rx_d81e1761ef"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phospho-D-glyceroyl phosphate",
+      "R:R_rx_d81e1761ef"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_d81e1761ef",
+     "target": "M:3-phospho-D-glyceroyl phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phospho-D-glyceroyl phosphate",
+      "R:R_rx_f774c379a4"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:3-phospho-D-glyceroyl phosphate",
+     "target": "R:R_rx_f774c379a4"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phosphoglycerate",
+      "R:R_rx_f774c379a4"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_f774c379a4",
+     "target": "M:3-phosphoglycerate"
+    },
+    {
+     "arrow": true,
+     "chain": 100030,
+     "own": [
+      "M:pyruvate",
+      "R:R_rx_5cc6fc2351"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:pyruvate",
+     "target": "R:R_rx_5cc6fc2351"
+    },
+    {
+     "arrow": false,
+     "chain": 100031,
+     "own": [
+      "M:phosphoenolpyruvate",
+      "R:R_rx_5cc6fc2351"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_5cc6fc2351",
+     "target": "__dp0_1_2"
+    },
+    {
+     "arrow": true,
+     "chain": 100031,
+     "own": [
+      "M:phosphoenolpyruvate",
+      "R:R_rx_5cc6fc2351"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__dp0_1_2",
+     "target": "M:phosphoenolpyruvate"
+    },
+    {
+     "arrow": true,
+     "chain": 100033,
+     "own": [
+      "M:2-phospho-D-glycerate",
+      "R:R_rx_NODE_2849"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_2849",
+     "target": "M:2-phospho-D-glycerate"
+    },
+    {
+     "arrow": true,
+     "chain": 100034,
+     "own": [
+      "M:2-phospho-D-glycerate",
+      "R:R_rx_NODE_8573"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_8573",
+     "target": "M:2-phospho-D-glycerate"
+    },
+    {
+     "arrow": true,
+     "chain": 100035,
+     "own": [
+      "M:2-phospho-D-glycerate",
+      "R:R_rx_c666ac0a6e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2-phospho-D-glycerate",
+     "target": "R:R_rx_c666ac0a6e"
+    },
+    {
+     "arrow": true,
+     "chain": 100036,
+     "own": [
+      "M:phosphoenolpyruvate",
+      "R:R_rx_c666ac0a6e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_c666ac0a6e",
+     "target": "M:phosphoenolpyruvate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phosphoglycerate",
+      "R:R_rx_NODE_2849"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:3-phosphoglycerate",
+     "target": "R:R_rx_NODE_2849"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:3-phosphoglycerate",
+      "R:R_rx_NODE_8573"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:3-phosphoglycerate",
+     "target": "R:R_rx_NODE_8573"
+    },
+    {
+     "arrow": true,
+     "chain": 200021,
+     "own": [
+      "M:D-fructose 1,6-bisphosphate",
+      "R:R_rx_2c94bd36b3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-fructose 1,6-bisphosphate",
+     "target": "R:R_rx_2c94bd36b3"
+    },
+    {
+     "arrow": true,
+     "chain": 200022,
+     "own": [
+      "M:D-fructose 6-phosphate",
+      "R:R_rx_8ac1b614ad"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-fructose 6-phosphate",
+     "target": "R:R_rx_8ac1b614ad"
+    },
+    {
+     "arrow": true,
+     "chain": 200023,
+     "own": [
+      "M:D-fructose 1,6-bisphosphate",
+      "R:R_rx_8ac1b614ad"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_8ac1b614ad",
+     "target": "M:D-fructose 1,6-bisphosphate"
+    },
+    {
+     "arrow": true,
+     "chain": 200024,
+     "own": [
+      "M:D-glucose",
+      "R:R_rx_92735d0939"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-glucose",
+     "target": "R:R_rx_92735d0939"
+    },
+    {
+     "arrow": true,
+     "chain": 200025,
+     "own": [
+      "M:D-glucose 6-phosphate",
+      "R:R_rx_92735d0939"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_92735d0939",
+     "target": "M:D-glucose 6-phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": 200026,
+     "own": [
+      "M:D-fructose 1,6-bisphosphate",
+      "R:R_rx_93ae42951f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-fructose 1,6-bisphosphate",
+     "target": "R:R_rx_93ae42951f"
+    },
+    {
+     "arrow": false,
+     "chain": 200027,
+     "own": [
+      "M:D-fructose 6-phosphate",
+      "R:R_rx_93ae42951f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_93ae42951f",
+     "target": "__dp1_6_2"
+    },
+    {
+     "arrow": false,
+     "chain": 200027,
+     "own": [
+      "M:D-fructose 6-phosphate",
+      "R:R_rx_93ae42951f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__dp1_6_2",
+     "target": "__dp1_6_1"
+    },
+    {
+     "arrow": true,
+     "chain": 200027,
+     "own": [
+      "M:D-fructose 6-phosphate",
+      "R:R_rx_93ae42951f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__dp1_6_1",
+     "target": "M:D-fructose 6-phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": 200031,
+     "own": [
+      "M:D-glucose 6-phosphate",
+      "R:R_rx_b4196404be"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b4196404be",
+     "target": "M:D-glucose 6-phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": 200032,
+     "own": [
+      "M:D-glucose",
+      "R:R_rx_b55563ec26"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-glucose",
+     "target": "R:R_rx_b55563ec26"
+    },
+    {
+     "arrow": true,
+     "chain": 200033,
+     "own": [
+      "M:D-glucose 6-phosphate",
+      "R:R_rx_b55563ec26"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b55563ec26",
+     "target": "M:D-glucose 6-phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": 200034,
+     "own": [
+      "M:D-fructose 6-phosphate",
+      "R:R_rx_e5d6b78bbc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-fructose 6-phosphate",
+     "target": "R:R_rx_e5d6b78bbc"
+    },
+    {
+     "arrow": true,
+     "chain": 200035,
+     "own": [
+      "M:D-fructose 1,6-bisphosphate",
+      "R:R_rx_e5d6b78bbc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_e5d6b78bbc",
+     "target": "M:D-fructose 1,6-bisphosphate"
+    },
+    {
+     "arrow": true,
+     "chain": 200036,
+     "own": [
+      "M:D-fructose 6-phosphate",
+      "R:R_rx_ef72af6ccc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:D-fructose 6-phosphate",
+     "target": "R:R_rx_ef72af6ccc"
+    },
+    {
+     "arrow": true,
+     "chain": 200037,
+     "own": [
+      "M:D-fructose 1,6-bisphosphate",
+      "R:R_rx_ef72af6ccc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_ef72af6ccc",
+     "target": "M:D-fructose 1,6-bisphosphate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:D-glyceraldehyde 3-phosphate",
+      "R:R_rx_2c94bd36b3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_2c94bd36b3",
+     "target": "M:D-glyceraldehyde 3-phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": 300037,
+     "own": [
+      "M:dihydroxyacetone phosphate",
+      "R:R_rx_9ab9f47716"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_9ab9f47716",
+     "target": "M:dihydroxyacetone phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_2c94bd36b3:0",
+      "R:R_rx_2c94bd36b3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_2c94bd36b3",
+     "target": "A:R_rx_2c94bd36b3:0"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:cut0",
+      "R:R_rx_b4196404be"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:cut0",
+     "target": "R:R_rx_b4196404be"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:cut1",
+      "R:R_rx_9ab9f47716"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:cut1",
+     "target": "R:R_rx_9ab9f47716"
+    }
+   ],
+   "name": "",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_2c94bd36b3:0",
+     "kind": "alias",
+     "label": "dihydroxyacetone phosphate",
+     "sbml_id": "M_mt_5068da0e84",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 118.431,
+     "x": 224.81588038518166,
+     "y": -261.2889264721049
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut0",
+     "kind": "alias",
+     "label": "D-fructose 6-phosphate",
+     "sbml_id": "M_mt_dfef3a54ea",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 97.534,
+     "x": 561.1620482182628,
+     "y": -99.91129875354233
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut1",
+     "kind": "alias",
+     "label": "D-glyceraldehyde 3-phosphate",
+     "sbml_id": "M_mt_4d404b9e9f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 124.613,
+     "x": 271.3692582812748,
+     "y": 1.8483025260413513
+    },
+    {
+     "h": 16.5,
+     "id": "M:2-phospho-D-glycerate",
+     "kind": "met",
+     "label": "2-phospho-D-glycerate",
+     "sbml_id": "M_mt_2e9e6d89f7",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 108.589,
+     "x": -20.22889630266394,
+     "y": -503.3772049397003
+    },
+    {
+     "h": 19.5,
+     "id": "M:3-phospho-D-glyceroyl phosphate",
+     "kind": "core",
+     "label": "3-phospho-D-glyceroyl phosphate",
+     "sbml_id": "M_mt_cbb28d5a93",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 194.233,
+     "x": 460.3019836674171,
+     "y": -451.00220493970033
+    },
+    {
+     "h": 19.5,
+     "id": "M:3-phosphoglycerate",
+     "kind": "core",
+     "label": "3-phosphoglycerate",
+     "sbml_id": "M_mt_1137269b50",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 119.695,
+     "x": 268.4754471953697,
+     "y": -451.0022049397003
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-fructose 1,6-bisphosphate",
+     "kind": "met",
+     "label": "D-fructose 1,6-bisphosphate",
+     "sbml_id": "M_mt_759cb00988",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 131.501,
+     "x": 343.72447451096275,
+     "y": -182.37555123492507
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-fructose 6-phosphate",
+     "kind": "met",
+     "label": "D-fructose 6-phosphate",
+     "sbml_id": "M_mt_dfef3a54ea",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 111.206,
+     "x": 346.9602562892136,
+     "y": -77.62555123492507
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-glucose",
+     "kind": "met",
+     "label": "D-glucose",
+     "sbml_id": "M_mt_5dbc9a97f4",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 53.002,
+     "x": 884.2810766017135,
+     "y": -77.62555123492507
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-glucose 6-phosphate",
+     "kind": "met",
+     "label": "D-glucose 6-phosphate",
+     "sbml_id": "M_mt_c40006a428",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 109.144,
+     "x": 808.4883807609629,
+     "y": -182.37555123492507
+    },
+    {
+     "h": 19.5,
+     "id": "M:D-glyceraldehyde 3-phosphate",
+     "kind": "core",
+     "label": "D-glyceraldehyde 3-phosphate",
+     "sbml_id": "M_mt_4d404b9e9f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 177.354,
+     "x": 364.38871543139345,
+     "y": -284.87555123492507
+    },
+    {
+     "h": 16.5,
+     "id": "M:dihydroxyacetone phosphate",
+     "kind": "met",
+     "label": "dihydroxyacetone phosphate",
+     "sbml_id": "M_mt_5068da0e84",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 134.889,
+     "x": 364.3887154313935,
+     "y": 20.37444876507493
+    },
+    {
+     "h": 16.5,
+     "id": "M:phosphoenolpyruvate",
+     "kind": "met",
+     "label": "phosphoenolpyruvate",
+     "sbml_id": "M_mt_1a48495501",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 103.461,
+     "x": -58.166885214114444,
+     "y": -610.0022049397003
+    },
+    {
+     "h": 16.5,
+     "id": "M:pyruvate",
+     "kind": "met",
+     "label": "pyruvate",
+     "sbml_id": "M_mt_7dd2d3b76f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 48.886,
+     "x": -203.6191231171303,
+     "y": -451.0022049397003
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_2c94bd36b3",
+     "kind": "rxn",
+     "label": "fructose-bisphosphate aldolase",
+     "sbml_id": "R_rx_2c94bd36b3",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 116.788,
+     "x": 364.38871543139345,
+     "y": -234.75055123492507
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_5cc6fc2351",
+     "kind": "rxn",
+     "label": "pyruvate kinase",
+     "sbml_id": "R_rx_5cc6fc2351",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 63.997,
+     "x": -149.86199862106287,
+     "y": -503.3772049397003
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_8ac1b614ad",
+     "kind": "rxn",
+     "label": "diphosphate-fructose-6-phosphate 1-phosphotransferase",
+     "sbml_id": "R_rx_8ac1b614ad",
+     "sbml_type": "reaction",
+     "sub": "diphosphate \u2192 phosphate",
+     "w": 134.78,
+     "x": 346.9602562892136,
+     "y": -130.00055123492507
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_92735d0939",
+     "kind": "rxn",
+     "label": "glucose-6-phosphatase",
+     "sbml_id": "R_rx_92735d0939",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 88.846,
+     "x": 956.8379906642135,
+     "y": -130.00055123492507
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_93ae42951f",
+     "kind": "rxn",
+     "label": "fructose-bisphosphatase",
+     "sbml_id": "R_rx_93ae42951f",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 phosphate",
+     "w": 93.35,
+     "x": 225.32004355639344,
+     "y": -234.75055123492507
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_9ab9f47716",
+     "kind": "rxn",
+     "label": "triose-phosphate isomerase",
+     "sbml_id": "R_rx_9ab9f47716",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 104.947,
+     "x": 364.3887154313935,
+     "y": -28.37555123492507
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_2304",
+     "kind": "rxn",
+     "label": "glyceraldehyde-3-phosphate dehydrogenase [NAD(P)+]",
+     "sbml_id": "R_rx_NODE_2304",
+     "sbml_type": "reaction",
+     "sub": "NAD+ \u2192 NADH",
+     "w": 138.203,
+     "x": 150.14892552412044,
+     "y": -290.00578887301657
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_NODE_2849",
+     "kind": "rxn",
+     "label": "phosphoglycerate mutase (2,3-diphosphoglycerate-independent)",
+     "sbml_id": "R_rx_NODE_2849",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 134.826,
+     "x": -77.7632246796303,
+     "y": -451.0022049397003
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_8284",
+     "kind": "rxn",
+     "label": "glyceraldehyde-3-phosphate dehydrogenase (ferredoxin)",
+     "sbml_id": "R_rx_NODE_8284",
+     "sbml_type": "reaction",
+     "sub": "oxidized ferredoxin \u2192 reduced ferredoxin",
+     "w": 138.203,
+     "x": 357.3524959482845,
+     "y": -367.6833703899631
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_NODE_8573",
+     "kind": "rxn",
+     "label": "phosphoglycerate mutase (2,3-diphosphoglycerate-dependent)",
+     "sbml_id": "R_rx_NODE_8573",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 134.826,
+     "x": 76.92042094663879,
+     "y": -465.14434056343123
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_8708",
+     "kind": "rxn",
+     "label": "glyceraldehyde-3-phosphate dehydrogenase (NADP+)",
+     "sbml_id": "R_rx_NODE_8708",
+     "sbml_type": "reaction",
+     "sub": "NADP+ \u2192 NADPH",
+     "w": 138.203,
+     "x": 268.4754471953697,
+     "y": -340.2511024698501
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_b4196404be",
+     "kind": "rxn",
+     "label": "glucose-6-phosphate isomerase",
+     "sbml_id": "R_rx_b4196404be",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 119.255,
+     "x": 651.4055687892135,
+     "y": -130.00055123492507
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_b55563ec26",
+     "kind": "rxn",
+     "label": "ADP-specific glucose/glucosamine kinase",
+     "sbml_id": "R_rx_b55563ec26",
+     "sbml_type": "reaction",
+     "sub": "ADP \u2192 AMP",
+     "w": 133.382,
+     "x": 811.7241625392135,
+     "y": -130.00055123492507
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_c666ac0a6e",
+     "kind": "rxn",
+     "label": "phosphopyruvate hydratase",
+     "sbml_id": "R_rx_c666ac0a6e",
+     "sbml_type": "reaction",
+     "sub": " \u2192 H2O",
+     "w": 106.47,
+     "x": -20.22889630266394,
+     "y": -557.6272049397003
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_d81e1761ef",
+     "kind": "rxn",
+     "label": "BR1125-a",
+     "sbml_id": "R_rx_d81e1761ef",
+     "sbml_type": "reaction",
+     "sub": "phosphate + NAD+ \u2192 NADH + H+",
+     "w": 107.171,
+     "x": 460.3019836674172,
+     "y": -340.25110246985014
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_e5d6b78bbc",
+     "kind": "rxn",
+     "label": "ADP-specific phosphofructokinase",
+     "sbml_id": "R_rx_e5d6b78bbc",
+     "sbml_type": "reaction",
+     "sub": "ADP \u2192 AMP",
+     "w": 126.695,
+     "x": 189.87658118651535,
+     "y": -148.4781418851508
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_ef72af6ccc",
+     "kind": "rxn",
+     "label": "tagatose-6-phosphate kinase",
+     "sbml_id": "R_rx_ef72af6ccc",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 109.428,
+     "x": 503.0640844142136,
+     "y": -130.00055123492507
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_f774c379a4",
+     "kind": "rxn",
+     "label": "phosphoglycerate kinase",
+     "sbml_id": "R_rx_f774c379a4",
+     "sbml_type": "reaction",
+     "sub": "ADP \u2192 ATP",
+     "w": 95.491,
+     "x": 364.38871543139345,
+     "y": -506.37775617462535
+    },
+    {
+     "h": 0.0,
+     "id": "__dp0_1_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": -111.46405255266393,
+     "y": -557.6272049397003
+    },
+    {
+     "h": 0.0,
+     "id": "__dp1_6_1",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 80.87549066421353,
+     "y": -130.00055123492507
+    },
+    {
+     "h": 0.0,
+     "id": "__dp1_6_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 151.47987622117807,
+     "y": -182.37555123492507
+    }
+   ],
+   "rings": [
+    {
+     "cx": 364.38871543139345,
+     "cy": -395.6266537047752,
+     "id": 0,
+     "r": 110.75110246985015
+    }
+   ],
+   "title": "glycolysis"
+  }
+ ],
+ "format": "sbml-pathway-layout",
+ "model": "glycolysis",
+ "settings": {
+  "escher": false,
+  "hide": "",
+  "legend": false,
+  "max_cluster": 60,
+  "show": ""
+ },
+ "source": "brenda_glycolysis.xml",
+ "units": "points; x right, y up; boxes are centred on (x, y)",
+ "version": 1
+}

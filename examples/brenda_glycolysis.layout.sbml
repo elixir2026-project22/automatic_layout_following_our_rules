@@ -1,0 +1,1941 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" xmlns:groups="http://www.sbml.org/sbml/level3/version1/groups/version1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sboTerm="SBO:0000624" level="3" version="1" fbc:required="false" groups:required="false" layout:required="false">
+  <model metaid="meta_pw_39834c18" id="pw_39834c18" name="glycolysis" fbc:strict="true">
+    <notes>
+      <html:html>
+        <html:p>pathway_id: pw_39834c18</html:p>
+        <html:p>category: Central and energy metabolism</html:p>
+        <html:p>warnings: 16 participant(s) had no stoichiometry; 1 was assumed</html:p>
+      </html:html>
+    </notes>
+    <listOfUnitDefinitions>
+      <unitDefinition id="mmol_per_gDW_per_hr">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1" />
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1" />
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600" />
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="c" name="default" constant="true" />
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="meta_M_mt_1137269b50" sboTerm="SBO:0000247" id="M_mt_1137269b50" name="3-phosphoglycerate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C3H7O7P/c4-2(3(5)6)1-10-11(7,8)9/h2,4H,1H2,(H,5,6)(H2,7,8,9)</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_1137269b50">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:17050" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/724" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL87788" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=OSJPPGNTCRNQQC-UHFFFAOYSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_19acfa327b" sboTerm="SBO:0000247" id="M_mt_19acfa327b" name="NADH" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C21H29N7O14P2/c22-17-12-19(25-7-24-17)28(8-26-12)21-16(32)14(30)11(41-21)6-39-44(36,37)42-43(34,35)38-5-10-13(29)15(31)20(40-10)27-3-1-2-9(4-27)18(23)33/h1,3-4,7-8,10-11,13-16,20-21,29-32H,2,5-6H2,(H2,23,33)(H,34,35)(H,36,37)(H2,22,24,25)/t10-,11-,13-,14-,15-,16-,20-,21-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_19acfa327b">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:16908" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/439153" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL1234616" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=BOPGDPNILDQYTO-NNYOXOHSSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_1a48495501" sboTerm="SBO:0000247" id="M_mt_1a48495501" name="phosphoenolpyruvate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C3H5O6P/c1-2(3(4)5)9-10(6,7)8/h1H2,(H,4,5)(H2,6,7,8)</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_1a48495501">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:44897" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/1005" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/58114173" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/59658623" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL1235228" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=DTBNBXWJWCWCIK-UHFFFAOYSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_1b1223fff4" sboTerm="SBO:0000247" id="M_mt_1b1223fff4" name="H2O" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/H2O/h1H2</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_1b1223fff4">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:15377" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/22247451" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/962" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL1098659" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=XLYOFNOQVPJJNP-UHFFFAOYSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_2e9e6d89f7" sboTerm="SBO:0000247" id="M_mt_2e9e6d89f7" name="2-phospho-D-glycerate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C3H7O7P/c4-1-2(3(5)6)10-11(7,8)9/h2,4H,1H2,(H,5,6)(H2,7,8,9)/t2-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_2e9e6d89f7">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:17835" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/439278" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=GXIURPTVHJPJLF-UWTATZPHSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_3577006728" sboTerm="SBO:0000247" id="M_mt_3577006728" name="phosphate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/H3O4P/c1-5(2,3)4/h(H3,1,2,3,4)</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_3577006728">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:26078" />
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:52641" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/1004" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/172995034" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/173209996" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/22486802" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL1187" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=NBIIXXVUZAFLBC-UHFFFAOYSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_3f71b18536" sboTerm="SBO:0000247" id="M_mt_3f71b18536" name="oxidized ferredoxin" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/4RS.2Fe.2S/c4*1-2;;;;/q4*-1;2*+5;;</html:p>
+          </html:html>
+        </notes>
+      </species>
+      <species metaid="meta_M_mt_410bd09215" sboTerm="SBO:0000247" id="M_mt_410bd09215" name="NADP+" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C21H28N7O17P3/c22-17-12-19(25-7-24-17)28(8-26-12)21-16(44-46(33,34)35)14(30)11(43-21)6-41-48(38,39)45-47(36,37)40-5-10-13(29)15(31)20(42-10)27-3-1-2-9(4-27)18(23)32/h1-4,7-8,10-11,13-16,20-21,29-31H,5-6H2,(H7-,22,23,24,25,32,33,34,35,36,37,38,39)/p+1/t10-,11-,13-,14-,15-,16-,20-,21-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_410bd09215">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:18009" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/5886" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL5079525" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=XJLXINKUBYWONI-NNYOXOHSSA-O" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_4d404b9e9f" sboTerm="SBO:0000247" id="M_mt_4d404b9e9f" name="D-glyceraldehyde 3-phosphate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C3H7O6P/c4-1-3(5)2-9-10(6,7)8/h1,3,5H,2H2,(H2,6,7,8)/t3-/m0/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_4d404b9e9f">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:29052" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/439168" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL1232918" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=LXJXRIRHZLFYRP-VKHMYHEASA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_5068da0e84" sboTerm="SBO:0000247" id="M_mt_5068da0e84" name="dihydroxyacetone phosphate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C3H7O6P/c4-1-3(5)2-9-10(6,7)8/h4H,1-2H2,(H2,6,7,8)</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_5068da0e84">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:16108" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/668" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL1161998" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=GNGACRATGGDKBX-UHFFFAOYSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_5dbc9a97f4" sboTerm="SBO:0000247" id="M_mt_5dbc9a97f4" name="D-glucose" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C6H12O6/c7-1-2-3(8)4(9)5(10)6(11)12-2/h2-11H,1H2/t2-,3-,4+,5-,6?/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_5dbc9a97f4">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:4167" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/5793" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL1222250" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=WQZGKKKJIJFFOK-GASJEMHNSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_62968a0d8b" sboTerm="SBO:0000247" id="M_mt_62968a0d8b" name="NAD+" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C21H27N7O14P2/c22-17-12-19(25-7-24-17)28(8-26-12)21-16(32)14(30)11(41-21)6-39-44(36,37)42-43(34,35)38-5-10-13(29)15(31)20(40-10)27-3-1-2-9(4-27)18(23)33/h1-4,7-8,10-11,13-16,20-21,29-32H,5-6H2,(H5-,22,23,24,25,33,34,35,36,37)/p+1/t10-,11-,13-,14-,15-,16-,20-,21-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_62968a0d8b">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:15846" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/5893" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL3039307" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=BAWFJGJZGIEFAR-NNYOXOHSSA-O" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_7133524672" sboTerm="SBO:0000247" id="M_mt_7133524672" name="ADP" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C10H15N5O10P2/c11-8-5-9(13-2-12-8)15(3-14-5)10-7(17)6(16)4(24-10)1-23-27(21,22)25-26(18,19)20/h2-4,6-7,10,16-17H,1H2,(H,21,22)(H2,11,12,13)(H2,18,19,20)/t4-,6-,7-,10-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_7133524672">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:16761" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/6022" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL14830" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=XTWYTFMLZFPYCI-KQYNXXCUSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_759cb00988" sboTerm="SBO:0000247" id="M_mt_759cb00988" name="D-fructose 1,6-bisphosphate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C6H14O12P2/c7-4-3(1-16-19(10,11)12)18-6(9,5(4)8)2-17-20(13,14)15/h3-5,7-9H,1-2H2,(H2,10,11,12)(H2,13,14,15)/t3-,4-,5+,6-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_759cb00988">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:28013" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/10267" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL97893" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=RNBGYGVWRKECFJ-ARQDHWQXSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_7dd2d3b76f" sboTerm="SBO:0000247" id="M_mt_7dd2d3b76f" name="pyruvate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C3H4O3/c1-2(4)3(5)6/h1H3,(H,5,6)</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_7dd2d3b76f">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:32816" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/1060" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL1162144" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=LCTONWCANYUPML-UHFFFAOYSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_7fdd97c6e1" sboTerm="SBO:0000247" id="M_mt_7fdd97c6e1" name="AMP" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C10H14N5O7P/c11-8-5-9(13-2-12-8)15(3-14-5)10-7(17)6(16)4(22-10)1-21-23(18,19)20/h2-4,6-7,10,16-17H,1H2,(H2,11,12,13)(H2,18,19,20)/t4-,6-,7-,10-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_7fdd97c6e1">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:16027" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/6083" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL752" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=UDMBCSSLTHHNCD-KQYNXXCUSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_82e3f482bf" sboTerm="SBO:0000247" id="M_mt_82e3f482bf" name="ATP" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C10H16N5O13P3/c11-8-5-9(13-2-12-8)15(3-14-5)10-7(17)6(16)4(26-10)1-25-30(21,22)28-31(23,24)27-29(18,19)20/h2-4,6-7,10,16-17H,1H2,(H,21,22)(H,23,24)(H2,11,12,13)(H2,18,19,20)/t4-,6-,7-,10-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_82e3f482bf">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:15422" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/5957" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL14249" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=ZKHQWZAMYRWXGA-KQYNXXCUSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_86b2209667" sboTerm="SBO:0000247" id="M_mt_86b2209667" name="reduced ferredoxin" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/4RS.2Fe.2S/c4*1-2;;;;/q4*-1;2*+4;;</html:p>
+          </html:html>
+        </notes>
+      </species>
+      <species metaid="meta_M_mt_942f98c2ec" sboTerm="SBO:0000247" id="M_mt_942f98c2ec" name="NADPH" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C21H30N7O17P3/c22-17-12-19(25-7-24-17)28(8-26-12)21-16(44-46(33,34)35)14(30)11(43-21)6-41-48(38,39)45-47(36,37)40-5-10-13(29)15(31)20(42-10)27-3-1-2-9(4-27)18(23)32/h1,3-4,7-8,10-11,13-16,20-21,29-31H,2,5-6H2,(H2,23,32)(H,36,37)(H,38,39)(H2,22,24,25)(H2,33,34,35)/t10-,11-,13-,14-,15-,16-,20-,21-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_942f98c2ec">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:16474" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/134821689" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/5884" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL407009" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=ACFIXJIJDZMPPO-NNYOXOHSSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_bdcc7261de" sboTerm="SBO:0000247" id="M_mt_bdcc7261de" name="diphosphate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/H4O7P2/c1-8(2,3)7-9(4,5)6/h(H2,1,2,3)(H2,4,5,6)</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_bdcc7261de">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:29888" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/1023" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/173008659" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/21961011" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL1160571" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=XPPKVPWEQAFLFU-UHFFFAOYSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_c40006a428" sboTerm="SBO:0000247" id="M_mt_c40006a428" name="D-glucose 6-phosphate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C6H13O9P/c7-3-2(1-14-16(11,12)13)15-6(10)5(9)4(3)8/h2-10H,1H2,(H2,11,12,13)/t2-,3-,4+,5-,6?/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_c40006a428">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:4170" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/5958" />
+                  <rdf:li rdf:resource="https://identifiers.org/chembl.compound/CHEMBL4283156" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=NBSCHQHZLSJFNQ-GASJEMHNSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_cbb28d5a93" sboTerm="SBO:0000247" id="M_mt_cbb28d5a93" name="3-phospho-D-glyceroyl phosphate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C3H8O10P2/c4-2(1-12-14(6,7)8)3(5)13-15(9,10)11/h2,4H,1H2,(H2,6,7,8)(H2,9,10,11)/t2-/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_cbb28d5a93">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:16001" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/439191" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=LJQLQCAXBUHEAZ-UWTATZPHSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_d78fb7f9bf" sboTerm="SBO:0000247" id="M_mt_d78fb7f9bf" name="H+" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/p+1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_d78fb7f9bf">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:15378" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/1038" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=GPRLSGONYQIRFK-UHFFFAOYSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_M_mt_dfef3a54ea" sboTerm="SBO:0000247" id="M_mt_dfef3a54ea" name="D-fructose 6-phosphate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <html:html>
+            <html:p>inchi: InChI=1S/C6H13O9P/c7-2-6(10)5(9)4(8)3(15-6)1-14-16(11,12)13/h3-5,7-10H,1-2H2,(H2,11,12,13)/t3-,4-,5+,6?/m1/s1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_M_mt_dfef3a54ea">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/chebi/CHEBI:61553" />
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/439160" />
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/InChIKey=BGWGXPAPYGQALX-VRPWFDPXSA-N" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter sboTerm="SBO:0000626" id="cobra_default_lb" value="-1000" constant="true" />
+      <parameter sboTerm="SBO:0000626" id="cobra_default_ub" value="1000" constant="true" />
+      <parameter sboTerm="SBO:0000626" id="cobra_0_bound" value="0" constant="true" />
+      <parameter sboTerm="SBO:0000626" id="minus_inf" value="-INF" constant="true" />
+      <parameter sboTerm="SBO:0000626" id="plus_inf" value="INF" constant="true" />
+    </listOfParameters>
+    <listOfReactions>
+      <reaction metaid="meta_R_rx_2c94bd36b3" sboTerm="SBO:0000176" id="R_rx_2c94bd36b3" name="BR344" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_4d404b9e9f, mt_5068da0e84, mt_759cb00988</html:p>
+            <html:p>ec_numbers: 4.1.2.13, 4.1.2.40</html:p>
+            <html:p>ec_directions: 4.1.2.13=both; 4.1.2.40=both</html:p>
+            <html:p>preferred_ec: 4.1.2.13</html:p>
+            <html:p>brenda_reaction_ids: BR344</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_2c94bd36b3">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/4.1.2.13" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/4.1.2.40" />
+                  <rdf:li rdf:resource="https://identifiers.org/kegg.reaction/R01070" />
+                  <rdf:li rdf:resource="https://identifiers.org/sabiork.reaction/3" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_759cb00988" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_4d404b9e9f" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_5068da0e84" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_5cc6fc2351" sboTerm="SBO:0000176" id="R_rx_5cc6fc2351" name="BR47778" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_1a48495501, mt_7dd2d3b76f</html:p>
+            <html:p>ec_numbers: 2.7.1.40</html:p>
+            <html:p>ec_directions: 2.7.1.40=both</html:p>
+            <html:p>preferred_ec: 2.7.1.40</html:p>
+            <html:p>brenda_reaction_ids: BR47778</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_5cc6fc2351">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.40" />
+                  <rdf:li rdf:resource="https://identifiers.org/kegg.reaction/R00200" />
+                  <rdf:li rdf:resource="https://identifiers.org/metacyc.reaction/PEPDEPHOS-RXN" />
+                  <rdf:li rdf:resource="https://identifiers.org/sabiork.reaction/9" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_7dd2d3b76f" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_82e3f482bf" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_1a48495501" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_7133524672" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_8ac1b614ad" sboTerm="SBO:0000176" id="R_rx_8ac1b614ad" name="BR47815" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_759cb00988, mt_dfef3a54ea</html:p>
+            <html:p>ec_numbers: 2.7.1.90</html:p>
+            <html:p>ec_directions: 2.7.1.90=both</html:p>
+            <html:p>preferred_ec: 2.7.1.90</html:p>
+            <html:p>brenda_reaction_ids: BR47815</html:p>
+            <html:p>xrefs_unresolved: xrefKegg=['R00764,R02073']; xrefSabiork=['1119,14403,32']</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_8ac1b614ad">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.90" />
+                  <rdf:li rdf:resource="https://identifiers.org/metacyc.reaction/2.7.1.90-RXN" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_bdcc7261de" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_dfef3a54ea" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_3577006728" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_759cb00988" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_92735d0939" sboTerm="SBO:0000176" id="R_rx_92735d0939" name="BR47759" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_5dbc9a97f4, mt_c40006a428</html:p>
+            <html:p>ec_numbers: 2.7.1.1, 2.7.1.17, 2.7.1.2, 2.7.1.4, 2.7.1.55, 2.7.1.59, 2.7.1.60, 2.7.1.63, 2.7.1.7, 2.7.1.8, 2.7.1.85, 3.1.3.9</html:p>
+            <html:p>ec_directions: 2.7.1.1=both; 2.7.1.17=both; 2.7.1.2=forward; 2.7.1.4=both; 2.7.1.55=both; 2.7.1.59=both; 2.7.1.60=both; 2.7.1.63=both; 2.7.1.7=both; 2.7.1.8=both; 2.7.1.85=both; 3.1.3.9=both</html:p>
+            <html:p>preferred_ec: 2.7.1.1</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_92735d0939">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.1" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.17" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.2" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.4" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.55" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.59" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.60" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.63" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.7" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.8" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.85" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/3.1.3.9" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_5dbc9a97f4" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_82e3f482bf" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_7133524672" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_c40006a428" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_93ae42951f" sboTerm="SBO:0000176" id="R_rx_93ae42951f" name="BR19198" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_759cb00988, mt_dfef3a54ea</html:p>
+            <html:p>ec_numbers: 3.1.3.11, 3.1.3.25, 3.1.3.29</html:p>
+            <html:p>ec_directions: 3.1.3.11=both; 3.1.3.25=both; 3.1.3.29=both</html:p>
+            <html:p>preferred_ec: 3.1.3.11</html:p>
+            <html:p>brenda_reaction_ids: BR19198</html:p>
+            <html:p>xrefs_unresolved: xrefKegg=['R00762,R04780']; xrefSabiork=['10378,1117']</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_93ae42951f">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/3.1.3.11" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/3.1.3.25" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/3.1.3.29" />
+                  <rdf:li rdf:resource="https://identifiers.org/metacyc.reaction/F16BDEPHOS-RXN" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_1b1223fff4" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_759cb00988" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_3577006728" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_dfef3a54ea" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_9ab9f47716" sboTerm="SBO:0000176" id="R_rx_9ab9f47716" name="BR219" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_4d404b9e9f, mt_5068da0e84</html:p>
+            <html:p>ec_numbers: 5.2.1.8, 5.3.1.1</html:p>
+            <html:p>ec_directions: 5.2.1.8=both; 5.3.1.1=both</html:p>
+            <html:p>preferred_ec: 5.3.1.1</html:p>
+            <html:p>brenda_reaction_ids: BR219</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_9ab9f47716">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.2.1.8" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.3.1.1" />
+                  <rdf:li rdf:resource="https://identifiers.org/kegg.reaction/R01015" />
+                  <rdf:li rdf:resource="https://identifiers.org/metacyc.reaction/TRIOSEPISOMERIZATION-RXN" />
+                  <rdf:li rdf:resource="https://identifiers.org/sabiork.reaction/4" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_4d404b9e9f" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_5068da0e84" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_NODE_2304" sboTerm="SBO:0000176" id="R_rx_NODE_2304" name="NODE_2304" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_1137269b50, mt_4d404b9e9f</html:p>
+            <html:p>ec_numbers: 1.2.1.90</html:p>
+            <html:p>ec_directions: 1.2.1.90=both</html:p>
+            <html:p>preferred_ec: 1.2.1.90</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_NODE_2304">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.90" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_4d404b9e9f" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_62968a0d8b" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_1137269b50" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_19acfa327b" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_NODE_2849" sboTerm="SBO:0000176" id="R_rx_NODE_2849" name="NODE_2849" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_1137269b50, mt_2e9e6d89f7</html:p>
+            <html:p>ec_numbers: 5.4.2.12</html:p>
+            <html:p>ec_directions: 5.4.2.12=both</html:p>
+            <html:p>preferred_ec: 5.4.2.12</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_NODE_2849">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.4.2.12" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_1137269b50" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_2e9e6d89f7" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_NODE_8284" sboTerm="SBO:0000176" id="R_rx_NODE_8284" name="NODE_8284" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_1137269b50, mt_4d404b9e9f</html:p>
+            <html:p>ec_numbers: 1.2.7.6</html:p>
+            <html:p>ec_directions: 1.2.7.6=both</html:p>
+            <html:p>preferred_ec: 1.2.7.6</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_NODE_8284">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.7.6" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_3f71b18536" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_4d404b9e9f" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_1137269b50" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_86b2209667" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_NODE_8573" sboTerm="SBO:0000176" id="R_rx_NODE_8573" name="NODE_8573" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_1137269b50, mt_2e9e6d89f7</html:p>
+            <html:p>ec_numbers: 5.4.2.11</html:p>
+            <html:p>ec_directions: 5.4.2.11=both</html:p>
+            <html:p>preferred_ec: 5.4.2.11</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_NODE_8573">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.4.2.11" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_1137269b50" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_2e9e6d89f7" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_NODE_8708" sboTerm="SBO:0000176" id="R_rx_NODE_8708" name="NODE_8708" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_1137269b50, mt_4d404b9e9f</html:p>
+            <html:p>ec_numbers: 1.2.1.9</html:p>
+            <html:p>ec_directions: 1.2.1.9=both</html:p>
+            <html:p>preferred_ec: 1.2.1.9</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_NODE_8708">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.9" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_410bd09215" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_4d404b9e9f" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_1137269b50" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_942f98c2ec" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_b4196404be" sboTerm="SBO:0000176" id="R_rx_b4196404be" name="BS1067" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_c40006a428, mt_dfef3a54ea</html:p>
+            <html:p>ec_numbers: 2.6.1.16, 5.3.1.8, 5.3.1.9</html:p>
+            <html:p>ec_directions: 2.6.1.16=both; 5.3.1.8=both; 5.3.1.9=both</html:p>
+            <html:p>preferred_ec: 5.3.1.9</html:p>
+            <html:p>brenda_reaction_ids: BS1067</html:p>
+            <html:p>xrefs_unresolved: xrefSabiork=['1123,8448']</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_b4196404be">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.6.1.16" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.3.1.8" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.3.1.9" />
+                  <rdf:li rdf:resource="https://identifiers.org/kegg.reaction/R00771" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_dfef3a54ea" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_c40006a428" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_b55563ec26" sboTerm="SBO:0000176" id="R_rx_b55563ec26" name="BR37041" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_5dbc9a97f4, mt_c40006a428</html:p>
+            <html:p>ec_numbers: 2.7.1.11, 2.7.1.146, 2.7.1.147, 2.7.1.2, 3.1.3.9</html:p>
+            <html:p>ec_directions: 2.7.1.11=both; 2.7.1.146=both; 2.7.1.147=both; 2.7.1.2=both; 3.1.3.9=both</html:p>
+            <html:p>preferred_ec: 2.7.1.147</html:p>
+            <html:p>brenda_reaction_ids: BR37041</html:p>
+            <html:p>xrefs_unresolved: xrefSabiork=['5395,9512']</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_b55563ec26">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.11" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.146" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.147" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.2" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/3.1.3.9" />
+                  <rdf:li rdf:resource="https://identifiers.org/kegg.reaction/R05804" />
+                  <rdf:li rdf:resource="https://identifiers.org/metacyc.reaction/RXN-17001" />
+                  <rdf:li rdf:resource="https://identifiers.org/sabiork.reaction/5395" />
+                  <rdf:li rdf:resource="https://identifiers.org/sabiork.reaction/9512" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_5dbc9a97f4" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_7133524672" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_7fdd97c6e1" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_c40006a428" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_c666ac0a6e" sboTerm="SBO:0000176" id="R_rx_c666ac0a6e" name="BR3384" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_1a48495501, mt_2e9e6d89f7</html:p>
+            <html:p>ec_numbers: 4.2.1.11</html:p>
+            <html:p>ec_directions: 4.2.1.11=both</html:p>
+            <html:p>preferred_ec: 4.2.1.11</html:p>
+            <html:p>brenda_reaction_ids: BR3384</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_c666ac0a6e">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/4.2.1.11" />
+                  <rdf:li rdf:resource="https://identifiers.org/kegg.reaction/R00658" />
+                  <rdf:li rdf:resource="https://identifiers.org/metacyc.reaction/2PGADEHYDRAT-RXN" />
+                  <rdf:li rdf:resource="https://identifiers.org/sabiork.reaction/8" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_2e9e6d89f7" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_1a48495501" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_1b1223fff4" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_d81e1761ef" sboTerm="SBO:0000176" id="R_rx_d81e1761ef" name="BR1125-a" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_4d404b9e9f, mt_cbb28d5a93</html:p>
+            <html:p>ec_numbers: 1.2.1.12, 1.2.1.13, 1.2.1.59</html:p>
+            <html:p>ec_directions: 1.2.1.12=both; 1.2.1.13=both; 1.2.1.59=both</html:p>
+            <html:p>preferred_ec: 1.2.1.12</html:p>
+            <html:p>brenda_reaction_ids: BR29386</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_d81e1761ef">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.12" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.13" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.59" />
+                  <rdf:li rdf:resource="https://identifiers.org/kegg.reaction/R01061" />
+                  <rdf:li rdf:resource="https://identifiers.org/sabiork.reaction/7844" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_3577006728" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_4d404b9e9f" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_62968a0d8b" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_19acfa327b" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_cbb28d5a93" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_d78fb7f9bf" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_e5d6b78bbc" sboTerm="SBO:0000176" id="R_rx_e5d6b78bbc" name="BR37044" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_759cb00988, mt_dfef3a54ea</html:p>
+            <html:p>ec_numbers: 2.7.1.11, 2.7.1.146, 2.7.1.147</html:p>
+            <html:p>ec_directions: 2.7.1.11=both; 2.7.1.146=both; 2.7.1.147=both</html:p>
+            <html:p>preferred_ec: 2.7.1.146</html:p>
+            <html:p>brenda_reaction_ids: BR37044</html:p>
+            <html:p>xrefs_unresolved: xrefKegg=['R05805,R09084']</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_e5d6b78bbc">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.11" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.146" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.147" />
+                  <rdf:li rdf:resource="https://identifiers.org/metacyc.reaction/R302-RXN" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_7133524672" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_dfef3a54ea" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_759cb00988" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_7fdd97c6e1" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_ef72af6ccc" sboTerm="SBO:0000176" id="R_rx_ef72af6ccc" name="BS357047" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_759cb00988, mt_dfef3a54ea</html:p>
+            <html:p>ec_numbers: 2.7.1.11, 2.7.1.144, 2.7.1.146</html:p>
+            <html:p>ec_directions: 2.7.1.11=both; 2.7.1.144=both; 2.7.1.146=both</html:p>
+            <html:p>preferred_ec: 2.7.1.11</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_ef72af6ccc">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.11" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.144" />
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.146" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_82e3f482bf" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_dfef3a54ea" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_7133524672" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_759cb00988" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_rx_f774c379a4" sboTerm="SBO:0000176" id="R_rx_f774c379a4" name="BS422744" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html:html>
+            <html:p>main_metabolites: mt_1137269b50, mt_cbb28d5a93</html:p>
+            <html:p>ec_numbers: 2.7.2.3</html:p>
+            <html:p>ec_directions: 2.7.2.3=both</html:p>
+            <html:p>preferred_ec: 2.7.2.3</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_R_rx_f774c379a4">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.2.3" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="M_mt_7133524672" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_cbb28d5a93" stoichiometry="1" constant="true" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mt_1137269b50" stoichiometry="1" constant="true" />
+          <speciesReference species="M_mt_82e3f482bf" stoichiometry="1" constant="true" />
+        </listOfProducts>
+      </reaction>
+    </listOfReactions>
+    <groups:listOfGroups>
+      <groups:group metaid="meta_G_group_ec_1_2_1_12" groups:id="G_group_ec_1_2_1_12" groups:name="EC 1.2.1.12 glyceraldehyde-3-phosphate dehydrogenase (phosphorylating)" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_1_2_1_12</html:p>
+            <html:p>preferred_for: rx_d81e1761ef</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_1_2_1_12">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.12" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR1125-a" groups:idRef="R_rx_d81e1761ef" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_1_2_1_13" groups:id="G_group_ec_1_2_1_13" groups:name="EC 1.2.1.13 glyceraldehyde-3-phosphate dehydrogenase (NADP+) (phosphorylating)" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_1_2_1_13</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_1_2_1_13">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.13" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR1125-a" groups:idRef="R_rx_d81e1761ef" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_1_2_1_59" groups:id="G_group_ec_1_2_1_59" groups:name="EC 1.2.1.59 glyceraldehyde-3-phosphate dehydrogenase (NAD(P)+) (phosphorylating)" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_1_2_1_59</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_1_2_1_59">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.59" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR1125-a" groups:idRef="R_rx_d81e1761ef" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_1_2_1_9" groups:id="G_group_ec_1_2_1_9" groups:name="EC 1.2.1.9 glyceraldehyde-3-phosphate dehydrogenase (NADP+)" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_1_2_1_9</html:p>
+            <html:p>preferred_for: rx_NODE_8708</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_1_2_1_9">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.9" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="NODE_8708" groups:idRef="R_rx_NODE_8708" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_1_2_1_90" groups:id="G_group_ec_1_2_1_90" groups:name="EC 1.2.1.90 glyceraldehyde-3-phosphate dehydrogenase [NAD(P)+]" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_1_2_1_90</html:p>
+            <html:p>preferred_for: rx_NODE_2304</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_1_2_1_90">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.1.90" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="NODE_2304" groups:idRef="R_rx_NODE_2304" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_1_2_7_6" groups:id="G_group_ec_1_2_7_6" groups:name="EC 1.2.7.6 glyceraldehyde-3-phosphate dehydrogenase (ferredoxin)" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_1_2_7_6</html:p>
+            <html:p>preferred_for: rx_NODE_8284</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_1_2_7_6">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/1.2.7.6" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="NODE_8284" groups:idRef="R_rx_NODE_8284" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_6_1_16" groups:id="G_group_ec_2_6_1_16" groups:name="EC 2.6.1.16 glutamine-fructose-6-phosphate transaminase (isomerizing)" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_6_1_16</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_6_1_16">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.6.1.16" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BS1067" groups:idRef="R_rx_b4196404be" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_1" groups:id="G_group_ec_2_7_1_1" groups:name="EC 2.7.1.1 hexokinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_1</html:p>
+            <html:p>preferred_for: rx_92735d0939</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_1">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.1" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_11" groups:id="G_group_ec_2_7_1_11" groups:name="EC 2.7.1.11 6-phosphofructokinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_11</html:p>
+            <html:p>preferred_for: rx_ef72af6ccc</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_11">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.11" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR37044" groups:idRef="R_rx_e5d6b78bbc" />
+          <groups:member groups:name="BR37041" groups:idRef="R_rx_b55563ec26" />
+          <groups:member groups:name="BS357047" groups:idRef="R_rx_ef72af6ccc" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_144" groups:id="G_group_ec_2_7_1_144" groups:name="EC 2.7.1.144 tagatose-6-phosphate kinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_144</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_144">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.144" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BS357047" groups:idRef="R_rx_ef72af6ccc" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_146" groups:id="G_group_ec_2_7_1_146" groups:name="EC 2.7.1.146 ADP-specific phosphofructokinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_146</html:p>
+            <html:p>preferred_for: rx_e5d6b78bbc</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_146">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.146" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR37044" groups:idRef="R_rx_e5d6b78bbc" />
+          <groups:member groups:name="BR37041" groups:idRef="R_rx_b55563ec26" />
+          <groups:member groups:name="BS357047" groups:idRef="R_rx_ef72af6ccc" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_147" groups:id="G_group_ec_2_7_1_147" groups:name="EC 2.7.1.147 ADP-specific glucose/glucosamine kinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_147</html:p>
+            <html:p>preferred_for: rx_b55563ec26</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_147">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.147" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR37044" groups:idRef="R_rx_e5d6b78bbc" />
+          <groups:member groups:name="BR37041" groups:idRef="R_rx_b55563ec26" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_17" groups:id="G_group_ec_2_7_1_17" groups:name="EC 2.7.1.17 xylulokinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_17</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_17">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.17" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_2" groups:id="G_group_ec_2_7_1_2" groups:name="EC 2.7.1.2 glucokinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_2</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_2">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.2" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR37041" groups:idRef="R_rx_b55563ec26" />
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_4" groups:id="G_group_ec_2_7_1_4" groups:name="EC 2.7.1.4 fructokinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_4</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_4">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.4" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_40" groups:id="G_group_ec_2_7_1_40" groups:name="EC 2.7.1.40 pyruvate kinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_40</html:p>
+            <html:p>preferred_for: rx_5cc6fc2351</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_40">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.40" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47778" groups:idRef="R_rx_5cc6fc2351" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_55" groups:id="G_group_ec_2_7_1_55" groups:name="EC 2.7.1.55 allose kinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_55</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_55">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.55" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_59" groups:id="G_group_ec_2_7_1_59" groups:name="EC 2.7.1.59 N-acetylglucosamine kinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_59</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_59">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.59" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_60" groups:id="G_group_ec_2_7_1_60" groups:name="EC 2.7.1.60 N-acylmannosamine kinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_60</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_60">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.60" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_63" groups:id="G_group_ec_2_7_1_63" groups:name="EC 2.7.1.63 polyphosphate-glucose phosphotransferase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_63</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_63">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.63" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_7" groups:id="G_group_ec_2_7_1_7" groups:name="EC 2.7.1.7 mannokinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_7</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_7">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.7" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_8" groups:id="G_group_ec_2_7_1_8" groups:name="EC 2.7.1.8 glucosamine kinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_8</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_8">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.8" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_85" groups:id="G_group_ec_2_7_1_85" groups:name="EC 2.7.1.85 beta-glucoside kinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_85</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_85">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.85" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_1_90" groups:id="G_group_ec_2_7_1_90" groups:name="EC 2.7.1.90 diphosphate-fructose-6-phosphate 1-phosphotransferase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_1_90</html:p>
+            <html:p>preferred_for: rx_8ac1b614ad</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_1_90">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.1.90" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47815" groups:idRef="R_rx_8ac1b614ad" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_2_7_2_3" groups:id="G_group_ec_2_7_2_3" groups:name="EC 2.7.2.3 phosphoglycerate kinase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_2_7_2_3</html:p>
+            <html:p>preferred_for: rx_f774c379a4</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_2_7_2_3">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/2.7.2.3" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BS422744" groups:idRef="R_rx_f774c379a4" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_3_1_3_11" groups:id="G_group_ec_3_1_3_11" groups:name="EC 3.1.3.11 fructose-bisphosphatase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_3_1_3_11</html:p>
+            <html:p>preferred_for: rx_93ae42951f</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_3_1_3_11">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/3.1.3.11" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR19198" groups:idRef="R_rx_93ae42951f" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_3_1_3_25" groups:id="G_group_ec_3_1_3_25" groups:name="EC 3.1.3.25 inositol-phosphate phosphatase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_3_1_3_25</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_3_1_3_25">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/3.1.3.25" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR19198" groups:idRef="R_rx_93ae42951f" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_3_1_3_29" groups:id="G_group_ec_3_1_3_29" groups:name="EC 3.1.3.29 N-acylneuraminate-9-phosphatase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_3_1_3_29</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_3_1_3_29">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/3.1.3.29" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR19198" groups:idRef="R_rx_93ae42951f" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_3_1_3_9" groups:id="G_group_ec_3_1_3_9" groups:name="EC 3.1.3.9 glucose-6-phosphatase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_3_1_3_9</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_3_1_3_9">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/3.1.3.9" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR37041" groups:idRef="R_rx_b55563ec26" />
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_4_1_2_13" groups:id="G_group_ec_4_1_2_13" groups:name="EC 4.1.2.13 fructose-bisphosphate aldolase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_4_1_2_13</html:p>
+            <html:p>preferred_for: rx_2c94bd36b3</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_4_1_2_13">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/4.1.2.13" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR344" groups:idRef="R_rx_2c94bd36b3" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_4_1_2_40" groups:id="G_group_ec_4_1_2_40" groups:name="EC 4.1.2.40 tagatose-bisphosphate aldolase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_4_1_2_40</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_4_1_2_40">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/4.1.2.40" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR344" groups:idRef="R_rx_2c94bd36b3" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_4_2_1_11" groups:id="G_group_ec_4_2_1_11" groups:name="EC 4.2.1.11 phosphopyruvate hydratase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_4_2_1_11</html:p>
+            <html:p>preferred_for: rx_c666ac0a6e</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_4_2_1_11">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/4.2.1.11" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR3384" groups:idRef="R_rx_c666ac0a6e" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_5_2_1_8" groups:id="G_group_ec_5_2_1_8" groups:name="EC 5.2.1.8 peptidylprolyl isomerase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_5_2_1_8</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_5_2_1_8">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.2.1.8" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR219" groups:idRef="R_rx_9ab9f47716" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_5_3_1_1" groups:id="G_group_ec_5_3_1_1" groups:name="EC 5.3.1.1 triose-phosphate isomerase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_5_3_1_1</html:p>
+            <html:p>preferred_for: rx_9ab9f47716</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_5_3_1_1">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.3.1.1" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BR219" groups:idRef="R_rx_9ab9f47716" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_5_3_1_8" groups:id="G_group_ec_5_3_1_8" groups:name="EC 5.3.1.8 mannose-6-phosphate isomerase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_5_3_1_8</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_5_3_1_8">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.3.1.8" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BS1067" groups:idRef="R_rx_b4196404be" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_5_3_1_9" groups:id="G_group_ec_5_3_1_9" groups:name="EC 5.3.1.9 glucose-6-phosphate isomerase" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_5_3_1_9</html:p>
+            <html:p>preferred_for: rx_b4196404be</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_5_3_1_9">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.3.1.9" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="BS1067" groups:idRef="R_rx_b4196404be" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_5_4_2_11" groups:id="G_group_ec_5_4_2_11" groups:name="EC 5.4.2.11 phosphoglycerate mutase (2,3-diphosphoglycerate-dependent)" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_5_4_2_11</html:p>
+            <html:p>preferred_for: rx_NODE_8573</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_5_4_2_11">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.4.2.11" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="NODE_8573" groups:idRef="R_rx_NODE_8573" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_ec_5_4_2_12" groups:id="G_group_ec_5_4_2_12" groups:name="EC 5.4.2.12 phosphoglycerate mutase (2,3-diphosphoglycerate-independent)" groups:kind="classification">
+        <notes>
+          <html:html>
+            <html:p>ec_id: ec_5_4_2_12</html:p>
+            <html:p>preferred_for: rx_NODE_2849</html:p>
+          </html:html>
+        </notes>
+        <annotation>
+          <rdf:RDF>
+            <rdf:Description rdf:about="#meta_G_group_ec_5_4_2_12">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ec-code/5.4.2.12" />
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:name="NODE_2849" groups:idRef="R_rx_NODE_2849" />
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="meta_G_group_pw_39834c18" sboTerm="SBO:0000633" groups:id="G_group_pw_39834c18" groups:name="glycolysis" groups:kind="partonomy">
+        <groups:listOfMembers>
+          <groups:member groups:name="BR47815" groups:idRef="R_rx_8ac1b614ad" />
+          <groups:member groups:name="BR37044" groups:idRef="R_rx_e5d6b78bbc" />
+          <groups:member groups:name="BS357047" groups:idRef="R_rx_ef72af6ccc" />
+          <groups:member groups:name="NODE_2849" groups:idRef="R_rx_NODE_2849" />
+          <groups:member groups:name="NODE_8708" groups:idRef="R_rx_NODE_8708" />
+          <groups:member groups:name="BR47759" groups:idRef="R_rx_92735d0939" />
+          <groups:member groups:name="BR19198" groups:idRef="R_rx_93ae42951f" />
+          <groups:member groups:name="BR47778" groups:idRef="R_rx_5cc6fc2351" />
+          <groups:member groups:name="NODE_8284" groups:idRef="R_rx_NODE_8284" />
+          <groups:member groups:name="BS422744" groups:idRef="R_rx_f774c379a4" />
+          <groups:member groups:name="BR219" groups:idRef="R_rx_9ab9f47716" />
+          <groups:member groups:name="NODE_8573" groups:idRef="R_rx_NODE_8573" />
+          <groups:member groups:name="BS1067" groups:idRef="R_rx_b4196404be" />
+          <groups:member groups:name="BR1125-a" groups:idRef="R_rx_d81e1761ef" />
+          <groups:member groups:name="BR344" groups:idRef="R_rx_2c94bd36b3" />
+          <groups:member groups:name="NODE_2304" groups:idRef="R_rx_NODE_2304" />
+          <groups:member groups:name="BR37041" groups:idRef="R_rx_b55563ec26" />
+          <groups:member groups:name="BR3384" groups:idRef="R_rx_c666ac0a6e" />
+        </groups:listOfMembers>
+      </groups:group>
+    </groups:listOfGroups>
+  <layout:listOfLayouts><layout:layout layout:id="layout_1" layout:name="glycolysis"><layout:dimensions layout:width="1269.32" layout:height="686.88" /><layout:listOfSpeciesGlyphs><layout:speciesGlyph layout:id="sg_1_0" layout:species="M_mt_5068da0e84"><layout:boundingBox><layout:position layout:x="413.66" layout:y="303.16" /><layout:dimensions layout:width="118.43" layout:height="13.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_1" layout:species="M_mt_dfef3a54ea"><layout:boundingBox><layout:position layout:x="760.46" layout:y="141.79" /><layout:dimensions layout:width="97.53" layout:height="13.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_2" layout:species="M_mt_4d404b9e9f"><layout:boundingBox><layout:position layout:x="457.12" layout:y="40.03" /><layout:dimensions layout:width="124.61" layout:height="13.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_3" layout:species="M_mt_2e9e6d89f7"><layout:boundingBox><layout:position layout:x="173.54" layout:y="543.75" /><layout:dimensions layout:width="108.59" layout:height="16.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_4" layout:species="M_mt_cbb28d5a93"><layout:boundingBox><layout:position layout:x="611.25" layout:y="489.88" /><layout:dimensions layout:width="194.23" layout:height="19.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_5" layout:species="M_mt_1137269b50"><layout:boundingBox><layout:position layout:x="456.69" layout:y="489.88" /><layout:dimensions layout:width="119.69" layout:height="19.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_6" layout:species="M_mt_759cb00988"><layout:boundingBox><layout:position layout:x="526.04" layout:y="222.75" /><layout:dimensions layout:width="131.50" layout:height="16.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_7" layout:species="M_mt_dfef3a54ea"><layout:boundingBox><layout:position layout:x="539.42" layout:y="118.00" /><layout:dimensions layout:width="111.21" layout:height="16.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_8" layout:species="M_mt_5dbc9a97f4"><layout:boundingBox><layout:position layout:x="1105.84" layout:y="118.00" /><layout:dimensions layout:width="53.00" layout:height="16.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_9" layout:species="M_mt_c40006a428"><layout:boundingBox><layout:position layout:x="1001.98" layout:y="222.75" /><layout:dimensions layout:width="109.14" layout:height="16.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_10" layout:species="M_mt_4d404b9e9f"><layout:boundingBox><layout:position layout:x="523.77" layout:y="323.75" /><layout:dimensions layout:width="177.35" layout:height="19.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_11" layout:species="M_mt_5068da0e84"><layout:boundingBox><layout:position layout:x="545.01" layout:y="20.00" /><layout:dimensions layout:width="134.89" layout:height="16.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_12" layout:species="M_mt_1a48495501"><layout:boundingBox><layout:position layout:x="138.16" layout:y="650.38" /><layout:dimensions layout:width="103.46" layout:height="16.50" /></layout:boundingBox></layout:speciesGlyph><layout:speciesGlyph layout:id="sg_1_13" layout:species="M_mt_7dd2d3b76f"><layout:boundingBox><layout:position layout:x="20.00" layout:y="491.38" /><layout:dimensions layout:width="48.89" layout:height="16.50" /></layout:boundingBox></layout:speciesGlyph></layout:listOfSpeciesGlyphs><layout:listOfReactionGlyphs><layout:reactionGlyph layout:id="rg_1_14" layout:reaction="R_rx_2c94bd36b3"><layout:boundingBox><layout:position layout:x="554.06" layout:y="276.88" /><layout:dimensions layout:width="116.79" layout:height="13.00" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_18" layout:speciesGlyph="sg_1_6" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="591.79" layout:y="231.00" /><layout:end layout:x="612.45" layout:y="283.38" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_32" layout:speciesGlyph="sg_1_10" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="612.45" layout:y="283.38" /><layout:end layout:x="612.45" layout:y="333.50" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_34" layout:speciesGlyph="sg_1_0" layout:role="sideproduct"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="612.45" layout:y="283.38" /><layout:end layout:x="472.88" layout:y="309.91" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_15" layout:reaction="R_rx_5cc6fc2351"><layout:boundingBox><layout:position layout:x="66.20" layout:y="541.88" /><layout:dimensions layout:width="64.00" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_10" layout:speciesGlyph="sg_1_13" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="44.44" layout:y="499.63" /><layout:end layout:x="98.20" layout:y="552.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_11" layout:speciesGlyph="sg_1_12" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="98.20" layout:y="552.00" /><layout:end layout:x="136.60" layout:y="606.25" /></layout:curveSegment><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="136.60" layout:y="606.25" /><layout:end layout:x="189.90" layout:y="658.63" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_16" layout:reaction="R_rx_8ac1b614ad"><layout:boundingBox><layout:position layout:x="527.63" layout:y="168.50" /><layout:dimensions layout:width="134.78" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_19" layout:speciesGlyph="sg_1_7" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="595.02" layout:y="126.25" /><layout:end layout:x="595.02" layout:y="178.62" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_20" layout:speciesGlyph="sg_1_6" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="595.02" layout:y="178.62" /><layout:end layout:x="591.79" layout:y="231.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_17" layout:reaction="R_rx_92735d0939"><layout:boundingBox><layout:position layout:x="1160.48" layout:y="168.50" /><layout:dimensions layout:width="88.85" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_21" layout:speciesGlyph="sg_1_8" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="1132.34" layout:y="126.25" /><layout:end layout:x="1204.90" layout:y="178.62" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_22" layout:speciesGlyph="sg_1_9" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="1204.90" layout:y="178.62" /><layout:end layout:x="1056.55" layout:y="231.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_18" layout:reaction="R_rx_93ae42951f"><layout:boundingBox><layout:position layout:x="426.71" layout:y="273.25" /><layout:dimensions layout:width="93.35" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_23" layout:speciesGlyph="sg_1_6" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="591.79" layout:y="231.00" /><layout:end layout:x="473.38" layout:y="283.38" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_24" layout:speciesGlyph="sg_1_7" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="473.38" layout:y="283.38" /><layout:end layout:x="399.54" layout:y="231.00" /></layout:curveSegment><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="399.54" layout:y="231.00" /><layout:end layout:x="328.94" layout:y="178.62" /></layout:curveSegment><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="328.94" layout:y="178.62" /><layout:end layout:x="595.02" layout:y="126.25" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_19" layout:reaction="R_rx_9ab9f47716"><layout:boundingBox><layout:position layout:x="559.98" layout:y="70.50" /><layout:dimensions layout:width="104.95" layout:height="13.00" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_33" layout:speciesGlyph="sg_1_11" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="612.45" layout:y="77.00" /><layout:end layout:x="612.45" layout:y="28.25" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_36" layout:speciesGlyph="sg_1_2" layout:role="sidesubstrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="519.43" layout:y="46.78" /><layout:end layout:x="612.45" layout:y="77.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_20" layout:reaction="R_rx_NODE_2304"><layout:boundingBox><layout:position layout:x="329.11" layout:y="328.51" /><layout:dimensions layout:width="138.20" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_2" layout:speciesGlyph="sg_1_10" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="612.45" layout:y="333.50" /><layout:end layout:x="398.21" layout:y="338.63" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_3" layout:speciesGlyph="sg_1_5" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="398.21" layout:y="338.63" /><layout:end layout:x="516.54" layout:y="499.63" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_21" layout:reaction="R_rx_NODE_2849"><layout:boundingBox><layout:position layout:x="102.89" layout:y="493.13" /><layout:dimensions layout:width="134.83" layout:height="13.00" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_12" layout:speciesGlyph="sg_1_3" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="170.30" layout:y="499.63" /><layout:end layout:x="227.83" layout:y="552.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_16" layout:speciesGlyph="sg_1_5" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="516.54" layout:y="499.63" /><layout:end layout:x="170.30" layout:y="499.63" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_22" layout:reaction="R_rx_NODE_8284"><layout:boundingBox><layout:position layout:x="536.31" layout:y="406.18" /><layout:dimensions layout:width="138.20" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_4" layout:speciesGlyph="sg_1_10" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="612.45" layout:y="333.50" /><layout:end layout:x="605.41" layout:y="416.31" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_5" layout:speciesGlyph="sg_1_5" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="605.41" layout:y="416.31" /><layout:end layout:x="516.54" layout:y="499.63" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_23" layout:reaction="R_rx_NODE_8573"><layout:boundingBox><layout:position layout:x="257.57" layout:y="507.27" /><layout:dimensions layout:width="134.83" layout:height="13.00" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_13" layout:speciesGlyph="sg_1_3" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="324.98" layout:y="513.77" /><layout:end layout:x="227.83" layout:y="552.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_17" layout:speciesGlyph="sg_1_5" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="516.54" layout:y="499.63" /><layout:end layout:x="324.98" layout:y="513.77" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_24" layout:reaction="R_rx_NODE_8708"><layout:boundingBox><layout:position layout:x="447.44" layout:y="378.75" /><layout:dimensions layout:width="138.20" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_0" layout:speciesGlyph="sg_1_10" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="CubicBezier"><layout:start layout:x="612.45" layout:y="333.50" /><layout:end layout:x="516.54" layout:y="388.88" /><layout:basePoint1 layout:x="572.88" layout:y="333.50" /><layout:basePoint2 layout:x="536.32" layout:y="354.61" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_1" layout:speciesGlyph="sg_1_5" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="CubicBezier"><layout:start layout:x="516.54" layout:y="388.88" /><layout:end layout:x="516.54" layout:y="499.63" /><layout:basePoint1 layout:x="496.75" layout:y="423.14" /><layout:basePoint2 layout:x="496.75" layout:y="465.36" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_25" layout:reaction="R_rx_b4196404be"><layout:boundingBox><layout:position layout:x="839.84" layout:y="172.12" /><layout:dimensions layout:width="119.26" layout:height="13.00" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_25" layout:speciesGlyph="sg_1_9" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="899.47" layout:y="178.62" /><layout:end layout:x="1056.55" layout:y="231.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_35" layout:speciesGlyph="sg_1_1" layout:role="sidesubstrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="809.22" layout:y="148.54" /><layout:end layout:x="899.47" layout:y="178.62" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_26" layout:reaction="R_rx_b55563ec26"><layout:boundingBox><layout:position layout:x="993.10" layout:y="168.50" /><layout:dimensions layout:width="133.38" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_26" layout:speciesGlyph="sg_1_8" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="1132.34" layout:y="126.25" /><layout:end layout:x="1059.79" layout:y="178.62" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_27" layout:speciesGlyph="sg_1_9" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="1059.79" layout:y="178.62" /><layout:end layout:x="1056.55" layout:y="231.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_27" layout:reaction="R_rx_c666ac0a6e"><layout:boundingBox><layout:position layout:x="174.60" layout:y="596.13" /><layout:dimensions layout:width="106.47" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_14" layout:speciesGlyph="sg_1_3" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="227.83" layout:y="552.00" /><layout:end layout:x="227.83" layout:y="606.25" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_15" layout:speciesGlyph="sg_1_12" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="227.83" layout:y="606.25" /><layout:end layout:x="189.90" layout:y="658.63" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_28" layout:reaction="R_rx_d81e1761ef"><layout:boundingBox><layout:position layout:x="654.78" layout:y="378.75" /><layout:dimensions layout:width="107.17" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_6" layout:speciesGlyph="sg_1_10" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="CubicBezier"><layout:start layout:x="612.45" layout:y="333.50" /><layout:end layout:x="708.36" layout:y="388.88" /><layout:basePoint1 layout:x="652.02" layout:y="333.50" /><layout:basePoint2 layout:x="688.58" layout:y="354.61" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_7" layout:speciesGlyph="sg_1_4" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="CubicBezier"><layout:start layout:x="708.36" layout:y="388.88" /><layout:end layout:x="708.36" layout:y="499.63" /><layout:basePoint1 layout:x="728.15" layout:y="423.14" /><layout:basePoint2 layout:x="728.15" layout:y="465.36" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_29" layout:reaction="R_rx_e5d6b78bbc"><layout:boundingBox><layout:position layout:x="374.59" layout:y="186.98" /><layout:dimensions layout:width="126.69" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_28" layout:speciesGlyph="sg_1_7" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="595.02" layout:y="126.25" /><layout:end layout:x="437.94" layout:y="197.10" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_29" layout:speciesGlyph="sg_1_6" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="437.94" layout:y="197.10" /><layout:end layout:x="591.79" layout:y="231.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_30" layout:reaction="R_rx_ef72af6ccc"><layout:boundingBox><layout:position layout:x="696.41" layout:y="168.50" /><layout:dimensions layout:width="109.43" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_30" layout:speciesGlyph="sg_1_7" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="595.02" layout:y="126.25" /><layout:end layout:x="751.13" layout:y="178.62" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_31" layout:speciesGlyph="sg_1_6" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="LineSegment"><layout:start layout:x="751.13" layout:y="178.62" /><layout:end layout:x="591.79" layout:y="231.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph><layout:reactionGlyph layout:id="rg_1_31" layout:reaction="R_rx_f774c379a4"><layout:boundingBox><layout:position layout:x="564.71" layout:y="544.88" /><layout:dimensions layout:width="95.49" layout:height="20.25" /></layout:boundingBox><layout:listOfSpeciesReferenceGlyphs><layout:speciesReferenceGlyph layout:id="srg_1_8" layout:speciesGlyph="sg_1_4" layout:role="substrate"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="CubicBezier"><layout:start layout:x="708.36" layout:y="499.63" /><layout:end layout:x="612.45" layout:y="555.00" /><layout:basePoint1 layout:x="688.58" layout:y="533.89" /><layout:basePoint2 layout:x="652.02" layout:y="555.00" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph><layout:speciesReferenceGlyph layout:id="srg_1_9" layout:speciesGlyph="sg_1_5" layout:role="product"><layout:curve><layout:listOfCurveSegments><layout:curveSegment xsi:type="CubicBezier"><layout:start layout:x="612.45" layout:y="555.00" /><layout:end layout:x="516.54" layout:y="499.63" /><layout:basePoint1 layout:x="572.88" layout:y="555.00" /><layout:basePoint2 layout:x="536.32" layout:y="533.89" /></layout:curveSegment></layout:listOfCurveSegments></layout:curve></layout:speciesReferenceGlyph></layout:listOfSpeciesReferenceGlyphs></layout:reactionGlyph></layout:listOfReactionGlyphs><layout:listOfTextGlyphs><layout:textGlyph layout:id="tg_1_0" layout:graphicalObject="sg_1_0" layout:originOfText="M_mt_5068da0e84"><layout:boundingBox><layout:position layout:x="413.66" layout:y="303.16" /><layout:dimensions layout:width="118.43" layout:height="13.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_1" layout:graphicalObject="sg_1_1" layout:originOfText="M_mt_dfef3a54ea"><layout:boundingBox><layout:position layout:x="760.46" layout:y="141.79" /><layout:dimensions layout:width="97.53" layout:height="13.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_2" layout:graphicalObject="sg_1_2" layout:originOfText="M_mt_4d404b9e9f"><layout:boundingBox><layout:position layout:x="457.12" layout:y="40.03" /><layout:dimensions layout:width="124.61" layout:height="13.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_3" layout:graphicalObject="sg_1_3" layout:originOfText="M_mt_2e9e6d89f7"><layout:boundingBox><layout:position layout:x="173.54" layout:y="543.75" /><layout:dimensions layout:width="108.59" layout:height="16.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_4" layout:graphicalObject="sg_1_4" layout:originOfText="M_mt_cbb28d5a93"><layout:boundingBox><layout:position layout:x="611.25" layout:y="489.88" /><layout:dimensions layout:width="194.23" layout:height="19.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_5" layout:graphicalObject="sg_1_5" layout:originOfText="M_mt_1137269b50"><layout:boundingBox><layout:position layout:x="456.69" layout:y="489.88" /><layout:dimensions layout:width="119.69" layout:height="19.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_6" layout:graphicalObject="sg_1_6" layout:originOfText="M_mt_759cb00988"><layout:boundingBox><layout:position layout:x="526.04" layout:y="222.75" /><layout:dimensions layout:width="131.50" layout:height="16.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_7" layout:graphicalObject="sg_1_7" layout:originOfText="M_mt_dfef3a54ea"><layout:boundingBox><layout:position layout:x="539.42" layout:y="118.00" /><layout:dimensions layout:width="111.21" layout:height="16.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_8" layout:graphicalObject="sg_1_8" layout:originOfText="M_mt_5dbc9a97f4"><layout:boundingBox><layout:position layout:x="1105.84" layout:y="118.00" /><layout:dimensions layout:width="53.00" layout:height="16.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_9" layout:graphicalObject="sg_1_9" layout:originOfText="M_mt_c40006a428"><layout:boundingBox><layout:position layout:x="1001.98" layout:y="222.75" /><layout:dimensions layout:width="109.14" layout:height="16.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_10" layout:graphicalObject="sg_1_10" layout:originOfText="M_mt_4d404b9e9f"><layout:boundingBox><layout:position layout:x="523.77" layout:y="323.75" /><layout:dimensions layout:width="177.35" layout:height="19.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_11" layout:graphicalObject="sg_1_11" layout:originOfText="M_mt_5068da0e84"><layout:boundingBox><layout:position layout:x="545.01" layout:y="20.00" /><layout:dimensions layout:width="134.89" layout:height="16.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_12" layout:graphicalObject="sg_1_12" layout:originOfText="M_mt_1a48495501"><layout:boundingBox><layout:position layout:x="138.16" layout:y="650.38" /><layout:dimensions layout:width="103.46" layout:height="16.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tg_1_13" layout:graphicalObject="sg_1_13" layout:originOfText="M_mt_7dd2d3b76f"><layout:boundingBox><layout:position layout:x="20.00" layout:y="491.38" /><layout:dimensions layout:width="48.89" layout:height="16.50" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_14" layout:graphicalObject="rg_1_14" layout:text="fructose-bisphosphate aldolase"><layout:boundingBox><layout:position layout:x="554.06" layout:y="276.88" /><layout:dimensions layout:width="116.79" layout:height="13.00" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_15" layout:graphicalObject="rg_1_15" layout:text="pyruvate kinase | ATP → ADP"><layout:boundingBox><layout:position layout:x="66.20" layout:y="541.88" /><layout:dimensions layout:width="64.00" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_16" layout:graphicalObject="rg_1_16" layout:text="diphosphate-fructose-6-phosphate 1-phosphotransferase | diphosphate → phosphate"><layout:boundingBox><layout:position layout:x="527.63" layout:y="168.50" /><layout:dimensions layout:width="134.78" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_17" layout:graphicalObject="rg_1_17" layout:text="glucose-6-phosphatase | ATP → ADP"><layout:boundingBox><layout:position layout:x="1160.48" layout:y="168.50" /><layout:dimensions layout:width="88.85" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_18" layout:graphicalObject="rg_1_18" layout:text="fructose-bisphosphatase | H2O → phosphate"><layout:boundingBox><layout:position layout:x="426.71" layout:y="273.25" /><layout:dimensions layout:width="93.35" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_19" layout:graphicalObject="rg_1_19" layout:text="triose-phosphate isomerase"><layout:boundingBox><layout:position layout:x="559.98" layout:y="70.50" /><layout:dimensions layout:width="104.95" layout:height="13.00" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_20" layout:graphicalObject="rg_1_20" layout:text="glyceraldehyde-3-phosphate dehydrogenase [NAD(P)+] | NAD+ → NADH"><layout:boundingBox><layout:position layout:x="329.11" layout:y="328.51" /><layout:dimensions layout:width="138.20" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_21" layout:graphicalObject="rg_1_21" layout:text="phosphoglycerate mutase (2,3-diphosphoglycerate-independent)"><layout:boundingBox><layout:position layout:x="102.89" layout:y="493.13" /><layout:dimensions layout:width="134.83" layout:height="13.00" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_22" layout:graphicalObject="rg_1_22" layout:text="glyceraldehyde-3-phosphate dehydrogenase (ferredoxin) | oxidized ferredoxin → reduced ferredoxin"><layout:boundingBox><layout:position layout:x="536.31" layout:y="406.18" /><layout:dimensions layout:width="138.20" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_23" layout:graphicalObject="rg_1_23" layout:text="phosphoglycerate mutase (2,3-diphosphoglycerate-dependent)"><layout:boundingBox><layout:position layout:x="257.57" layout:y="507.27" /><layout:dimensions layout:width="134.83" layout:height="13.00" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_24" layout:graphicalObject="rg_1_24" layout:text="glyceraldehyde-3-phosphate dehydrogenase (NADP+) | NADP+ → NADPH"><layout:boundingBox><layout:position layout:x="447.44" layout:y="378.75" /><layout:dimensions layout:width="138.20" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_25" layout:graphicalObject="rg_1_25" layout:text="glucose-6-phosphate isomerase"><layout:boundingBox><layout:position layout:x="839.84" layout:y="172.12" /><layout:dimensions layout:width="119.26" layout:height="13.00" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_26" layout:graphicalObject="rg_1_26" layout:text="ADP-specific glucose/glucosamine kinase | ADP → AMP"><layout:boundingBox><layout:position layout:x="993.10" layout:y="168.50" /><layout:dimensions layout:width="133.38" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_27" layout:graphicalObject="rg_1_27" layout:text="phosphopyruvate hydratase |  → H2O"><layout:boundingBox><layout:position layout:x="174.60" layout:y="596.13" /><layout:dimensions layout:width="106.47" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_28" layout:graphicalObject="rg_1_28" layout:text="BR1125-a | phosphate + NAD+ → NADH + H+"><layout:boundingBox><layout:position layout:x="654.78" layout:y="378.75" /><layout:dimensions layout:width="107.17" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_29" layout:graphicalObject="rg_1_29" layout:text="ADP-specific phosphofructokinase | ADP → AMP"><layout:boundingBox><layout:position layout:x="374.59" layout:y="186.98" /><layout:dimensions layout:width="126.69" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_30" layout:graphicalObject="rg_1_30" layout:text="tagatose-6-phosphate kinase | ATP → ADP"><layout:boundingBox><layout:position layout:x="696.41" layout:y="168.50" /><layout:dimensions layout:width="109.43" layout:height="20.25" /></layout:boundingBox></layout:textGlyph><layout:textGlyph layout:id="tgr_1_31" layout:graphicalObject="rg_1_31" layout:text="phosphoglycerate kinase | ADP → ATP"><layout:boundingBox><layout:position layout:x="564.71" layout:y="544.88" /><layout:dimensions layout:width="95.49" layout:height="20.25" /></layout:boundingBox></layout:textGlyph></layout:listOfTextGlyphs></layout:layout></layout:listOfLayouts></model>
+</sbml>

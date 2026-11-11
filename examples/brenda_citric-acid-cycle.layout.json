@@ -1,0 +1,1321 @@
+{
+ "drawings": [
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_fd1ad384ec"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:2-oxoglutarate",
+     "target": "R:R_rx_fd1ad384ec"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinyl-CoA",
+      "R:R_rx_fd1ad384ec"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_fd1ad384ec",
+     "target": "M:succinyl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_0aac87f3c2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2-oxoglutarate",
+     "target": "R:R_rx_0aac87f3c2"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinyl-CoA",
+      "R:R_rx_0aac87f3c2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_0aac87f3c2",
+     "target": "M:succinyl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinyl-CoA",
+      "R:R_rx_2432fef40d"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:succinyl-CoA",
+     "target": "R:R_rx_2432fef40d"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_2432fef40d"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_2432fef40d",
+     "target": "M:succinate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinyl-CoA",
+      "R:R_rx_e5d9b4b716"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:succinyl-CoA",
+     "target": "R:R_rx_e5d9b4b716"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_e5d9b4b716"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_e5d9b4b716",
+     "target": "M:succinate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_2685246bd5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:succinate",
+     "target": "R:R_rx_2685246bd5"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinyl-CoA",
+      "R:R_rx_2685246bd5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_2685246bd5",
+     "target": "M:succinyl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_f64083be68"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:succinate",
+     "target": "R:R_rx_f64083be68"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinyl-CoA",
+      "R:R_rx_f64083be68"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_f64083be68",
+     "target": "M:succinyl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:isocitrate",
+      "R:R_rx_3726ad3344"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:isocitrate",
+     "target": "R:R_rx_3726ad3344"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_3726ad3344"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_3726ad3344",
+     "target": "M:2-oxoglutarate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:isocitrate",
+      "R:R_rx_bf6797eac2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:isocitrate",
+     "target": "R:R_rx_bf6797eac2"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_bf6797eac2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_bf6797eac2",
+     "target": "M:2-oxoglutarate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:citrate",
+      "R:R_rx_47da2f6af0"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:citrate",
+     "target": "R:R_rx_47da2f6af0"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:cis-aconitate",
+      "R:R_rx_47da2f6af0"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_47da2f6af0",
+     "target": "M:cis-aconitate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_4a2da21816"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:succinate",
+     "target": "R:R_rx_4a2da21816"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:fumarate",
+      "R:R_rx_4a2da21816"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_4a2da21816",
+     "target": "M:fumarate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_dee9b5c8f5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:succinate",
+     "target": "R:R_rx_dee9b5c8f5"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:fumarate",
+      "R:R_rx_dee9b5c8f5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_dee9b5c8f5",
+     "target": "M:fumarate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:oxaloacetate",
+      "R:R_rx_681ee1ac1b"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:oxaloacetate",
+     "target": "R:R_rx_681ee1ac1b"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:citrate",
+      "R:R_rx_681ee1ac1b"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_681ee1ac1b",
+     "target": "M:citrate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:oxaloacetate",
+      "R:R_rx_b3a6f5a2c0"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:oxaloacetate",
+     "target": "R:R_rx_b3a6f5a2c0"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:citrate",
+      "R:R_rx_b3a6f5a2c0"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b3a6f5a2c0",
+     "target": "M:citrate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:(S)-malate",
+      "R:R_rx_6d4d806e97"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:(S)-malate",
+     "target": "R:R_rx_6d4d806e97"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:oxaloacetate",
+      "R:R_rx_6d4d806e97"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_6d4d806e97",
+     "target": "M:oxaloacetate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:(S)-malate",
+      "R:R_rx_d24528dbec"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(S)-malate",
+     "target": "R:R_rx_d24528dbec"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:oxaloacetate",
+      "R:R_rx_d24528dbec"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_d24528dbec",
+     "target": "M:oxaloacetate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:(S)-malate",
+      "R:R_rx_b53605d7d2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(S)-malate",
+     "target": "R:R_rx_b53605d7d2"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:oxaloacetate",
+      "R:R_rx_b53605d7d2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b53605d7d2",
+     "target": "M:oxaloacetate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:(S)-malate",
+      "R:R_rx_d19c8ae89f"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:(S)-malate",
+     "target": "R:R_rx_d19c8ae89f"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:fumarate",
+      "R:R_rx_d19c8ae89f"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_d19c8ae89f",
+     "target": "M:fumarate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:isocitrate",
+      "R:R_rx_f203bb67a8"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:isocitrate",
+     "target": "R:R_rx_f203bb67a8"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:cis-aconitate",
+      "R:R_rx_f203bb67a8"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_f203bb67a8",
+     "target": "M:cis-aconitate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:isocitrate",
+      "R:R_rx_378a340be1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:isocitrate",
+     "target": "R:R_rx_378a340be1"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_378a340be1"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_378a340be1",
+     "target": "M:succinate"
+    },
+    {
+     "arrow": true,
+     "chain": 100044,
+     "own": [
+      "M:(3S)-citryl-CoA",
+      "R:R_rx_12438e6346"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(3S)-citryl-CoA",
+     "target": "R:R_rx_12438e6346"
+    },
+    {
+     "arrow": true,
+     "chain": 100045,
+     "own": [
+      "M:(3S)-citryl-CoA",
+      "R:R_rx_611050f494"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_611050f494",
+     "target": "M:(3S)-citryl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": 100046,
+     "own": [
+      "M:(3S)-citryl-CoA",
+      "R:R_rx_e568d43995"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_e568d43995",
+     "target": "M:(3S)-citryl-CoA"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:citrate",
+      "R:R_rx_611050f494"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:citrate",
+     "target": "R:R_rx_611050f494"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:citrate",
+      "R:R_rx_e568d43995"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:citrate",
+     "target": "R:R_rx_e568d43995"
+    },
+    {
+     "arrow": true,
+     "chain": 200048,
+     "own": [
+      "M:Maleate",
+      "R:R_rx_6aa5564e42"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:Maleate",
+     "target": "R:R_rx_6aa5564e42"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:fumarate",
+      "R:R_rx_6aa5564e42"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_6aa5564e42",
+     "target": "M:fumarate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:acetate",
+      "R:R_rx_2432fef40d"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:acetate",
+     "target": "R:R_rx_2432fef40d"
+    },
+    {
+     "arrow": true,
+     "chain": 400048,
+     "own": [
+      "M:acetyl-CoA",
+      "R:R_rx_NODE_8880"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:acetyl-CoA",
+     "target": "R:R_rx_NODE_8880"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:(S)-malate",
+      "R:R_rx_NODE_8880"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_8880",
+     "target": "M:(S)-malate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:glyoxylate",
+      "R:R_rx_378a340be1"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_378a340be1",
+     "target": "M:glyoxylate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_12438e6346:0",
+      "R:R_rx_12438e6346"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_12438e6346",
+     "target": "A:R_rx_12438e6346:0"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_2432fef40d:1",
+      "R:R_rx_2432fef40d"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_2432fef40d",
+     "target": "A:R_rx_2432fef40d:1"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_681ee1ac1b:0",
+      "R:R_rx_681ee1ac1b"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_681ee1ac1b:0",
+     "target": "R:R_rx_681ee1ac1b"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_NODE_8880:0",
+      "R:R_rx_NODE_8880"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_NODE_8880:0",
+     "target": "R:R_rx_NODE_8880"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_b3a6f5a2c0:0",
+      "R:R_rx_b3a6f5a2c0"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_b3a6f5a2c0:0",
+     "target": "R:R_rx_b3a6f5a2c0"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_e568d43995:0",
+      "R:R_rx_e568d43995"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_e568d43995:0",
+     "target": "R:R_rx_e568d43995"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_e568d43995:1",
+      "R:R_rx_e568d43995"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_e568d43995",
+     "target": "A:R_rx_e568d43995:1"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_e5d9b4b716:0",
+      "R:R_rx_e5d9b4b716"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_e5d9b4b716:0",
+     "target": "R:R_rx_e5d9b4b716"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_e5d9b4b716:1",
+      "R:R_rx_e5d9b4b716"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_e5d9b4b716",
+     "target": "A:R_rx_e5d9b4b716:1"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:cut0",
+      "R:R_rx_12438e6346"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_12438e6346",
+     "target": "A:cut0"
+    }
+   ],
+   "name": "",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_12438e6346:0",
+     "kind": "alias",
+     "label": "acetyl-CoA",
+     "sbml_id": "M_mt_4cb0ce6646",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 49.948,
+     "x": 625.2787380500907,
+     "y": -7.754130873660628
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_2432fef40d:1",
+     "kind": "alias",
+     "label": "acetyl-CoA",
+     "sbml_id": "M_mt_4cb0ce6646",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 49.948,
+     "x": 588.0506624990392,
+     "y": -882.6646970063458
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_681ee1ac1b:0",
+     "kind": "alias",
+     "label": "acetyl-CoA",
+     "sbml_id": "M_mt_4cb0ce6646",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 49.948,
+     "x": 650.0434637075763,
+     "y": -386.8160382782244
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_NODE_8880:0",
+     "kind": "alias",
+     "label": "glyoxylate",
+     "sbml_id": "M_mt_921fde0567",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 47.942,
+     "x": 1049.0913190574847,
+     "y": -595.8106096287581
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_b3a6f5a2c0:0",
+     "kind": "alias",
+     "label": "acetyl-CoA",
+     "sbml_id": "M_mt_4cb0ce6646",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 49.948,
+     "x": 675.2302632169959,
+     "y": -275.5611251762537
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_e568d43995:0",
+     "kind": "alias",
+     "label": "acetyl-CoA",
+     "sbml_id": "M_mt_4cb0ce6646",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 49.948,
+     "x": 783.7132481315381,
+     "y": -173.812051138907
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_e568d43995:1",
+     "kind": "alias",
+     "label": "acetate",
+     "sbml_id": "M_mt_ddadea339f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 37.577,
+     "x": 774.1988354673736,
+     "y": -211.45558748166815
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_e5d9b4b716:0",
+     "kind": "alias",
+     "label": "acetoacetate",
+     "sbml_id": "M_mt_4dc40ec0d7",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 58.441,
+     "x": 571.2457189509644,
+     "y": -1103.1029474504285
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_e5d9b4b716:1",
+     "kind": "alias",
+     "label": "acetoacetyl-CoA",
+     "sbml_id": "M_mt_d637213a50",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 70.812,
+     "x": 367.9922217984813,
+     "y": -985.1304900707482
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut0",
+     "kind": "alias",
+     "label": "oxaloacetate",
+     "sbml_id": "M_mt_e7c775ae46",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 57.679,
+     "x": 706.1732329546043,
+     "y": -65.04858088234124
+    },
+    {
+     "h": 16.5,
+     "id": "M:(3S)-citryl-CoA",
+     "kind": "met",
+     "label": "(3S)-citryl-CoA",
+     "sbml_id": "M_mt_06a6d0a9ed",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 72.974,
+     "x": 640.1398467551707,
+     "y": -121.27663101714762
+    },
+    {
+     "h": 19.5,
+     "id": "M:(S)-malate",
+     "kind": "core",
+     "label": "(S)-malate",
+     "sbml_id": "M_mt_397e4b29bd",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 69.153,
+     "x": 887.9015015586092,
+     "y": -547.4761046298826
+    },
+    {
+     "h": 19.5,
+     "id": "M:2-oxoglutarate",
+     "kind": "core",
+     "label": "2-oxoglutarate",
+     "sbml_id": "M_mt_ea23b49b7a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 92.374,
+     "x": 292.78329706742807,
+     "y": -764.0814169346193
+    },
+    {
+     "h": 16.5,
+     "id": "M:Maleate",
+     "kind": "met",
+     "label": "Maleate",
+     "sbml_id": "M_mt_28dfe657d4",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 44.619,
+     "x": 952.7303330318236,
+     "y": -715.3314169346195
+    },
+    {
+     "h": 16.5,
+     "id": "M:acetate",
+     "kind": "met",
+     "label": "acetate",
+     "sbml_id": "M_mt_ddadea339f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 43.253,
+     "x": 572.551,
+     "y": -953.714
+    },
+    {
+     "h": 16.5,
+     "id": "M:acetyl-CoA",
+     "kind": "met",
+     "label": "acetyl-CoA",
+     "sbml_id": "M_mt_4cb0ce6646",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 57.274,
+     "x": 1000.7568140586092,
+     "y": -498.72610462988257
+    },
+    {
+     "h": 19.5,
+     "id": "M:cis-aconitate",
+     "kind": "core",
+     "label": "cis-aconitate",
+     "sbml_id": "M_mt_cc309b9235",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 82.142,
+     "x": 364.5633355383461,
+     "y": -356.9965897430426
+    },
+    {
+     "h": 19.5,
+     "id": "M:citrate",
+     "kind": "core",
+     "label": "citrate",
+     "sbml_id": "M_mt_7a3b1a04d2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 48.641,
+     "x": 571.2457189509645,
+     "y": -281.7703542336548
+    },
+    {
+     "h": 19.5,
+     "id": "M:fumarate",
+     "kind": "core",
+     "label": "fumarate",
+     "sbml_id": "M_mt_6ea7392d87",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 62.644,
+     "x": 849.7081408345007,
+     "y": -764.0814169346195
+    },
+    {
+     "h": 16.5,
+     "id": "M:glyoxylate",
+     "kind": "met",
+     "label": "glyoxylate",
+     "sbml_id": "M_mt_921fde0567",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 55.001,
+     "x": 506.545,
+     "y": -676.213
+    },
+    {
+     "h": 19.5,
+     "id": "M:isocitrate",
+     "kind": "core",
+     "label": "isocitrate",
+     "sbml_id": "M_mt_bccfa7c866",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 63.688,
+     "x": 254.58993634331978,
+     "y": -547.4761046298823
+    },
+    {
+     "h": 19.5,
+     "id": "M:oxaloacetate",
+     "kind": "core",
+     "label": "oxaloacetate",
+     "sbml_id": "M_mt_e7c775ae46",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 82.403,
+     "x": 777.9281023635829,
+     "y": -356.9965897430426
+    },
+    {
+     "h": 19.5,
+     "id": "M:succinate",
+     "kind": "core",
+     "label": "succinate",
+     "sbml_id": "M_mt_92e136de2e",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 64.144,
+     "x": 681.2191181459906,
+     "y": -905.4604937299684
+    },
+    {
+     "h": 19.5,
+     "id": "M:succinyl-CoA",
+     "kind": "core",
+     "label": "succinyl-CoA",
+     "sbml_id": "M_mt_70122f9a7f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 81.405,
+     "x": 461.2723197559382,
+     "y": -905.4604937299684
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0aac87f3c2",
+     "kind": "rxn",
+     "label": "2-oxoglutarate dehydrogenase system",
+     "sbml_id": "R_rx_0aac87f3c2",
+     "sbml_type": "reaction",
+     "sub": "NAD+ + CoA \u2192 NADH + CO2",
+     "w": 136.003,
+     "x": 241.04920091841467,
+     "y": -878.1263345795804
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_12438e6346",
+     "kind": "rxn",
+     "label": "citryl-CoA lyase",
+     "sbml_id": "R_rx_12438e6346",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 61.911,
+     "x": 640.1398467551707,
+     "y": -72.52663101714762
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_2432fef40d",
+     "kind": "rxn",
+     "label": "succinyl-CoA:acetate CoA-transferase",
+     "sbml_id": "R_rx_2432fef40d",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 131.163,
+     "x": 571.2457189509644,
+     "y": -924.8517711682741
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_2685246bd5",
+     "kind": "rxn",
+     "label": "succinate-CoA ligase (ADP-forming)",
+     "sbml_id": "R_rx_2685246bd5",
+     "sbml_type": "reaction",
+     "sub": "ATP + CoA \u2192 phosphate + ADP",
+     "w": 131.493,
+     "x": 497.33535635006155,
+     "y": -817.0673265469127
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_3726ad3344",
+     "kind": "rxn",
+     "label": "isocitrate dehydrogenase (NAD+)",
+     "sbml_id": "R_rx_3726ad3344",
+     "sbml_type": "reaction",
+     "sub": "NAD+ \u2192 NADH + CO2",
+     "w": 125.229,
+     "x": 254.58993634331978,
+     "y": -659.1460207720464
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_378a340be1",
+     "kind": "rxn",
+     "label": "isocitrate lyase",
+     "sbml_id": "R_rx_378a340be1",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 60.629,
+     "x": 486.50594175179083,
+     "y": -704.2999966137124
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_47da2f6af0",
+     "kind": "rxn",
+     "label": "aconitate hydratase",
+     "sbml_id": "R_rx_47da2f6af0",
+     "sbml_type": "reaction",
+     "sub": " \u2192 H2O",
+     "w": 77.692,
+     "x": 461.27231975593816,
+     "y": -301.16163167196055
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_4a2da21816",
+     "kind": "rxn",
+     "label": "succinate dehydrogenase",
+     "sbml_id": "R_rx_4a2da21816",
+     "sbml_type": "reaction",
+     "sub": "a quinone \u2192 a quinol",
+     "w": 97.703,
+     "x": 777.9281023635829,
+     "y": -849.6255356588864
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_611050f494",
+     "kind": "rxn",
+     "label": "citrate-CoA ligase",
+     "sbml_id": "R_rx_611050f494",
+     "sbml_type": "reaction",
+     "sub": "ATP + CoA \u2192 phosphate + ADP",
+     "w": 98.135,
+     "x": 576.4262061301706,
+     "y": -173.65163101714762
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_681ee1ac1b",
+     "kind": "rxn",
+     "label": "ATP citrate synthase",
+     "sbml_id": "R_rx_681ee1ac1b",
+     "sbml_type": "reaction",
+     "sub": "phosphate + ADP \u2192 ATP + CoA",
+     "w": 97.803,
+     "x": 681.2191181459908,
+     "y": -301.16163167196055
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_6aa5564e42",
+     "kind": "rxn",
+     "label": "maleate isomerase",
+     "sbml_id": "R_rx_6aa5564e42",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 74.489,
+     "x": 952.7303330318236,
+     "y": -764.0814169346195
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_6d4d806e97",
+     "kind": "rxn",
+     "label": "malate dehydrogenase (NADP+)",
+     "sbml_id": "R_rx_6d4d806e97",
+     "sbml_type": "reaction",
+     "sub": "NADP+ \u2192 NADPH",
+     "w": 121.213,
+     "x": 849.7081408345008,
+     "y": -442.5407084673096
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_NODE_8880",
+     "kind": "rxn",
+     "label": "malate synthase",
+     "sbml_id": "R_rx_NODE_8880",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 65.711,
+     "x": 1000.7568140586092,
+     "y": -547.4761046298826
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_b3a6f5a2c0",
+     "kind": "rxn",
+     "label": "citrate (Si)-synthase",
+     "sbml_id": "R_rx_b3a6f5a2c0",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 CoA",
+     "w": 78.374,
+     "x": 707.6127339527972,
+     "y": -228.64576822499964
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_b53605d7d2",
+     "kind": "rxn",
+     "label": "(S)-malate dehydrogenase (NAD+, oxaloacetate-forming)",
+     "sbml_id": "R_rx_b53605d7d2",
+     "sbml_type": "reaction",
+     "sub": "NAD+ \u2192 NADH",
+     "w": 137.574,
+     "x": 782.8771595824521,
+     "y": -481.1255934833868
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_bf6797eac2",
+     "kind": "rxn",
+     "label": "isocitrate dehydrogenase (NADP+)",
+     "sbml_id": "R_rx_bf6797eac2",
+     "sbml_type": "reaction",
+     "sub": "NADP+ \u2192 NADPH + CO2",
+     "w": 129.45,
+     "x": 164.4504128937541,
+     "y": -686.6885463328371
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_d19c8ae89f",
+     "kind": "rxn",
+     "label": "fumarate hydratase",
+     "sbml_id": "R_rx_d19c8ae89f",
+     "sbml_type": "reaction",
+     "sub": " \u2192 H2O",
+     "w": 76.844,
+     "x": 887.9015015586092,
+     "y": -659.1460207720469
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_d24528dbec",
+     "kind": "rxn",
+     "label": "malate dehydrogenase (quinone)",
+     "sbml_id": "R_rx_d24528dbec",
+     "sbml_type": "reaction",
+     "sub": "a quinone \u2192 a quinol",
+     "w": 123.999,
+     "x": 936.5391220865495,
+     "y": -403.9558234512325
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_dee9b5c8f5",
+     "kind": "rxn",
+     "label": "succinate dehydrogenase",
+     "sbml_id": "R_rx_dee9b5c8f5",
+     "sbml_type": "reaction",
+     "sub": "FAD \u2192 FADH2",
+     "w": 97.703,
+     "x": 827.5318743826112,
+     "y": -908.7410091687877
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_e568d43995",
+     "kind": "rxn",
+     "label": "citrate CoA-transferase",
+     "sbml_id": "R_rx_e568d43995",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 88.72,
+     "x": 703.8534873801707,
+     "y": -173.65163101714762
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_e5d9b4b716",
+     "kind": "rxn",
+     "label": "succinyl-CoA:acetate CoA-transferase",
+     "sbml_id": "R_rx_e5d9b4b716",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 131.163,
+     "x": 571.2457189509644,
+     "y": -1222.0215412004286
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_f203bb67a8",
+     "kind": "rxn",
+     "label": "aconitate hydratase",
+     "sbml_id": "R_rx_f203bb67a8",
+     "sbml_type": "reaction",
+     "sub": " \u2192 H2O",
+     "w": 77.692,
+     "x": 292.7832970674281,
+     "y": -442.5407084673097
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_f64083be68",
+     "kind": "rxn",
+     "label": "succinate-CoA ligase (GDP-forming)",
+     "sbml_id": "R_rx_f64083be68",
+     "sbml_type": "reaction",
+     "sub": "GTP + CoA \u2192 GDP + phosphate",
+     "w": 132.129,
+     "x": 552.7681283007387,
+     "y": -1066.8449798798847
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_fd1ad384ec",
+     "kind": "rxn",
+     "label": "2-oxoglutarate synthase",
+     "sbml_id": "R_rx_fd1ad384ec",
+     "sbml_type": "reaction",
+     "sub": "2 oxidized ferredoxin + CoA \u2192 2 reduced ferredoxin + CO2",
+     "w": 177.869,
+     "x": 364.56333553834605,
+     "y": -849.6255356588864
+    }
+   ],
+   "rings": [
+    {
+     "cx": 571.2457189509645,
+     "cy": -603.3110627009645,
+     "id": 0,
+     "r": 321.5407084673097
+    }
+   ],
+   "title": "citric acid cycle"
+  }
+ ],
+ "format": "sbml-pathway-layout",
+ "model": "citric acid cycle",
+ "settings": {
+  "escher": false,
+  "hide": "",
+  "legend": false,
+  "max_cluster": 60,
+  "show": ""
+ },
+ "source": "brenda_citric-acid-cycle.xml",
+ "units": "points; x right, y up; boxes are centred on (x, y)",
+ "version": 1
+}

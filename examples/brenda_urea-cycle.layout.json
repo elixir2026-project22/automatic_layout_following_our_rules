@@ -1,0 +1,505 @@
+{
+ "drawings": [
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:L-citrulline",
+      "R:R_rx_0e0c18dea9"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:L-citrulline",
+     "target": "R:R_rx_0e0c18dea9"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:argininosuccinate",
+      "R:R_rx_0e0c18dea9"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_0e0c18dea9",
+     "target": "M:argininosuccinate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:L-ornithine",
+      "R:R_rx_68b42c436c"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:L-ornithine",
+     "target": "R:R_rx_68b42c436c"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:L-citrulline",
+      "R:R_rx_68b42c436c"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_68b42c436c",
+     "target": "M:L-citrulline"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:L-citrulline",
+      "R:R_rx_41bad020b6"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:L-citrulline",
+     "target": "R:R_rx_41bad020b6"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:L-ornithine",
+      "R:R_rx_41bad020b6"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_41bad020b6",
+     "target": "M:L-ornithine"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:argininosuccinate",
+      "R:R_rx_56b84e5a3a"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:argininosuccinate",
+     "target": "R:R_rx_56b84e5a3a"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:L-arginine",
+      "R:R_rx_56b84e5a3a"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_56b84e5a3a",
+     "target": "M:L-arginine"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:L-arginine",
+      "R:R_rx_66a617511c"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:L-arginine",
+     "target": "R:R_rx_66a617511c"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:L-ornithine",
+      "R:R_rx_66a617511c"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_66a617511c",
+     "target": "M:L-ornithine"
+    },
+    {
+     "arrow": true,
+     "chain": 100015,
+     "own": [
+      "M:Carbamoyl phosphate",
+      "R:R_rx_189c95a8a7"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_189c95a8a7",
+     "target": "M:Carbamoyl phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": 100016,
+     "own": [
+      "M:Carbamoyl phosphate",
+      "R:R_rx_a6d6f13f52"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_a6d6f13f52",
+     "target": "M:Carbamoyl phosphate"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:Carbamoyl phosphate",
+      "R:R_rx_68b42c436c"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:Carbamoyl phosphate",
+     "target": "R:R_rx_68b42c436c"
+    },
+    {
+     "arrow": true,
+     "chain": 200013,
+     "own": [
+      "M:Urea",
+      "R:R_rx_8701f9a5ef"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:Urea",
+     "target": "R:R_rx_8701f9a5ef"
+    },
+    {
+     "arrow": true,
+     "chain": 200014,
+     "own": [
+      "M:allophanate",
+      "R:R_rx_8701f9a5ef"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_8701f9a5ef",
+     "target": "M:allophanate"
+    },
+    {
+     "arrow": true,
+     "chain": 200015,
+     "own": [
+      "M:allophanate",
+      "R:R_rx_8bc6940100"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:allophanate",
+     "target": "R:R_rx_8bc6940100"
+    },
+    {
+     "arrow": true,
+     "chain": 200016,
+     "own": [
+      "M:Urea",
+      "R:R_rx_fe4c1635af"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:Urea",
+     "target": "R:R_rx_fe4c1635af"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "M:Urea",
+      "R:R_rx_66a617511c"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_66a617511c",
+     "target": "M:Urea"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_0e0c18dea9:0",
+      "R:R_rx_0e0c18dea9"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_0e0c18dea9:0",
+     "target": "R:R_rx_0e0c18dea9"
+    },
+    {
+     "arrow": true,
+     "chain": null,
+     "own": [
+      "A:R_rx_56b84e5a3a:0",
+      "R:R_rx_56b84e5a3a"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_56b84e5a3a",
+     "target": "A:R_rx_56b84e5a3a:0"
+    }
+   ],
+   "name": "",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_0e0c18dea9:0",
+     "kind": "alias",
+     "label": "L-aspartate",
+     "sbml_id": "M_mt_0de283c3a3",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 51.653,
+     "x": 224.66291686196143,
+     "y": -494.9653822699358
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_56b84e5a3a:0",
+     "kind": "alias",
+     "label": "fumarate",
+     "sbml_id": "M_mt_6ea7392d87",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 43.957,
+     "x": 415.7199916449358,
+     "y": -290.49901061196147
+    },
+    {
+     "h": 16.5,
+     "id": "M:Carbamoyl phosphate",
+     "kind": "met",
+     "label": "Carbamoyl phosphate",
+     "sbml_id": "M_mt_73617a0182",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 104.855,
+     "x": -85.09553292101282,
+     "y": -290.49901061196147
+    },
+    {
+     "h": 19.5,
+     "id": "M:L-arginine",
+     "kind": "core",
+     "label": "L-arginine",
+     "sbml_id": "M_mt_f25ff329c6",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 67.041,
+     "x": 302.7977497810808,
+     "y": -212.36417769284213
+    },
+    {
+     "h": 19.5,
+     "id": "M:L-citrulline",
+     "kind": "core",
+     "label": "L-citrulline",
+     "sbml_id": "M_mt_75d2d46d2f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 70.516,
+     "x": 146.52808394284216,
+     "y": -368.6338435310808
+    },
+    {
+     "h": 19.5,
+     "id": "M:L-ornithine",
+     "kind": "core",
+     "label": "L-ornithine",
+     "sbml_id": "M_mt_9e164fa705",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 71.661,
+     "x": 146.52808394284216,
+     "y": -212.36417769284213
+    },
+    {
+     "h": 16.5,
+     "id": "M:Urea",
+     "kind": "met",
+     "label": "Urea",
+     "sbml_id": "M_mt_e5dc9628b1",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 30.457,
+     "x": 224.6629168619615,
+     "y": -131.74967020398714
+    },
+    {
+     "h": 16.5,
+     "id": "M:allophanate",
+     "kind": "met",
+     "label": "allophanate",
+     "sbml_id": "M_mt_6966c4a71e",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 61.32,
+     "x": 272.6054485706147,
+     "y": -26.999670203987137
+    },
+    {
+     "h": 19.5,
+     "id": "M:argininosuccinate",
+     "kind": "core",
+     "label": "argininosuccinate",
+     "sbml_id": "M_mt_98318d535e",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 108.688,
+     "x": 302.7977497810808,
+     "y": -368.6338435310808
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0e0c18dea9",
+     "kind": "rxn",
+     "label": "argininosuccinate synthase",
+     "sbml_id": "R_rx_0e0c18dea9",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 AMP + diphosphate",
+     "w": 103.434,
+     "x": 224.66291686196146,
+     "y": -400.9983510199358
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_189c95a8a7",
+     "kind": "rxn",
+     "label": "carbamate kinase",
+     "sbml_id": "R_rx_189c95a8a7",
+     "sbml_type": "reaction",
+     "sub": "HCO3- + ATP + NH3 \u2192 H2O + ADP",
+     "w": 107.678,
+     "x": -164.12815792101281,
+     "y": -238.12401061196147
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_41bad020b6",
+     "kind": "rxn",
+     "label": "citrullinase",
+     "sbml_id": "R_rx_41bad020b6",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 CO2 + NH3",
+     "w": 61.374,
+     "x": 227.64373475607334,
+     "y": -290.49901061196147
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_56b84e5a3a",
+     "kind": "rxn",
+     "label": "argininosuccinate lyase",
+     "sbml_id": "R_rx_56b84e5a3a",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 90.115,
+     "x": 335.1622572699358,
+     "y": -290.49901061196147
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_66a617511c",
+     "kind": "rxn",
+     "label": "arginase",
+     "sbml_id": "R_rx_66a617511c",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 ",
+     "w": 37.636,
+     "x": 224.6629168619615,
+     "y": -179.99967020398714
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_68b42c436c",
+     "kind": "rxn",
+     "label": "ornithine carbamoyltransferase",
+     "sbml_id": "R_rx_68b42c436c",
+     "sbml_type": "reaction",
+     "sub": " \u2192 phosphate",
+     "w": 117.828,
+     "x": 114.16357645398718,
+     "y": -290.49901061196147
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_8701f9a5ef",
+     "kind": "rxn",
+     "label": "urea carboxylase",
+     "sbml_id": "R_rx_8701f9a5ef",
+     "sbml_type": "reaction",
+     "sub": "HCO3- + ATP \u2192 phosphate + ADP",
+     "w": 104.805,
+     "x": 284.5911121744615,
+     "y": -79.37467020398714
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_8bc6940100",
+     "kind": "rxn",
+     "label": "allophanate hydrolase",
+     "sbml_id": "R_rx_8bc6940100",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 2 CO2 + 2 NH3",
+     "w": 85.407,
+     "x": 264.6150025734573,
+     "y": 25.375329796012863
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_a6d6f13f52",
+     "kind": "rxn",
+     "label": "carbamoyl-phosphate synthase (ammonia)",
+     "sbml_id": "R_rx_a6d6f13f52",
+     "sbml_type": "reaction",
+     "sub": "H2O + ATP + CO2 + NH3 \u2192 phosphate + ADP",
+     "w": 140.453,
+     "x": -6.0629079210128225,
+     "y": -238.12401061196147
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_fe4c1635af",
+     "kind": "rxn",
+     "label": "urease",
+     "sbml_id": "R_rx_fe4c1635af",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 CO2 + 2 NH3",
+     "w": 66.908,
+     "x": 164.73472154946148,
+     "y": -79.37467020398714
+    }
+   ],
+   "rings": [
+    {
+     "cx": 224.6629168619615,
+     "cy": -290.49901061196147,
+     "id": 0,
+     "r": 110.49934040797432
+    }
+   ],
+   "title": "urea cycle"
+  }
+ ],
+ "format": "sbml-pathway-layout",
+ "model": "urea cycle",
+ "settings": {
+  "escher": false,
+  "hide": "",
+  "legend": false,
+  "max_cluster": 60,
+  "show": ""
+ },
+ "source": "brenda_urea-cycle.xml",
+ "units": "points; x right, y up; boxes are centred on (x, y)",
+ "version": 1
+}
