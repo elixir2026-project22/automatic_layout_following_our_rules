@@ -24,8 +24,10 @@ design reimplemented, no code copied):
     network communities when the file has none), one drawing per part.
 Nothing is random; the hash seed is pinned and SVGs are written without a date.
 
-Usage: python3 sbml_pathway_layout.py model.xml[.gz] [--out NAME] [--max-cluster 60]
-                                       [--side "x,y"] [--keep "x,y"]
+Usage: python3 sbml_pathway_layout.py model.xml[.gz] [--out NAME] [--max-cluster 60] [--side "x,y"] [--keep "x,y"]
+       python3 sbml_pathway_layout.py [model.xml] --from-layout NAME.layout.json   # redraw a saved layout
+Writes NAME.svg/.png per drawing, NAME.layout.json (reusable layout) and, for SBML Level 3 models,
+NAME.layout.sbml (the model plus the SBML Layout package, readable by other SBML tools).
 Requires: networkx>=3.1, numpy, matplotlib
 """
 import os, sys
@@ -99,6 +101,7 @@ def similarity(a,b,F):
     return _lcs(sa,sb)/max(len(sa),len(sb),1) if sa and sb else 0.0
 
 # ============================================================ SBML (levels 1-3)
+SPECIES_ID={}
 def _l(tag): return tag.rsplit('}',1)[-1]
 def _kids(e,name): return [c for c in e if _l(c.tag)==name]
 def _attr(e,name):
@@ -123,6 +126,7 @@ def read_sbml(path):
         if len({species[i]['comp'] for i in ids})>1:
             for i in ids: species[i]['name']=f"{nm} [{species[i]['comp']}]"
     F={s['name']:s['formula'] for s in species.values()}
+    global SPECIES_ID; SPECIES_ID={s['name']:sid for sid,s in species.items()}
     groups=[]
     for e in model.iter():
         if _l(e.tag)=='group':
@@ -437,13 +441,50 @@ def layout_cluster(rxns):
         for _ in range(4): rad=max(70.0,need(rad))
         mw=max(max(D.size('M:'+m)[0] for m in ring),max([D.size('R:'+r['id'])[0] for k in steps for r in steps[k]],default=0))
         ring_steps[i]=dict(ring=ring,steps=steps,chords=chords,rad=rad,box=(2*rad*1.5+mw,2*rad*1.5+40))
+    # ---- which compounds get a real (shared) box: every main compound, and every secondary
+    # compound used by two or more reactions; compounds used once stay private dashed copies
+    appear={}
+    for r in rxns:
+        for n in set(r['main'] or ())|{x for x,_ in r['secondary']}: appear[n]=appear.get(n,0)+1
+    # A secondary compound is connected to its shared box only where that joins parts of the network
+    # that are otherwise separate (e.g. carbamoyl phosphate, urea); everywhere else it stays a private copy.
+    uf={}
+    def find(x):
+        while uf.setdefault(x,x)!=x: uf[x]=uf[uf[x]]; x=uf[x]
+        return x
+    for r in rxns:
+        find('R:'+r['id'])
+        if r['main']:
+            for n in r['main']: uf[find('M:'+n)]=find('R:'+r['id'])
+    mains={n for r in rxns for n in (r['main'] or ())}
+    joins=set()
+    cands=sorted(((n,r['id']) for r in rxns for n,_ in r['secondary'] if appear[n]>=2 or n in mains),
+                 key=lambda t:(-appear[t[0]],t[0],t[1]))
+    for n,rid in cands:
+        if find('M:'+n)!=find('R:'+rid): uf[find('M:'+n)]=find('R:'+rid); joins.add((n,rid))
+    real=mains|{n for n,_ in joins}
+    for n in sorted(real):
+        if 'M:'+n not in D.info: D.add('M:'+n,'core' if n in ringof else 'met',n)
+    rring={r['id']:ringof[r['main'][0]] for r in rxns if r['id'] in internal}
     # ---- contracted graph for the layered pass
     unit=lambda n:f'RING{ringof[n]}' if n in ringof else 'M:'+n
-    nodes=set(); edges=[]; emeta=[]
+    runit=lambda r:f'RING{rring[r["id"]]}' if r['id'] in rring else 'R:'+r['id']
+    nodes=set(); edges=[]; emeta=[]; eside=[]; ring_side=[]
     for r in rxns:
+        R='R:'+r['id']; Ru=runit(r)
         if r['main'] and r['id'] not in internal:
-            R='R:'+r['id']; a,b=unit(r['main'][0]),unit(r['main'][1]); nodes|={a,b,R}
-            edges.append((a,R)); emeta.append(('M:'+r['main'][0],R)); edges.append((R,b)); emeta.append((R,'M:'+r['main'][1]))
+            a,b=unit(r['main'][0]),unit(r['main'][1]); nodes|={a,b,R}
+            edges.append((a,R)); emeta.append(('M:'+r['main'][0],R)); eside.append(False)
+            edges.append((R,b)); emeta.append((R,'M:'+r['main'][1])); eside.append(False)
+        for n,sd in r['secondary']:
+            if (n,r['id']) not in joins: continue
+            a=unit(n)
+            if a==Ru:                                             # side link inside one ring
+                ring_side.append(('M:'+n,R) if sd=='s' else (R,'M:'+n)); continue
+            nodes|={a,Ru}
+            if sd=='s': edges.append((a,Ru)); emeta.append(('M:'+n,R))
+            else: edges.append((Ru,a)); emeta.append((R,'M:'+n))
+            eside.append(True)
     for i in ring_steps: nodes.add(f'RING{i}')
     size={}
     for n in nodes:
@@ -451,34 +492,39 @@ def layout_cluster(rxns):
     comps=sorted((sorted(c) for c in nx.connected_components(nx.Graph([e for e in edges]+[(n,n) for n in nodes]))),key=lambda c:(-len(c),c))
     xoff=0.0
     for comp in comps:
-        cs=set(comp); ce=[(e,m) for e,m in zip(edges,emeta) if e[0] in cs]
-        pos,chains=sugiyama(comp,[e for e,_ in ce],size)
+        cs=set(comp); ce=[(e,m,sd) for e,m,sd in zip(edges,emeta,eside) if e[0] in cs]
+        pos,chains=sugiyama(comp,[e for e,_,_ in ce],size)
         xs=[pos[n][0]-size.get(n,(8,0))[0]/2 for n in pos]; xe=[pos[n][0]+size.get(n,(8,0))[0]/2 for n in pos]
         dx=xoff-min(xs); xoff+=max(xe)-min(xs)+80
         for n,p in pos.items():
             if n.startswith('__d'): D.add(n,'dummy')
             if not n.startswith('RING'): D.P[n]=(p[0]+dx,p[1])
             else: D.rings[int(n[4:])]=((p[0]+dx,p[1]),ring_steps[int(n[4:])]['rad'])
-        for (pts,rv),(e,m) in zip(chains,ce):
+        for (pts,rv),(e,m,sd) in zip(chains,ce):
             pts=list(pts)
             if rv: pts=pts[::-1]
-            real=[m[0] if pts[0].startswith('RING') else pts[0], m[1] if pts[-1].startswith('RING') else pts[-1]]
-            pts[0],pts[-1]=real
+            ends=[m[0] if pts[0].startswith('RING') else pts[0], m[1] if pts[-1].startswith('RING') else pts[-1]]
+            pts[0],pts[-1]=ends
             cid=len(D.links)
-            for a,b in zip(pts,pts[1:]): D.link(a,b,arrow=(b==pts[-1]),own=set(real),chain=cid)
+            for a,b in zip(pts,pts[1:]):
+                D.link(a,b,arrow=(b==pts[-1]),own=set(ends),chain=cid); D.links[-1]['side']=sd
     # ---- expand rings, rotated towards their outside connections
     for i,rs in ring_steps.items():
         (cx,cy),rad=D.rings[i]; ring=rs['ring']; n=len(ring)
+        slot={'M:'+m:(j,1.0) for j,m in enumerate(ring)}         # node -> (angle slot, radius factor)
+        for k,lst in rs['steps'].items():
+            for j,r in enumerate(lst): slot['R:'+r['id']]=(k+0.5,1.0 if j==0 else 1+(0.24 if j%2 else -0.24)*((j+1)//2))
         ext=[]
         for L in D.links:
             for end,other in ((L['a'],L['b']),(L['b'],L['a'])):
-                if end.startswith('M:') and end[2:] in ring and ringof.get(end[2:])==i and other in D.P: ext.append((end[2:],D.P[other]))
+                if end in slot and other in D.P and other not in slot: ext.append((end,D.P[other]))
         best=None
         for mir in (1,-1):
             for k in range(72):
                 th=2*math.pi*k/72
                 p={m:(cx+rad*math.cos(th+mir*2*math.pi*j/n),cy+rad*math.sin(th+mir*2*math.pi*j/n)) for j,m in enumerate(ring)}
-                sc=sum(math.dist(p[m],q) for m,q in ext)
+                at=lambda e:(cx+rad*slot[e][1]*math.cos(th+mir*2*math.pi*slot[e][0]/n),cy+rad*slot[e][1]*math.sin(th+mir*2*math.pi*slot[e][0]/n))
+                sc=sum(math.dist(at(e),q) for e,q in ext)
                 if best is None or sc<best[0]-1e-6: best=(sc,p,th,mir)
         _,p,th,mir=best
         for m in ring: D.P['M:'+m]=p[m]
@@ -489,15 +535,19 @@ def layout_cluster(rxns):
                 R='R:'+r['id']; s,pp='M:'+r['main'][0],'M:'+r['main'][1]
                 if j==0:
                     D.P[R]=(cx+rad*ux,cy+rad*uy); D.link(s,R,arrow=True,ring=i); D.link(R,pp,arrow=True,ring=i)
-                else:
-                    f=1+(0.24 if j%2 else -0.24)*((j+1)//2); D.P[R]=(cx+rad*f*ux,cy+rad*f*uy)
+                else:                                             # alternative enzymes: first go to the side
+                    busy=any(e in ({a,b}|{'R:'+x['id'] for x in lst}) for e,_ in ext)   # that has no outside links
+                    first=-0.24 if busy else 0.24
+                    f=1+(first if j%2 else -first)*((j+1)//2); D.P[R]=(cx+rad*f*ux,cy+rad*f*uy)
                     D.link(s,R,arrow=True); D.link(R,pp,arrow=True)
         for r in rs['chords']:
             R='R:'+r['id']; s,pp='M:'+r['main'][0],'M:'+r['main'][1]
             D.P[R]=((D.P[s][0]+D.P[pp][0])/2*0.82+cx*0.18,(D.P[s][1]+D.P[pp][1])/2*0.82+cy*0.18)
             D.link(s,R); D.link(R,pp)
+    for a,b in ring_side: D.link(a,b); D.links[-1]['side']=True
     # ---- pieces attached only to one ring: place them radially outside that ring
     Gc=nx.Graph(); Gc.add_nodes_from(nodes); Gc.add_edges_from(edges)
+    ringnodes={i:{'M:'+m for m in rings[i]}|{'R:'+rid for rid,k in rring.items() if k==i} for i in ring_steps}
     att={}                                                        # (piece node, ring) -> ring members
     for (a,b),(ma,mb) in zip(edges,emeta):
         if a.startswith('RING'): att.setdefault(b,set()).add(ma)
@@ -513,47 +563,35 @@ def layout_cluster(rxns):
             keep=[]
             for L in D.links:
                 own=L['own']
-                if L['ring'] is None and own & cs and own <= cs|{'M:'+m for m in rings[i]}: 
+                if L['ring'] is None and own & cs and own <= cs|ringnodes[i]: 
                     for e in (L['a'],L['b']):
                         if D.info.get(e,{}).get('kind')=='dummy': D.P.pop(e,None)
                     continue
                 keep.append(L)
             D.links=keep
             (cx,cy),rad=D.rings[i]
-            ang={m:math.atan2(D.P['M:'+m][1]-cy,D.P['M:'+m][0]-cx) for m in rings[i]}
+            ang={x:math.atan2(D.P[x][1]-cy,D.P[x][0]-cx) for x in sorted(ringnodes[i])}
             PG=nx.Graph(); PG.add_edges_from((a,b) for a,b in edges if a in cs or b in cs)
             for n in cs:
                 for m in att.get(n,()): PG.add_edge(n,m)
-            dist={m:nx.single_source_shortest_path_length(PG,'M:'+m) for m in rings[i] if 'M:'+m in PG}
+            dist={x:nx.single_source_shortest_path_length(PG,x) for x in sorted(ringnodes[i]) if x in PG}
             for n in comp:
-                ds=[(dist[m][n],m) for m in dist if n in dist[m]] or [(1,rings[i][0])]
+                ds=[(dist[x][n],x) for x in dist if n in dist[x]] or [(1,'M:'+rings[i][0])]
                 sx=sum(math.cos(ang[m])/(d*d) for d,m in ds); sy=sum(math.sin(ang[m])/(d*d) for d,m in ds)
                 t=math.atan2(sy,sx); dmin=min(d for d,_ in ds)
                 r=rad+55+75*(dmin-1)+(12 if D.info[n]['kind']=='rxn' else 0)
                 D.P[n]=(cx+r*math.cos(t),cy+r*math.sin(t))
-            for r_ in rxns:
-                if r_['main'] and 'R:'+r_['id'] in cs:
-                    R='R:'+r_['id']; D.link('M:'+r_['main'][0],R); D.link(R,'M:'+r_['main'][1])
+            for (ea,eb),(ma,mb),sd in zip(edges,emeta,eside):           # straight links for the piece
+                if ea in cs or eb in cs: D.link(ma,mb); D.links[-1]['side']=sd
     # ---- reactions without a main pair, and secondary participants: side boxes
     pending=[]
     k=0
     for r in rxns:
         R='R:'+r['id']
-        if not r['main']:
-            sec=sorted({n for n,_ in r['secondary']})
-            anchor=max(sec,key=lambda n:(sum(1 for x in rxns if x['main'] and n in x['main']),n)) if sec else None
-            if anchor and 'M:'+anchor in D.P:
-                side=[sd for n,sd in r['secondary'] if n==anchor][0]
-                pending.append((R,'M:'+anchor,side=='s'))
-                r=dict(r,secondary=[(n,sd) for n,sd in r['secondary'] if n!=anchor])
-            elif anchor:
-                D.add('M:'+anchor,'met',anchor); D.P['M:'+anchor]=(xoff+60*k,200.0); k+=1
-                side=[sd for n,sd in r['secondary'] if n==anchor][0]
-                pending.append((R,'M:'+anchor,side=='s'))
-                r=dict(r,secondary=[(n,sd) for n,sd in r['secondary'] if n!=anchor])
-            else:
-                D.P[R]=(xoff+150*k,300.0); k+=1
+        if R not in D.P:                                          # touches no shared box at all
+            D.P[R]=(xoff+150*k,300.0); k+=1
         for j,(n,sd) in enumerate(r['secondary']):
+            if (n,r['id']) in joins: continue
             a=f'A:{r["id"]}:{j}'; D.add(a,'alias',n); pending.append((a,R,sd=='p'))
     order=sorted(pending,key=lambda t:(0 if t[0].startswith('R:') else 1,t[0]))
     for node,anchor,into_node in order:
@@ -613,7 +651,11 @@ def remove_crossings(D):
     n_cut=0
     for _ in range(500):
         cp=crossing_pairs(D)
-        if not cp: return n_cut
+        if not cp:
+            used={e for L in D.links for e in (L['a'],L['b'])}       # shared boxes left without any line
+            for n in [n for n in D.P if D.info[n]['kind'] in ('met','alias') and n not in used]:
+                D.P.pop(n)                                        # (every use became a dashed copy)
+            return n_cut
         i,j=cp[0]
         def cand(k):
             L=D.links[k]; own=sorted(L['own'])
@@ -700,7 +742,7 @@ def render(D,path,title):
         P=D.path(L)
         if D.info[L['a']]['kind']!='dummy': P=cut(P,D.box(L['a']))
         if D.info[L['b']]['kind']!='dummy': P=cut(P[::-1],D.box(L['b']))[::-1]
-        ring=L['ring'] is not None; side=any(D.info[x]['kind']=='alias' for x in (L['a'],L['b']))
+        ring=L['ring'] is not None; side=L.get('side') or any(D.info[x]['kind']=='alias' for x in (L['a'],L['b']))
         col,lw=('#b23b36',1.8) if ring else (('#9aa6bd',0.8) if side else ('#4a4a4a',1.1))
         if L['arrow']:
             ax.plot([p[0] for p in P[:-1]],[p[1] for p in P[:-1]],color=col,lw=lw,solid_capstyle='round',zorder=1)
@@ -719,6 +761,124 @@ def render(D,path,title):
     ax.text(x0+12,y1-14,title,fontsize=12,va='top')
     fig.savefig(path,**({'metadata':{'Date':None}} if path.endswith('.svg') else {'dpi':min(110.0,7000*72/max(x1-x0,y1-y0))}))
     plt.close(fig)
+
+# ============================================================ export / reuse
+def sbml_ref(D,n):
+    k=D.info[n]['kind']
+    if n.startswith('R:'): return ('reaction',n[2:])
+    if k in ('core','met','alias'): return ('species',SPECIES_ID.get(D.info[n]['label']))
+    return (None,None)
+def drawing_to_dict(D,name,title,checks):
+    nodes=[]
+    for n in sorted(D.P):
+        w,h=D.size(n); t,ref=sbml_ref(D,n)
+        nodes.append(dict(id=n,kind=D.info[n]['kind'],label=D.info[n]['label'],sub=D.info[n]['sub'],
+                          x=D.P[n][0],y=D.P[n][1],w=round(w,3),h=round(h,3),sbml_type=t,sbml_id=ref))
+    links=[dict(source=L['a'],target=L['b'],arrow=L['arrow'],ring=L['ring'],chain=L['chain'],own=sorted(L['own']),side=bool(L.get('side'))) for L in D.links]
+    rings=[dict(id=i,cx=c[0],cy=c[1],r=r) for i,(c,r) in sorted(D.rings.items())]
+    return dict(name=name,title=title,checks=checks,rings=rings,nodes=nodes,links=links)
+def drawing_from_dict(d):
+    D=Drawing()
+    for n in d['nodes']:
+        D.add(n['id'],n['kind'],n['label'],n['sub']); D.P[n['id']]=(n['x'],n['y'])
+        if n.get('sbml_type')=='species' and n.get('sbml_id'): SPECIES_ID.setdefault(n['label'],n['sbml_id'])
+    for L in d['links']:
+        D.links.append(dict(a=L['source'],b=L['target'],arrow=L['arrow'],ring=L['ring'],own=set(L['own']),chain=L['chain'],cut=True,side=L.get('side',False)))
+    D.rings={r['id']:((r['cx'],r['cy']),r['r']) for r in d['rings']}
+    return D
+
+LNS='http://www.sbml.org/sbml/level3/version1/layout/version1'
+XSI='http://www.w3.org/2001/XMLSchema-instance'
+def export_sbml_layout(src,dst,drawings):
+    """Copy the model and add one SBML Layout (L3 'layout' package) per drawing."""
+    nsmap={}
+    opener=(lambda: gzip.open(src)) if src.endswith('.gz') else (lambda: open(src,'rb'))
+    with opener() as fh:
+        for ev,(pre,uri) in ET.iterparse(fh,events=('start-ns',)): nsmap.setdefault(pre,uri)
+    for pre,uri in nsmap.items(): ET.register_namespace(pre,uri)
+    ET.register_namespace('layout',LNS); ET.register_namespace('xsi',XSI)
+    with opener() as fh: tree=ET.parse(fh)
+    root=tree.getroot()
+    if root.get('level')!='3': return False
+    q=lambda t:f'{{{LNS}}}{t}'
+    root.set(q('required'),'false')
+    model=next(c for c in root if _l(c.tag)=='model')
+    old=[c for c in model if _l(c.tag)=='listOfLayouts']
+    for o in old: model.remove(o)
+    LL=ET.SubElement(model,q('listOfLayouts'))
+    def bbox(parent,x,y,w,h):
+        b=ET.SubElement(parent,q('boundingBox')); p=ET.SubElement(b,q('position')); p.set(q('x'),f'{x:.2f}'); p.set(q('y'),f'{y:.2f}')
+        d=ET.SubElement(b,q('dimensions')); d.set(q('width'),f'{w:.2f}'); d.set(q('height'),f'{h:.2f}')
+    def pt(parent,tag,x,y):
+        e=ET.SubElement(parent,q(tag)); e.set(q('x'),f'{x:.2f}'); e.set(q('y'),f'{y:.2f}')
+    for k,(D,name,title) in enumerate(drawings):
+        names=D.real(); B={n:D.box(n) for n in names}
+        allx=[b[0] for b in B.values()]+[b[2] for b in B.values()]; ally=[b[1] for b in B.values()]+[b[3] for b in B.values()]
+        for L in D.links:
+            for p_ in D.path(L): allx.append(p_[0]); ally.append(p_[1])
+        X0,Y1=min(allx)-20,max(ally)+20
+        tx=lambda x:x-X0; ty=lambda y:Y1-y                        # SBML layout: origin top-left, y down
+        lay=ET.SubElement(LL,q('layout')); lay.set(q('id'),f'layout_{k+1}'); lay.set(q('name'),title)
+        d=ET.SubElement(lay,q('dimensions')); d.set(q('width'),f'{max(allx)+20-X0:.2f}'); d.set(q('height'),f'{Y1-min(ally)+20:.2f}')
+        SG=ET.SubElement(lay,q('listOfSpeciesGlyphs')); RG=ET.SubElement(lay,q('listOfReactionGlyphs'))
+        TG=ET.SubElement(lay,q('listOfTextGlyphs'))
+        gid={}
+        for i,n in enumerate(names):
+            t,ref=sbml_ref(D,n); x0,y0,x1,y1=B[n]
+            if t=='species' and ref:
+                g=ET.SubElement(SG,q('speciesGlyph')); gid[n]=f'sg_{k+1}_{i}'; g.set(q('id'),gid[n]); g.set(q('species'),ref)
+                bbox(g,tx(x0),ty(y1),x1-x0,y1-y0)
+                tg=ET.SubElement(TG,q('textGlyph')); tg.set(q('id'),f'tg_{k+1}_{i}'); tg.set(q('graphicalObject'),gid[n]); tg.set(q('originOfText'),ref)
+                bbox(tg,tx(x0),ty(y1),x1-x0,y1-y0)
+        # every metabolite<->reaction connection, following dummy chains and ring arcs
+        conns={}
+        for L in D.links:
+            key=L['chain'] if L['chain'] is not None else id(L)
+            conns.setdefault(key,[]).append(L)
+        rglyph={}
+        for i,n in enumerate(names):
+            if n.startswith('R:'):
+                x0,y0,x1,y1=B[n]; g=ET.SubElement(RG,q('reactionGlyph')); g.set(q('id'),f'rg_{k+1}_{i}'); g.set(q('reaction'),n[2:])
+                bbox(g,tx(x0),ty(y1),x1-x0,y1-y0); rglyph[n]=(g,ET.SubElement(g,q('listOfSpeciesReferenceGlyphs')))
+                tg=ET.SubElement(TG,q('textGlyph')); tg.set(q('id'),f'tgr_{k+1}_{i}'); tg.set(q('graphicalObject'),f'rg_{k+1}_{i}')
+                tg.set(q('text'),D.info[n]['label']+(' | '+D.info[n]['sub'] if D.info[n]['sub'] else '')); bbox(tg,tx(x0),ty(y1),x1-x0,y1-y0)
+        nref=0
+        for key,Ls in conns.items():
+            own=sorted(Ls[0]['own']); R=[x for x in own if x.startswith('R:')]; S=[x for x in own if x in gid]
+            if not R or not S: continue
+            R,S=R[0],S[0]; into_species=Ls[-1]['b']==S
+            role=('sideproduct' if into_species else 'sidesubstrate') if (D.info[S]['kind']=='alias' or Ls[0].get('side')) else ('product' if into_species else 'substrate')
+            if R not in rglyph: continue
+            sr=ET.SubElement(rglyph[R][1],q('speciesReferenceGlyph')); sr.set(q('id'),f'srg_{k+1}_{nref}'); nref+=1
+            sr.set(q('speciesGlyph'),gid[S]); sr.set(q('role'),role)
+            cv=ET.SubElement(ET.SubElement(sr,q('curve')),q('listOfCurveSegments'))
+            for L in Ls:
+                if L['ring'] is None:
+                    a,b=D.P[L['a']],D.P[L['b']]
+                    seg=ET.SubElement(cv,q('curveSegment')); seg.set(f'{{{XSI}}}type','LineSegment')
+                    pt(seg,'start',tx(a[0]),ty(a[1])); pt(seg,'end',tx(b[0]),ty(b[1]))
+                else:                                             # ring arc -> cubic Beziers of <= 90 degrees
+                    (cx,cy),r=D.rings[L['ring']]; a,b=D.P[L['a']],D.P[L['b']]
+                    t1=math.atan2(a[1]-cy,a[0]-cx); t2=math.atan2(b[1]-cy,b[0]-cx); dt=(t2-t1+math.pi)%(2*math.pi)-math.pi
+                    m=max(1,int(math.ceil(abs(dt)/(math.pi/2)))); h=dt/m; kk=4/3*math.tan(h/4)*r
+                    for j in range(m):
+                        u,v=t1+h*j,t1+h*(j+1)
+                        P0=(cx+r*math.cos(u),cy+r*math.sin(u)); P3=(cx+r*math.cos(v),cy+r*math.sin(v))
+                        P1=(P0[0]-kk*math.sin(u),P0[1]+kk*math.cos(u)); P2=(P3[0]+kk*math.sin(v),P3[1]-kk*math.cos(v))
+                        seg=ET.SubElement(cv,q('curveSegment')); seg.set(f'{{{XSI}}}type','CubicBezier')
+                        pt(seg,'start',tx(P0[0]),ty(P0[1])); pt(seg,'end',tx(P3[0]),ty(P3[1]))
+                        pt(seg,'basePoint1',tx(P1[0]),ty(P1[1])); pt(seg,'basePoint2',tx(P2[0]),ty(P2[1]))
+        AG=None
+        for g,lst in rglyph.values():                             # unconnected reaction -> generalGlyph
+            if len(lst)==0:                                       # (a reactionGlyph needs >=1 connection)
+                if AG is None: AG=ET.Element(q('listOfAdditionalGraphicalObjects'))
+                gg=ET.SubElement(AG,q('generalGlyph')); gg.set(q('id'),g.get(q('id'))); gg.set(q('reference'),g.get(q('reaction')))
+                gg.append(g.find(q('boundingBox'))); RG.remove(g)
+        if AG is not None: lay.insert(list(lay).index(TG)+1,AG)
+        for lst in (SG,RG,TG):
+            if len(lst)==0: lay.remove(lst)
+    tree.write(dst,xml_declaration=True,encoding='UTF-8')
+    return True
 
 # ============================================================ clustering and main
 def clusters(reactions,max_size):
@@ -748,27 +908,53 @@ def clusters(reactions,max_size):
     return out
 
 def main():
+    import json
     ap=argparse.ArgumentParser(description=__doc__.split('\n')[0])
-    ap.add_argument('sbml'); ap.add_argument('--out',default=None); ap.add_argument('--max-cluster',type=int,default=60)
+    ap.add_argument('sbml',nargs='?'); ap.add_argument('--out',default=None); ap.add_argument('--max-cluster',type=int,default=60)
     ap.add_argument('--side',default=''); ap.add_argument('--keep',default='')
+    ap.add_argument('--from-layout',default=None,help='redraw a saved NAME.layout.json (positions may have been edited) instead of computing a layout')
+    ap.add_argument('--no-sbml-layout',action='store_true',help='do not write NAME.layout.sbml')
     a=ap.parse_args()
+    if a.from_layout:                                             # ---- reuse a saved layout
+        saved=json.load(open(a.from_layout)); out=a.out or a.from_layout.replace('.layout.json','')+'_redrawn'
+        ok=True; drawings=[]
+        for k,d in enumerate(saved['drawings']):
+            D=drawing_from_dict(d); v=violations(D)
+            fn=out if len(saved['drawings'])==1 else f'{out}_{k+1:02d}'
+            print(f'{fn}: {v}')
+            if any(v.values()): ok=False; print('  rules not met (was the layout edited?) - drawn anyway for inspection')
+            render(D,fn+'.svg',d['title']); render(D,fn+'.png',d['title']); drawings.append((D,d['name'],d['title']))
+        if a.sbml and not a.no_sbml_layout:
+            read_sbml(a.sbml)
+            if export_sbml_layout(a.sbml,out+'.layout.sbml',drawings): print('wrote',out+'.layout.sbml')
+        sys.exit(0 if ok else 1)
+    if not a.sbml: ap.error('an SBML file is required unless --from-layout is given')
     name,F,reactions=read_sbml(a.sbml)
     cof=reduce(reactions,F,{_norm(x) for x in a.side.split(',') if x},{_norm(x) for x in a.keep.split(',') if x})
     out=a.out or os.path.splitext(os.path.splitext(os.path.basename(a.sbml))[0])[0]+'_layout'
     parts=clusters(reactions,a.max_cluster)
     log(f'{len(reactions)} reactions, {sum(1 for f in F.values() if f)}/{len(F)} formulas, {len(cof)} cofactors, {len(parts)} drawing(s)')
-    ok=True
+    ok=True; saved=[]; drawings=[]
     for k,(cname,rx) in enumerate(parts):
         D,rings=layout_cluster(rx); cuts=remove_crossings(D)
-        repair(D,{n for n in D.P if D.info[n]['kind']=='core'} | {n for n in D.P if D.info[n]['kind']=='dummy'})
+        fixed={n for n in D.P if D.info[n]['kind'] in ('core','dummy')}|{e for L in D.links if L['ring'] is not None for e in (L['a'],L['b'])}
+        repair(D,fixed)                                           # ring members and ring-arc reactions never move
         v=scale_until_clean(D)
         fn=out if len(parts)==1 else f"{out}_{k+1:02d}_{re.sub(r'[^A-Za-z0-9]+','_',cname).strip('_')[:40]}"
-        segs=[len(D.path(L)) for L in D.links if L['ring'] is None]
         bends=sum(1 for L in D.links if L['ring'] is None and D.info[L['b']]['kind']=='dummy')
         print(f'{fn}: {len(rx)} reactions, rings {[len(r) for r in rings]}, {sum(1 for n in D.P if D.info[n]["kind"]=="alias")} side boxes ({cuts} added to avoid crossings), {bends} bends, {v}')
         if any(v.values()): ok=False; print('  rules not met - drawing not written'); continue
         title=name+(f' \u2014 {cname}' if cname else '')
         render(D,fn+'.svg',title); render(D,fn+'.png',title)
+        saved.append(drawing_to_dict(D,cname,title,v)); drawings.append((D,cname,title))
+    meta=dict(format='sbml-pathway-layout',version=1,source=os.path.basename(a.sbml),model=name,
+              settings=dict(max_cluster=a.max_cluster,side=a.side,keep=a.keep),
+              units='points; x right, y up; boxes are centred on (x, y)',drawings=saved)
+    with open(out+'.layout.json','w') as fh: json.dump(meta,fh,indent=1,sort_keys=True)
+    print('wrote',out+'.layout.json')
+    if not a.no_sbml_layout:
+        if export_sbml_layout(a.sbml,out+'.layout.sbml',drawings): print('wrote',out+'.layout.sbml (SBML Layout package)')
+        else: print('SBML Layout export skipped: the model is not SBML Level 3')
     sys.exit(0 if ok else 1)
 
 if __name__=='__main__': main()
