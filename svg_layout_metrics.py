@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """Quality metrics for a pathway/graph drawing in SVG, measured against the layout rules:
 
-  1. the rendering must be reproducible
-  2. labels must have fixed positions, according to their type
-  3. no line crossing
-  4. try to avoid long lines
-  5. try to avoid line bends
+  hard  1. the rendering must be reproducible
+        2. labels must have fixed positions, according to their type
+        3. no line crossing
+        4. cycles look like cycles
+        5. consistent placement: substrates and products on opposite sides, catalysts beside
+  soft  6. try to avoid long lines
+        7. try to avoid line bends
+        8. try to avoid overlapping nodes
 
 The SVG carries no notion of "metabolite" or "reaction", so the drawing is reconstructed from its
 geometry (works for any SVG made of paths: matplotlib, Inkscape, Escher/Cytoscape exports, ...):
@@ -23,7 +26,7 @@ Usage:
 --annotate draws the reconstructed geometry and marks every problem found.
 Requires: svgelements, numpy (and matplotlib for --annotate)
 """
-import sys, re, io, math, json, argparse, hashlib
+import sys, re, io, math, json, argparse, hashlib, itertools
 import numpy as np
 from svgelements import SVG, Path, Shape, Text, Close, Line, Move
 
@@ -58,6 +61,22 @@ def _area(pts):
     a=0.0
     for (x1,y1),(x2,y2) in zip(pts,pts[1:]): a+=x1*y2-x2*y1
     return abs(a)/2
+_cmaps={}
+def _glyph_char(font,index):
+    """matplotlib names glyph outlines <font>-<glyph index>; map the index back to its character."""
+    if font not in _cmaps:
+        inv={}
+        try:
+            from matplotlib import font_manager, ft2font
+            fam,_,style=font.partition('-')
+            prop=font_manager.FontProperties(family=re.sub(r'(Sans|Serif|Mono)',r' \1',fam).strip(),
+                                             style='oblique' if 'Oblique' in style or 'Italic' in style else 'normal',
+                                             weight='bold' if 'Bold' in style else 'normal')
+            f=ft2font.FT2Font(font_manager.findfont(prop,fallback_to_default=True))
+            inv={g:chr(c) for c,g in sorted(f.get_charmap().items(),reverse=True)}
+        except Exception: pass
+        _cmaps[font]=inv
+    return _cmaps[font].get(index,'?')
 def read(svgfile):
     src=_clean(open(svgfile,encoding='utf-8').read())
     svg=SVG.parse(io.StringIO(src))
@@ -69,13 +88,15 @@ def read(svgfile):
             anchor=(e.values.get('text-anchor') or 'start')
             x0=x-w/2 if anchor=='middle' else (x-w if anchor=='end' else x)
             p=e.transform.point_in_matrix_space if hasattr(e.transform,'point_in_matrix_space') else None
-            texts.append(dict(bbox=(x0,y-fs*0.8,x0+w,y+fs*0.2),text=e.text,color=str(e.fill)))
+            texts.append(dict(bbox=(x0,y-fs*0.8,x0+w,y+fs*0.2),text=e.text,color=str(e.fill),italic='italic' in str(e.values.get('font-style',''))))
             continue
         if not isinstance(e,Shape): continue
         p=Path(e)
         for pts,closed,curved in _poly(p):
             xs=[q[0] for q in pts]; ys=[q[1] for q in pts]
-            shapes.append(dict(eid=eid,pts=pts,closed=closed,curved=curved,bbox=(min(xs),min(ys),max(xs),max(ys)),
+            gm=re.match(r'^(.+)-([0-9a-f]{1,5})$',str(e.id or ''))
+            shapes.append(dict(eid=eid,ch=_glyph_char(gm.group(1),int(gm.group(2),16)) if gm else '',italic=bool(gm and re.search('Oblique|Italic',gm.group(1))),
+                               pts=pts,closed=closed,curved=curved,bbox=(min(xs),min(ys),max(xs),max(ys)),
                                stroke=str(e.stroke) if _has(e.stroke) else None,fill=str(e.fill) if _has(e.fill) else None,
                                sw=float(e.stroke_width or 0) if _has(e.stroke) else 0.0,
                                dash=str(e.values.get('stroke-dasharray') or 'solid'),area=_area(pts) if closed else 0.0))
@@ -135,8 +156,15 @@ def classify(shapes,texts,canvas):
     for i in range(n): groups.setdefault(find(i),[]).append(i)
     labels=[]
     for ix in groups.values():
-        bb=G[ix]; labels.append(dict(bbox=(bb[:,0].min(),bb[:,1].min(),bb[:,2].max(),bb[:,3].max()),color=glyphs[ix[0]]['fill'],n=len(ix)))
-    labels+= [dict(bbox=t['bbox'],color=t['color'],n=len(t['text'])) for t in texts]
+        bb=G[ix]; seen_e=set(); txt=''; last=None
+        for i in sorted(ix,key=lambda i:G[i,0]):
+            if glyphs[i]['eid'] in seen_e: continue
+            seen_e.add(glyphs[i]['eid'])
+            if last is not None and G[i,0]-last>0.25*EM[i]: txt+=' '
+            txt+=glyphs[i]['ch']; last=G[i,2]
+        labels.append(dict(bbox=(bb[:,0].min(),bb[:,1].min(),bb[:,2].max(),bb[:,3].max()),color=glyphs[ix[0]]['fill'],n=len(ix),
+                           text=txt,italic=sum(glyphs[i]['italic'] for i in ix)>len(ix)/2))
+    labels+= [dict(bbox=t['bbox'],color=t['color'],n=len(t['text']),text=t['text'],italic=t['italic']) for t in texts]
     # line pieces -> connections (end-to-end, same colour)
     conns=[dict(pts=list(p['pts']),stroke=p['stroke'],curved=p['curved'],arrow=False) for p in pieces]
     def close(a,b): return math.dist(a,b)<0.8
@@ -152,11 +180,12 @@ def classify(shapes,texts,canvas):
                 else: continue
                 conns[i]['curved']|=conns[j]['curved']; conns[j]=None; merged=True
         conns=[c for c in conns if c]
-    for h in heads:                                                 # mark connections ending in an arrowhead
+    for c in conns: c['head']=set()
+    for h in heads:                                                 # which end of each line has an arrowhead
         hx0,hy0,hx1,hy1=h['bbox']
         for c in conns:
-            for e in (c['pts'][0],c['pts'][-1]):
-                if hx0-2<=e[0]<=hx1+2 and hy0-2<=e[1]<=hy1+2: c['arrow']=True
+            for k,e in ((0,c['pts'][0]),(-1,c['pts'][-1])):
+                if hx0-2<=e[0]<=hx1+2 and hy0-2<=e[1]<=hy1+2: c['arrow']=True; c['head'].add(k)
     return boxes,labels,conns,heads
 
 # ------------------------------------------------------------------ metrics
@@ -185,11 +214,134 @@ def seg_hits(a,b,Bx,margin=0.0):
         elif p<0: t0=np.maximum(t0,q/p)
         else: t1=np.minimum(t1,q/p)
     return ok&(t0<=t1)
+
+def _fit_circle(P):
+    """Least-squares (Kasa) circle through points; returns centre, radius."""
+    P=np.asarray(P,float); A=np.c_[2*P[:,0],2*P[:,1],np.ones(len(P))]; b=(P**2).sum(1)
+    (cx,cy,c),*_=np.linalg.lstsq(A,b,rcond=None); return (cx,cy),math.sqrt(max(c+cx*cx+cy*cy,1e-9))
+def semantics(boxes,labels,conns,info,by_box):
+    """Roles (reaction / metabolite boxes), metabolite cycles and their roundness, substrate/product/catalyst
+    sides at each reaction, and crowding between boxes."""
+    import networkx as nx
+    B=[b['bbox'] for b in boxes]; ctr=[((b[0]+b[2])/2,(b[1]+b[3])/2) for b in B]
+    def endbox(p):                                                # the nearest box within 6 px (0 if inside)
+        d=[(max(b[0]-p[0],0,p[0]-b[2])**2+max(b[1]-p[1],0,p[1]-b[3])**2,(b[2]-b[0])*(b[3]-b[1]),k) for k,b in enumerate(B)]
+        d=[x for x in d if x[0]<=36.0]
+        return min(d)[2] if d else None
+    def lum(col):
+        try: h=col.lstrip('#'); r,g,b=(int(h[k:k+2],16)/255 for k in (0,2,4)); return 0.2126*r+0.7152*g+0.0722*b
+        except Exception: return 0.0
+    cols=sorted({c['stroke'] for c in conns if c['stroke']},key=lum)
+    side_cols={col for col in cols if len(cols)>1 and lum(col)>0.5 and lum(col)-lum(cols[0])>0.2}
+    for c in conns: c['side']=c['stroke'] in side_cols
+    E=[]
+    for i,c in enumerate(conns):
+        a,b=endbox(c['pts'][0]),endbox(c['pts'][-1])
+        if a is not None and b is not None and a!=b: E.append((i,a,b))
+    G=nx.Graph(); G.add_nodes_from(range(len(B))); G.add_edges_from((a,b) for _,a,b in E)
+    # roles: the graph is bipartite (compounds - reactions); reactions = the side whose names are italic,
+    # else the side whose boxes more often hold two text lines
+    role={}; how='none'
+    for comp in nx.connected_components(G):
+        H=G.subgraph(comp)
+        if H.number_of_edges()==0 or not nx.is_bipartite(H): continue
+        col=nx.bipartite.color(H); sides={0:[k for k in comp if col[k]==0],1:[k for k in comp if col[k]==1]}
+        def score(ks):
+            it=[L['italic'] for k in ks for L in by_box.get(k,[])[:1]]; two=[len(by_box.get(k,[]))>=2 for k in ks]
+            return (sum(it)/max(1,len(it)), sum(two)/max(1,len(two)))
+        sc={k:score(v) for k,v in sides.items()}
+        if sc[0][0]!=sc[1][0]: rx=0 if sc[0][0]>sc[1][0] else 1; how='italic reaction names'
+        else: rx=0 if sc[0][1]>sc[1][1] else 1; how='two-line reaction boxes'
+        for k in sides[rx]: role[k]='rxn'
+        for k in sides[1-rx]: role[k]='met'
+    name=lambda k:(sorted(by_box.get(k,[]),key=lambda L:L['bbox'][1])[0]['text'] if by_box.get(k) else f'box{k}')
+    # line roles at each reaction: arrowhead at the reaction = substrate, at the other end = product, none = catalyst
+    S={};P={};C={}
+    for i,a,b in E:
+        for r,m,end in ((a,b,0),(b,a,-1)):
+            if role.get(r)!='rxn' or role.get(m)!='met': continue
+            h=conns[i]['head']
+            if end in h: S.setdefault(r,[]).append((m,i))
+            elif (-1-end if end==0 else 0) in h or (end==-1 and 0 in h) or (end==0 and -1 in h): P.setdefault(r,[]).append((m,i))
+            else: C.setdefault(r,[]).append((m,i))
+    def direction(r,i):
+        p=conns[i]['pts']; p=p if endbox(p[0])==r else p[::-1]
+        c=ctr[r]; bb=B[r]; far=max(bb[2]-bb[0],bb[3]-bb[1])/2+8
+        q=next((v for v in p if math.dist(v,c)>far),p[-1]); d=(q[0]-c[0],q[1]-c[1]); n=math.hypot(*d) or 1
+        return (d[0]/n,d[1]/n)
+    ang=lambda u,v: math.degrees(math.acos(max(-1,min(1,u[0]*v[0]+u[1]*v[1]))))
+    checked=0; bad=[]; opening=[]; cat_bad=0; cats=0
+    for r in sorted(k for k,v in role.items() if v=='rxn'):
+        s=[direction(r,i) for _,i in S.get(r,[])]; p=[direction(r,i) for _,i in P.get(r,[])]; c=[direction(r,i) for _,i in C.get(r,[])]
+        if not s or not p: continue
+        checked+=1                                                # axis from the main lines (secondary ones only
+        s_m=[direction(r,i) for m,i in S.get(r,[]) if not conns[i]['side']]   # if a side has no main line)
+        p_m=[direction(r,i) for m,i in P.get(r,[]) if not conns[i]['side']]
+        ms=np.mean(s_m if (s_m and p_m) else s,0); mp=np.mean(p_m if (s_m and p_m) else p,0); ax=mp-ms; n=np.linalg.norm(ax)
+        if n<1e-9: bad.append((r,'substrates and products on the same side')); continue
+        ax=ax/n; opening.append(ang(ms/max(np.linalg.norm(ms),1e-9),mp/max(np.linalg.norm(mp),1e-9)))
+        wrong=[d for d in s if ang(d,-ax)>80]+[d for d in p if ang(d,ax)>80]
+        cw=[d for d in c if not 50<=ang(d,ax)<=130]; cats+=len(c); cat_bad+=len(cw)
+        if wrong or cw: bad.append((r,f"{len(wrong)} compound(s) on the wrong side" + (f", {len(cw)} catalyst(s) not beside" if cw else '')))
+    placement=dict(role_detection=how,reactions=sum(1 for v in role.values() if v=='rxn'),reactions_checked=checked,
+                   reactions_inconsistent=len(bad),catalyst_lines=cats,catalysts_not_beside=cat_bad,
+                   mean_substrate_product_angle=round(float(np.mean(opening)),1) if opening else None,
+                   inconsistent=[f"{name(r)}: {why}" for r,why in bad][:20])
+    # metabolite cycles: compound - reaction - compound steps (substrate -> product); minimum cycle basis
+    M=nx.Graph(); step={}
+    for r in role:
+        if role[r]!='rxn': continue
+        for sm,i in S.get(r,[]):
+            for pm,j in P.get(r,[]):
+                if sm!=pm and not conns[i]['side'] and not conns[j]['side']:     # main steps only
+                    M.add_edge(sm,pm); step.setdefault(frozenset((sm,pm)),[]).append(r)
+    cand=[c for c in itertools.islice(nx.simple_cycles(M,length_bound=16),20000) if len(c)>=3] if M.number_of_edges() else []
+    def shape(c):
+        pts=[]; mfit=_fit_circle([ctr[m] for m in c])
+        for a,b in zip(c,c[1:]+c[:1]):
+            pts.append(ctr[a]); rs=step[frozenset((a,b))]
+            pts.append(ctr[min(rs,key=lambda r:abs(math.dist(ctr[r],mfit[0])-mfit[1]))])
+        (cx,cy),R=_fit_circle(pts); res=[abs(math.dist(q,(cx,cy))-R)/R for q in pts]
+        th=np.unwrap([math.atan2(q[1]-cy,q[0]-cx) for q in pts+[pts[0]]]); d=np.diff(th)
+        order_ok=bool(np.all(d>0) or np.all(d<0)) and abs(abs(th[-1]-th[0])-2*math.pi)<0.5
+        return pts,float(np.sqrt(np.mean(np.square(res)))),float(max(res)),order_ok
+    shp={tuple(c):shape(c) for c in cand}
+    cyc=[]; used=set(); pool=list(cand)
+    isround=lambda c:shp[tuple(c)][1]<=0.08 and shp[tuple(c)][2]<=0.2 and shp[tuple(c)][3]
+    while pool:                                                   # main cycles: the longest one drawn round (if it is
+        mx=max(len(c) for c in pool)                              # at least half as long as the longest loop), else the
+        rnd=[c for c in pool if isround(c) and len(c)>=0.5*mx]    # longest loop, which is then judged not round
+        best=max(rnd,key=lambda c:(len(c),-shp[tuple(c)][1])) if rnd else min((c for c in pool if len(c)==mx),key=lambda c:(shp[tuple(c)][1],sorted(c)))
+        cyc.append(best); used|=set(best)
+        pool=[c for c in pool if not (set(c)&used)]
+    alternative=len(cand)-len(cyc)
+    rounds=[]; marks=[]
+    for c in cyc:
+        pts,rms,mx,order_ok=shp[tuple(c)]
+        ok=rms<=0.08 and mx<=0.2 and order_ok
+        rounds.append(dict(compounds=[name(m) for m in c],round=ok,rms_dev=round(rms,3),max_dev=round(mx,3),in_cycle_order=order_ok))
+        if not ok: marks+=pts
+    cycles=dict(cycles=len(rounds),round_cycles=sum(1 for x in rounds if x['round']),alternative_routes=alternative,detail=rounds)
+    # crowding: boxes that do not overlap but almost touch
+    tight=0; mincl=None
+    for i in range(len(B)):
+        for j in range(i+1,len(B)):
+            a,b=B[i],B[j]; dx=max(b[0]-a[2],a[0]-b[2],0); dy=max(b[1]-a[3],a[1]-b[3],0)
+            cl=math.hypot(dx,dy) if (dx>0 or dy>0) else 0.0
+            if dx>0 or dy>0:
+                mincl=cl if mincl is None else min(mincl,cl)
+                if cl<6: tight+=1
+    return dict(cycles=cycles,placement=placement,tight_pairs=tight,min_clearance=round(mincl,1) if mincl is not None else None,
+                cycle_marks=marks,placement_marks=[ctr[r] for r,_ in bad])
+
 def evaluate(svgfile,compare=None):
     src,shapes,texts,canvas=read(svgfile)
     boxes,labels,conns,heads=classify(shapes,texts,canvas)
     B=[b['bbox'] for b in boxes]
-    end_box=lambda p:[k for k,b in enumerate(B) if inside(p,b,3.0)]
+    def end_box(p):                                               # nearest box within 6 px
+        d=[(max(b[0]-p[0],0,p[0]-b[2])**2+max(b[1]-p[1],0,p[1]-b[3])**2,k) for k,b in enumerate(B)]
+        d=[x for x in d if x[0]<=36.0]
+        return [min(d)[1]] if d else []
     issues=dict(crossings=[],line_through_box=[],box_overlaps=[],label_overlaps=[],label_crossed=[],bends=[],long=[])
     # --- connections: endpoints, length, bends, axis alignment
     info=[]
@@ -297,6 +449,8 @@ def evaluate(svgfile,compare=None):
         g2=sorted((tuple(round(v,2) for v in s['bbox']),s['stroke'],s['fill']) for s in shapes2)
         rep.update(compared_with=compare,byte_identical=open(svgfile,'rb').read()==open(compare,'rb').read(),
                    geometry_identical=g1==g2,shapes_differing=len(set(g1)^set(g2)))
+    # --- roles, cycles, placement, crowding
+    sem=semantics(boxes,labels,conns,info,by_box)
     # --- summary
     straight=[x for x in info if not x['curved']]
     out=dict(file=svgfile,
@@ -306,19 +460,24 @@ def evaluate(svgfile,compare=None):
         rule2_labels=dict(per_box_type=type_report,label_overlaps=len(issues['label_overlaps']),labels_crossed_by_lines=len(issues['label_crossed']),
                           worst_x_spread=max([t['x_spread'] for t in type_report if t['labelled']],default=0.0),
                           worst_top_gap_spread_px=max([t['top_gap_spread_px'] for t in type_report if t['labelled']],default=0.0)),
-        rule3_crossings=dict(line_crossings=len(issues['crossings']),lines_through_boxes=len(issues['line_through_box']),box_overlaps=len(issues['box_overlaps'])),
-        rule4_long_lines=dict(median=round(med,1),max=round(float(lens.max()),1) if len(lens) else 0,max_over_median=round(float(lens.max())/med,2) if med else 0,
+        rule3_crossings=dict(line_crossings=len(issues['crossings']),lines_through_boxes=len(issues['line_through_box'])),
+        rule4_cycles=sem['cycles'],
+        rule5_placement=sem['placement'],
+        rule6_long_lines=dict(median=round(med,1),max=round(float(lens.max()),1) if len(lens) else 0,max_over_median=round(float(lens.max())/med,2) if med else 0,
                               over_2_5x_median=len(issues['long']),cv=round(float(lens.std()/lens.mean()),3) if len(lens) and lens.mean() else 0),
-        rule5_bends=dict(bends=len(issues['bends']),connections_with_bends=sum(1 for x in info if x['bends']),straight_connections=len(straight),
+        rule7_bends=dict(bends=len(issues['bends']),connections_with_bends=sum(1 for x in info if x['bends']),straight_connections=len(straight),
                          curved_connections=len(info)-len(straight),
                          axis_aligned_share=round(sum(1 for x in straight if x['axis_dev']<=5)/len(straight),3) if straight else 0,
                          mean_axis_deviation_deg=round(float(np.mean([x['axis_dev'] for x in straight])),1) if straight else 0),
+        rule8_overlaps=dict(box_overlaps=len(issues['box_overlaps']),tight_pairs=sem['tight_pairs'],min_clearance=sem['min_clearance'],boxes=len(B)),
         drawing=dict(width=round(canvas[2]-canvas[0],1),height=round(canvas[3]-canvas[1],1),aspect=round((canvas[2]-canvas[0])/max(canvas[3]-canvas[1],1),2),
                      box_area_share=round(sum((b[2]-b[0])*(b[3]-b[1]) for b in B)/max((canvas[2]-canvas[0])*(canvas[3]-canvas[1]),1),3)))
+    issues['cycles']=sem['cycle_marks']; issues['placement']=sem['placement_marks']
     return out,(boxes,labels,conns,issues,canvas)
 
 def verdicts(m):
-    r1=m['rule1_reproducible']; r2=m['rule2_labels']; r3=m['rule3_crossings']; r4=m['rule4_long_lines']; r5=m['rule5_bends']
+    r1=m['rule1_reproducible']; r2=m['rule2_labels']; r3=m['rule3_crossings']; r4=m['rule4_cycles']; r5=m['rule5_placement']
+    r6=m['rule6_long_lines']; r7=m['rule7_bends']; r8=m['rule8_overlaps']; n=max(1,m['reconstructed']['connections'])
     rep_ok=(not r1['date_stamp'] and r1['random_like_ids']==0) if 'byte_identical' not in r1 else r1['byte_identical'] or r1['geometry_identical']
     return [('1 reproducible', 'PASS' if rep_ok else 'CHECK',
              (f"identical to {r1['compared_with']}: bytes {r1['byte_identical']}, geometry {r1['geometry_identical']}" if 'byte_identical' in r1
@@ -326,13 +485,22 @@ def verdicts(m):
             ('2 fixed labels', 'PASS' if r2['worst_x_spread']<=0.02 and r2['worst_top_gap_spread_px']<=1.5 and r2['label_overlaps']==0 and r2['labels_crossed_by_lines']==0 else 'FAIL',
              f"within each box type the label varies by <= {round(100*r2['worst_x_spread'],1)}% of box width sideways and {r2['worst_top_gap_spread_px']} px from the top; "
              f"{r2['label_overlaps']} label overlaps; {r2['labels_crossed_by_lines']} labels crossed by lines"),
-            ('3 no crossing', 'PASS' if r3['line_crossings']==0 and r3['lines_through_boxes']==0 and r3['box_overlaps']==0 else 'FAIL',
-             f"{r3['line_crossings']} crossings, {r3['lines_through_boxes']} lines through boxes, {r3['box_overlaps']} box overlaps"),
-            ('4 avoid long lines', 'GOOD' if r4['over_2_5x_median']==0 else ('MODERATE' if r4['over_2_5x_median']<=0.05*max(1,m['reconstructed']['connections']) else 'POOR'),
-             f"median {r4['median']}, max {r4['max']} ({r4['max_over_median']}x median), {r4['over_2_5x_median']} lines > 2.5x median, CV {r4['cv']}"),
-            ('5 avoid bends', 'GOOD' if r5['bends']==0 else ('MODERATE' if r5['connections_with_bends']<=0.1*max(1,r5['straight_connections']) else 'POOR'),
-             f"{r5['bends']} sharp bends on {r5['connections_with_bends']} lines; {r5['straight_connections']} straight-segment lines, {r5['curved_connections']} smooth curves; "
-             f"{round(100*r5['axis_aligned_share'])}% of straight lines vertical/horizontal (mean deviation {r5['mean_axis_deviation_deg']} deg)")]
+            ('3 no crossing', 'PASS' if r3['line_crossings']==0 and r3['lines_through_boxes']==0 else 'FAIL',
+             f"{r3['line_crossings']} crossings, {r3['lines_through_boxes']} lines through boxes"),
+            ('4 cycles as cycles', 'PASS' if r4['round_cycles']==r4['cycles'] else 'FAIL',
+             f"{r4['cycles']} main metabolite cycle(s), {r4['round_cycles']} drawn round"+(" (none in this drawing)" if not r4['cycles'] else "")
+             +(f"; {r4['alternative_routes']} alternative route(s) sharing metabolites with them (not judged)" if r4.get('alternative_routes') else '')),
+            ('5 consistent placement', ('PASS' if r5['reactions_inconsistent']==0 else 'FAIL') if r5['reactions_checked'] else 'N/A',
+             (f"{r5['reactions_checked']} reactions checked ({r5['role_detection']}), {r5['reactions_inconsistent']} with substrates/products not on opposite sides "
+              f"or catalysts not beside; mean substrate-product angle {r5['mean_substrate_product_angle']} deg; {r5['catalyst_lines']} catalyst line(s)")
+             if r5['reactions_checked'] else "no reaction boxes recognised"),
+            ('6 avoid long lines', 'GOOD' if r6['over_2_5x_median']==0 else ('MODERATE' if r6['over_2_5x_median']<=0.05*n else 'POOR'),
+             f"median {r6['median']}, max {r6['max']} ({r6['max_over_median']}x median), {r6['over_2_5x_median']} lines > 2.5x median, CV {r6['cv']}"),
+            ('7 avoid bends', 'GOOD' if r7['bends']==0 else ('MODERATE' if r7['connections_with_bends']<=0.1*max(1,r7['straight_connections']) else 'POOR'),
+             f"{r7['bends']} sharp bends on {r7['connections_with_bends']} lines; {r7['straight_connections']} straight-segment lines, {r7['curved_connections']} smooth curves; "
+             f"{round(100*r7['axis_aligned_share'])}% of straight lines vertical/horizontal (mean deviation {r7['mean_axis_deviation_deg']} deg)"),
+            ('8 avoid overlapping nodes', 'GOOD' if r8['box_overlaps']==0 and r8['tight_pairs']==0 else ('MODERATE' if r8['box_overlaps']==0 and r8['tight_pairs']<=0.05*max(1,r8['boxes']) else 'POOR'),
+             f"{r8['box_overlaps']} overlapping box pairs, {r8['tight_pairs']} pairs closer than 6 px, smallest gap {r8['min_clearance']} px")]
 
 def annotate(geo,path,title):
     import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
@@ -345,7 +513,8 @@ def annotate(geo,path,title):
     for b in boxes: ax.add_patch(Rectangle(b['bbox'][:2],b['bbox'][2]-b['bbox'][0],b['bbox'][3]-b['bbox'][1],fc='none',ec='#777',lw=0.6))
     for L in labels: ax.add_patch(Rectangle(L['bbox'][:2],L['bbox'][2]-L['bbox'][0],L['bbox'][3]-L['bbox'][1],fc='#ffd76a',ec='none',alpha=0.35))
     mk=[('crossings','#e3262b','X',90,'crossing'),('line_through_box','#ff8c1a','s',60,'line through box'),('box_overlaps','#9b30d9','D',60,'box overlap'),
-        ('label_overlaps','#7a4a00','o',40,'label overlap'),('label_crossed','#c2185b','^',40,'label crossed'),('bends','#00a07a','o',25,'bend')]
+        ('label_overlaps','#7a4a00','o',40,'label overlap'),('label_crossed','#c2185b','^',40,'label crossed'),('bends','#00a07a','o',25,'bend'),
+        ('cycles','#ff00aa','h',70,'node of a cycle not drawn round'),('placement','#0b7285','P',90,'reaction with inconsistent sides')]
     for key,col,m,s,lab in mk:
         if issues[key]: ax.scatter([p[0] for p in issues[key]],[p[1] for p in issues[key]],c=col,marker=m,s=s,label=f'{lab} ({len(issues[key])})',zorder=5)
     if issues['long']: ax.plot([],[],color='#2f6fd6',lw=2.4,label=f"long line ({len(issues['long'])})")
@@ -362,11 +531,14 @@ def main():
     r=m['reconstructed']
     print(f"{a.svg}\n  reconstructed: {r['boxes']} boxes of {r['box_types']} types, {r['labels']} labels ({r['labels_inside_boxes']} inside boxes, {r['free_labels']} free), "
           f"{r['connections']} lines ({r['curved_connections']} curved), {r['arrowheads']} arrowheads"+(f"; {r['frames_ignored']} framed region(s) such as a legend ignored" if r['frames_ignored'] else ''))
-    for name,verdict,detail in verdicts(m): print(f"  {name:<20} {verdict:<8} {detail}")
+    for name,verdict,detail in verdicts(m): print(f"  {name:<26} {verdict:<8} {detail}")
     print(f"  label position per box type (sideways offset of the first text line from the box centre, as % of box width; gap to the box top in px):")
     for t in m['rule2_labels']['per_box_type']:
         print(f"    outline {t['style']['outline']:<8} fill {t['style']['fill']:<8} {t['style']['dash']:<10} {t['boxes']:>3} boxes, {t['unlabelled']} unlabelled, "
               f"offset {round(100*t['x_offset'],1)}% +/- {round(100*t['x_spread'],1)}%, top gap {t['top_gap_px']} +/- {t['top_gap_spread_px']} px")
+    for c in m['rule4_cycles']['detail']:
+        print(f"  cycle {'round    ' if c['round'] else 'NOT round'} (deviation rms {c['rms_dev']}, max {c['max_dev']}, order {'ok' if c['in_cycle_order'] else 'broken'}): {' -> '.join(c['compounds'])}")
+    for t in m['rule5_placement']['inconsistent']: print(f"  inconsistent placement: {t}")
     d=m['drawing']; print(f"  drawing: {d['width']} x {d['height']} (aspect {d['aspect']}), boxes cover {round(100*d['box_area_share'],1)}% of the area")
     if a.json:
         m['verdicts']=[dict(rule=n,verdict=v,detail=t) for n,v,t in verdicts(m)]

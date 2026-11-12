@@ -155,6 +155,11 @@ def read_sbml(path):
             return out
         rid=e.get('id') or e.get('name'); nm=(e.get('name') or rid).strip()
         subs,prods=refs('listOfReactants'),refs('listOfProducts')
+        mods=[]
+        for Lm in _kids(e,'listOfModifiers'):
+            for r_ in Lm:
+                sid=r_.get('species') or r_.get('specie')
+                if sid in species: mods.append(species[sid]['name'])
         mine=[(n,k) for n,k in rg.get(rid,[]) if n and n.strip().lower()!=mname]
         if re.fullmatch(r'[A-Za-z_]{0,6}\d+[A-Za-z0-9_]*',nm) or nm==rid:      # name is just an identifier
             toks={t for p,_ in subs+prods for t in re.findall(r'[a-z0-9+]{3,}',p.lower())}
@@ -168,7 +173,7 @@ def read_sbml(path):
         if not sub:
             parts=sorted(n for n,k in mine if not re.match(r'EC [0-9]',n) and k!='classification')
             sub=parts[0] if parts else None
-        reactions.append(dict(id=rid,name=nm,subs=subs,prods=prods,reversible=(e.get('reversible','true')!='false'),subsystem=sub))
+        reactions.append(dict(id=rid,name=nm,subs=subs,prods=prods,modifiers=mods,reversible=(e.get('reversible','true')!='false'),subsystem=sub))
     return (model.get('name') or model.get('id') or 'model'),F,reactions
 
 # ============================================================ primary-compound reduction
@@ -227,6 +232,7 @@ STYLE={'core': dict(fs=9.5,weight='bold',style='normal',pad=(7,5),fc='#fde3e1',e
        'met':  dict(fs=8.5,weight='normal',style='normal',pad=(6,4),fc='#e3ecfd',ec='#5b8def',tc='#0f2550'),
        'alias':dict(fs=7.5,weight='normal',style='normal',pad=(5,3),fc='#eef3fd',ec='#8aa9ec',tc='#33456b',ls='--'),
        'rxn':  dict(fs=7.0,weight='normal',style='italic',pad=(4,3),fc='#ffffff',ec='#2b2b2b',tc='#222222'),
+       'cat':  dict(fs=7.5,weight='normal',style='normal',pad=(5,3),fc='#e6f4ea',ec='#3c8d5a',tc='#1f4d2e'),
        'dummy':None}
 SUB=dict(fs=5.8,weight='normal',style='normal',pad=(4,0),tc='#777777')
 _tw={}
@@ -640,6 +646,21 @@ def layout_cluster(rxns,ring_scale=1.0):
                 if not hit(bx,shift,0): break
                 shift+=30 if right else -30
             sx,sy=shift,0.0
+        # consistent placement: a line to a ring REACTION must arrive from its substrate side / leave on its
+        # product side, so slide the piece along the ring (smallest shift that satisfies every such link)
+        need=[]
+        for (ea,eb),(ma,mb),sd in zip(edges,emeta,eside):
+            if ma in cs and mb in ringnodes[i] and mb.startswith('R:'): need.append((ma,mb,'substrate'))
+            if mb in cs and ma in ringnodes[i] and ma.startswith('R:'): need.append((mb,ma,'product'))
+        if need:
+            ok_at=lambda ox,oy: all(side_ok(reaction_axis(D,x),(pos[n][0]+sx+ox-D.P[x][0],pos[n][1]+sy+oy-D.P[x][1]),ro,65.0) for n,x,ro in need)
+            if not ok_at(0,0):
+                for step_ in range(1,40):
+                    hitf=None
+                    for sgn in (1,-1):
+                        ox,oy=((sgn*20*step_,0) if vertical else (0,sgn*20*step_))
+                        if ok_at(ox,oy) and not hit(bx,sx+ox,sy+oy): hitf=(ox,oy); break
+                    if hitf: sx+=hitf[0]; sy+=hitf[1]; break
         for k,v in pos.items():
             if k.startswith('__d'): D.add(k,'dummy')
             D.P[k]=(v[0]+sx,v[1]+sy)
@@ -659,10 +680,46 @@ def layout_cluster(rxns,ring_scale=1.0):
         for j,(n,sd) in enumerate(r['secondary']):
             if (n,r['id']) in joins: continue
             a=f'A:{r["id"]}:{j}'; D.add(a,'alias',n); pending.append((a,R,sd=='p'))
-    order=sorted(pending,key=lambda t:(0 if t[0].startswith('R:') else 1,t[0]))
+        for j,n in enumerate(r.get('modifiers',[])):
+            c_=f'K:{r["id"]}:{j}'; D.add(c_,'cat',n); pending.append((c_,R,'cat'))
+    order=sorted(pending,key=lambda t:(0 if t[0].startswith('R:') else (2 if t[0].startswith('K:') else 1),t[0]))
     for node,anchor,into_node in order:
         plant(D,node,anchor,into_node)
     return D,rings
+
+def reaction_axis(D,R,exclude=None):
+    """Unit vector from the substrate side to the product side of reaction R (None if one side is missing)."""
+    if R not in D.P: return None
+    x,y=D.P[R]; sub=[]; prod=[]; msub=[]; mprod=[]               # main lines define the axis (secondary ones
+    for L in D.links:                                             # only if a side has no main line)
+        if R not in (L['a'],L['b']) or L.get('cat') or (exclude is not None and exclude in (L['a'],L['b'])): continue
+        p=D.path(L); other=L['b'] if L['a']==R else L['a']
+        main=not L.get('side') and D.info.get(other,{}).get('kind') not in ('alias','cat')
+        if L['a']==R: q=p[1] if len(p)>1 else p[-1]; v=(q[0]-x,q[1]-y); prod.append(v); (mprod.append(v) if main else None)
+        else: q=p[-2] if len(p)>1 else p[0]; v=(q[0]-x,q[1]-y); sub.append(v); (msub.append(v) if main else None)
+    u=lambda v:np.array(v)/max(np.linalg.norm(v),1e-9)
+    if msub and mprod: sub,prod=msub,mprod
+    if not sub or not prod: return None
+    ax=np.mean([u(v) for v in prod],0)-np.mean([u(v) for v in sub],0); n=np.linalg.norm(ax)
+    return ax/n if n>1e-9 else None
+def side_ok(axis,d,role,tol=70.0):
+    """Is direction d (from the reaction) on the right side for a substrate / product / catalyst?"""
+    if axis is None: return True
+    d=np.array(d)/max(np.linalg.norm(d),1e-9); a=math.degrees(math.acos(max(-1,min(1,float(d@axis)))))
+    return a<=tol if role=='product' else (a>=180-tol if role=='substrate' else 90-35<=a<=90+35)
+def placement_violations(D,tol=80.0):
+    """Reactions whose substrates and products are not on opposite sides, or whose catalysts are not beside."""
+    bad=[]
+    for R in [n for n in D.P if n.startswith('R:')]:
+        ax=reaction_axis(D,R)
+        if ax is None: continue
+        x,y=D.P[R]
+        for L in D.links:
+            if R not in (L['a'],L['b']): continue
+            p=D.path(L); q=(p[1] if L['a']==R else p[-2]) if len(p)>1 else p[0]
+            role='catalyst' if L.get('cat') else ('product' if L['a']==R else 'substrate')
+            if not side_ok(ax,(q[0]-x,q[1]-y),role,tol): bad.append((R,L['b'] if L['a']==R else L['a'],role)); break
+    return bad
 
 def plant(D,node,anchor,into_node,dist0=None):
     """Put a side box in the free angular gap of its anchor (crossing-free, fewest box conflicts)."""
@@ -676,20 +733,33 @@ def plant(D,node,anchor,into_node,dist0=None):
     if not dirs: cands=[(2*math.pi,-math.pi/2-math.pi)]
     else: cands=sorted(((((dirs[(i+1)%len(dirs)]-dirs[i])%(2*math.pi)) or 2*math.pi,dirs[i]) for i in range(len(dirs))),key=lambda t:(-t[0],t[1]))
     w,h=D.size(node); aw,ah=D.size(anchor); base=dist0 or (max(w,aw)/2+max(h,ah)+22)
-    D.link(anchor,node,arrow=into_node) if into_node else D.link(node,anchor,arrow=True)
+    role='catalyst' if into_node=='cat' else ('product' if into_node else 'substrate')
+    axis=reaction_axis(D,anchor) if anchor.startswith('R:') else None   # substrates / products / catalysts:
+    if into_node=='cat': D.link(node,anchor,arrow=False); D.links[-1]['cat']=True   # their own side of the reaction
+    elif into_node: D.link(anchor,node,arrow=True)
+    else: D.link(node,anchor,arrow=True)
     li=len(D.links)-1; best=None
-    for gap,lo in cands[:3]:
-        for frac in (0.5,0.35,0.65,0.2,0.8):
-            t=lo+gap*frac
-            for f in (1.0,1.5,2.2,0.7):
-                D.P[node]=(x+base*f*math.cos(t),y+base*f*math.sin(t))
-                if crossing_pairs(D,only={li}): continue
-                v=violations_local(D,node,li)
-                key=(v,abs(f-1.0),-gap,frac)
-                if best is None or key<best[0]: best=(key,D.P[node])
-                if v==0: break
-            if best and best[0][0]==0: break
+    angles=[(lo+gap*frac,gap,frac) for gap,lo in cands[:3] for frac in (0.5,0.35,0.65,0.2,0.8)]
+    if axis is not None:                                          # also try directly on the right side
+        base_t=math.atan2(axis[1],axis[0])+(0 if role=='product' else (math.pi if role=='substrate' else math.pi/2))
+        extra=[base_t+math.radians(d) for d in (0,-20,20,-40,40,-60,60)]
+        if role=='catalyst': extra+=[t+math.pi for t in extra]
+        angles=[(t,0.0,9) for t in extra]+angles
+        angles=[a for a in angles if side_ok(axis,(math.cos(a[0]),math.sin(a[0])),role,70.0)]
+    for t,gap,frac in angles:
+        if dist0 is None:                                         # distance from the extent of both boxes
+            base=abs(math.cos(t))*(w+aw)/2+abs(math.sin(t))*(h+ah)/2+16   # in this direction (no tight pairs)
+        for f in (1.0,1.5,2.2,0.7):
+            D.P[node]=(x+base*f*math.cos(t),y+base*f*math.sin(t))
+            if crossing_pairs(D,only={li}): continue
+            v=violations_local(D,node,li)
+            key=(v,abs(f-1.0),-gap,frac)
+            if best is None or key<best[0]: best=(key,D.P[node])
+            if v==0: break
         if best and best[0][0]==0: break
+    if best is None and axis is not None:                         # nothing free on the right side: closest spot there
+        t=math.atan2(axis[1],axis[0])+(0 if role=='product' else (math.pi if role=='substrate' else math.pi/2))
+        best=(None,(x+base*0.6*math.cos(t),y+base*0.6*math.sin(t)))
     D.P[node]=best[1] if best else (x+4,y+4)
 def violations_local(D,node,li,margin=3):
     names=D.real(); Bx={n:D.box(n) for n in names}; b=Bx[node]; c=0
@@ -713,6 +783,8 @@ def place_hubs(D,hubs,grid=26):
         inc=[i for i,L in enumerate(D.links) if h in (L['a'],L['b'])]
         if not inc or any(D.links[i]['chain'] is not None or D.links[i]['ring'] is not None for i in inc): continue
         nbr=[D.links[i]['b'] if D.links[i]['a']==h else D.links[i]['a'] for i in inc]
+        roles=['substrate' if D.links[i]['a']==h else 'product' for i in inc]
+        axes=[reaction_axis(D,r,exclude=h) if r.startswith('R:') else None for r in nbr]
         others=[]
         for i,L in enumerate(D.links):
             if i in inc: continue
@@ -740,9 +812,10 @@ def place_hubs(D,hubs,grid=26):
                 thr+=int(((SX>bx[0]-3)&(SX<bx[2]+3)&(SY>bx[1]-3)&(SY<bx[3]+3)).any(1).sum())
             ln=sum(math.dist(c,D.P[r]) for r in nbr)
             skew=sum(min(abs(c[0]-D.P[r][0]),abs(c[1]-D.P[r][1])) for r in nbr)   # 0 for straight vertical/horizontal
-            key=(cr,thr+ov,round(ln+2.0*skew,3),round(c[0],3),round(c[1],3))
+            wrong=sum(1 for r,ro,ax in zip(nbr,roles,axes) if not side_ok(ax,(c[0]-D.P[r][0],c[1]-D.P[r][1]),ro,70.0))
+            key=(cr,wrong,thr+ov,round(ln+2.0*skew,3),round(c[0],3),round(c[1],3))
             if best is None or key<best: best=key
-        D.P[h]=(best[3],best[4])
+        D.P[h]=(best[4],best[5])
 
 
 def remove_crossings(D):
@@ -764,9 +837,9 @@ def remove_crossings(D):
             return (ln,k,mets[0],rx[0])
         cs=[c for c in (cand(i),cand(j)) if c]
         if not cs:                                                # a dashed copy's own line is involved:
-            al=[(k,x) for k in (i,j) for x in (D.links[k]['a'],D.links[k]['b']) if D.info.get(x,{}).get('kind')=='alias']
+            al=[(k,x) for k in (i,j) for x in (D.links[k]['a'],D.links[k]['b']) if D.info.get(x,{}).get('kind') in ('alias','cat')]
             if not al: raise RuntimeError('crossing between two ring arcs')
-            k,a=al[0]; L=D.links[k]; anchor=L['b'] if L['a']==a else L['a']; into=L['b']==a
+            k,a=al[0]; L=D.links[k]; anchor=L['b'] if L['a']==a else L['a']; into='cat' if L.get('cat') else L['b']==a
             tries=D.__dict__.setdefault('replants',{}); tries[a]=tries.get(a,0)+1
             D.links.pop(k)
             if tries[a]<=3: plant(D,a,anchor,into); continue      # re-place the copy in a free spot
@@ -846,6 +919,8 @@ def legend_entries(D):
     if ring: E.append(('line','ring','cycle step'))
     if main: E.append(('line','main','main substrate → product'))
     if side: E.append(('line','side','secondary compound'))
+    if 'cat' in kinds: E.insert(len([e for e in E if e[0]=='box']),('box','cat','catalyst (SBML modifier)'))
+    if any(L.get('cat') for L in D.links): E.append(('line','cat','catalyst \u2192 reaction (no arrowhead), beside the reaction'))
     return E
 def legend_size(E):
     sw=74; tw=max(text_w(t,dict(fs=LEG_FS,weight='normal',style='normal')) for *_,t in E)
@@ -867,8 +942,8 @@ def draw_legend(ax,E,x0,y0):
             ax.text(sx+4+bw/2,cy+(3.5 if what else 0),'enzyme',ha='center',va='center_baseline',fontsize=6.5,style='italic',color=st['tc'],zorder=7)
             if what: ax.text(sx+4+bw/2,cy-4.5,'cofactors',ha='center',va='center_baseline',fontsize=5.2,color=SUB['tc'],zorder=7)
         else:
-            col,lw={'ring':('#b23b36',1.8),'main':('#4a4a4a',1.1),'side':('#9aa6bd',0.8)}[what]
-            ax.add_patch(FancyArrowPatch((sx+6,cy),(sx+68,cy),arrowstyle='-|>',mutation_scale=9 if what=='ring' else 7,color=col,lw=lw,zorder=6))
+            col,lw={'ring':('#b23b36',1.8),'main':('#4a4a4a',1.1),'side':('#9aa6bd',0.8),'cat':('#3c8d5a',0.9)}[what]
+            ax.add_patch(FancyArrowPatch((sx+6,cy),(sx+68,cy),arrowstyle='-' if what=='cat' else '-|>',mutation_scale=9 if what=='ring' else 7,color=col,lw=lw,zorder=6))
         ax.text(sx+86,cy,text,fontsize=LEG_FS,va='center_baseline',color='#222222',zorder=7)
 
 def render(D,path,title,legend=False):
@@ -904,7 +979,7 @@ def render(D,path,title,legend=False):
         if D.info[L['a']]['kind']!='dummy': P=cut(P,D.box(L['a']))
         if D.info[L['b']]['kind']!='dummy': P=cut(P[::-1],D.box(L['b']))[::-1]
         ring=L['ring'] is not None; side=L.get('side') or any(D.info[x]['kind']=='alias' for x in (L['a'],L['b']))
-        col,lw=('#b23b36',1.8) if ring else (('#9aa6bd',0.8) if side else ('#4a4a4a',1.1))
+        col,lw=('#b23b36',1.8) if ring else (('#3c8d5a',0.9) if L.get('cat') else (('#9aa6bd',0.8) if side else ('#4a4a4a',1.1)))
         if L['arrow']:
             ax.plot([p[0] for p in P[:-1]],[p[1] for p in P[:-1]],color=col,lw=lw,solid_capstyle='round',zorder=1)
             ax.add_patch(FancyArrowPatch(P[-2],P[-1],arrowstyle='-|>',mutation_scale=9 if ring else 7,color=col,lw=lw,shrinkA=0,shrinkB=0,zorder=1))
@@ -928,7 +1003,7 @@ def render(D,path,title,legend=False):
 def sbml_ref(D,n):
     k=D.info[n]['kind']
     if n.startswith('R:'): return ('reaction',n[2:])
-    if k in ('core','met','alias'): return ('species',SPECIES_ID.get(D.info[n]['label']))
+    if k in ('core','met','alias','cat'): return ('species',SPECIES_ID.get(D.info[n]['label']))
     return (None,None)
 def drawing_to_dict(D,name,title,checks):
     nodes=[]
@@ -936,7 +1011,7 @@ def drawing_to_dict(D,name,title,checks):
         w,h=D.size(n); t,ref=sbml_ref(D,n)
         nodes.append(dict(id=n,kind=D.info[n]['kind'],label=D.info[n]['label'],sub=D.info[n]['sub'],
                           x=D.P[n][0],y=D.P[n][1],w=round(w,3),h=round(h,3),sbml_type=t,sbml_id=ref))
-    links=[dict(source=L['a'],target=L['b'],arrow=L['arrow'],ring=L['ring'],chain=L['chain'],own=sorted(L['own']),side=bool(L.get('side'))) for L in D.links]
+    links=[dict(source=L['a'],target=L['b'],arrow=L['arrow'],ring=L['ring'],chain=L['chain'],own=sorted(L['own']),side=bool(L.get('side')),cat=bool(L.get('cat'))) for L in D.links]
     rings=[dict(id=i,cx=c[0],cy=c[1],r=r) for i,(c,r) in sorted(D.rings.items())]
     return dict(name=name,title=title,checks=checks,rings=rings,nodes=nodes,links=links)
 def drawing_from_dict(d):
@@ -945,7 +1020,7 @@ def drawing_from_dict(d):
         D.add(n['id'],n['kind'],n['label'],n['sub']); D.P[n['id']]=(n['x'],n['y'])
         if n.get('sbml_type')=='species' and n.get('sbml_id'): SPECIES_ID.setdefault(n['label'],n['sbml_id'])
     for L in d['links']:
-        D.links.append(dict(a=L['source'],b=L['target'],arrow=L['arrow'],ring=L['ring'],own=set(L['own']),chain=L['chain'],cut=True,side=L.get('side',False)))
+        D.links.append(dict(a=L['source'],b=L['target'],arrow=L['arrow'],ring=L['ring'],own=set(L['own']),chain=L['chain'],cut=True,side=L.get('side',False),cat=L.get('cat',False)))
     D.rings={r['id']:((r['cx'],r['cy']),r['r']) for r in d['rings']}
     return D
 
@@ -1009,7 +1084,7 @@ def export_sbml_layout(src,dst,drawings):
             own=sorted(Ls[0]['own']); R=[x for x in own if x.startswith('R:')]; S=[x for x in own if x in gid]
             if not R or not S: continue
             R,S=R[0],S[0]; into_species=Ls[-1]['b']==S
-            role=('sideproduct' if into_species else 'sidesubstrate') if (D.info[S]['kind']=='alias' or Ls[0].get('side')) else ('product' if into_species else 'substrate')
+            role='modifier' if Ls[0].get('cat') else (('sideproduct' if into_species else 'sidesubstrate') if (D.info[S]['kind']=='alias' or Ls[0].get('side')) else ('product' if into_species else 'substrate'))
             if R not in rglyph: continue
             sr=ET.SubElement(rglyph[R][1],q('speciesReferenceGlyph')); sr.set(q('id'),f'srg_{k+1}_{nref}'); nref+=1
             sr.set(q('speciesGlyph'),gid[S]); sr.set(q('role'),role)
@@ -1060,7 +1135,7 @@ def export_escher(D,title,rxn_by_id,path,map_id):
     def new_node(key,d): node_id[key]=str(next(nid)); nodes[node_id[key]]=d; return node_id[key]
     for n in names:                                               # metabolites
         k=D.info[n]['kind']
-        if k not in ('core','met','alias'): continue
+        if k not in ('core','met','alias'): continue               # (Escher maps have no catalysts)
         x,y=ex(D.P[n]); w,h=D.size(n)
         new_node(n,dict(node_type='metabolite',x=x,y=y,bigg_id=_bigg(SPECIES_ID.get(D.info[n]['label'],D.info[n]['label']),'M_'),
                         name=D.info[n]['label'],label_x=round(x-w/2+4,3),label_y=round(y+h/2+12,3),node_is_primary=(k!='alias')))
@@ -1080,7 +1155,7 @@ def export_escher(D,title,rxn_by_id,path,map_id):
         conns.setdefault(L['chain'] if L['chain'] is not None else id(L),[]).append(L)
     for key,Ls in conns.items():
         own=sorted(Ls[0]['own']); R=[x for x in own if x.startswith('R:')]; M=[x for x in own if x in node_id and not x.startswith('R:')]
-        if not R or not M or R[0] not in by_key: continue
+        if not R or not M or R[0] not in by_key or Ls[0].get('cat'): continue
         rx=by_key[R[0]]
         for L in Ls:                                              # one Escher segment per drawn piece
             a,b=L['a'],L['b']
@@ -1200,6 +1275,17 @@ def main():
         fn=out if len(parts)==1 else f"{out}_{k+1:02d}_{re.sub(r'[^A-Za-z0-9]+','_',cname).strip('_')[:40]}"
         bends=sum(1 for L in D.links if L['ring'] is None and D.info[L['b']]['kind']=='dummy')
         print(f'{fn}: {len(rx)} reactions, rings {[len(r) for r in rings]}, {sum(1 for n in D.P if D.info[n]["kind"]=="alias")} side boxes ({cuts} added to avoid crossings), {bends} bends, {v}')
+        for _ in range(3):                                        # consistent placement: re-place movable boxes
+            pv=placement_violations(D)                            # of reactions that break it
+            if not pv: break
+            for R,other,role in pv:
+                if D.info.get(other,{}).get('kind') in ('alias','cat'):
+                    k=next(i for i,L in enumerate(D.links) if other in (L['a'],L['b']) and R in (L['a'],L['b']))
+                    into='cat' if D.links[k].get('cat') else D.links[k]['b']==other; D.links.pop(k); plant(D,other,R,into)
+                elif D.info.get(other,{}).get('kind')=='met': place_hubs(D,[other])
+            v=scale_until_clean(D)
+        pv=placement_violations(D); v['placement']=len(pv)
+        for R,other,role in pv[:5]: print(f"  inconsistent placement: {D.info[R]['label']} - {role} {D.info[other]['label']} on the wrong side")
         if any(v.values()): ok=False; print('  rules not met - drawing not written'); continue
         title=name+(f' \u2014 {cname}' if cname else '')
         render(D,fn+'.svg',title,a.legend); render(D,fn+'.png',title,a.legend)
