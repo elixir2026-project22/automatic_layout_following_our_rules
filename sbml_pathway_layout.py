@@ -284,15 +284,37 @@ def crossing_pairs(D,only=None):
         hit=np.where(_segx(np.array(a)[None],np.array(b)[None],A,B))[0]
         for h in hit:
             j=I[h]
-            if j!=i and not (ends[i]&ends[j]): out.add((min(i,j),max(i,j)))
+            if j==i: continue
+            shared=ends[i]&ends[j]
+            if shared:                                            # lines from the same box may only meet AT that box:
+                c,d=A[h],B[h]                                     # find where they cross, ignore it only if it is
+                d1=(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]); d2=(b[0]-a[0])*(d[1]-a[1])-(b[1]-a[1])*(d[0]-a[0])
+                t=d1/(d1-d2) if d1!=d2 else 0.0; x=(c[0]+(d[0]-c[0])*t,c[1]+(d[1]-c[1])*t)
+                near=False                                        # inside / next to the shared box
+                for n in shared:
+                    if n in D.P and D.info.get(n,{}).get('kind')!='dummy':
+                        bx=D.box(n)
+                        if bx[0]-20<=x[0]<=bx[2]+20 and bx[1]-20<=x[1]<=bx[3]+20: near=True   # tangent meetings at the box
+                if near: continue
+            out.add((min(i,j),max(i,j)))
     return sorted(out)
+def seg_hits(a,b,Bx,margin=0.0):
+    """Exact test (Liang-Barsky clipping): does segment a-b pass through each box, grown by margin?
+    Vectorised over boxes; replaces point sampling, which can miss a line clipping a box corner."""
+    Bx=np.asarray(Bx,float).reshape(-1,4)
+    lo_x,lo_y,hi_x,hi_y=Bx[:,0]-margin,Bx[:,1]-margin,Bx[:,2]+margin,Bx[:,3]+margin
+    dx,dy=b[0]-a[0],b[1]-a[1]; n=len(Bx)
+    t0=np.zeros(n); t1=np.ones(n); ok=np.ones(n,bool)
+    for p,q in ((-dx,a[0]-lo_x),(dx,hi_x-a[0]),(-dy,a[1]-lo_y),(dy,hi_y-a[1])):
+        if abs(p)<1e-12: ok&=(q>=0)
+        elif p<0: t0=np.maximum(t0,q/p)
+        else: t1=np.minimum(t1,q/p)
+    return ok&(t0<=t1)
 def violations(D,margin=3):
     S=segments(D); names=D.real(); Bx=np.array([D.box(n) for n in names]); thr=0; ov=0
     for i,a,b in S:
-        own=D.links[i]['own']; ts=np.linspace(0,1,10)
-        X=a[0]+(b[0]-a[0])*ts; Y=a[1]+(b[1]-a[1])*ts
-        hit=(X[None]>Bx[:,0,None]-margin)&(X[None]<Bx[:,2,None]+margin)&(Y[None]>Bx[:,1,None]-margin)&(Y[None]<Bx[:,3,None]+margin)
-        thr+=sum(1 for k in np.where(hit.any(1))[0] if names[k] not in own)
+        own=D.links[i]['own']
+        thr+=sum(1 for k in np.where(seg_hits(a,b,Bx,margin))[0] if names[k] not in own)
     o=(Bx[:,None,0]<Bx[None,:,2]+margin)&(Bx[None,:,0]<Bx[:,None,2]+margin)&(Bx[:,None,1]<Bx[None,:,3]+margin)&(Bx[None,:,1]<Bx[:,None,3]+margin)
     ov=int(np.triu(o,1).sum())
     return {'crossings':len(crossing_pairs(D)),'line_through_box':thr,'box_overlaps':ov}
@@ -677,16 +699,10 @@ def violations_local(D,node,li,margin=3):
         if b[0]<o[2]+margin and o[0]<b[2]+margin and b[1]<o[3]+margin and o[1]<b[3]+margin: c+=1
     for i,a,bb in segments(D):
         if node in D.links[i]['own']: continue
-        for t in np.linspace(0,1,10):
-            px,py=a[0]+(bb[0]-a[0])*t,a[1]+(bb[1]-a[1])*t
-            if b[0]-margin<px<b[2]+margin and b[1]-margin<py<b[3]+margin: c+=1; break
+        if seg_hits(a,bb,[b],margin)[0]: c+=1
+    others=[n for n in names if n not in D.links[li]['own']]; OB=np.array([Bx[n] for n in others]) if others else np.zeros((0,4))
     for i,a,bb in segments(D,{li}):
-        for n in names:
-            if n in D.links[li]['own']: continue
-            o=Bx[n]
-            for t in np.linspace(0,1,10):
-                px,py=a[0]+(bb[0]-a[0])*t,a[1]+(bb[1]-a[1])*t
-                if o[0]-margin<px<o[2]+margin and o[1]-margin<py<o[3]+margin: c+=1; break
+        if len(OB): c+=int(seg_hits(a,bb,OB,margin).sum())
     return c
 
 # ============================================================ enforcing the rules
@@ -715,9 +731,7 @@ def place_hubs(D,hubs,grid=26):
                 if len(A):
                     mask=np.array([r not in (o[2],o[3]) for o in others])
                     cr+=int(_segx(np.array(c)[None],np.array(q)[None],A[mask],B[mask]).sum())
-                ts=np.linspace(0.05,0.95,14); X=c[0]+(q[0]-c[0])*ts; Y=c[1]+(q[1]-c[1])*ts
-                hit=(X[None]>Bx[:,0,None]-3)&(X[None]<Bx[:,2,None]+3)&(Y[None]>Bx[:,1,None]-3)&(Y[None]<Bx[:,3,None]+3)
-                thr+=sum(1 for k in np.where(hit.any(1))[0] if names[k]!=r)
+                thr+=sum(1 for k in np.where(seg_hits(c,q,Bx,3))[0] if names[k]!=r)
             bx=(c[0]-w/2,c[1]-hh/2,c[0]+w/2,c[1]+hh/2)
             ov=int(((Bx[:,0]<bx[2]+6)&(bx[0]<Bx[:,2]+6)&(Bx[:,1]<bx[3]+6)&(bx[1]<Bx[:,3]+6)).sum())
             # boxes crossed by OTHER lines at this spot
@@ -749,8 +763,18 @@ def remove_crossings(D):
             ln=sum(math.dist(p,q) for p,q in zip(D.path(L),D.path(L)[1:]))
             return (ln,k,mets[0],rx[0])
         cs=[c for c in (cand(i),cand(j)) if c]
-        if not cs: cs=[c for c in (cand(k) for k in (i,j)) if c]
-        if not cs: raise RuntimeError('crossing between two ring arcs')
+        if not cs:                                                # a dashed copy's own line is involved:
+            al=[(k,x) for k in (i,j) for x in (D.links[k]['a'],D.links[k]['b']) if D.info.get(x,{}).get('kind')=='alias']
+            if not al: raise RuntimeError('crossing between two ring arcs')
+            k,a=al[0]; L=D.links[k]; anchor=L['b'] if L['a']==a else L['a']; into=L['b']==a
+            tries=D.__dict__.setdefault('replants',{}); tries[a]=tries.get(a,0)+1
+            D.links.pop(k)
+            if tries[a]<=3: plant(D,a,anchor,into); continue      # re-place the copy in a free spot
+            # no crossing-free spot: keep the information, write the compound into the reaction box
+            if anchor.startswith('R:'):
+                lab=D.info[a]['label']; sub=D.info[anchor]['sub']
+                D.info[anchor]['sub']=((sub+' ; ') if sub else '')+('→ ' if into else '')+lab+('' if into else ' →')
+            D.P.pop(a,None); continue
         _,k,m,R=max(cs)
         L=D.links[k]; chain=L['chain']
         idx=[t for t,x in enumerate(D.links) if (chain is not None and x['chain']==chain) or t==k]
@@ -766,9 +790,8 @@ def remove_crossings(D):
 def offending(D,margin=3):
     names=D.real(); Bx=np.array([D.box(n) for n in names]); out=[]
     for i,a,b in segments(D):
-        own=D.links[i]['own']; ts=np.linspace(0,1,10); X=a[0]+(b[0]-a[0])*ts; Y=a[1]+(b[1]-a[1])*ts
-        hit=(X[None]>Bx[:,0,None]-margin)&(X[None]<Bx[:,2,None]+margin)&(Y[None]>Bx[:,1,None]-margin)&(Y[None]<Bx[:,3,None]+margin)
-        for k in np.where(hit.any(1))[0]:
+        own=D.links[i]['own']
+        for k in np.where(seg_hits(a,b,Bx,margin))[0]:
             if names[k] not in own: out+=[names[k]]+sorted(own)
     for i in range(len(names)):
         for j in range(i+1,len(names)):
@@ -858,12 +881,8 @@ def render(D,path,title,legend=False):
     if legend:
         E=legend_entries(D); lw_,lh=legend_size(E)
         lx,ly=x1-12-lw_,y0+12                                     # bottom-right corner of the drawing
-        pts=[q for L in D.links for q in D.path(L)]
-        for L in D.links:                                         # sample the lines, not just their ends
-            p=D.path(L)
-            for a,b in zip(p,p[1:]):
-                for t in np.linspace(0,1,12): pts.append((a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t))
-        free=not any(lx-8<q[0]<lx+lw_+8 and ly-8<q[1]<ly+lh+8 for q in pts) and \
+        LBX=[(lx,ly,lx+lw_,ly+lh)]                                # exact: no line segment may touch the legend
+        free=not any(seg_hits(a,b,LBX,8)[0] for L in D.links for a,b in zip(D.path(L),D.path(L)[1:])) and \
              not any(b[0]<lx+lw_+8 and lx-8<b[2] and b[1]<ly+lh+8 and ly-8<b[3] for b in B)
         if not free:                                              # corner in use: extend the canvas downwards
             ly=y0-lh-10; y0=ly-12
@@ -1168,14 +1187,15 @@ def main():
                         key=lambda n:(_norm(D.info[n]['label']) not in SHOW,n))
             place_hubs(D,hubs)                                    # shared compounds: best free spot
             for _ in range(6):                                    # repeat until all three checks hold together
-                cuts+=remove_crossings(D)                         # (a near-touch can tip into a crossing when scaled)
+                try: cuts+=remove_crossings(D)                    # (a near-touch can tip into a crossing when scaled)
+                except RuntimeError as err: log(f'  layout attempt failed ({err}); trying a larger ring'); v={'crossings':1}; break
                 fixed={n for n in D.P if D.info[n]['kind'] in ('core','dummy')}|{e for L in D.links if L['ring'] is not None for e in (L['a'],L['b'])}
                 repair(D,fixed)                                   # ring members and ring-arc reactions never move
                 v=scale_until_clean(D)
                 if not any(v.values()): break
-            key=(any(v.values()),D.scaled>1.35,cuts,D.scaled)
+            key=(any(v.values()),getattr(D,'scaled',1.0)>1.35,cuts,getattr(D,'scaled',1.0))
             if best is None or key<best[0]: best=(key,D,rings,cuts,v)
-            if not rings or (not any(v.values()) and D.scaled<=1.35): break
+            if not rings or (not any(v.values()) and getattr(D,'scaled',1.0)<=1.35): break
         _,D,rings,cuts,v=best
         fn=out if len(parts)==1 else f"{out}_{k+1:02d}_{re.sub(r'[^A-Za-z0-9]+','_',cname).strip('_')[:40]}"
         bends=sum(1 for L in D.links if L['ring'] is None and D.info[L['b']]['kind']=='dummy')
