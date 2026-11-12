@@ -4,11 +4,13 @@
    "checks": {
     "box_overlaps": 0,
     "crossings": 0,
-    "line_through_box": 0
+    "line_through_box": 0,
+    "placement": 0
    },
    "links": [
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:2-keto-3-deoxy phosphogluconate",
@@ -21,6 +23,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:D-glyceraldehyde 3-phosphate",
@@ -33,6 +36,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:2-dehydro-3-deoxy-D-gluconate",
@@ -45,6 +49,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:2-keto-3-deoxy phosphogluconate",
@@ -57,6 +62,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:DL-glyceraldehyde",
@@ -69,6 +75,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:D-glycerate",
@@ -81,6 +88,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:DL-glyceraldehyde",
@@ -93,6 +101,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:D-glycerate",
@@ -105,6 +114,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:DL-glyceraldehyde",
@@ -117,6 +127,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:D-glycerate",
@@ -129,6 +140,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:DL-glyceraldehyde",
@@ -141,6 +153,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:D-glycerate",
@@ -153,6 +166,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:3-phosphoglycerate",
@@ -165,6 +179,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:2-phospho-D-glycerate",
@@ -177,6 +192,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:D-glyceraldehyde 3-phosphate",
@@ -189,6 +205,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:3-phosphoglycerate",
@@ -201,6 +218,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:D-glycerate",
@@ -213,6 +231,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:2-phospho-D-glycerate",
@@ -225,6 +244,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:2-dehydro-3-deoxy-D-gluconate",
@@ -237,6 +257,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:DL-glyceraldehyde",
@@ -249,6 +270,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 100029,
      "own": [
       "M:6-phosphogluconate",
@@ -261,6 +283,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:2-keto-3-deoxy phosphogluconate",
@@ -273,6 +296,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 200023,
      "own": [
       "M:D-glucose",
@@ -285,6 +309,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 200024,
      "own": [
       "M:D-glucono-1,5-lactone",
@@ -297,6 +322,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 200025,
      "own": [
       "M:D-glucose",
@@ -309,6 +335,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 200026,
      "own": [
       "M:D-glucono-1,5-lactone",
@@ -321,6 +348,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 200027,
      "own": [
       "M:D-glucono-1,5-lactone",
@@ -333,6 +361,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 200028,
      "own": [
       "M:D-gluconate",
@@ -345,6 +374,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 200029,
      "own": [
       "M:D-gluconate",
@@ -357,6 +387,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:2-dehydro-3-deoxy-D-gluconate",
@@ -369,6 +400,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "M:pyruvate",
@@ -381,6 +413,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "A:R_rx_f577fb18c1:0",
@@ -403,8 +436,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 42.546,
-     "x": 847.789044183713,
-     "y": -794.401142916063
+     "x": 992.477010275423,
+     "y": -866.8618198528586
     },
     {
      "h": 19.5,
@@ -415,8 +448,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 183.222,
-     "x": 700.9763754728152,
-     "y": -882.179897550554
+     "x": 881.9028037396598,
+     "y": -1046.5588668157202
     },
     {
      "h": 19.5,
@@ -427,8 +460,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 195.777,
-     "x": 500.206782799941,
-     "y": -988.2897253585754
+     "x": 620.9023332649233,
+     "y": -1184.5016429661482
     },
     {
      "h": 19.5,
@@ -439,8 +472,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 135.527,
-     "x": 368.1428134234935,
-     "y": -495.42028179645285
+     "x": 449.2191730755417,
+     "y": -543.7713663353886
     },
     {
      "h": 19.5,
@@ -451,8 +484,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 119.695,
-     "x": 233.29498965024885,
-     "y": -678.1325947999824
+     "x": 273.9170021703236,
+     "y": -781.2973732399771
     },
     {
      "h": 16.5,
@@ -463,8 +496,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 98.001,
-     "x": 500.206782799941,
-     "y": -1090.7897253585754
+     "x": 620.9023332649233,
+     "y": -1287.0016429661482
     },
     {
      "h": 16.5,
@@ -475,8 +508,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 62.502,
-     "x": 996.7784397834971,
-     "y": -829.804897550554
+     "x": 1133.0471735006277,
+     "y": -994.1838668157202
     },
     {
      "h": 16.5,
@@ -487,8 +520,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 105.135,
-     "x": 996.7784397061507,
-     "y": -725.054897550554
+     "x": 1133.0471734232813,
+     "y": -889.4338668157202
     },
     {
      "h": 16.5,
@@ -499,8 +532,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 53.002,
-     "x": 996.7785391655518,
-     "y": -620.304897550554
+     "x": 1133.0472728826824,
+     "y": -784.6838668157202
     },
     {
      "h": 19.5,
@@ -511,8 +544,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 177.354,
-     "x": 292.0689852654993,
-     "y": -897.4801325999274
+     "x": 350.3231964701491,
+     "y": -1066.4491723799056
     },
     {
      "h": 19.5,
@@ -523,8 +556,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 75.078,
-     "x": 595.0692948896675,
-     "y": -486.9292919329548
+     "x": 744.2235989815678,
+     "y": -532.7330795128413
     },
     {
      "h": 19.5,
@@ -535,8 +568,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 112.669,
-     "x": 743.1941650481115,
-     "y": -659.0535137613306
+     "x": 936.7859301875449,
+     "y": -756.4945678897298
     },
     {
      "h": 16.5,
@@ -547,8 +580,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 48.886,
-     "x": 385.775,
-     "y": -1026.638
+     "x": 472.14,
+     "y": -1096.354
     },
     {
      "h": 13.0,
@@ -559,8 +592,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 140.657,
-     "x": 385.7745355531259,
-     "y": -966.6379760098387
+     "x": 472.1404118440637,
+     "y": -1156.3543688127902
     },
     {
      "h": 20.25,
@@ -571,8 +604,8 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 118.57,
-     "x": 500.206782799941,
-     "y": -1038.4147253585754
+     "x": 620.9023332649233,
+     "y": -1234.6266429661482
     },
     {
      "h": 20.25,
@@ -583,8 +616,8 @@
      "sbml_type": "reaction",
      "sub": "NAD+ \u2192 NADH",
      "w": 126.509,
-     "x": 1078.088187603052,
-     "y": -672.679897550554
+     "x": 1214.3569213201824,
+     "y": -837.0588668157202
     },
     {
      "h": 20.25,
@@ -595,8 +628,8 @@
      "sbml_type": "reaction",
      "sub": "NADP+ \u2192 NADPH",
      "w": 130.73,
-     "x": 915.4688907280519,
-     "y": -672.679897550554
+     "x": 1051.7376244451823,
+     "y": -837.0588668157202
     },
     {
      "h": 20.25,
@@ -607,8 +640,8 @@
      "sbml_type": "reaction",
      "sub": "ATP \u2192 ADP",
      "w": 124.755,
-     "x": 612.7010170192996,
-     "y": -958.1469861463409
+     "x": 767.1448377500894,
+     "y": -1145.3160819902432
     },
     {
      "h": 20.25,
@@ -619,8 +652,8 @@
      "sbml_type": "reaction",
      "sub": "H2O \u2192 ",
      "w": 68.93,
-     "x": 996.7784397061507,
-     "y": -777.429897550554
+     "x": 1133.0471734232813,
+     "y": -941.8088668157202
     },
     {
      "h": 20.25,
@@ -631,8 +664,8 @@
      "sbml_type": "reaction",
      "sub": "NAD+ \u2192 NADH",
      "w": 124.873,
-     "x": 688.7748451772941,
-     "y": -556.0871353428661
+     "x": 866.0408143554824,
+     "y": -622.638275945726
     },
     {
      "h": 20.25,
@@ -643,8 +676,8 @@
      "sbml_type": "reaction",
      "sub": "NADP+ \u2192 NADPH",
      "w": 137.168,
-     "x": 627.0280063641478,
-     "y": -582.9121593899825
+     "x": 961.9381343367129,
+     "y": -540.1119590806538
     },
     {
      "h": 13.0,
@@ -655,8 +688,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 134.826,
-     "x": 279.8674549699781,
-     "y": -571.3873703922395
+     "x": 334.46120708597164,
+     "y": -642.5285815099114
     },
     {
      "h": 20.25,
@@ -667,8 +700,8 @@
      "sbml_type": "reaction",
      "sub": "acceptor \u2192 reduced acceptor",
      "w": 137.619,
-     "x": 863.984251556125,
-     "y": -474.15281600117146
+     "x": 672.6467076484824,
+     "y": -789.0673621085433
     },
     {
      "h": 20.25,
@@ -679,8 +712,8 @@
      "sbml_type": "reaction",
      "sub": "oxidized ferredoxin \u2192 reduced ferredoxin",
      "w": 134.25,
-     "x": 773.334729667161,
-     "y": -499.81263837741517
+     "x": 770.9814424237536,
+     "y": -704.4434802055328
     },
     {
      "h": 20.25,
@@ -691,8 +724,8 @@
      "sbml_type": "reaction",
      "sub": "NAD+ \u2192 NADH",
      "w": 124.873,
-     "x": 237.649665394682,
-     "y": -794.5137541814629
+     "x": 279.57808063808665,
+     "y": -932.5928804359019
     },
     {
      "h": 20.25,
@@ -703,8 +736,8 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 88.351,
-     "x": 996.7784398438874,
-     "y": -882.179897550554
+     "x": 1133.047173561018,
+     "y": -1046.5588668157202
     },
     {
      "h": 20.25,
@@ -715,8 +748,8 @@
      "sbml_type": "reaction",
      "sub": "ATP \u2192 ADP",
      "w": 72.251,
-     "x": 480.63704764285234,
-     "y": -465.27754258421805
+     "x": 595.4616775607082,
+     "y": -504.58580535948346
     },
     {
      "h": 13.0,
@@ -727,16 +760,16 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 133.038,
-     "x": 747.5488407925445,
-     "y": -775.4346731428111
+     "x": 942.447008655308,
+     "y": -907.7900750856544
     }
    ],
    "rings": [
     {
-     "cx": 490.4219152213967,
-     "cy": -726.7836339713967,
+     "cx": 608.1820054128158,
+     "cy": -844.5437241628158,
      "id": 0,
-     "r": 261.6890893142645
+     "r": 340.19581610854385
     }
    ],
    "title": "Entner Doudoroff pathway"

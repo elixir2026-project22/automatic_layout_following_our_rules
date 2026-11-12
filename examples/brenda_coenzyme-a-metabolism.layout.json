@@ -4,11 +4,13 @@
    "checks": {
     "box_overlaps": 0,
     "crossings": 0,
-    "line_through_box": 0
+    "line_through_box": 0,
+    "placement": 0
    },
    "links": [
     {
      "arrow": true,
+     "cat": false,
      "chain": 0,
      "own": [
       "M:4-phosphopantothenoyl-L-Cys",
@@ -21,6 +23,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 1,
      "own": [
       "M:4'-phosphopantetheine",
@@ -33,6 +36,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 2,
      "own": [
       "M:(R)-4'-phosphopantothenate",
@@ -45,6 +49,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 3,
      "own": [
       "M:4-phosphopantothenoyl-L-Cys",
@@ -57,6 +62,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 4,
      "own": [
       "M:3'-dephospho-CoA",
@@ -69,6 +75,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 5,
      "own": [
       "M:pantothenate",
@@ -81,6 +88,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 6,
      "own": [
       "M:(R)-4'-phosphopantothenate",
@@ -93,6 +101,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 7,
      "own": [
       "M:4'-phosphopantetheine",
@@ -105,6 +114,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": 8,
      "own": [
       "M:3'-dephospho-CoA",
@@ -117,6 +127,7 @@
     },
     {
      "arrow": true,
+     "cat": false,
      "chain": null,
      "own": [
       "A:R_rx_7966130d64:0",
@@ -139,8 +150,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 47.095,
-     "x": -39.72360692768274,
-     "y": -165.37880336470775
+     "x": 203.05886364054683,
+     "y": -88.25358284436
     },
     {
      "h": 16.5,

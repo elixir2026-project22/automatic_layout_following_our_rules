@@ -1,0 +1,6663 @@
+{
+ "drawings": [
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Inosine",
+      "R:R_rx_e661421360"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:Inosine",
+     "target": "R:R_rx_e661421360"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:hypoxanthine",
+      "R:R_rx_e661421360"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_e661421360",
+     "target": "M:hypoxanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Inosine",
+      "R:R_rx_243d00dc4d"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:Inosine",
+     "target": "R:R_rx_243d00dc4d"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:hypoxanthine",
+      "R:R_rx_243d00dc4d"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_243d00dc4d",
+     "target": "M:hypoxanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:IMP",
+      "R:R_rx_98ccc0eef2"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:IMP",
+     "target": "R:R_rx_98ccc0eef2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:hypoxanthine",
+      "R:R_rx_98ccc0eef2"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_98ccc0eef2",
+     "target": "M:hypoxanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:IMP",
+      "R:R_rx_NODE_4480"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:IMP",
+     "target": "R:R_rx_NODE_4480"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Inosine",
+      "R:R_rx_NODE_4480"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_NODE_4480",
+     "target": "M:Inosine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Inosine",
+      "R:R_rx_d16a1d1e12"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:Inosine",
+     "target": "R:R_rx_d16a1d1e12"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:IMP",
+      "R:R_rx_d16a1d1e12"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_d16a1d1e12",
+     "target": "M:IMP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100020,
+     "own": [
+      "M:6,8-dihydroxypurine",
+      "R:R_rx_4250c9370b"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:6,8-dihydroxypurine",
+     "target": "R:R_rx_4250c9370b"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100021,
+     "own": [
+      "M:Urate",
+      "R:R_rx_4250c9370b"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_4250c9370b",
+     "target": "M:Urate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100022,
+     "own": [
+      "M:purine",
+      "R:R_rx_4f49ee5ada"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:purine",
+     "target": "R:R_rx_4f49ee5ada"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100023,
+     "own": [
+      "M:8-hydroxypurine",
+      "R:R_rx_4f49ee5ada"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_4f49ee5ada",
+     "target": "M:8-hydroxypurine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100024,
+     "own": [
+      "M:purine",
+      "R:R_rx_NODE_4393"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:purine",
+     "target": "R:R_rx_NODE_4393"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100025,
+     "own": [
+      "M:6,8-dihydroxypurine",
+      "R:R_rx_NODE_4453"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4453",
+     "target": "M:6,8-dihydroxypurine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100026,
+     "own": [
+      "M:8-hydroxypurine",
+      "R:R_rx_NODE_4455"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:8-hydroxypurine",
+     "target": "R:R_rx_NODE_4455"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100027,
+     "own": [
+      "M:6,8-dihydroxypurine",
+      "R:R_rx_NODE_4455"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4455",
+     "target": "M:6,8-dihydroxypurine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:hypoxanthine",
+      "R:R_rx_NODE_4393"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4393",
+     "target": "M:hypoxanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 200028,
+     "own": [
+      "M:adenine",
+      "R:R_rx_e62486bcc2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:adenine",
+     "target": "R:R_rx_e62486bcc2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 300026,
+     "own": [
+      "M:adenylosuccinate",
+      "R:R_rx_563c346be9"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_563c346be9",
+     "target": "M:adenylosuccinate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 300027,
+     "own": [
+      "M:adenylosuccinate",
+      "R:R_rx_d79f5bb30e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:adenylosuccinate",
+     "target": "R:R_rx_d79f5bb30e"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 300028,
+     "own": [
+      "M:fumarate",
+      "R:R_rx_d79f5bb30e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_d79f5bb30e",
+     "target": "M:fumarate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:IMP",
+      "R:R_rx_563c346be9"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:IMP",
+     "target": "R:R_rx_563c346be9"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 400028,
+     "own": [
+      "M:deoxyinosine",
+      "R:R_rx_NODE_4373"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:deoxyinosine",
+     "target": "R:R_rx_NODE_4373"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 500028,
+     "own": [
+      "M:xanthine",
+      "R:R_rx_0f5f21a673"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_0f5f21a673",
+     "target": "M:xanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_243d00dc4d:0",
+      "R:R_rx_243d00dc4d"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_243d00dc4d",
+     "target": "A:R_rx_243d00dc4d:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_563c346be9:0",
+      "R:R_rx_563c346be9"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_563c346be9:0",
+     "target": "R:R_rx_563c346be9"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_98ccc0eef2:0",
+      "R:R_rx_98ccc0eef2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_98ccc0eef2",
+     "target": "A:R_rx_98ccc0eef2:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_NODE_4373:0",
+      "R:R_rx_NODE_4373"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4373",
+     "target": "A:R_rx_NODE_4373:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_NODE_4393:0",
+      "R:R_rx_NODE_4393"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_NODE_4393:0",
+     "target": "R:R_rx_NODE_4393"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_NODE_4393:1",
+      "R:R_rx_NODE_4393"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4393",
+     "target": "A:R_rx_NODE_4393:1"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_e661421360:0",
+      "R:R_rx_e661421360"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_e661421360",
+     "target": "A:R_rx_e661421360:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:cut0",
+      "R:R_rx_NODE_4453"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:cut0",
+     "target": "R:R_rx_NODE_4453"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:cut1",
+      "R:R_rx_e62486bcc2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_e62486bcc2",
+     "target": "A:cut1"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:cut2",
+      "R:R_rx_NODE_4373"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4373",
+     "target": "A:cut2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:cut3",
+      "R:R_rx_0f5f21a673"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:cut3",
+     "target": "R:R_rx_0f5f21a673"
+    }
+   ],
+   "name": "module 1",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_243d00dc4d:0",
+     "kind": "alias",
+     "label": "alpha-D-ribose 1-phosphate",
+     "sbml_id": "M_mt_8edfd22915",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 113.704,
+     "x": 307.0867648126036,
+     "y": -359.5617136588517
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_563c346be9:0",
+     "kind": "alias",
+     "label": "L-aspartate",
+     "sbml_id": "M_mt_0de283c3a3",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 51.653,
+     "x": 447.4608794806324,
+     "y": -193.96009254726383
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_98ccc0eef2:0",
+     "kind": "alias",
+     "label": "5-phospho-alpha-D-ribose 1-diphosphate",
+     "sbml_id": "M_mt_15981d019b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 144.32,
+     "x": 354.565150266774,
+     "y": -463.8583297395039
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_NODE_4373:0",
+     "kind": "alias",
+     "label": "2-deoxy-D-ribose 1-phosphate",
+     "sbml_id": "M_mt_4875ee172c",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 122.773,
+     "x": 363.2037287454002,
+     "y": -849.4454981589136
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_NODE_4393:0",
+     "kind": "alias",
+     "label": "oxidized electron donor",
+     "sbml_id": "M_mt_NAME_00000042",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 97.805,
+     "x": 204.23315682466205,
+     "y": -570.1325912107703
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_NODE_4393:1",
+     "kind": "alias",
+     "label": "reduced electron acceptor",
+     "sbml_id": "M_mt_NAME_00000048",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 108.104,
+     "x": 136.8296457336599,
+     "y": -492.529711638107
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_e661421360:0",
+     "kind": "alias",
+     "label": "D-ribose",
+     "sbml_id": "M_mt_6834bd094a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 40.384,
+     "x": 159.717867432133,
+     "y": -443.46261314020893
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut0",
+     "kind": "alias",
+     "label": "hypoxanthine",
+     "sbml_id": "M_mt_e386e39f50",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 60.164,
+     "x": 371.69353999483053,
+     "y": -589.8881795070181
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut1",
+     "kind": "alias",
+     "label": "hypoxanthine",
+     "sbml_id": "M_mt_e386e39f50",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 60.164,
+     "x": 324.55856158946665,
+     "y": -806.027651035532
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut2",
+     "kind": "alias",
+     "label": "hypoxanthine",
+     "sbml_id": "M_mt_e386e39f50",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 60.164,
+     "x": 349.0470587024802,
+     "y": -921.679041827636
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut3",
+     "kind": "alias",
+     "label": "hypoxanthine",
+     "sbml_id": "M_mt_e386e39f50",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 60.164,
+     "x": 258.93966641312295,
+     "y": -1060.8275690218716
+    },
+    {
+     "h": 16.5,
+     "id": "M:6,8-dihydroxypurine",
+     "kind": "met",
+     "label": "6,8-dihydroxypurine",
+     "sbml_id": "M_mt_e2531b7f6d",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 96.673,
+     "x": 257.2007739155415,
+     "y": -694.0775690218716
+    },
+    {
+     "h": 16.5,
+     "id": "M:8-hydroxypurine",
+     "kind": "met",
+     "label": "8-hydroxypurine",
+     "sbml_id": "M_mt_9901785592",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 80.823,
+     "x": 258.9539941091485,
+     "y": -596.5775690218716
+    },
+    {
+     "h": 19.5,
+     "id": "M:IMP",
+     "kind": "core",
+     "label": "IMP",
+     "sbml_id": "M_mt_15d5819dc2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 32.688,
+     "x": 369.38477609303385,
+     "y": -252.2810276087486
+    },
+    {
+     "h": 19.5,
+     "id": "M:Inosine",
+     "kind": "core",
+     "label": "Inosine",
+     "sbml_id": "M_mt_d3a4558c71",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 51.608,
+     "x": 148.49455673321205,
+     "y": -252.28102760874856
+    },
+    {
+     "h": 16.5,
+     "id": "M:Urate",
+     "kind": "met",
+     "label": "Urate",
+     "sbml_id": "M_mt_4422bac4b2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 34.295,
+     "x": 257.2007739155138,
+     "y": -798.8275690218716
+    },
+    {
+     "h": 16.5,
+     "id": "M:adenine",
+     "kind": "met",
+     "label": "adenine",
+     "sbml_id": "M_mt_1e6bef36f9",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 45.238,
+     "x": 258.93966641312295,
+     "y": -906.0775690218716
+    },
+    {
+     "h": 16.5,
+     "id": "M:adenylosuccinate",
+     "kind": "met",
+     "label": "adenylosuccinate",
+     "sbml_id": "M_mt_e8dedbdbfe",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 85.534,
+     "x": 505.78181454211716,
+     "y": -304.65602760874856
+    },
+    {
+     "h": 16.5,
+     "id": "M:deoxyinosine",
+     "kind": "met",
+     "label": "deoxyinosine",
+     "sbml_id": "M_mt_b91c3ffa6f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 67.061,
+     "x": 258.93966641312295,
+     "y": -1026.0775690218716
+    },
+    {
+     "h": 16.5,
+     "id": "M:fumarate",
+     "kind": "met",
+     "label": "fumarate",
+     "sbml_id": "M_mt_6ea7392d87",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 50.485,
+     "x": 505.7818142763707,
+     "y": -409.40602760874856
+    },
+    {
+     "h": 19.5,
+     "id": "M:hypoxanthine",
+     "kind": "core",
+     "label": "hypoxanthine",
+     "sbml_id": "M_mt_e386e39f50",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 86.092,
+     "x": 258.93966641312295,
+     "y": -443.5775690218715
+    },
+    {
+     "h": 16.5,
+     "id": "M:purine",
+     "kind": "met",
+     "label": "purine",
+     "sbml_id": "M_mt_027ebe7059",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 38.031,
+     "x": 280.2160287502436,
+     "y": -491.8275690218715
+    },
+    {
+     "h": 16.5,
+     "id": "M:xanthine",
+     "kind": "met",
+     "label": "xanthine",
+     "sbml_id": "M_mt_96e4cb6d43",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 48.627,
+     "x": 258.93966641312295,
+     "y": -1146.0775690218716
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0f5f21a673",
+     "kind": "rxn",
+     "label": "xanthine oxidase",
+     "sbml_id": "R_rx_0f5f21a673",
+     "sbml_type": "reaction",
+     "sub": "H2O + NAD+ \u2192 NADH + H+",
+     "w": 89.063,
+     "x": 258.93966641312295,
+     "y": -1093.7025690218716
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_243d00dc4d",
+     "kind": "rxn",
+     "label": "uridine phosphorylase",
+     "sbml_id": "R_rx_243d00dc4d",
+     "sbml_type": "reaction",
+     "sub": "phosphate \u2192 ",
+     "w": 85.085,
+     "x": 231.3283889931452,
+     "y": -331.98791986421645
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_4250c9370b",
+     "kind": "rxn",
+     "label": "xanthine dehydrogenase",
+     "sbml_id": "R_rx_4250c9370b",
+     "sbml_type": "reaction",
+     "sub": "H2O + NAD+ \u2192 NADH",
+     "w": 95.198,
+     "x": 257.2007739155415,
+     "y": -746.4525690218716
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_4f49ee5ada",
+     "kind": "rxn",
+     "label": "xanthine dehydrogenase",
+     "sbml_id": "R_rx_4f49ee5ada",
+     "sbml_type": "reaction",
+     "sub": "H2O + NAD+ \u2192 NADH + H+",
+     "w": 95.198,
+     "x": 313.3244271877436,
+     "y": -544.2025690218716
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_563c346be9",
+     "kind": "rxn",
+     "label": "adenylosuccinate synthase",
+     "sbml_id": "R_rx_563c346be9",
+     "sbml_type": "reaction",
+     "sub": "GTP \u2192 GDP + phosphate",
+     "w": 102.626,
+     "x": 505.78181454211716,
+     "y": -252.2810276087486
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_98ccc0eef2",
+     "kind": "rxn",
+     "label": "hypoxanthine phosphoribosyltransferase",
+     "sbml_id": "R_rx_98ccc0eef2",
+     "sbml_type": "reaction",
+     "sub": "diphosphate \u2192 ",
+     "w": 135.286,
+     "x": 369.3847760930339,
+     "y": -379.8120552174972
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_4373",
+     "kind": "rxn",
+     "label": "purine-nucleoside phosphorylase",
+     "sbml_id": "R_rx_NODE_4373",
+     "sbml_type": "reaction",
+     "sub": "phosphate \u2192 ",
+     "w": 123.686,
+     "x": 258.93966641312295,
+     "y": -973.7025690218716
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_NODE_4393",
+     "kind": "rxn",
+     "label": "NODE_4393",
+     "sbml_id": "R_rx_NODE_4393",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 49.235,
+     "x": 207.1076303127436,
+     "y": -544.2025690218716
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_NODE_4453",
+     "kind": "rxn",
+     "label": "xanthine dehydrogenase",
+     "sbml_id": "R_rx_NODE_4453",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 95.198,
+     "x": 310.7717025135023,
+     "y": -645.3275690218716
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_NODE_4455",
+     "kind": "rxn",
+     "label": "NODE_4455",
+     "sbml_id": "R_rx_NODE_4455",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 49.301,
+     "x": 204.52209313850227,
+     "y": -645.3275690218716
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_4480",
+     "kind": "rxn",
+     "label": "5'-nucleotidase",
+     "sbml_id": "R_rx_NODE_4480",
+     "sbml_type": "reaction",
+     "sub": "phosphate \u2192 ",
+     "w": 61.084,
+     "x": 258.93966641312295,
+     "y": -188.51551380437428
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_d16a1d1e12",
+     "kind": "rxn",
+     "label": "inosine kinase",
+     "sbml_id": "R_rx_d16a1d1e12",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 57.343,
+     "x": 258.93966641312295,
+     "y": -222.76551380437428
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_d79f5bb30e",
+     "kind": "rxn",
+     "label": "adenylosuccinate lyase",
+     "sbml_id": "R_rx_d79f5bb30e",
+     "sbml_type": "reaction",
+     "sub": " \u2192 AMP",
+     "w": 89.307,
+     "x": 505.7818143928865,
+     "y": -357.03102760874856
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_e62486bcc2",
+     "kind": "rxn",
+     "label": "adenine deaminase",
+     "sbml_id": "R_rx_e62486bcc2",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 NH3",
+     "w": 76.274,
+     "x": 258.93966641312295,
+     "y": -853.7025690218716
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_e661421360",
+     "kind": "rxn",
+     "label": "inosine nucleosidase",
+     "sbml_id": "R_rx_e661421360",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 ",
+     "w": 80.201,
+     "x": 148.49455673321202,
+     "y": -379.8120552174972
+    }
+   ],
+   "rings": [
+    {
+     "cx": 258.93966641312295,
+     "cy": -316.0465414131229,
+     "id": 0,
+     "r": 127.53102760874862
+    }
+   ],
+   "title": "purine metabolism \u2014 module 1"
+  },
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 3,
+     "own": [
+      "M:xanthine",
+      "R:R_rx_NODE_11602"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:xanthine",
+     "target": "R:R_rx_NODE_11602"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:XMP",
+      "R:R_rx_4c5e13b3c8"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:XMP",
+     "target": "R:R_rx_4c5e13b3c8"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Xanthosine",
+      "R:R_rx_4c5e13b3c8"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_4c5e13b3c8",
+     "target": "M:Xanthosine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:XMP",
+      "R:R_rx_58be0c3cd5"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:XMP",
+     "target": "R:R_rx_58be0c3cd5"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:xanthine",
+      "R:R_rx_58be0c3cd5"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_58be0c3cd5",
+     "target": "M:xanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Xanthosine",
+      "R:R_rx_a8cb706be5"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:Xanthosine",
+     "target": "R:R_rx_a8cb706be5"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:xanthine",
+      "R:R_rx_a8cb706be5"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_a8cb706be5",
+     "target": "M:xanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Xanthosine",
+      "R:R_rx_NODE_4361"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:Xanthosine",
+     "target": "R:R_rx_NODE_4361"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:xanthine",
+      "R:R_rx_NODE_4361"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4361",
+     "target": "M:xanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Caffeine",
+      "R:R_rx_0b6119213d"
+     ],
+     "ring": 1,
+     "side": false,
+     "source": "M:Caffeine",
+     "target": "R:R_rx_0b6119213d"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Theobromine",
+      "R:R_rx_0b6119213d"
+     ],
+     "ring": 1,
+     "side": false,
+     "source": "R:R_rx_0b6119213d",
+     "target": "M:Theobromine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Theobromine",
+      "R:R_rx_590de31288"
+     ],
+     "ring": 1,
+     "side": false,
+     "source": "M:Theobromine",
+     "target": "R:R_rx_590de31288"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:7-methylxanthine",
+      "R:R_rx_590de31288"
+     ],
+     "ring": 1,
+     "side": false,
+     "source": "R:R_rx_590de31288",
+     "target": "M:7-methylxanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:paraxanthine",
+      "R:R_rx_7cb90a49d2"
+     ],
+     "ring": 1,
+     "side": false,
+     "source": "M:paraxanthine",
+     "target": "R:R_rx_7cb90a49d2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:7-methylxanthine",
+      "R:R_rx_7cb90a49d2"
+     ],
+     "ring": 1,
+     "side": false,
+     "source": "R:R_rx_7cb90a49d2",
+     "target": "M:7-methylxanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:Caffeine",
+      "R:R_rx_aa027f4294"
+     ],
+     "ring": 1,
+     "side": false,
+     "source": "M:Caffeine",
+     "target": "R:R_rx_aa027f4294"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:paraxanthine",
+      "R:R_rx_aa027f4294"
+     ],
+     "ring": 1,
+     "side": false,
+     "source": "R:R_rx_aa027f4294",
+     "target": "M:paraxanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100023,
+     "own": [
+      "M:5-ureido-4-imidazole carboxylate",
+      "R:R_rx_NODE_4449"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4449",
+     "target": "M:5-ureido-4-imidazole carboxylate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:xanthine",
+      "R:R_rx_NODE_4449"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:xanthine",
+     "target": "R:R_rx_NODE_4449"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 200023,
+     "own": [
+      "M:IMP",
+      "R:R_rx_fa4bb04bdc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:IMP",
+     "target": "R:R_rx_fa4bb04bdc"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:XMP",
+      "R:R_rx_fa4bb04bdc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_fa4bb04bdc",
+     "target": "M:XMP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 300023,
+     "own": [
+      "M:Urate",
+      "R:R_rx_678d211f5b"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_678d211f5b",
+     "target": "M:Urate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:formaldehyde",
+      "R:R_rx_0b6119213d"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_0b6119213d",
+     "target": "M:formaldehyde"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_58be0c3cd5:0",
+      "R:R_rx_58be0c3cd5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_58be0c3cd5",
+     "target": "A:R_rx_58be0c3cd5:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_590de31288:0",
+      "R:R_rx_590de31288"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_590de31288",
+     "target": "A:R_rx_590de31288:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_7cb90a49d2:0",
+      "R:R_rx_7cb90a49d2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_7cb90a49d2",
+     "target": "A:R_rx_7cb90a49d2:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_a8cb706be5:0",
+      "R:R_rx_a8cb706be5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_a8cb706be5",
+     "target": "A:R_rx_a8cb706be5:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_aa027f4294:0",
+      "R:R_rx_aa027f4294"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_aa027f4294",
+     "target": "A:R_rx_aa027f4294:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:cut0",
+      "R:R_rx_NODE_11602"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_11602",
+     "target": "A:cut0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:cut1",
+      "R:R_rx_678d211f5b"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:cut1",
+     "target": "R:R_rx_678d211f5b"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_NODE_4361:0",
+      "R:R_rx_NODE_4361"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4361",
+     "target": "A:R_rx_NODE_4361:0"
+    }
+   ],
+   "name": "module 2",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_58be0c3cd5:0",
+     "kind": "alias",
+     "label": "5-phospho-alpha-D-ribose 1-diphosphate",
+     "sbml_id": "M_mt_15981d019b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 144.32,
+     "x": 12393.687380182762,
+     "y": -10580.994340696336
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_590de31288:0",
+     "kind": "alias",
+     "label": "formaldehyde",
+     "sbml_id": "M_mt_224abb736c",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 61.539,
+     "x": 13963.061385970184,
+     "y": -17697.132014592797
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_7cb90a49d2:0",
+     "kind": "alias",
+     "label": "formaldehyde",
+     "sbml_id": "M_mt_224abb736c",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 61.539,
+     "x": 9722.558918660965,
+     "y": -18091.24881858529
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_NODE_4361:0",
+     "kind": "alias",
+     "label": "alpha-D-ribose 1-phosphate",
+     "sbml_id": "M_mt_8edfd22915",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 113.704,
+     "x": 9338.93497389247,
+     "y": -8390.999312652139
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_a8cb706be5:0",
+     "kind": "alias",
+     "label": "D-ribose",
+     "sbml_id": "M_mt_6834bd094a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 40.384,
+     "x": 8621.57801988001,
+     "y": -10435.615712600003
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_aa027f4294:0",
+     "kind": "alias",
+     "label": "formaldehyde",
+     "sbml_id": "M_mt_224abb736c",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 61.539,
+     "x": 4265.566076452472,
+     "y": -19705.018090536956
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut0",
+     "kind": "alias",
+     "label": "7-methylxanthine",
+     "sbml_id": "M_mt_dbb325baec",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 75.532,
+     "x": 7280.143844940184,
+     "y": -14161.044921394106
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut1",
+     "kind": "alias",
+     "label": "xanthine",
+     "sbml_id": "M_mt_96e4cb6d43",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 42.318,
+     "x": 7708.633444254672,
+     "y": -19356.44186234782
+    },
+    {
+     "h": 16.5,
+     "id": "M:5-ureido-4-imidazole carboxylate",
+     "kind": "met",
+     "label": "5-ureido-4-imidazole carboxylate",
+     "sbml_id": "M_mt_b77b7ab044",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 151.417,
+     "x": 9742.075044399226,
+     "y": -15249.994662700874
+    },
+    {
+     "h": 19.5,
+     "id": "M:7-methylxanthine",
+     "kind": "core",
+     "label": "7-methylxanthine",
+     "sbml_id": "M_mt_dbb325baec",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 107.621,
+     "x": 11335.493138827997,
+     "y": -16884.610535850905
+    },
+    {
+     "h": 19.5,
+     "id": "M:Caffeine",
+     "kind": "core",
+     "label": "Caffeine",
+     "sbml_id": "M_mt_28f040c3d3",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 57.051,
+     "x": 7321.916278824644,
+     "y": -23836.32957745947
+    },
+    {
+     "h": 16.5,
+     "id": "M:IMP",
+     "kind": "met",
+     "label": "IMP",
+     "sbml_id": "M_mt_15d5819dc2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 25.843,
+     "x": 14430.899077377228,
+     "y": -4474.527370118448
+    },
+    {
+     "h": 19.5,
+     "id": "M:Theobromine",
+     "kind": "core",
+     "label": "Theobromine",
+     "sbml_id": "M_mt_b1d6e74701",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 84.082,
+     "x": 12804.564229630607,
+     "y": -22367.258486656865
+    },
+    {
+     "h": 16.5,
+     "id": "M:Urate",
+     "kind": "met",
+     "label": "Urate",
+     "sbml_id": "M_mt_4422bac4b2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 34.295,
+     "x": 9742.075044399226,
+     "y": -20033.795844337263
+    },
+    {
+     "h": 19.5,
+     "id": "M:XMP",
+     "kind": "core",
+     "label": "XMP",
+     "sbml_id": "M_mt_1e41cb9a62",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 37.17,
+     "x": 12015.837527917522,
+     "y": -5812.586579134236
+    },
+    {
+     "h": 19.5,
+     "id": "M:Xanthosine",
+     "kind": "core",
+     "label": "Xanthosine",
+     "sbml_id": "M_mt_3b1a03c063",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 73.804,
+     "x": 7468.312560880926,
+     "y": -5812.586579134235
+    },
+    {
+     "h": 16.5,
+     "id": "M:formaldehyde",
+     "kind": "met",
+     "label": "formaldehyde",
+     "sbml_id": "M_mt_224abb736c",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 70.411,
+     "x": 12975.12502178006,
+     "y": -23937.83454087023
+    },
+    {
+     "h": 19.5,
+     "id": "M:paraxanthine",
+     "kind": "core",
+     "label": "paraxanthine",
+     "sbml_id": "M_mt_ea67be20a1",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 84.116,
+     "x": 5852.845188022042,
+     "y": -18353.68162665351
+    },
+    {
+     "h": 19.5,
+     "id": "M:xanthine",
+     "kind": "core",
+     "label": "xanthine",
+     "sbml_id": "M_mt_96e4cb6d43",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 60.464,
+     "x": 9742.075044399226,
+     "y": -9750.858724931919
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0b6119213d",
+     "kind": "rxn",
+     "label": "BR50577-a",
+     "sbml_id": "R_rx_0b6119213d",
+     "sbml_type": "reaction",
+     "sub": "NADH + O2 + H+ \u2192 H2O + NAD+",
+     "w": 105.866,
+     "x": 10367.494839177965,
+     "y": -24237.287601528624
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_4c5e13b3c8",
+     "kind": "rxn",
+     "label": "5'-nucleotidase",
+     "sbml_id": "R_rx_4c5e13b3c8",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 phosphate",
+     "w": 61.084,
+     "x": 9742.075044399226,
+     "y": -4499.829197201676
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_58be0c3cd5",
+     "kind": "rxn",
+     "label": "xanthine phosphoribosyltransferase",
+     "sbml_id": "R_rx_58be0c3cd5",
+     "sbml_type": "reaction",
+     "sub": "diphosphate \u2192 ",
+     "w": 133.976,
+     "x": 12015.837527917522,
+     "y": -8438.101342999356
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_590de31288",
+     "kind": "rxn",
+     "label": "methylxanthine N3-demethylase",
+     "sbml_id": "R_rx_590de31288",
+     "sbml_type": "reaction",
+     "sub": "O2 + NADPH + H+ \u2192 H2O + NADP+",
+     "w": 122.403,
+     "x": 13205.522253699737,
+     "y": -19321.67992630355
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_678d211f5b",
+     "kind": "rxn",
+     "label": "xanthine oxidase",
+     "sbml_id": "R_rx_678d211f5b",
+     "sbml_type": "reaction",
+     "sub": "H2O + NAD+ \u2192 NADH + H+",
+     "w": 89.063,
+     "x": 9742.075044399226,
+     "y": -18695.73663532149
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_7cb90a49d2",
+     "kind": "rxn",
+     "label": "BR50579-a",
+     "sbml_id": "R_rx_7cb90a49d2",
+     "sbml_type": "reaction",
+     "sub": "NADH + O2 + H+ \u2192 H2O + NAD+",
+     "w": 105.866,
+     "x": 8289.914578474685,
+     "y": -16483.652511781773
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_11602",
+     "kind": "rxn",
+     "label": "7-methylxanthine demethylase",
+     "sbml_id": "R_rx_NODE_11602",
+     "sbml_type": "reaction",
+     "sub": "NADP+ + NADPH \u2192 ",
+     "w": 116.763,
+     "x": 7676.683124113642,
+     "y": -13483.994036091175
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_4361",
+     "kind": "rxn",
+     "label": "purine-nucleoside phosphorylase",
+     "sbml_id": "R_rx_NODE_4361",
+     "sbml_type": "reaction",
+     "sub": " \u2192 phosphate",
+     "w": 123.686,
+     "x": 9173.634423519648,
+     "y": -7453.533306549943
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_NODE_4449",
+     "kind": "rxn",
+     "label": "NODE_4449",
+     "sbml_id": "R_rx_NODE_4449",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 49.253,
+     "x": 9742.075044399226,
+     "y": -14004.545756934387
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_a8cb706be5",
+     "kind": "rxn",
+     "label": "purine nucleosidase",
+     "sbml_id": "R_rx_a8cb706be5",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 ",
+     "w": 77.915,
+     "x": 7468.312560880923,
+     "y": -8438.101342999362
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_aa027f4294",
+     "kind": "rxn",
+     "label": "7-methylxanthine demethylase",
+     "sbml_id": "R_rx_aa027f4294",
+     "sbml_type": "reaction",
+     "sub": "O2 + NADPH + H+ \u2192 H2O + NADP+",
+     "w": 116.763,
+     "x": 5451.8871639529025,
+     "y": -21399.260187006817
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_fa4bb04bdc",
+     "kind": "rxn",
+     "label": "IMP dehydrogenase",
+     "sbml_id": "R_rx_fa4bb04bdc",
+     "sbml_type": "reaction",
+     "sub": "H2O + NAD+ \u2192 NADH + H+",
+     "w": 89.063,
+     "x": 14430.899077377228,
+     "y": -5812.586579134236
+    }
+   ],
+   "rings": [
+    {
+     "cx": 9742.075044399226,
+     "cy": -7125.343961066799,
+     "id": 0,
+     "r": 2625.5147638651247
+    },
+    {
+     "cx": 9328.70470882632,
+     "cy": -20360.470056655184,
+     "id": 1,
+     "r": 4013.5768600033507
+    }
+   ],
+   "title": "purine metabolism \u2014 module 2"
+  },
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 0,
+     "own": [
+      "M:dAMP",
+      "R:R_rx_1a1985edf3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:dAMP",
+     "target": "R:R_rx_1a1985edf3"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 1,
+     "own": [
+      "M:dADP",
+      "R:R_rx_1a1985edf3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_1a1985edf3",
+     "target": "M:dADP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 2,
+     "own": [
+      "M:adenosine",
+      "R:R_rx_28809f586e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:adenosine",
+     "target": "R:R_rx_28809f586e"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 3,
+     "own": [
+      "M:adenine",
+      "R:R_rx_28809f586e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_28809f586e",
+     "target": "M:adenine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 4,
+     "own": [
+      "M:adenine",
+      "R:R_rx_52e4d1571a"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:adenine",
+     "target": "R:R_rx_52e4d1571a"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 5,
+     "own": [
+      "M:2'-deoxyadenosine",
+      "R:R_rx_52e4d1571a"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_52e4d1571a",
+     "target": "M:2'-deoxyadenosine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 6,
+     "own": [
+      "M:adenosine",
+      "R:R_rx_74989996af"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:adenosine",
+     "target": "R:R_rx_74989996af"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 7,
+     "own": [
+      "M:Inosine",
+      "R:R_rx_74989996af"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_74989996af",
+     "target": "M:Inosine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 8,
+     "own": [
+      "M:dATP",
+      "R:R_rx_NODE_4549"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:dATP",
+     "target": "R:R_rx_NODE_4549"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 9,
+     "own": [
+      "M:thioredoxin disulfide",
+      "R:R_rx_NODE_4549"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4549",
+     "target": "M:thioredoxin disulfide"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 10,
+     "own": [
+      "M:5-phospho-alpha-D-ribose 1-diphosphate",
+      "R:R_rx_NODE_6206"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:5-phospho-alpha-D-ribose 1-diphosphate",
+     "target": "R:R_rx_NODE_6206"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 11,
+     "own": [
+      "M:adenine",
+      "R:R_rx_NODE_6206"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_6206",
+     "target": "M:adenine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 12,
+     "own": [
+      "M:adenosine",
+      "R:R_rx_bad7d5c6fc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:adenosine",
+     "target": "R:R_rx_bad7d5c6fc"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 13,
+     "own": [
+      "M:adenine",
+      "R:R_rx_bad7d5c6fc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_bad7d5c6fc",
+     "target": "M:adenine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 14,
+     "own": [
+      "M:dADP",
+      "R:R_rx_be1c9cee23"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:dADP",
+     "target": "R:R_rx_be1c9cee23"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 15,
+     "own": [
+      "M:dATP",
+      "R:R_rx_be1c9cee23"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_be1c9cee23",
+     "target": "M:dATP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 16,
+     "own": [
+      "M:2'-deoxyadenosine",
+      "R:R_rx_de6667c782"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2'-deoxyadenosine",
+     "target": "R:R_rx_de6667c782"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 17,
+     "own": [
+      "M:dAMP",
+      "R:R_rx_de6667c782"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_de6667c782",
+     "target": "M:dAMP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 18,
+     "own": [
+      "M:formate",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:formate",
+     "target": "R:R_rx_f1f248fe2c"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dATP",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_f1f248fe2c",
+     "target": "__d19_2"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dATP",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d19_2",
+     "target": "__d19_3"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dATP",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d19_3",
+     "target": "__d19_4"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dATP",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d19_4",
+     "target": "__d19_5"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dATP",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d19_5",
+     "target": "__d19_6"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dATP",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d19_6",
+     "target": "__d19_7"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dATP",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d19_7",
+     "target": "__d19_8"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dATP",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d19_8",
+     "target": "__d19_9"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dATP",
+      "R:R_rx_f1f248fe2c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d19_9",
+     "target": "M:dATP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 28,
+     "own": [
+      "M:2'-deoxyadenosine",
+      "R:R_rx_f550124ef6"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2'-deoxyadenosine",
+     "target": "R:R_rx_f550124ef6"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 29,
+     "own": [
+      "M:deoxyinosine",
+      "R:R_rx_f550124ef6"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_f550124ef6",
+     "target": "M:deoxyinosine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_bad7d5c6fc:0",
+      "R:R_rx_bad7d5c6fc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_bad7d5c6fc",
+     "target": "A:R_rx_bad7d5c6fc:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_28809f586e:0",
+      "R:R_rx_28809f586e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_28809f586e",
+     "target": "A:R_rx_28809f586e:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_52e4d1571a:0",
+      "R:R_rx_52e4d1571a"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_52e4d1571a:0",
+     "target": "R:R_rx_52e4d1571a"
+    }
+   ],
+   "name": "module 3",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_28809f586e:0",
+     "kind": "alias",
+     "label": "D-ribose",
+     "sbml_id": "M_mt_6834bd094a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 40.384,
+     "x": 1693.1721424083592,
+     "y": -787.5737399786575
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_52e4d1571a:0",
+     "kind": "alias",
+     "label": "2-deoxy-D-ribose 1-phosphate",
+     "sbml_id": "M_mt_4875ee172c",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 122.773,
+     "x": 1560.181902371171,
+     "y": -1148.9109360897467
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_bad7d5c6fc:0",
+     "kind": "alias",
+     "label": "alpha-D-ribose 1-phosphate",
+     "sbml_id": "M_mt_8edfd22915",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 113.704,
+     "x": 3841.853839980461,
+     "y": -1241.9961509635464
+    },
+    {
+     "h": 16.5,
+     "id": "M:2'-deoxyadenosine",
+     "kind": "met",
+     "label": "2'-deoxyadenosine",
+     "sbml_id": "M_mt_488dd8bd43",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 91.192,
+     "x": 2321.4104017310933,
+     "y": -2144.77929015711
+    },
+    {
+     "h": 16.5,
+     "id": "M:5-phospho-alpha-D-ribose 1-diphosphate",
+     "kind": "met",
+     "label": "5-phospho-alpha-D-ribose 1-diphosphate",
+     "sbml_id": "M_mt_15981d019b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 164.23,
+     "x": 808.8092596532127,
+     "y": -81.26029457541296
+    },
+    {
+     "h": 16.5,
+     "id": "M:Inosine",
+     "kind": "met",
+     "label": "Inosine",
+     "sbml_id": "M_mt_d3a4558c71",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 41.215,
+     "x": 5003.428356077038,
+     "y": -1113.019792366262
+    },
+    {
+     "h": 16.5,
+     "id": "M:adenine",
+     "kind": "met",
+     "label": "adenine",
+     "sbml_id": "M_mt_1e6bef36f9",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 45.238,
+     "x": 2418.5952552624944,
+     "y": -973.7235370074964
+    },
+    {
+     "h": 16.5,
+     "id": "M:adenosine",
+     "kind": "met",
+     "label": "adenosine",
+     "sbml_id": "M_mt_9a15888f59",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 54.867,
+     "x": 3631.4002124271237,
+     "y": -81.26029457541296
+    },
+    {
+     "h": 16.5,
+     "id": "M:dADP",
+     "kind": "met",
+     "label": "dADP",
+     "sbml_id": "M_mt_b748f088e6",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 34.123,
+     "x": 2558.806939299307,
+     "y": -4208.298285738811
+    },
+    {
+     "h": 16.5,
+     "id": "M:dAMP",
+     "kind": "met",
+     "label": "dAMP",
+     "sbml_id": "M_mt_2fd3f5930f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 34.911,
+     "x": 2760.894265293783,
+     "y": -3176.538787947961
+    },
+    {
+     "h": 16.5,
+     "id": "M:dATP",
+     "kind": "met",
+     "label": "dATP",
+     "sbml_id": "M_mt_9195e86598",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 32.109,
+     "x": 2668.9586441550787,
+     "y": -5240.057783529659
+    },
+    {
+     "h": 16.5,
+     "id": "M:deoxyinosine",
+     "kind": "met",
+     "label": "deoxyinosine",
+     "sbml_id": "M_mt_b91c3ffa6f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 67.061,
+     "x": 1733.2658295048159,
+     "y": -3176.538787947961
+    },
+    {
+     "h": 16.5,
+     "id": "M:formate",
+     "kind": "met",
+     "label": "formate",
+     "sbml_id": "M_mt_da5826e6ef",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 44.941,
+     "x": 6381.547150880831,
+     "y": -81.26029457541296
+    },
+    {
+     "h": 16.5,
+     "id": "M:thioredoxin disulfide",
+     "kind": "met",
+     "label": "thioredoxin disulfide",
+     "sbml_id": "M_mt_de46869ffd",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 97.867,
+     "x": 2668.9586441549327,
+     "y": -6271.817281320507
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_1a1985edf3",
+     "kind": "rxn",
+     "label": "dTMP kinase",
+     "sbml_id": "R_rx_1a1985edf3",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 51.249,
+     "x": 2663.5531822537814,
+     "y": -3692.4185368433846
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_28809f586e",
+     "kind": "rxn",
+     "label": "adenosine nucleosidase",
+     "sbml_id": "R_rx_28809f586e",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 ",
+     "w": 91.255,
+     "x": 2237.9531442080593,
+     "y": -597.1400434708377
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_52e4d1571a",
+     "kind": "rxn",
+     "label": "purine-nucleoside phosphorylase",
+     "sbml_id": "R_rx_52e4d1571a",
+     "sbml_type": "reaction",
+     "sub": " \u2192 phosphate",
+     "w": 123.686,
+     "x": 2307.3365468930333,
+     "y": -1628.8995412616866
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_74989996af",
+     "kind": "rxn",
+     "label": "adenosine deaminase",
+     "sbml_id": "R_rx_74989996af",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 NH3",
+     "w": 84.204,
+     "x": 4990.120047370674,
+     "y": -597.1400434708377
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_4549",
+     "kind": "rxn",
+     "label": "ribonucleoside-triphosphate reductase (thioredoxin)",
+     "sbml_id": "R_rx_NODE_4549",
+     "sbml_type": "reaction",
+     "sub": "thioredoxin \u2192 ATP",
+     "w": 130.327,
+     "x": 2668.9586441550787,
+     "y": -5755.937532425084
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_6206",
+     "kind": "rxn",
+     "label": "adenine phosphoribosyltransferase",
+     "sbml_id": "R_rx_NODE_6206",
+     "sbml_type": "reaction",
+     "sub": "AMP \u2192 diphosphate",
+     "w": 130.934,
+     "x": 808.8092596532127,
+     "y": -597.1400434708377
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_bad7d5c6fc",
+     "kind": "rxn",
+     "label": "purine-nucleoside phosphorylase",
+     "sbml_id": "R_rx_bad7d5c6fc",
+     "sbml_type": "reaction",
+     "sub": "phosphate \u2192 ",
+     "w": 123.686,
+     "x": 3631.4002124271237,
+     "y": -597.1400434708377
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_be1c9cee23",
+     "kind": "rxn",
+     "label": "nucleoside-diphosphate kinase",
+     "sbml_id": "R_rx_be1c9cee23",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 115.889,
+     "x": 2449.4217248526134,
+     "y": -4724.178034634236
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_de6667c782",
+     "kind": "rxn",
+     "label": "2'-deoxyadenosine kinase",
+     "sbml_id": "R_rx_de6667c782",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 98.882,
+     "x": 2846.72998397968,
+     "y": -2660.6590390525366
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_f1f248fe2c",
+     "kind": "rxn",
+     "label": "ribonucleoside-triphosphate reductase (formate)",
+     "sbml_id": "R_rx_f1f248fe2c",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 H2O + CO2",
+     "w": 130.327,
+     "x": 6381.547150880831,
+     "y": -597.1400434708377
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_f550124ef6",
+     "kind": "rxn",
+     "label": "ATP deaminase",
+     "sbml_id": "R_rx_f550124ef6",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 NH3",
+     "w": 61.545,
+     "x": 1721.7604651507136,
+     "y": -2660.6590390525366
+    },
+    {
+     "h": 0.0,
+     "id": "__d19_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 6039.139087814321,
+     "y": -1113.019792366262
+    },
+    {
+     "h": 0.0,
+     "id": "__d19_3",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 5683.422716041447,
+     "y": -1628.8995412616866
+    },
+    {
+     "h": 0.0,
+     "id": "__d19_4",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 5317.728822836424,
+     "y": -2144.77929015711
+    },
+    {
+     "h": 0.0,
+     "id": "__d19_5",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 4943.766429566631,
+     "y": -2660.6590390525366
+    },
+    {
+     "h": 0.0,
+     "id": "__d19_6",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 4563.116688784283,
+     "y": -3176.538787947961
+    },
+    {
+     "h": 0.0,
+     "id": "__d19_7",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 4177.199930107282,
+     "y": -3692.4185368433846
+    },
+    {
+     "h": 0.0,
+     "id": "__d19_8",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 3787.2716601537722,
+     "y": -4208.298285738811
+    },
+    {
+     "h": 0.0,
+     "id": "__d19_9",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 3394.4474008396883,
+     "y": -4724.178034634236
+    }
+   ],
+   "rings": [],
+   "title": "purine metabolism \u2014 module 3"
+  },
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:2'-deoxyguanosine",
+      "R:R_rx_3db9ac4c4f"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:2'-deoxyguanosine",
+     "target": "R:R_rx_3db9ac4c4f"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:dGMP",
+      "R:R_rx_3db9ac4c4f"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_3db9ac4c4f",
+     "target": "M:dGMP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:dGMP",
+      "R:R_rx_5e4a07cde4"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:dGMP",
+     "target": "R:R_rx_5e4a07cde4"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:dGDP",
+      "R:R_rx_5e4a07cde4"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_5e4a07cde4",
+     "target": "M:dGDP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:dGTP",
+      "R:R_rx_78434c9ef6"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:dGTP",
+     "target": "R:R_rx_78434c9ef6"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:2'-deoxyguanosine",
+      "R:R_rx_78434c9ef6"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_78434c9ef6",
+     "target": "M:2'-deoxyguanosine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:dGDP",
+      "R:R_rx_8b77b6e509"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:dGDP",
+     "target": "R:R_rx_8b77b6e509"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:dGTP",
+      "R:R_rx_8b77b6e509"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_8b77b6e509",
+     "target": "M:dGTP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:dGTP",
+      "R:R_rx_4e46578960"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:dGTP",
+     "target": "R:R_rx_4e46578960"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:dGMP",
+      "R:R_rx_4e46578960"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_4e46578960",
+     "target": "M:dGMP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100010,
+     "own": [
+      "M:guanosine",
+      "R:R_rx_2518552183"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:guanosine",
+     "target": "R:R_rx_2518552183"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100011,
+     "own": [
+      "M:guanine",
+      "R:R_rx_2518552183"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_2518552183",
+     "target": "M:guanine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100012,
+     "own": [
+      "M:guanosine",
+      "R:R_rx_50147a1ec3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:guanosine",
+     "target": "R:R_rx_50147a1ec3"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100013,
+     "own": [
+      "M:guanine",
+      "R:R_rx_50147a1ec3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_50147a1ec3",
+     "target": "M:guanine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100014,
+     "own": [
+      "M:guanine",
+      "R:R_rx_53dd9ba454"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:guanine",
+     "target": "R:R_rx_53dd9ba454"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100015,
+     "own": [
+      "M:xanthine",
+      "R:R_rx_53dd9ba454"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_53dd9ba454",
+     "target": "M:xanthine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100017,
+     "own": [
+      "M:Xanthosine",
+      "R:R_rx_54002064fc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_54002064fc",
+     "target": "M:Xanthosine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100018,
+     "own": [
+      "M:guanine",
+      "R:R_rx_6cccc2500f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_6cccc2500f",
+     "target": "M:guanine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:2'-deoxyguanosine",
+      "R:R_rx_6cccc2500f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2'-deoxyguanosine",
+     "target": "R:R_rx_6cccc2500f"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_50147a1ec3:0",
+      "R:R_rx_50147a1ec3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_50147a1ec3",
+     "target": "A:R_rx_50147a1ec3:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_6cccc2500f:0",
+      "R:R_rx_6cccc2500f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_6cccc2500f",
+     "target": "A:R_rx_6cccc2500f:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_78434c9ef6:0",
+      "R:R_rx_78434c9ef6"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_78434c9ef6",
+     "target": "A:R_rx_78434c9ef6:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:cut0",
+      "R:R_rx_54002064fc"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:cut0",
+     "target": "R:R_rx_54002064fc"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_2518552183:0",
+      "R:R_rx_2518552183"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_2518552183",
+     "target": "A:R_rx_2518552183:0"
+    }
+   ],
+   "name": "module 4",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_2518552183:0",
+     "kind": "alias",
+     "label": "alpha-D-ribose 1-phosphate",
+     "sbml_id": "M_mt_8edfd22915",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 113.704,
+     "x": 698.7421943515517,
+     "y": 204.1889229900263
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_50147a1ec3:0",
+     "kind": "alias",
+     "label": "D-ribose",
+     "sbml_id": "M_mt_6834bd094a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 40.384,
+     "x": 353.93705951547287,
+     "y": 246.37011933465388
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_6cccc2500f:0",
+     "kind": "alias",
+     "label": "2-deoxy-D-ribose 1-phosphate",
+     "sbml_id": "M_mt_4875ee172c",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 122.773,
+     "x": 1252.9844792954796,
+     "y": 301.6370125929195
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_78434c9ef6:0",
+     "kind": "alias",
+     "label": "tripolyphosphate",
+     "sbml_id": "M_mt_90d79e9616",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 73.055,
+     "x": 1422.6815616279018,
+     "y": -121.43538417185792
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut0",
+     "kind": "alias",
+     "label": "guanosine",
+     "sbml_id": "M_mt_d04a45a9a2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 47.998,
+     "x": 1594.549957994773,
+     "y": -49.46841754854517
+    },
+    {
+     "h": 19.5,
+     "id": "M:2'-deoxyguanosine",
+     "kind": "core",
+     "label": "2'-deoxyguanosine",
+     "sbml_id": "M_mt_33ff02b09d",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 113.72,
+     "x": 1219.7446000999992,
+     "y": -224.55878108562308
+    },
+    {
+     "h": 16.5,
+     "id": "M:Xanthosine",
+     "kind": "met",
+     "label": "Xanthosine",
+     "sbml_id": "M_mt_3b1a03c063",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 59.038,
+     "x": 1709.0031144805796,
+     "y": 303.6387147165218
+    },
+    {
+     "h": 19.5,
+     "id": "M:dGDP",
+     "kind": "core",
+     "label": "dGDP",
+     "sbml_id": "M_mt_68eeea66f5",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 42.629,
+     "x": 1219.7446000999992,
+     "y": -846.6122082766666
+    },
+    {
+     "h": 19.5,
+     "id": "M:dGMP",
+     "kind": "core",
+     "label": "dGMP",
+     "sbml_id": "M_mt_dd8d7830c5",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 44.197,
+     "x": 908.7178865044773,
+     "y": -535.585494681145
+    },
+    {
+     "h": 19.5,
+     "id": "M:dGTP",
+     "kind": "core",
+     "label": "dGTP",
+     "sbml_id": "M_mt_00d81ca564",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 41.057,
+     "x": 1530.7713136955215,
+     "y": -535.585494681145
+    },
+    {
+     "h": 16.5,
+     "id": "M:guanine",
+     "kind": "met",
+     "label": "guanine",
+     "sbml_id": "M_mt_42df7de7da",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 45.436,
+     "x": 919.5516770116692,
+     "y": 303.6387147165218
+    },
+    {
+     "h": 16.5,
+     "id": "M:guanosine",
+     "kind": "met",
+     "label": "guanosine",
+     "sbml_id": "M_mt_d04a45a9a2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 55.064,
+     "x": 767.1739600055304,
+     "y": -57.986694991155815
+    },
+    {
+     "h": 16.5,
+     "id": "M:xanthine",
+     "kind": "met",
+     "label": "xanthine",
+     "sbml_id": "M_mt_96e4cb6d43",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 48.627,
+     "x": 1060.207524412622,
+     "y": 665.2641244241995
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_2518552183",
+     "kind": "rxn",
+     "label": "guanosine phosphorylase",
+     "sbml_id": "R_rx_2518552183",
+     "sbml_type": "reaction",
+     "sub": "phosphate \u2192 ",
+     "w": 97.094,
+     "x": 698.1285357176682,
+     "y": 122.82600986268297
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_3db9ac4c4f",
+     "kind": "rxn",
+     "label": "deoxyguanosine kinase",
+     "sbml_id": "R_rx_3db9ac4c4f",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 89.814,
+     "x": 999.8155017864393,
+     "y": -315.6563963675853
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_4e46578960",
+     "kind": "rxn",
+     "label": "8-oxo-dGTP diphosphatase",
+     "sbml_id": "R_rx_4e46578960",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 diphosphate",
+     "w": 101.614,
+     "x": 1219.744600099999,
+     "y": -535.585494681145
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_50147a1ec3",
+     "kind": "rxn",
+     "label": "purine nucleosidase",
+     "sbml_id": "R_rx_50147a1ec3",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 ",
+     "w": 77.915,
+     "x": 347.70871289627104,
+     "y": 122.82600986268297
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_53dd9ba454",
+     "kind": "rxn",
+     "label": "guanine deaminase",
+     "sbml_id": "R_rx_53dd9ba454",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 NH3",
+     "w": 76.465,
+     "x": 1013.3222946071868,
+     "y": 484.45141957036054
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_54002064fc",
+     "kind": "rxn",
+     "label": "guanosine deaminase",
+     "sbml_id": "R_rx_54002064fc",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 NH3",
+     "w": 84.395,
+     "x": 1650.396015069958,
+     "y": 122.82600986268297
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_5e4a07cde4",
+     "kind": "rxn",
+     "label": "dTMP kinase",
+     "sbml_id": "R_rx_5e4a07cde4",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 51.249,
+     "x": 999.8155017864393,
+     "y": -755.5145929947046
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_6cccc2500f",
+     "kind": "rxn",
+     "label": "guanosine phosphorylase",
+     "sbml_id": "R_rx_6cccc2500f",
+     "sbml_type": "reaction",
+     "sub": "phosphate \u2192 ",
+     "w": 97.094,
+     "x": 1219.744600099999,
+     "y": 122.82600986268297
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_78434c9ef6",
+     "kind": "rxn",
+     "label": "dGTPase",
+     "sbml_id": "R_rx_78434c9ef6",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 ",
+     "w": 37.974,
+     "x": 1439.6736984135594,
+     "y": -315.6563963675854
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_8b77b6e509",
+     "kind": "rxn",
+     "label": "nucleoside-diphosphate kinase",
+     "sbml_id": "R_rx_8b77b6e509",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 115.889,
+     "x": 1439.673698413559,
+     "y": -755.5145929947046
+    }
+   ],
+   "rings": [
+    {
+     "cx": 1219.7446000999992,
+     "cy": -535.585494681145,
+     "id": 0,
+     "r": 311.026713595522
+    }
+   ],
+   "title": "purine metabolism \u2014 module 4"
+  },
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-carboxyamino-1-(5-phospho-D-ribosyl)imidazole",
+      "R:R_rx_3dcc256679"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:5-carboxyamino-1-(5-phospho-D-ribosyl)imidazole",
+     "target": "R:R_rx_3dcc256679"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate",
+      "R:R_rx_3dcc256679"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_3dcc256679",
+     "target": "M:5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate",
+      "R:R_rx_b0e94a7132"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate",
+     "target": "R:R_rx_b0e94a7132"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-amino-1-(5-phospho-D-ribosyl)imidazole",
+      "R:R_rx_b0e94a7132"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_b0e94a7132",
+     "target": "M:5-amino-1-(5-phospho-D-ribosyl)imidazole"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-amino-1-(5-phospho-D-ribosyl)imidazole",
+      "R:R_rx_e0d326f71c"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:5-amino-1-(5-phospho-D-ribosyl)imidazole",
+     "target": "R:R_rx_e0d326f71c"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-carboxyamino-1-(5-phospho-D-ribosyl)imidazole",
+      "R:R_rx_e0d326f71c"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_e0d326f71c",
+     "target": "M:5-carboxyamino-1-(5-phospho-D-ribosyl)imidazole"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100008,
+     "own": [
+      "M:5-aminoimidazole-4-carboxamide ribonucleotide",
+      "R:R_rx_325c695d75"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:5-aminoimidazole-4-carboxamide ribonucleotide",
+     "target": "R:R_rx_325c695d75"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100009,
+     "own": [
+      "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide",
+      "R:R_rx_325c695d75"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_325c695d75",
+     "target": "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100010,
+     "own": [
+      "M:(S)-2-[5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate",
+      "R:R_rx_384eda348e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_384eda348e",
+     "target": "M:(S)-2-[5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100011,
+     "own": [
+      "M:IMP",
+      "R:R_rx_6cee0ad03c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:IMP",
+     "target": "R:R_rx_6cee0ad03c"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 100012,
+     "own": [
+      "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide",
+      "R:R_rx_6cee0ad03c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_6cee0ad03c",
+     "target": "__dp0_4_2"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 100012,
+     "own": [
+      "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide",
+      "R:R_rx_6cee0ad03c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__dp0_4_2",
+     "target": "__dp0_4_3"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 100012,
+     "own": [
+      "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide",
+      "R:R_rx_6cee0ad03c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__dp0_4_3",
+     "target": "__dp0_4_4"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100012,
+     "own": [
+      "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide",
+      "R:R_rx_6cee0ad03c"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__dp0_4_4",
+     "target": "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100016,
+     "own": [
+      "M:(S)-2-[5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate",
+      "R:R_rx_b58b3ea39e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(S)-2-[5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate",
+     "target": "R:R_rx_b58b3ea39e"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100017,
+     "own": [
+      "M:5-aminoimidazole-4-carboxamide ribonucleotide",
+      "R:R_rx_b58b3ea39e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b58b3ea39e",
+     "target": "M:5-aminoimidazole-4-carboxamide ribonucleotide"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100018,
+     "own": [
+      "M:5-aminoimidazole-4-carboxamide ribonucleotide",
+      "R:R_rx_c3a8c37f8f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:5-aminoimidazole-4-carboxamide ribonucleotide",
+     "target": "R:R_rx_c3a8c37f8f"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100019,
+     "own": [
+      "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide",
+      "R:R_rx_c3a8c37f8f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_c3a8c37f8f",
+     "target": "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate",
+      "R:R_rx_384eda348e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate",
+     "target": "R:R_rx_384eda348e"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 200019,
+     "own": [
+      "M:2-(formamido)-N1-(5-phosphoribosyl)acetamidine",
+      "R:R_rx_0e68f61cef"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2-(formamido)-N1-(5-phosphoribosyl)acetamidine",
+     "target": "R:R_rx_0e68f61cef"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-amino-1-(5-phospho-D-ribosyl)imidazole",
+      "R:R_rx_0e68f61cef"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_0e68f61cef",
+     "target": "M:5-amino-1-(5-phospho-D-ribosyl)imidazole"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_325c695d75:0",
+      "R:R_rx_325c695d75"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_325c695d75:0",
+     "target": "R:R_rx_325c695d75"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_384eda348e:0",
+      "R:R_rx_384eda348e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_384eda348e:0",
+     "target": "R:R_rx_384eda348e"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_b58b3ea39e:0",
+      "R:R_rx_b58b3ea39e"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b58b3ea39e",
+     "target": "A:R_rx_b58b3ea39e:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_c3a8c37f8f:0",
+      "R:R_rx_c3a8c37f8f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_c3a8c37f8f:0",
+     "target": "R:R_rx_c3a8c37f8f"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_c3a8c37f8f:1",
+      "R:R_rx_c3a8c37f8f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_c3a8c37f8f",
+     "target": "A:R_rx_c3a8c37f8f:1"
+    }
+   ],
+   "name": "module 5",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_325c695d75:0",
+     "kind": "alias",
+     "label": "formate",
+     "sbml_id": "M_mt_da5826e6ef",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 39.066,
+     "x": -125.43027611405613,
+     "y": -379.58607790274704
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_384eda348e:0",
+     "kind": "alias",
+     "label": "L-aspartate",
+     "sbml_id": "M_mt_0de283c3a3",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 51.653,
+     "x": 42.257624523563095,
+     "y": -182.8879503293196
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_b58b3ea39e:0",
+     "kind": "alias",
+     "label": "fumarate",
+     "sbml_id": "M_mt_6ea7392d87",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 43.957,
+     "x": -73.72778500891684,
+     "y": -383.16631480513695
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_c3a8c37f8f:0",
+     "kind": "alias",
+     "label": "10-formyltetrahydrofolate",
+     "sbml_id": "M_mt_049fa82a22",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 106.135,
+     "x": 121.04314696901832,
+     "y": -429.0567533074122
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_c3a8c37f8f:1",
+     "kind": "alias",
+     "label": "tetrahydrofolate",
+     "sbml_id": "M_mt_3aeb164db4",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 70.498,
+     "x": 16.61231672888367,
+     "y": -508.0359338790446
+    },
+    {
+     "h": 16.5,
+     "id": "M:(S)-2-[5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate",
+     "kind": "met",
+     "label": "(S)-2-[5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate",
+     "sbml_id": "M_mt_e52de334db",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 159.168,
+     "x": -25.030146475421674,
+     "y": -304.42572132830435
+    },
+    {
+     "h": 16.5,
+     "id": "M:2-(formamido)-N1-(5-phosphoribosyl)acetamidine",
+     "kind": "met",
+     "label": "2-(formamido)-N1-(5-phosphoribosyl)acetamidine",
+     "sbml_id": "M_mt_c0e6a36190",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 167.239,
+     "x": 291.5940116799566,
+     "y": -540.8143033207609
+    },
+    {
+     "h": 16.5,
+     "id": "M:5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide",
+     "kind": "met",
+     "label": "5-Formamido-1-(5-phosphoribosyl)imidazole-4-carboxamide",
+     "sbml_id": "M_mt_909589cf04",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 166.675,
+     "x": -143.06073621995014,
+     "y": -508.55072132830435
+    },
+    {
+     "h": 19.5,
+     "id": "M:5-amino-1-(5-phospho-D-ribosyl)imidazole",
+     "kind": "core",
+     "label": "5-amino-1-(5-phospho-D-ribosyl)imidazole",
+     "sbml_id": "M_mt_8c8f75dd84",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 200.565,
+     "x": 291.5940116799566,
+     "y": -438.314303320761
+    },
+    {
+     "h": 19.5,
+     "id": "M:5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate",
+     "kind": "core",
+     "label": "5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate",
+     "sbml_id": "M_mt_1a547d42f7",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 200.565,
+     "x": 182.97215072165733,
+     "y": -250.17572132830435
+    },
+    {
+     "h": 16.5,
+     "id": "M:5-aminoimidazole-4-carboxamide ribonucleotide",
+     "kind": "met",
+     "label": "5-aminoimidazole-4-carboxamide ribonucleotide",
+     "sbml_id": "M_mt_3f98b736e2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 167.595,
+     "x": -25.0301477448715,
+     "y": -403.80072132830435
+    },
+    {
+     "h": 19.5,
+     "id": "M:5-carboxyamino-1-(5-phospho-D-ribosyl)imidazole",
+     "kind": "core",
+     "label": "5-carboxyamino-1-(5-phospho-D-ribosyl)imidazole",
+     "sbml_id": "M_mt_53fd34c970",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 206.911,
+     "x": 400.2158726382559,
+     "y": -250.17572132830438
+    },
+    {
+     "h": 16.5,
+     "id": "M:IMP",
+     "kind": "met",
+     "label": "IMP",
+     "sbml_id": "M_mt_15d5819dc2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 25.843,
+     "x": -248.0732138222688,
+     "y": -250.17572132830435
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0e68f61cef",
+     "kind": "rxn",
+     "label": "phosphoribosylformylglycinamidine cyclo-ligase",
+     "sbml_id": "R_rx_0e68f61cef",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 phosphate + ADP",
+     "w": 134.46,
+     "x": 291.5940116799566,
+     "y": -488.4393033207609
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_325c695d75",
+     "kind": "rxn",
+     "label": "formate-phosphoribosylaminoimidazolecarboxamide ligase",
+     "sbml_id": "R_rx_325c695d75",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 phosphate + ADP",
+     "w": 138.318,
+     "x": -143.1226551488007,
+     "y": -456.17572132830435
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_384eda348e",
+     "kind": "rxn",
+     "label": "phosphoribosylaminoimidazolesuccinocarboxamide synthase",
+     "sbml_id": "R_rx_384eda348e",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 phosphate + ADP",
+     "w": 138.493,
+     "x": -25.030146475421674,
+     "y": -250.17572132830435
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_3dcc256679",
+     "kind": "rxn",
+     "label": "5-(carboxyamino)imidazole ribonucleotide mutase",
+     "sbml_id": "R_rx_3dcc256679",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 134.412,
+     "x": 291.5940116799566,
+     "y": -187.46286066415217
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_6cee0ad03c",
+     "kind": "rxn",
+     "label": "IMP cyclohydrolase",
+     "sbml_id": "R_rx_6cee0ad03c",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 ",
+     "w": 74.491,
+     "x": -248.0732138222688,
+     "y": -304.42572132830435
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_b0e94a7132",
+     "kind": "rxn",
+     "label": "phosphoribosylaminoimidazole carboxylase",
+     "sbml_id": "R_rx_b0e94a7132",
+     "sbml_type": "reaction",
+     "sub": " \u2192 CO2",
+     "w": 135.953,
+     "x": 182.9721507216573,
+     "y": -375.60144265660875
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_b58b3ea39e",
+     "kind": "rxn",
+     "label": "adenylosuccinate lyase",
+     "sbml_id": "R_rx_b58b3ea39e",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 89.307,
+     "x": -25.030147188284786,
+     "y": -355.05072132830435
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_c3a8c37f8f",
+     "kind": "rxn",
+     "label": "phosphoribosylaminoimidazolecarboxamide formyltransferase",
+     "sbml_id": "R_rx_c3a8c37f8f",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 138.173,
+     "x": 29.122735476199296,
+     "y": -456.17572132830435
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_e0d326f71c",
+     "kind": "rxn",
+     "label": "5-(carboxyamino)imidazole ribonucleotide synthase",
+     "sbml_id": "R_rx_e0d326f71c",
+     "sbml_type": "reaction",
+     "sub": "HCO3- + ATP + H+ \u2192 phosphate + ADP",
+     "w": 134.412,
+     "x": 400.215872638256,
+     "y": -375.60144265660875
+    },
+    {
+     "h": 0.0,
+     "id": "__dp0_4_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": -248.6157587208175,
+     "y": -355.05072132830435
+    },
+    {
+     "h": 0.0,
+     "id": "__dp0_4_3",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": -249.37666232551345,
+     "y": -403.80072132830435
+    },
+    {
+     "h": 0.0,
+     "id": "__dp0_4_4",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": -250.28171764880074,
+     "y": -456.17572132830435
+    }
+   ],
+   "rings": [
+    {
+     "cx": 291.5940116799566,
+     "cy": -312.8885819924566,
+     "id": 0,
+     "r": 125.4257213283044
+    }
+   ],
+   "title": "purine metabolism \u2014 module 5"
+  },
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 0,
+     "own": [
+      "M:acetyl phosphate",
+      "R:R_rx_0baec52a4a"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:acetyl phosphate",
+     "target": "R:R_rx_0baec52a4a"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 1,
+     "own": [
+      "M:glycine",
+      "R:R_rx_0baec52a4a"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_0baec52a4a",
+     "target": "M:glycine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 2,
+     "own": [
+      "M:acetyl-CoA",
+      "R:R_rx_5b521e41a3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:acetyl-CoA",
+     "target": "R:R_rx_5b521e41a3"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 3,
+     "own": [
+      "M:acetyl phosphate",
+      "R:R_rx_5b521e41a3"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_5b521e41a3",
+     "target": "M:acetyl phosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 4,
+     "own": [
+      "M:acetate",
+      "R:R_rx_9977d8e344"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:acetate",
+     "target": "R:R_rx_9977d8e344"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 5,
+     "own": [
+      "M:acetyl phosphate",
+      "R:R_rx_9977d8e344"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_9977d8e344",
+     "target": "__d5_2"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 5,
+     "own": [
+      "M:acetyl phosphate",
+      "R:R_rx_9977d8e344"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d5_2",
+     "target": "__d5_3"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 5,
+     "own": [
+      "M:acetyl phosphate",
+      "R:R_rx_9977d8e344"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d5_3",
+     "target": "__d5_4"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 5,
+     "own": [
+      "M:acetyl phosphate",
+      "R:R_rx_9977d8e344"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d5_4",
+     "target": "__d5_5"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 5,
+     "own": [
+      "M:acetyl phosphate",
+      "R:R_rx_9977d8e344"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d5_5",
+     "target": "M:acetyl phosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 10,
+     "own": [
+      "M:pyruvate",
+      "R:R_rx_9fc44ed51f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:pyruvate",
+     "target": "R:R_rx_9fc44ed51f"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 11,
+     "own": [
+      "M:acetyl-CoA",
+      "R:R_rx_9fc44ed51f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_9fc44ed51f",
+     "target": "M:acetyl-CoA"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 12,
+     "own": [
+      "M:L-serine",
+      "R:R_rx_fc05093f60"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:L-serine",
+     "target": "R:R_rx_fc05093f60"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 13,
+     "own": [
+      "M:pyruvate",
+      "R:R_rx_fc05093f60"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_fc05093f60",
+     "target": "M:pyruvate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_0baec52a4a:0",
+      "R:R_rx_0baec52a4a"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_0baec52a4a:0",
+     "target": "R:R_rx_0baec52a4a"
+    }
+   ],
+   "name": "module 6",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_0baec52a4a:0",
+     "kind": "alias",
+     "label": "thioredoxin disulfide",
+     "sbml_id": "M_mt_de46869ffd",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 85.765,
+     "x": 256.52432182286225,
+     "y": -317.89490495787766
+    },
+    {
+     "h": 16.5,
+     "id": "M:L-serine",
+     "kind": "met",
+     "label": "L-serine",
+     "sbml_id": "M_mt_23258e632a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 44.498,
+     "x": 96.64303291164885,
+     "y": -8.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:acetate",
+     "kind": "met",
+     "label": "acetate",
+     "sbml_id": "M_mt_ddadea339f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 43.253,
+     "x": 229.70236812729155,
+     "y": -8.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:acetyl phosphate",
+     "kind": "met",
+     "label": "acetyl phosphate",
+     "sbml_id": "M_mt_c5363dd012",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 84.542,
+     "x": 157.83190218972436,
+     "y": -322.5
+    },
+    {
+     "h": 16.5,
+     "id": "M:acetyl-CoA",
+     "kind": "met",
+     "label": "acetyl-CoA",
+     "sbml_id": "M_mt_4cb0ce6646",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 57.274,
+     "x": 104.20893333335803,
+     "y": -217.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:glycine",
+     "kind": "met",
+     "label": "glycine",
+     "sbml_id": "M_mt_4fd822ed16",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 41.519,
+     "x": 157.83190218968824,
+     "y": -427.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:pyruvate",
+     "kind": "met",
+     "label": "pyruvate",
+     "sbml_id": "M_mt_7dd2d3b76f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 48.886,
+     "x": 96.00540302211644,
+     "y": -113.0
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0baec52a4a",
+     "kind": "rxn",
+     "label": "glycine reductase",
+     "sbml_id": "R_rx_0baec52a4a",
+     "sbml_type": "reaction",
+     "sub": "H2O + NH3 \u2192 phosphate + thioredoxin",
+     "w": 120.979,
+     "x": 157.83190218972436,
+     "y": -374.875
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_5b521e41a3",
+     "kind": "rxn",
+     "label": "phosphate acetyltransferase",
+     "sbml_id": "R_rx_5b521e41a3",
+     "sbml_type": "reaction",
+     "sub": "phosphate \u2192 CoA",
+     "w": 108.13,
+     "x": 113.17267395148149,
+     "y": -270.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_9977d8e344",
+     "kind": "rxn",
+     "label": "acetate kinase",
+     "sbml_id": "R_rx_9977d8e344",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP",
+     "w": 58.834,
+     "x": 229.70236812729155,
+     "y": -60.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_9fc44ed51f",
+     "kind": "rxn",
+     "label": "pyruvate synthase (ferredoxin)",
+     "sbml_id": "R_rx_9fc44ed51f",
+     "sbml_type": "reaction",
+     "sub": "oxidized ferredoxin + CoA \u2192 reduced ferredoxin + CO2 + 2 H+",
+     "w": 190.175,
+     "x": 95.08764062499999,
+     "y": -165.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_fc05093f60",
+     "kind": "rxn",
+     "label": "serine racemase",
+     "sbml_id": "R_rx_fc05093f60",
+     "sbml_type": "reaction",
+     "sub": " \u2192 NH3",
+     "w": 65.739,
+     "x": 96.64303291164885,
+     "y": -60.625
+    },
+    {
+     "h": 0.0,
+     "id": "__d5_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 229.07714866487413,
+     "y": -113.0
+    },
+    {
+     "h": 0.0,
+     "id": "__d5_3",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 228.17528125,
+     "y": -165.375
+    },
+    {
+     "h": 0.0,
+     "id": "__d5_4",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 216.78513645835804,
+     "y": -217.75
+    },
+    {
+     "h": 0.0,
+     "id": "__d5_5",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 205.2374395764815,
+     "y": -270.125
+    }
+   ],
+   "rings": [],
+   "title": "purine metabolism \u2014 module 6"
+  },
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5,10-methylenetetrahydrofolate",
+      "R:R_rx_26909b07d6"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:5,10-methylenetetrahydrofolate",
+     "target": "R:R_rx_26909b07d6"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:tetrahydrofolate",
+      "R:R_rx_26909b07d6"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_26909b07d6",
+     "target": "M:tetrahydrofolate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5,10-methylenetetrahydrofolate",
+      "R:R_rx_5d5a94a817"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:5,10-methylenetetrahydrofolate",
+     "target": "R:R_rx_5d5a94a817"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5,10-methenyltetrahydrofolate",
+      "R:R_rx_5d5a94a817"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_5d5a94a817",
+     "target": "M:5,10-methenyltetrahydrofolate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-formimidoyltetrahydrofolate",
+      "R:R_rx_7e337dc414"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:5-formimidoyltetrahydrofolate",
+     "target": "R:R_rx_7e337dc414"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:tetrahydrofolate",
+      "R:R_rx_7e337dc414"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_7e337dc414",
+     "target": "M:tetrahydrofolate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5-formimidoyltetrahydrofolate",
+      "R:R_rx_8963fc40e6"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "M:5-formimidoyltetrahydrofolate",
+     "target": "R:R_rx_8963fc40e6"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:5,10-methenyltetrahydrofolate",
+      "R:R_rx_8963fc40e6"
+     ],
+     "ring": 0,
+     "side": false,
+     "source": "R:R_rx_8963fc40e6",
+     "target": "M:5,10-methenyltetrahydrofolate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 100009,
+     "own": [
+      "M:10-formyltetrahydrofolate",
+      "R:R_rx_a191bd20d2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:10-formyltetrahydrofolate",
+     "target": "R:R_rx_a191bd20d2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:tetrahydrofolate",
+      "R:R_rx_a191bd20d2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_a191bd20d2",
+     "target": "M:tetrahydrofolate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:glycine",
+      "R:R_rx_26909b07d6"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:glycine",
+     "target": "R:R_rx_26909b07d6"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_26909b07d6:1",
+      "R:R_rx_26909b07d6"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_26909b07d6",
+     "target": "A:R_rx_26909b07d6:1"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_7e337dc414:0",
+      "R:R_rx_7e337dc414"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_7e337dc414:0",
+     "target": "R:R_rx_7e337dc414"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_7e337dc414:1",
+      "R:R_rx_7e337dc414"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_7e337dc414",
+     "target": "A:R_rx_7e337dc414:1"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_a191bd20d2:0",
+      "R:R_rx_a191bd20d2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_a191bd20d2:0",
+     "target": "R:R_rx_a191bd20d2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_a191bd20d2:1",
+      "R:R_rx_a191bd20d2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_a191bd20d2",
+     "target": "A:R_rx_a191bd20d2:1"
+    }
+   ],
+   "name": "module 7",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_26909b07d6:1",
+     "kind": "alias",
+     "label": "L-serine",
+     "sbml_id": "M_mt_23258e632a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 38.675,
+     "x": 245.77929855197087,
+     "y": -528.5739397446198
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_7e337dc414:0",
+     "kind": "alias",
+     "label": "glycine",
+     "sbml_id": "M_mt_4fd822ed16",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 36.046,
+     "x": 524.4565050544032,
+     "y": -384.232410807449
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_7e337dc414:1",
+     "kind": "alias",
+     "label": "Formiminoglycine",
+     "sbml_id": "M_mt_69b688237d",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 75.432,
+     "x": 327.92198300095515,
+     "y": -478.2183079575797
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_a191bd20d2:0",
+     "kind": "alias",
+     "label": "beta-glycinamide ribonucleotide",
+     "sbml_id": "M_mt_60b2d749d1",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 130.362,
+     "x": 210.04909226534483,
+     "y": -629.6669792950687
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_a191bd20d2:1",
+     "kind": "alias",
+     "label": "formylglycinamide ribonucleotide",
+     "sbml_id": "M_mt_be5abbf66d",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 135.262,
+     "x": 627.8381500555839,
+     "y": -418.9149653435278
+    },
+    {
+     "h": 16.5,
+     "id": "M:10-formyltetrahydrofolate",
+     "kind": "met",
+     "label": "10-formyltetrahydrofolate",
+     "sbml_id": "M_mt_049fa82a22",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 120.953,
+     "x": 329.00798538534275,
+     "y": -609.736030329738
+    },
+    {
+     "h": 19.5,
+     "id": "M:5,10-methenyltetrahydrofolate",
+     "kind": "core",
+     "label": "5,10-methenyltetrahydrofolate",
+     "sbml_id": "M_mt_2c28813661",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 179.389,
+     "x": 329.0079853853428,
+     "y": -199.6972060659476
+    },
+    {
+     "h": 19.5,
+     "id": "M:5,10-methylenetetrahydrofolate",
+     "kind": "core",
+     "label": "5,10-methylenetetrahydrofolate",
+     "sbml_id": "M_mt_42cdafbea5",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 185.833,
+     "x": 171.61357325344758,
+     "y": -357.0916181978428
+    },
+    {
+     "h": 19.5,
+     "id": "M:5-formimidoyltetrahydrofolate",
+     "kind": "core",
+     "label": "5-formimidoyltetrahydrofolate",
+     "sbml_id": "M_mt_368a0dc30c",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 176.69,
+     "x": 486.402397517238,
+     "y": -357.0916181978429
+    },
+    {
+     "h": 16.5,
+     "id": "M:glycine",
+     "kind": "met",
+     "label": "glycine",
+     "sbml_id": "M_mt_4fd822ed16",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 41.519,
+     "x": 217.713,
+     "y": -408.386
+    },
+    {
+     "h": 19.5,
+     "id": "M:tetrahydrofolate",
+     "kind": "core",
+     "label": "tetrahydrofolate",
+     "sbml_id": "M_mt_3aeb164db4",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 102.314,
+     "x": 329.00798538534275,
+     "y": -514.486030329738
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_26909b07d6",
+     "kind": "rxn",
+     "label": "glycine hydroxymethyltransferase",
+     "sbml_id": "R_rx_26909b07d6",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 ",
+     "w": 127.508,
+     "x": 217.71332924600947,
+     "y": -468.38627433717613
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_5d5a94a817",
+     "kind": "rxn",
+     "label": "methylenetetrahydrofolate dehydrogenase (NADP+)",
+     "sbml_id": "R_rx_5d5a94a817",
+     "sbml_type": "reaction",
+     "sub": "NADP+ \u2192 NADPH + H+",
+     "w": 135.268,
+     "x": 217.7133292460095,
+     "y": -245.7969620585095
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_7e337dc414",
+     "kind": "rxn",
+     "label": "glycine formimidoyltransferase",
+     "sbml_id": "R_rx_7e337dc414",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 116.609,
+     "x": 440.3026415246761,
+     "y": -468.38627433717613
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_8963fc40e6",
+     "kind": "rxn",
+     "label": "formimidoyltetrahydrofolate cyclodeaminase",
+     "sbml_id": "R_rx_8963fc40e6",
+     "sbml_type": "reaction",
+     "sub": " \u2192 NH3",
+     "w": 128.694,
+     "x": 440.3026415246761,
+     "y": -245.79696205850954
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_a191bd20d2",
+     "kind": "rxn",
+     "label": "phosphoribosylglycinamide formyltransferase 1",
+     "sbml_id": "R_rx_a191bd20d2",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 134.611,
+     "x": 329.00798538534275,
+     "y": -560.986030329738
+    }
+   ],
+   "rings": [
+    {
+     "cx": 329.0079853853428,
+     "cy": -357.0916181978428,
+     "id": 0,
+     "r": 157.39441213189522
+    }
+   ],
+   "title": "purine metabolism \u2014 module 7"
+  },
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 0,
+     "own": [
+      "M:5-amino-4-imidazole carboxylate",
+      "R:R_rx_NODE_4439"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:5-amino-4-imidazole carboxylate",
+     "target": "R:R_rx_NODE_4439"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 1,
+     "own": [
+      "M:4-aminoimidazole",
+      "R:R_rx_NODE_4439"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4439",
+     "target": "M:4-aminoimidazole"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 2,
+     "own": [
+      "M:5-ureido-4-imidazole carboxylate",
+      "R:R_rx_NODE_4445"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:5-ureido-4-imidazole carboxylate",
+     "target": "R:R_rx_NODE_4445"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 3,
+     "own": [
+      "M:5-amino-4-imidazole carboxylate",
+      "R:R_rx_NODE_4445"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4445",
+     "target": "M:5-amino-4-imidazole carboxylate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 4,
+     "own": [
+      "M:imidazolinone",
+      "R:R_rx_NODE_8924"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:imidazolinone",
+     "target": "R:R_rx_NODE_8924"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 5,
+     "own": [
+      "M:Formiminoglycine",
+      "R:R_rx_NODE_8924"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_8924",
+     "target": "M:Formiminoglycine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 6,
+     "own": [
+      "M:4-aminoimidazole",
+      "R:R_rx_c731c28fd2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:4-aminoimidazole",
+     "target": "R:R_rx_c731c28fd2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 7,
+     "own": [
+      "M:imidazolinone",
+      "R:R_rx_c731c28fd2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_c731c28fd2",
+     "target": "M:imidazolinone"
+    }
+   ],
+   "name": "module 8",
+   "nodes": [
+    {
+     "h": 16.5,
+     "id": "M:4-aminoimidazole",
+     "kind": "met",
+     "label": "4-aminoimidazole",
+     "sbml_id": "M_mt_d5814fc2ae",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 86.905,
+     "x": 75.60919686548253,
+     "y": -217.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:5-amino-4-imidazole carboxylate",
+     "kind": "met",
+     "label": "5-amino-4-imidazole carboxylate",
+     "sbml_id": "M_mt_0a3ae6685b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 150.972,
+     "x": 75.6835152994669,
+     "y": -113.0
+    },
+    {
+     "h": 16.5,
+     "id": "M:5-ureido-4-imidazole carboxylate",
+     "kind": "met",
+     "label": "5-ureido-4-imidazole carboxylate",
+     "sbml_id": "M_mt_b77b7ab044",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 151.417,
+     "x": 75.70863281250001,
+     "y": -8.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:Formiminoglycine",
+     "kind": "met",
+     "label": "Formiminoglycine",
+     "sbml_id": "M_mt_69b688237d",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 86.156,
+     "x": 75.49353091531374,
+     "y": -420.0
+    },
+    {
+     "h": 16.5,
+     "id": "M:imidazolinone",
+     "kind": "met",
+     "label": "imidazolinone",
+     "sbml_id": "M_mt_aade1d68a1",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 69.943,
+     "x": 75.5338438734166,
+     "y": -322.5
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_4439",
+     "kind": "rxn",
+     "label": "NODE_4439",
+     "sbml_id": "R_rx_NODE_4439",
+     "sbml_type": "reaction",
+     "sub": " \u2192 CO2",
+     "w": 49.253,
+     "x": 75.64894530291465,
+     "y": -165.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_4445",
+     "kind": "rxn",
+     "label": "Hydrolases acting on carbon-nitrogen bonds, other than peptide bonds in linear amides",
+     "sbml_id": "R_rx_NODE_4445",
+     "sbml_type": "reaction",
+     "sub": " \u2192 CO2 + NH3",
+     "w": 128.48,
+     "x": 75.70863281250001,
+     "y": -60.625
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_NODE_8924",
+     "kind": "rxn",
+     "label": "Hydrolases acting on carbon-nitrogen bonds, other than peptide bonds in cyclic amides",
+     "sbml_id": "R_rx_NODE_8924",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 128.48,
+     "x": 75.5075449159792,
+     "y": -371.25
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_c731c28fd2",
+     "kind": "rxn",
+     "label": "aminoimidazolase",
+     "sbml_id": "R_rx_c731c28fd2",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 NH3",
+     "w": 70.759,
+     "x": 75.569182168055,
+     "y": -270.125
+    }
+   ],
+   "rings": [],
+   "title": "purine metabolism \u2014 module 8"
+  },
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 0,
+     "own": [
+      "M:L-glutamate",
+      "R:R_rx_301cbbb4e8"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:L-glutamate",
+     "target": "R:R_rx_301cbbb4e8"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 1,
+     "own": [
+      "M:L-glutamine",
+      "R:R_rx_301cbbb4e8"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_301cbbb4e8",
+     "target": "__d1_2"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 1,
+     "own": [
+      "M:L-glutamine",
+      "R:R_rx_301cbbb4e8"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d1_2",
+     "target": "__d1_1"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 1,
+     "own": [
+      "M:L-glutamine",
+      "R:R_rx_301cbbb4e8"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d1_1",
+     "target": "M:L-glutamine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 4,
+     "own": [
+      "M:L-glutamine",
+      "R:R_rx_a7faa51f67"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:L-glutamine",
+     "target": "R:R_rx_a7faa51f67"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 5,
+     "own": [
+      "M:L-glutamate",
+      "R:R_rx_a7faa51f67"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_a7faa51f67",
+     "target": "M:L-glutamate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 6,
+     "own": [
+      "M:L-glutamine",
+      "R:R_rx_a8a4a3bd82"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:L-glutamine",
+     "target": "R:R_rx_a8a4a3bd82"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 7,
+     "own": [
+      "M:L-glutamate",
+      "R:R_rx_a8a4a3bd82"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_a8a4a3bd82",
+     "target": "M:L-glutamate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_301cbbb4e8:0",
+      "R:R_rx_301cbbb4e8"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_301cbbb4e8:0",
+     "target": "R:R_rx_301cbbb4e8"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_301cbbb4e8:1",
+      "R:R_rx_301cbbb4e8"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_301cbbb4e8",
+     "target": "A:R_rx_301cbbb4e8:1"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_a7faa51f67:0",
+      "R:R_rx_a7faa51f67"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_a7faa51f67:0",
+     "target": "R:R_rx_a7faa51f67"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_a8a4a3bd82:0",
+      "R:R_rx_a8a4a3bd82"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_a8a4a3bd82:0",
+     "target": "R:R_rx_a8a4a3bd82"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_a8a4a3bd82:1",
+      "R:R_rx_a8a4a3bd82"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_a8a4a3bd82",
+     "target": "A:R_rx_a8a4a3bd82:1"
+    }
+   ],
+   "name": "module 9",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_301cbbb4e8:0",
+     "kind": "alias",
+     "label": "5-phosphoribosylamine",
+     "sbml_id": "M_mt_300dadffb5",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 96.913,
+     "x": 6323.474088357817,
+     "y": -3089.898224187992
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_301cbbb4e8:1",
+     "kind": "alias",
+     "label": "5-phospho-alpha-D-ribose 1-diphosphate",
+     "sbml_id": "M_mt_15981d019b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 144.32,
+     "x": -142.89000071244345,
+     "y": -5561.981128960862
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_a7faa51f67:0",
+     "kind": "alias",
+     "label": "XMP",
+     "sbml_id": "M_mt_1e41cb9a62",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 25.652,
+     "x": 7088.180217407075,
+     "y": -649.5765215123433
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_a8a4a3bd82:0",
+     "kind": "alias",
+     "label": "formylglycinamide ribonucleotide",
+     "sbml_id": "M_mt_be5abbf66d",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 135.262,
+     "x": 2394.7235410673493,
+     "y": -935.2162031604898
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_a8a4a3bd82:1",
+     "kind": "alias",
+     "label": "2-(formamido)-N1-(5-phosphoribosyl)acetamidine",
+     "sbml_id": "M_mt_c0e6a36190",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 146.976,
+     "x": 5565.934092197518,
+     "y": -2032.0753686900634
+    },
+    {
+     "h": 16.5,
+     "id": "M:L-glutamate",
+     "kind": "met",
+     "label": "L-glutamate",
+     "sbml_id": "M_mt_219b3a1a3f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 62.104,
+     "x": 3539.606484148893,
+     "y": -2886.886694392062
+    },
+    {
+     "h": 16.5,
+     "id": "M:L-glutamine",
+     "kind": "met",
+     "label": "L-glutamine",
+     "sbml_id": "M_mt_ee694b7701",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 61.311,
+     "x": 1345.3835185200578,
+     "y": 1234.4261718673715
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_301cbbb4e8",
+     "kind": "rxn",
+     "label": "amidophosphoribosyltransferase",
+     "sbml_id": "R_rx_301cbbb4e8",
+     "sbml_type": "reaction",
+     "sub": "diphosphate \u2192 H2O",
+     "w": 122.324,
+     "x": 3354.46704651502,
+     "y": -4224.945903407852
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_a7faa51f67",
+     "kind": "rxn",
+     "label": "GMP synthase (glutamine-hydrolysing)",
+     "sbml_id": "R_rx_a7faa51f67",
+     "sbml_type": "reaction",
+     "sub": "H2O + ATP \u2192 GMP + AMP + diphosphate",
+     "w": 136.021,
+     "x": 9474.584498075033,
+     "y": -2135.427684876661
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_a8a4a3bd82",
+     "kind": "rxn",
+     "label": "phosphoribosylformylglycinamidine synthase",
+     "sbml_id": "R_rx_a8a4a3bd82",
+     "sbml_type": "reaction",
+     "sub": "H2O + ATP \u2192 phosphate + ADP",
+     "w": 134.46,
+     "x": 2790.5779667479123,
+     "y": -1548.8274853762723
+    },
+    {
+     "h": 0.0,
+     "id": "__d1_1",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 102.1906794475066,
+     "y": -1548.8274853762723
+    },
+    {
+     "h": 0.0,
+     "id": "__d1_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 1775.4949721728792,
+     "y": -2886.886694392062
+    }
+   ],
+   "rings": [],
+   "title": "purine metabolism \u2014 module 9"
+  },
+  {
+   "checks": {
+    "box_overlaps": 0,
+    "crossings": 0,
+    "line_through_box": 0,
+    "placement": 0
+   },
+   "links": [
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 0,
+     "own": [
+      "M:3-phospho-D-glycerate",
+      "R:R_rx_2700d9d0c7"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:3-phospho-D-glycerate",
+     "target": "R:R_rx_2700d9d0c7"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 1,
+     "own": [
+      "M:D-ribulose 1,5-bisphosphate",
+      "R:R_rx_2700d9d0c7"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_2700d9d0c7",
+     "target": "__d1_2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 1,
+     "own": [
+      "M:D-ribulose 1,5-bisphosphate",
+      "R:R_rx_2700d9d0c7"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "__d1_2",
+     "target": "M:D-ribulose 1,5-bisphosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 3,
+     "own": [
+      "M:alpha-D-ribose 1,5-bisphosphate",
+      "R:R_rx_ff6e8de688"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:alpha-D-ribose 1,5-bisphosphate",
+     "target": "R:R_rx_ff6e8de688"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 4,
+     "own": [
+      "M:D-ribulose 1,5-bisphosphate",
+      "R:R_rx_ff6e8de688"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_ff6e8de688",
+     "target": "M:D-ribulose 1,5-bisphosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 5,
+     "own": [
+      "M:alpha-D-ribose 1-phosphate",
+      "R:R_rx_2a7a779bec"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:alpha-D-ribose 1-phosphate",
+     "target": "R:R_rx_2a7a779bec"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 6,
+     "own": [
+      "M:D-ribose 5-phosphate",
+      "R:R_rx_2a7a779bec"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_2a7a779bec",
+     "target": "M:D-ribose 5-phosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 7,
+     "own": [
+      "M:ADP-ribose",
+      "R:R_rx_6179deec56"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:ADP-ribose",
+     "target": "R:R_rx_6179deec56"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 8,
+     "own": [
+      "M:D-ribose 5-phosphate",
+      "R:R_rx_6179deec56"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_6179deec56",
+     "target": "M:D-ribose 5-phosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 9,
+     "own": [
+      "M:adenine",
+      "R:R_rx_0b7e1d3f9e"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_0b7e1d3f9e",
+     "target": "M:adenine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 10,
+     "own": [
+      "M:alpha-D-ribose 1,5-bisphosphate",
+      "R:R_rx_0b7e1d3f9e"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_0b7e1d3f9e",
+     "target": "M:alpha-D-ribose 1,5-bisphosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 11,
+     "own": [
+      "M:adenine",
+      "R:R_rx_8b334fd176"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_8b334fd176",
+     "target": "M:adenine"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 12,
+     "own": [
+      "M:D-ribose 5-phosphate",
+      "R:R_rx_8b334fd176"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_8b334fd176",
+     "target": "__d11_1"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 12,
+     "own": [
+      "M:D-ribose 5-phosphate",
+      "R:R_rx_8b334fd176"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "__d11_1",
+     "target": "M:D-ribose 5-phosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 14,
+     "own": [
+      "M:reduced glutaredoxin-like protein",
+      "R:R_rx_NODE_4309"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:reduced glutaredoxin-like protein",
+     "target": "R:R_rx_NODE_4309"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 15,
+     "own": [
+      "M:oxidized glutaredoxin-like protein",
+      "R:R_rx_NODE_4309"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4309",
+     "target": "M:oxidized glutaredoxin-like protein"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 16,
+     "own": [
+      "M:dADP",
+      "R:R_rx_NODE_4309"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_NODE_4309",
+     "target": "M:dADP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 17,
+     "own": [
+      "M:reduced glutaredoxin-like protein",
+      "R:R_rx_NODE_4313"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:reduced glutaredoxin-like protein",
+     "target": "R:R_rx_NODE_4313"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 18,
+     "own": [
+      "M:oxidized glutaredoxin-like protein",
+      "R:R_rx_NODE_4313"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4313",
+     "target": "M:oxidized glutaredoxin-like protein"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 19,
+     "own": [
+      "M:dGDP",
+      "R:R_rx_08c4822df6"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_08c4822df6",
+     "target": "M:dGDP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 20,
+     "own": [
+      "M:thioredoxin disulfide",
+      "R:R_rx_08c4822df6"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_08c4822df6",
+     "target": "M:thioredoxin disulfide"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 21,
+     "own": [
+      "M:thioredoxin disulfide",
+      "R:R_rx_38679aa0a0"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_38679aa0a0",
+     "target": "M:thioredoxin disulfide"
+    },
+    {
+     "arrow": false,
+     "cat": false,
+     "chain": 22,
+     "own": [
+      "M:dADP",
+      "R:R_rx_aa849eb0e2"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_aa849eb0e2",
+     "target": "__d8_1"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 22,
+     "own": [
+      "M:dADP",
+      "R:R_rx_aa849eb0e2"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "__d8_1",
+     "target": "M:dADP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 24,
+     "own": [
+      "M:thioredoxin disulfide",
+      "R:R_rx_aa849eb0e2"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_aa849eb0e2",
+     "target": "M:thioredoxin disulfide"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 25,
+     "own": [
+      "M:2-deoxy-D-ribose 5-phosphate",
+      "R:R_rx_8da3825150"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2-deoxy-D-ribose 5-phosphate",
+     "target": "R:R_rx_8da3825150"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 26,
+     "own": [
+      "M:D-glyceraldehyde 3-phosphate",
+      "R:R_rx_8da3825150"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_8da3825150",
+     "target": "M:D-glyceraldehyde 3-phosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 27,
+     "own": [
+      "M:2-deoxy-D-ribose 1-phosphate",
+      "R:R_rx_d1a130ca5b"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2-deoxy-D-ribose 1-phosphate",
+     "target": "R:R_rx_d1a130ca5b"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 28,
+     "own": [
+      "M:2-deoxy-D-ribose 5-phosphate",
+      "R:R_rx_d1a130ca5b"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_d1a130ca5b",
+     "target": "M:2-deoxy-D-ribose 5-phosphate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 29,
+     "own": [
+      "M:beta-glycinamide ribonucleotide",
+      "R:R_rx_135365e001"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:beta-glycinamide ribonucleotide",
+     "target": "R:R_rx_135365e001"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 30,
+     "own": [
+      "M:formylglycinamide ribonucleotide",
+      "R:R_rx_135365e001"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_135365e001",
+     "target": "M:formylglycinamide ribonucleotide"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 31,
+     "own": [
+      "M:5-phosphoribosylamine",
+      "R:R_rx_3687a4a094"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:5-phosphoribosylamine",
+     "target": "R:R_rx_3687a4a094"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 32,
+     "own": [
+      "M:beta-glycinamide ribonucleotide",
+      "R:R_rx_3687a4a094"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_3687a4a094",
+     "target": "M:beta-glycinamide ribonucleotide"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 33,
+     "own": [
+      "M:IMP",
+      "R:R_rx_0fb949fb5f"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_0fb949fb5f",
+     "target": "M:IMP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 34,
+     "own": [
+      "M:IMP",
+      "R:R_rx_NODE_7841"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:IMP",
+     "target": "R:R_rx_NODE_7841"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 35,
+     "own": [
+      "M:adenosine",
+      "R:R_rx_9999562145"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:adenosine",
+     "target": "R:R_rx_9999562145"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 36,
+     "own": [
+      "M:adenosine",
+      "R:R_rx_a112eaafaa"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_a112eaafaa",
+     "target": "M:adenosine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 37,
+     "own": [
+      "M:cGMP",
+      "R:R_rx_288676c879"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:cGMP",
+     "target": "R:R_rx_288676c879"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 38,
+     "own": [
+      "M:cGMP",
+      "R:R_rx_54b656e93e"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_54b656e93e",
+     "target": "M:cGMP"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 39,
+     "own": [
+      "M:guanosine",
+      "R:R_rx_2bff8e5db7"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "M:guanosine",
+     "target": "R:R_rx_2bff8e5db7"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": 40,
+     "own": [
+      "M:guanosine",
+      "R:R_rx_468525e224"
+     ],
+     "ring": null,
+     "side": true,
+     "source": "R:R_rx_468525e224",
+     "target": "M:guanosine"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_135365e001:0",
+      "R:R_rx_135365e001"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_135365e001:0",
+     "target": "R:R_rx_135365e001"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_3687a4a094:0",
+      "R:R_rx_3687a4a094"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_3687a4a094:0",
+     "target": "R:R_rx_3687a4a094"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_38679aa0a0:0",
+      "R:R_rx_38679aa0a0"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_38679aa0a0",
+     "target": "A:R_rx_38679aa0a0:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_5fc0762946:0",
+      "R:R_rx_5fc0762946"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_5fc0762946:0",
+     "target": "R:R_rx_5fc0762946"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_8da3825150:0",
+      "R:R_rx_8da3825150"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_8da3825150",
+     "target": "A:R_rx_8da3825150:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_NODE_4313:0",
+      "R:R_rx_NODE_4313"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_NODE_4313",
+     "target": "A:R_rx_NODE_4313:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_eee942447f:0",
+      "R:R_rx_eee942447f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_eee942447f:0",
+     "target": "R:R_rx_eee942447f"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:R_rx_eee942447f:1",
+      "R:R_rx_eee942447f"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "A:R_rx_eee942447f:1",
+     "target": "R:R_rx_eee942447f"
+    }
+   ],
+   "name": "other reactions",
+   "nodes": [
+    {
+     "h": 13.5,
+     "id": "A:R_rx_135365e001:0",
+     "kind": "alias",
+     "label": "formate",
+     "sbml_id": "M_mt_da5826e6ef",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 39.066,
+     "x": 1966.0675129599135,
+     "y": -133.26675486616114
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_3687a4a094:0",
+     "kind": "alias",
+     "label": "glycine",
+     "sbml_id": "M_mt_4fd822ed16",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 36.046,
+     "x": 1987.6664945435607,
+     "y": -11.77252238703199
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_38679aa0a0:0",
+     "kind": "alias",
+     "label": "dGTP",
+     "sbml_id": "M_mt_00d81ca564",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 28.739,
+     "x": 1290.8117435672796,
+     "y": 30.10713663664353
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_5fc0762946:0",
+     "kind": "alias",
+     "label": "P1,P4-bis(5'-adenosyl) tetraphosphate",
+     "sbml_id": "M_mt_ab3f90dfb3",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 138.034,
+     "x": 3110.8729305459196,
+     "y": 267.125
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_8da3825150:0",
+     "kind": "alias",
+     "label": "acetaldehyde",
+     "sbml_id": "M_mt_82ff77105a",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 60.05,
+     "x": 1715.1226197124822,
+     "y": -183.75006415572398
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_NODE_4313:0",
+     "kind": "alias",
+     "label": "dGDP",
+     "sbml_id": "M_mt_68eeea66f5",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 30.201,
+     "x": 833.2561849110333,
+     "y": -98.45779859512636
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_eee942447f:0",
+     "kind": "alias",
+     "label": "5-phospho-alpha-D-ribose 1-diphosphate",
+     "sbml_id": "M_mt_15981d019b",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 144.32,
+     "x": 3560.8729305459196,
+     "y": 267.125
+    },
+    {
+     "h": 13.5,
+     "id": "A:R_rx_eee942447f:1",
+     "kind": "alias",
+     "label": "guanine",
+     "sbml_id": "M_mt_42df7de7da",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 39.502,
+     "x": 3560.8729305459196,
+     "y": 332.875
+    },
+    {
+     "h": 16.5,
+     "id": "M:2-deoxy-D-ribose 1-phosphate",
+     "kind": "met",
+     "label": "2-deoxy-D-ribose 1-phosphate",
+     "sbml_id": "M_mt_4875ee172c",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 139.809,
+     "x": 1675.1225173991836,
+     "y": -8.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:2-deoxy-D-ribose 5-phosphate",
+     "kind": "met",
+     "label": "2-deoxy-D-ribose 5-phosphate",
+     "sbml_id": "M_mt_81ae8d0e89",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 139.809,
+     "x": 1675.1225568054872,
+     "y": -105.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:3-phospho-D-glycerate",
+     "kind": "met",
+     "label": "3-phospho-D-glycerate",
+     "sbml_id": "M_mt_47e3624500",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 108.564,
+     "x": 64.68015625000001,
+     "y": -10.125
+    },
+    {
+     "h": 16.5,
+     "id": "M:5-phosphoribosylamine",
+     "kind": "met",
+     "label": "5-phosphoribosylamine",
+     "sbml_id": "M_mt_300dadffb5",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 110.502,
+     "x": 1903.051541412246,
+     "y": -8.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:ADP-ribose",
+     "kind": "met",
+     "label": "ADP-ribose",
+     "sbml_id": "M_mt_9e50bcbbd5",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 57.956,
+     "x": 652.5948095703126,
+     "y": -10.125
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-glyceraldehyde 3-phosphate",
+     "kind": "met",
+     "label": "D-glyceraldehyde 3-phosphate",
+     "sbml_id": "M_mt_4d404b9e9f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 141.895,
+     "x": 1675.1226258584193,
+     "y": -203.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-ribose 5-phosphate",
+     "kind": "met",
+     "label": "D-ribose 5-phosphate",
+     "sbml_id": "M_mt_f496109ce7",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 102.578,
+     "x": 513.6503217696102,
+     "y": -116.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:D-ribulose 1,5-bisphosphate",
+     "kind": "met",
+     "label": "D-ribulose 1,5-bisphosphate",
+     "sbml_id": "M_mt_1a819d74e7",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 130.621,
+     "x": 162.20908949435136,
+     "y": -167.25
+    },
+    {
+     "h": 16.5,
+     "id": "M:IMP",
+     "kind": "met",
+     "label": "IMP",
+     "sbml_id": "M_mt_15d5819dc2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 25.843,
+     "x": 2109.910758670886,
+     "y": -62.5
+    },
+    {
+     "h": 16.5,
+     "id": "M:adenine",
+     "kind": "met",
+     "label": "adenine",
+     "sbml_id": "M_mt_1e6bef36f9",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 45.238,
+     "x": 369.8053125,
+     "y": -64.375
+    },
+    {
+     "h": 16.5,
+     "id": "M:adenosine",
+     "kind": "met",
+     "label": "adenosine",
+     "sbml_id": "M_mt_9a15888f59",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 54.867,
+     "x": 2279.780930545919,
+     "y": -62.5
+    },
+    {
+     "h": 16.5,
+     "id": "M:alpha-D-ribose 1,5-bisphosphate",
+     "kind": "met",
+     "label": "alpha-D-ribose 1,5-bisphosphate",
+     "sbml_id": "M_mt_e993149052",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 149.826,
+     "x": 238.27339843750005,
+     "y": -64.375
+    },
+    {
+     "h": 16.5,
+     "id": "M:alpha-D-ribose 1-phosphate",
+     "kind": "met",
+     "label": "alpha-D-ribose 1-phosphate",
+     "sbml_id": "M_mt_8edfd22915",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 129.531,
+     "x": 524.8513720703126,
+     "y": -10.125
+    },
+    {
+     "h": 16.5,
+     "id": "M:beta-glycinamide ribonucleotide",
+     "kind": "met",
+     "label": "beta-glycinamide ribonucleotide",
+     "sbml_id": "M_mt_60b2d749d1",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 148.41,
+     "x": 1903.0515522244123,
+     "y": -113.0
+    },
+    {
+     "h": 16.5,
+     "id": "M:cGMP",
+     "kind": "met",
+     "label": "cGMP",
+     "sbml_id": "M_mt_3d5ac2ad34",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 34.961,
+     "x": 2465.6141805458756,
+     "y": -62.5
+    },
+    {
+     "h": 16.5,
+     "id": "M:dADP",
+     "kind": "met",
+     "label": "dADP",
+     "sbml_id": "M_mt_b748f088e6",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 34.123,
+     "x": 1054.6125731545376,
+     "y": -116.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:dGDP",
+     "kind": "met",
+     "label": "dGDP",
+     "sbml_id": "M_mt_68eeea66f5",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 34.894,
+     "x": 1464.233901030103,
+     "y": -64.375
+    },
+    {
+     "h": 16.5,
+     "id": "M:formylglycinamide ribonucleotide",
+     "kind": "met",
+     "label": "formylglycinamide ribonucleotide",
+     "sbml_id": "M_mt_be5abbf66d",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 153.963,
+     "x": 1903.0515711709195,
+     "y": -217.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:guanosine",
+     "kind": "met",
+     "label": "guanosine",
+     "sbml_id": "M_mt_d04a45a9a2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 55.064,
+     "x": 2671.163868045919,
+     "y": -62.5
+    },
+    {
+     "h": 16.5,
+     "id": "M:oxidized glutaredoxin-like protein",
+     "kind": "met",
+     "label": "oxidized glutaredoxin-like protein",
+     "sbml_id": "M_mt_NAME_00023221",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 152.581,
+     "x": 918.8639794045376,
+     "y": -116.75
+    },
+    {
+     "h": 16.5,
+     "id": "M:reduced glutaredoxin-like protein",
+     "kind": "met",
+     "label": "reduced glutaredoxin-like protein",
+     "sbml_id": "M_mt_NAME_00023220",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 151.721,
+     "x": 916.2483593750001,
+     "y": -10.125
+    },
+    {
+     "h": 16.5,
+     "id": "M:thioredoxin disulfide",
+     "kind": "met",
+     "label": "thioredoxin disulfide",
+     "sbml_id": "M_mt_de46869ffd",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 97.867,
+     "x": 1299.906713530103,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_08c4822df6",
+     "kind": "rxn",
+     "label": "ribonucleoside-triphosphate reductase (thioredoxin)",
+     "sbml_id": "R_rx_08c4822df6",
+     "sbml_type": "reaction",
+     "sub": "GDP + thioredoxin \u2192 H2O",
+     "w": 130.327,
+     "x": 1459.0117274209192,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0b67f0c415",
+     "kind": "rxn",
+     "label": "ATP-independent RNA helicase",
+     "sbml_id": "R_rx_0b67f0c415",
+     "sbml_type": "reaction",
+     "sub": "H2O + ATP \u2192 phosphate + ADP",
+     "w": 115.294,
+     "x": 2810.8729305459196,
+     "y": 300.0
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0b7e1d3f9e",
+     "kind": "rxn",
+     "label": "AMP phosphorylase",
+     "sbml_id": "R_rx_0b7e1d3f9e",
+     "sbml_type": "reaction",
+     "sub": "phosphate + AMP \u2192 ",
+     "w": 76.517,
+     "x": 282.9575439453125,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_0fb949fb5f",
+     "kind": "rxn",
+     "label": "AMP deaminase",
+     "sbml_id": "R_rx_0fb949fb5f",
+     "sbml_type": "reaction",
+     "sub": "H2O + AMP \u2192 NH3",
+     "w": 63.818,
+     "x": 2109.910758670886,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_135365e001",
+     "kind": "rxn",
+     "label": "phosphoribosylglycinamide formyltransferase 2",
+     "sbml_id": "R_rx_135365e001",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 phosphate + ADP",
+     "w": 134.611,
+     "x": 1903.0515638006536,
+     "y": -165.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_2700d9d0c7",
+     "kind": "rxn",
+     "label": "ribulose-bisphosphate carboxylase",
+     "sbml_id": "R_rx_2700d9d0c7",
+     "sbml_type": "reaction",
+     "sub": "2 H+ \u2192 H2O + CO2",
+     "w": 129.36,
+     "x": 64.68015625000001,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_288676c879",
+     "kind": "rxn",
+     "label": "3',5'-cyclic-GMP phosphodiesterase",
+     "sbml_id": "R_rx_288676c879",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 GMP",
+     "w": 131.681,
+     "x": 2465.614180545919,
+     "y": -114.875
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_2a7a779bec",
+     "kind": "rxn",
+     "label": "phosphopentomutase",
+     "sbml_id": "R_rx_2a7a779bec",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 84.139,
+     "x": 510.49375000000003,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_2bff8e5db7",
+     "kind": "rxn",
+     "label": "inosine kinase",
+     "sbml_id": "R_rx_2bff8e5db7",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 GMP + ADP",
+     "w": 60.334,
+     "x": 2671.163868045922,
+     "y": -114.875
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_35de376d34",
+     "kind": "rxn",
+     "label": "dTMP kinase",
+     "sbml_id": "R_rx_35de376d34",
+     "sbml_type": "reaction",
+     "sub": "AMP + ATP \u2192 2 ADP",
+     "w": 65.341,
+     "x": 2960.8729305459196,
+     "y": 300.0
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_3687a4a094",
+     "kind": "rxn",
+     "label": "phosphoribosylamine-glycine ligase",
+     "sbml_id": "R_rx_3687a4a094",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 phosphate + ADP",
+     "w": 133.158,
+     "x": 1903.051541412246,
+     "y": -60.625
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_38679aa0a0",
+     "kind": "rxn",
+     "label": "ribonucleoside-triphosphate reductase (thioredoxin)",
+     "sbml_id": "R_rx_38679aa0a0",
+     "sbml_type": "reaction",
+     "sub": "GTP + thioredoxin \u2192 H2O",
+     "w": 130.327,
+     "x": 1294.6845399209192,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_468525e224",
+     "kind": "rxn",
+     "label": "inositol-phosphate phosphatase",
+     "sbml_id": "R_rx_468525e224",
+     "sbml_type": "reaction",
+     "sub": "H2O + GMP \u2192 phosphate",
+     "w": 119.418,
+     "x": 2671.163868045919,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_54b656e93e",
+     "kind": "rxn",
+     "label": "adenylate cyclase",
+     "sbml_id": "R_rx_54b656e93e",
+     "sbml_type": "reaction",
+     "sub": "GTP \u2192 diphosphate",
+     "w": 70.56,
+     "x": 2465.6141805458756,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_5fc0762946",
+     "kind": "rxn",
+     "label": "bis(5'-nucleosyl)-tetraphosphatase (symmetrical)",
+     "sbml_id": "R_rx_5fc0762946",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 2 ADP",
+     "w": 127.653,
+     "x": 3110.8729305459196,
+     "y": 300.0
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_6179deec56",
+     "kind": "rxn",
+     "label": "ADP-ribose diphosphatase",
+     "sbml_id": "R_rx_6179deec56",
+     "sbml_type": "reaction",
+     "sub": "H2O \u2192 AMP",
+     "w": 99.687,
+     "x": 636.406796875,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_64cce326d8",
+     "kind": "rxn",
+     "label": "guanylate kinase",
+     "sbml_id": "R_rx_64cce326d8",
+     "sbml_type": "reaction",
+     "sub": "ADP + GTP \u2192 GDP + ATP",
+     "w": 79.67,
+     "x": 3260.8729305459196,
+     "y": 300.0
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_87c95f5b6e",
+     "kind": "rxn",
+     "label": "dTMP kinase",
+     "sbml_id": "R_rx_87c95f5b6e",
+     "sbml_type": "reaction",
+     "sub": "GMP + ATP \u2192 GDP + ADP",
+     "w": 81.058,
+     "x": 3410.8729305459196,
+     "y": 300.0
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_8b334fd176",
+     "kind": "rxn",
+     "label": "AMP nucleosidase",
+     "sbml_id": "R_rx_8b334fd176",
+     "sbml_type": "reaction",
+     "sub": "H2O + AMP \u2192 ",
+     "w": 70.87,
+     "x": 390.6509033203125,
+     "y": -10.125
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_8da3825150",
+     "kind": "rxn",
+     "label": "deoxyribose-phosphate aldolase",
+     "sbml_id": "R_rx_8da3825150",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 121.121,
+     "x": 1675.1225989965571,
+     "y": -154.5
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_9999562145",
+     "kind": "rxn",
+     "label": "adenosine kinase",
+     "sbml_id": "R_rx_9999562145",
+     "sbml_type": "reaction",
+     "sub": "ATP \u2192 ADP + AMP",
+     "w": 68.398,
+     "x": 2279.7809305459255,
+     "y": -114.875
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_4309",
+     "kind": "rxn",
+     "label": "ribonucleoside-diphosphate reductase",
+     "sbml_id": "R_rx_NODE_4309",
+     "sbml_type": "reaction",
+     "sub": "ADP \u2192 ",
+     "w": 132.998,
+     "x": 999.7474218750001,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_4313",
+     "kind": "rxn",
+     "label": "ribonucleoside-diphosphate reductase",
+     "sbml_id": "R_rx_NODE_4313",
+     "sbml_type": "reaction",
+     "sub": "GDP \u2192 ",
+     "w": 132.998,
+     "x": 832.749296875,
+     "y": -64.375
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_NODE_7841",
+     "kind": "rxn",
+     "label": "GMP reductase",
+     "sbml_id": "R_rx_NODE_7841",
+     "sbml_type": "reaction",
+     "sub": "NADPH \u2192 GMP + NADP+ + NH3",
+     "w": 99.755,
+     "x": 2109.910758670919,
+     "y": -114.875
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_a112eaafaa",
+     "kind": "rxn",
+     "label": "apyrase",
+     "sbml_id": "R_rx_a112eaafaa",
+     "sbml_type": "reaction",
+     "sub": "H2O + AMP \u2192 phosphate",
+     "w": 79.985,
+     "x": 2279.780930545919,
+     "y": -10.125
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_aa849eb0e2",
+     "kind": "rxn",
+     "label": "ribonucleoside-triphosphate reductase (thioredoxin)",
+     "sbml_id": "R_rx_aa849eb0e2",
+     "sbml_type": "reaction",
+     "sub": "ADP + thioredoxin \u2192 H2O",
+     "w": 130.327,
+     "x": 1130.3573524209191,
+     "y": -10.125
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_d1a130ca5b",
+     "kind": "rxn",
+     "label": "phosphopentomutase",
+     "sbml_id": "R_rx_d1a130ca5b",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 84.139,
+     "x": 1675.1225173991836,
+     "y": -57.0
+    },
+    {
+     "h": 20.25,
+     "id": "R:R_rx_eee942447f",
+     "kind": "rxn",
+     "label": "xanthine phosphoribosyltransferase",
+     "sbml_id": "R_rx_eee942447f",
+     "sbml_type": "reaction",
+     "sub": " \u2192 GMP + diphosphate",
+     "w": 133.976,
+     "x": 3560.8729305459196,
+     "y": 300.0
+    },
+    {
+     "h": 13.0,
+     "id": "R:R_rx_ff6e8de688",
+     "kind": "rxn",
+     "label": "ribose-1,5-bisphosphate isomerase",
+     "sbml_id": "R_rx_ff6e8de688",
+     "sbml_type": "reaction",
+     "sub": null,
+     "w": 130.54,
+     "x": 210.05633649135578,
+     "y": -116.75
+    },
+    {
+     "h": 0.0,
+     "id": "__d11_1",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 430.42414062500006,
+     "y": -64.375
+    },
+    {
+     "h": 0.0,
+     "id": "__d1_2",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 106.78610211635578,
+     "y": -116.75
+    },
+    {
+     "h": 0.0,
+     "id": "__d8_1",
+     "kind": "dummy",
+     "label": "",
+     "sbml_id": null,
+     "sbml_type": null,
+     "sub": null,
+     "w": 0.0,
+     "x": 1104.246484375,
+     "y": -64.375
+    }
+   ],
+   "rings": [],
+   "title": "purine metabolism \u2014 other reactions"
+  }
+ ],
+ "format": "sbml-pathway-layout",
+ "model": "purine metabolism",
+ "settings": {
+  "escher": true,
+  "hide": "",
+  "legend": false,
+  "max_cluster": 60,
+  "show": ""
+ },
+ "source": "brenda_purine-metabolism.xml",
+ "units": "points; x right, y up; boxes are centred on (x, y)",
+ "version": 1
+}

@@ -565,7 +565,7 @@ def layout_cluster(rxns,ring_scale=1.0):
         (cx,cy),rad=D.rings[i]; ring=rs['ring']; n=len(ring)
         slot={'M:'+m:(j,1.0) for j,m in enumerate(ring)}         # node -> (angle slot, radius factor)
         for k,lst in rs['steps'].items():
-            for j,r in enumerate(lst): slot['R:'+r['id']]=(k+0.5,1.0 if j==0 else 1+(0.24 if j%2 else -0.24)*((j+1)//2))
+            for j,r in enumerate(lst): slot['R:'+r['id']]=(k+0.5,1.0 if j==0 else 1+(-0.24 if j%2 else 0.24)*((j+1)//2))
         ext=[]
         for L in D.links:
             if L['own'] & piece_of_ring[i]: continue
@@ -585,18 +585,22 @@ def layout_cluster(rxns,ring_scale=1.0):
         for m in ring: D.P['M:'+m]=p[m]
         for k,lst in rs['steps'].items():
             t=th+mir*2*math.pi*(k+0.5)/n; ux,uy=math.cos(t),math.sin(t)
-            a,b='M:'+ring[k],'M:'+ring[(k+1)%n]
+            a,b='M:'+ring[k],'M:'+ring[(k+1)%n]; placed_alt=[]
             for j,r in enumerate(lst):
                 R='R:'+r['id']; s,pp='M:'+r['main'][0],'M:'+r['main'][1]
                 if j==0:
                     D.P[R]=(cx+rad*ux,cy+rad*uy); D.link(s,R,arrow=True,ring=i); D.link(R,pp,arrow=True,ring=i)
-                else:                                             # alternative enzymes: first go to the side
-                    busy=any(e in ({a,b}|{'R:'+x['id'] for x in lst}) for e,_ in ext)   # that has no outside links
-                    first=-0.24 if busy else 0.24
-                    f=1+(first if j%2 else -first)*((j+1)//2); D.P[R]=(cx+rad*f*ux,cy+rad*f*uy)
+                else:                                             # alternative enzymes: the first one INSIDE the ring
+                    inward=(j%2==1)                               # (compact; the outside stays free for side
+                    ext_=lambda nm:abs(ux)*D.size(nm)[0]/2+abs(uy)*D.size(nm)[1]/2   # pathways), then alternate
+                    prev=[x for x in placed_alt if x[1]==inward]  # stack after earlier ones on the same side
+                    last=prev[-1][0] if prev else 'R:'+lst[0]['id']
+                    d=(abs(math.dist(D.P[last],(cx,cy))-rad) if prev else 0.0)+ext_(last)+ext_(R)+14
+                    f=max(0.25,1-d/rad) if inward else 1+d/rad
+                    D.P[R]=(cx+rad*f*ux,cy+rad*f*uy); placed_alt.append((R,inward)); D.info[R]['pinned']=True
                     D.link(s,R,arrow=True); D.link(R,pp,arrow=True)
         for r in rs['chords']:
-            R='R:'+r['id']; s,pp='M:'+r['main'][0],'M:'+r['main'][1]
+            R='R:'+r['id']; s,pp='M:'+r['main'][0],'M:'+r['main'][1]; D.info[R]['pinned']=True
             D.P[R]=((D.P[s][0]+D.P[pp][0])/2*0.82+cx*0.18,(D.P[s][1]+D.P[pp][1])/2*0.82+cy*0.18)
             D.link(s,R); D.link(R,pp)
     for a,b in ring_side: D.link(a,b); D.links[-1]['side']=True
@@ -1264,8 +1268,8 @@ def main():
             for _ in range(6):                                    # repeat until all three checks hold together
                 try: cuts+=remove_crossings(D)                    # (a near-touch can tip into a crossing when scaled)
                 except RuntimeError as err: log(f'  layout attempt failed ({err}); trying a larger ring'); v={'crossings':1}; break
-                fixed={n for n in D.P if D.info[n]['kind'] in ('core','dummy')}|{e for L in D.links if L['ring'] is not None for e in (L['a'],L['b'])}
-                repair(D,fixed)                                   # ring members and ring-arc reactions never move
+                fixed={n for n in D.P if D.info[n]['kind'] in ('core','dummy') or D.info[n].get('pinned')}|{e for L in D.links if L['ring'] is not None for e in (L['a'],L['b'])}
+                repair(D,fixed)                                   # the ring, its reactions and alternatives never move
                 v=scale_until_clean(D)
                 if not any(v.values()): break
             key=(any(v.values()),getattr(D,'scaled',1.0)>1.35,cuts,getattr(D,'scaled',1.0))

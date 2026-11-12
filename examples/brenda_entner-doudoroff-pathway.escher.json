@@ -8,216 +8,216 @@
  },
  {
   "canvas": {
-   "height": 763.887,
-   "width": 1087.895,
+   "height": 920.791,
+   "width": 1183.542,
    "x": 0.0,
    "y": 0.0
   },
   "nodes": {
    "1": {
     "bigg_id": "mt_7dd2d3b76f",
-    "label_x": 717.069,
-    "label_y": 417.999,
+    "label_x": 821.134,
+    "label_y": 451.151,
     "name": "pyruvate",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 734.342,
-    "y": 399.249
+    "x": 838.407,
+    "y": 432.401
    },
    "10": {
     "bigg_id": "mt_4d404b9e9f",
-    "label_x": 93.944,
-    "label_y": 524.078,
+    "label_x": 111.577,
+    "label_y": 653.738,
     "name": "D-glyceraldehyde 3-phosphate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 178.621,
-    "y": 502.328
+    "x": 196.254,
+    "y": 631.988
    },
    "11": {
     "bigg_id": "mt_996ef3e8d7",
-    "label_x": 448.083,
-    "label_y": 113.527,
+    "label_x": 556.615,
+    "label_y": 120.022,
     "name": "D-glycerate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 481.622,
-    "y": 91.777
+    "x": 590.154,
+    "y": 98.272
    },
    "12": {
     "bigg_id": "mt_7476acb4c8",
-    "label_x": 577.412,
-    "label_y": 285.651,
+    "label_x": 730.381,
+    "label_y": 343.784,
     "name": "DL-glyceraldehyde",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 629.747,
-    "y": 263.901
+    "x": 782.716,
+    "y": 322.034
    },
    "13": {
     "bigg_id": "mt_7dd2d3b76f",
-    "label_x": 251.884,
-    "label_y": 651.735,
+    "label_x": 297.627,
+    "label_y": 682.143,
     "name": "pyruvate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 272.327,
-    "y": 631.485
+    "x": 318.07,
+    "y": 661.893
    },
    "14": {
     "node_type": "midmarker",
-    "x": 272.327,
-    "y": 571.485
+    "x": 318.071,
+    "y": 721.894
    },
    "15": {
     "node_type": "midmarker",
-    "x": 386.759,
-    "y": 643.262
+    "x": 466.833,
+    "y": 800.166
    },
    "16": {
     "node_type": "midmarker",
-    "x": 964.641,
-    "y": 277.527
+    "x": 1060.287,
+    "y": 402.598
    },
    "17": {
     "node_type": "midmarker",
-    "x": 802.021,
-    "y": 277.527
+    "x": 897.668,
+    "y": 402.598
    },
    "18": {
     "node_type": "midmarker",
-    "x": 499.253,
-    "y": 562.994
+    "x": 613.075,
+    "y": 710.855
    },
    "19": {
     "node_type": "midmarker",
-    "x": 883.331,
-    "y": 382.277
+    "x": 978.978,
+    "y": 507.348
    },
    "2": {
     "bigg_id": "mt_31c9b8dab7",
-    "label_x": 499.918,
-    "label_y": 508.777,
+    "label_x": 640.222,
+    "label_y": 633.848,
     "name": "2-dehydro-3-deoxy-D-gluconate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 587.529,
-    "y": 487.027
+    "x": 727.833,
+    "y": 612.098
    },
    "20": {
     "node_type": "midmarker",
-    "x": 575.327,
-    "y": 160.935
+    "x": 711.971,
+    "y": 188.177
    },
    "21": {
     "node_type": "midmarker",
-    "x": 513.58,
-    "y": 187.76
+    "x": 807.869,
+    "y": 105.651
    },
    "22": {
     "node_type": "midmarker",
-    "x": 166.42,
-    "y": 176.235
+    "x": 180.392,
+    "y": 208.068
    },
    "23": {
     "node_type": "midmarker",
-    "x": 750.537,
-    "y": 79.0
+    "x": 518.577,
+    "y": 354.607
    },
    "24": {
     "node_type": "midmarker",
-    "x": 659.887,
-    "y": 104.66
+    "x": 616.912,
+    "y": 269.983
    },
    "25": {
     "node_type": "midmarker",
-    "x": 124.202,
-    "y": 399.361
+    "x": 125.509,
+    "y": 498.132
    },
    "26": {
     "node_type": "midmarker",
-    "x": 883.331,
-    "y": 487.027
+    "x": 978.978,
+    "y": 612.098
    },
    "27": {
     "node_type": "midmarker",
-    "x": 367.19,
+    "x": 441.392,
     "y": 70.125
    },
    "28": {
     "node_type": "midmarker",
-    "x": 634.101,
-    "y": 380.282
+    "x": 788.377,
+    "y": 473.329
    },
    "3": {
     "bigg_id": "mt_bdfc186b9b",
-    "label_x": 292.871,
-    "label_y": 614.887,
+    "label_x": 372.945,
+    "label_y": 771.791,
     "name": "2-keto-3-deoxy phosphogluconate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 386.759,
-    "y": 593.137
+    "x": 466.833,
+    "y": 750.041
    },
    "4": {
     "bigg_id": "mt_2e9e6d89f7",
-    "label_x": 190.931,
-    "label_y": 122.018,
+    "label_x": 231.386,
+    "label_y": 131.061,
     "name": "2-phospho-D-glycerate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 254.695,
-    "y": 100.268
+    "x": 295.15,
+    "y": 109.311
    },
    "5": {
     "bigg_id": "mt_1137269b50",
     "label_x": 64.0,
-    "label_y": 304.73,
+    "label_y": 368.587,
     "name": "3-phosphoglycerate",
     "node_is_primary": true,
     "node_type": "metabolite",
     "x": 119.847,
-    "y": 282.98
+    "y": 346.837
    },
    "6": {
     "bigg_id": "mt_4defa8de25",
-    "label_x": 341.758,
-    "label_y": 715.887,
+    "label_x": 421.832,
+    "label_y": 872.791,
     "name": "6-phosphogluconate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 386.759,
-    "y": 695.637
+    "x": 466.833,
+    "y": 852.541
    },
    "7": {
     "bigg_id": "mt_b0096e08ce",
-    "label_x": 856.08,
-    "label_y": 454.902,
+    "label_x": 951.727,
+    "label_y": 579.973,
     "name": "D-gluconate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 883.331,
-    "y": 434.652
+    "x": 978.978,
+    "y": 559.723
    },
    "8": {
     "bigg_id": "mt_d419d96edb",
-    "label_x": 834.764,
-    "label_y": 350.152,
+    "label_x": 930.411,
+    "label_y": 475.223,
     "name": "D-glucono-1,5-lactone",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 883.331,
-    "y": 329.902
+    "x": 978.978,
+    "y": 454.973
    },
    "9": {
     "bigg_id": "mt_5dbc9a97f4",
-    "label_x": 860.83,
-    "label_y": 245.402,
+    "label_x": 956.477,
+    "label_y": 370.473,
     "name": "D-glucose",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 883.331,
-    "y": 225.152
+    "x": 978.978,
+    "y": 350.223
    }
   },
   "reactions": {
@@ -225,8 +225,8 @@
     "bigg_id": "rx_139ed80125",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 204.999,
-    "label_y": 574.485,
+    "label_x": 250.743,
+    "label_y": 724.894,
     "metabolites": [
      {
       "bigg_id": "mt_bdfc186b9b",
@@ -246,24 +246,24 @@
     "segments": {
      "1": {
       "b1": {
-       "x": 347.473,
-       "y": 594.607
+       "x": 415.761,
+       "y": 751.952
       },
       "b2": {
-       "x": 308.36,
-       "y": 587.207
+       "x": 364.914,
+       "y": 742.331
       },
       "from_node_id": "3",
       "to_node_id": "14"
      },
      "2": {
       "b1": {
-       "x": 236.294,
-       "y": 555.764
+       "x": 271.227,
+       "y": 701.456
       },
       "b2": {
-       "x": 204.265,
-       "y": 532.126
+       "x": 229.591,
+       "y": 670.727
       },
       "from_node_id": "14",
       "to_node_id": "10"
@@ -280,8 +280,8 @@
     "bigg_id": "rx_NODE_2957",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 684.727,
-    "label_y": 82.0,
+    "label_x": 452.767,
+    "label_y": 357.607,
     "metabolites": [
      {
       "bigg_id": "mt_7476acb4c8",
@@ -321,8 +321,8 @@
     "bigg_id": "rx_NODE_8287",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 595.762,
-    "label_y": 107.66,
+    "label_x": 552.787,
+    "label_y": 272.983,
     "metabolites": [
      {
       "bigg_id": "mt_3f71b18536",
@@ -362,8 +362,8 @@
     "bigg_id": "rx_NODE_8726",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 64.766,
-    "label_y": 402.361,
+    "label_x": 66.073,
+    "label_y": 501.132,
     "metabolites": [
      {
       "bigg_id": "mt_4d404b9e9f",
@@ -387,24 +387,24 @@
     "segments": {
      "15": {
       "b1": {
-       "x": 152.978,
-       "y": 472.529
+       "x": 162.917,
+       "y": 593.25
       },
       "b2": {
-       "x": 134.377,
-       "y": 437.335
+       "x": 138.736,
+       "y": 547.498
       },
       "from_node_id": "10",
       "to_node_id": "25"
      },
      "16": {
       "b1": {
-       "x": 114.027,
-       "y": 361.387
+       "x": 112.281,
+       "y": 448.766
       },
       "b2": {
-       "x": 112.539,
-       "y": 321.608
+       "x": 110.346,
+       "y": 397.053
       },
       "from_node_id": "25",
       "to_node_id": "5"
@@ -415,8 +415,8 @@
     "bigg_id": "rx_bed4579fed",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 842.155,
-    "label_y": 490.027,
+    "label_x": 937.802,
+    "label_y": 615.098,
     "metabolites": [
      {
       "bigg_id": "mt_b0096e08ce",
@@ -452,7 +452,7 @@
     "bigg_id": "rx_cbc2670356",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 334.064,
+    "label_x": 408.266,
     "label_y": 73.125,
     "metabolites": [
      {
@@ -477,24 +477,24 @@
     "segments": {
      "17": {
       "b1": {
-       "x": 445.588,
-       "y": 76.056
+       "x": 543.311,
+       "y": 77.835
       },
       "b2": {
-       "x": 406.476,
-       "y": 68.655
+       "x": 492.464,
+       "y": 68.214
       },
       "from_node_id": "11",
       "to_node_id": "27"
      },
      "18": {
       "b1": {
-       "x": 327.903,
-       "y": 71.595
+       "x": 390.32,
+       "y": 72.036
       },
       "b2": {
-       "x": 289.453,
-       "y": 81.898
+       "x": 340.335,
+       "y": 85.429
       },
       "from_node_id": "27",
       "to_node_id": "4"
@@ -505,8 +505,8 @@
     "bigg_id": "rx_f577fb18c1",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 570.582,
-    "label_y": 383.282,
+    "label_x": 724.858,
+    "label_y": 476.329,
     "metabolites": [
      {
       "bigg_id": "mt_31c9b8dab7",
@@ -526,24 +526,24 @@
     "segments": {
      "19": {
       "b1": {
-       "x": 610.874,
-       "y": 455.396
+       "x": 758.182,
+       "y": 570.977
       },
       "b2": {
-       "x": 626.792,
-       "y": 418.91
+       "x": 778.876,
+       "y": 523.546
       },
       "from_node_id": "2",
       "to_node_id": "28"
      },
      "20": {
       "b1": {
-       "x": 641.41,
-       "y": 341.654
+       "x": 797.879,
+       "y": 423.112
       },
       "b2": {
-       "x": 639.922,
-       "y": 301.875
+       "x": 795.944,
+       "y": 371.4
       },
       "from_node_id": "28",
       "to_node_id": "12"
@@ -560,8 +560,8 @@
     "bigg_id": "rx_22845319ee",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 330.474,
-    "label_y": 646.262,
+    "label_x": 410.548,
+    "label_y": 803.166,
     "metabolites": [
      {
       "bigg_id": "mt_4defa8de25",
@@ -597,8 +597,8 @@
     "bigg_id": "rx_48192a666d",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 904.387,
-    "label_y": 280.527,
+    "label_x": 1000.033,
+    "label_y": 405.598,
     "metabolites": [
      {
       "bigg_id": "mt_5dbc9a97f4",
@@ -638,8 +638,8 @@
     "bigg_id": "rx_627809f435",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 739.656,
-    "label_y": 280.527,
+    "label_x": 835.303,
+    "label_y": 405.598,
     "metabolites": [
      {
       "bigg_id": "mt_410bd09215",
@@ -679,8 +679,8 @@
     "bigg_id": "rx_691dd5f2e0",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 439.876,
-    "label_y": 565.994,
+    "label_x": 553.698,
+    "label_y": 713.855,
     "metabolites": [
      {
       "bigg_id": "mt_31c9b8dab7",
@@ -704,24 +704,24 @@
     "segments": {
      "3": {
       "b1": {
-       "x": 564.184,
-       "y": 518.659
+       "x": 697.484,
+       "y": 653.219
       },
       "b2": {
-       "x": 534.011,
-       "y": 544.624
+       "x": 658.261,
+       "y": 686.974
       },
       "from_node_id": "2",
       "to_node_id": "18"
      },
      "4": {
       "b1": {
-       "x": 464.496,
-       "y": 581.365
+       "x": 567.89,
+       "y": 734.736
       },
       "b2": {
-       "x": 426.045,
-       "y": 591.667
+       "x": 517.905,
+       "y": 748.13
       },
       "from_node_id": "18",
       "to_node_id": "3"
@@ -732,8 +732,8 @@
     "bigg_id": "rx_832f1e61b1",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 851.866,
-    "label_y": 385.277,
+    "label_x": 947.513,
+    "label_y": 510.348,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -769,8 +769,8 @@
     "bigg_id": "rx_NODE_10018",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 515.891,
-    "label_y": 163.935,
+    "label_x": 652.535,
+    "label_y": 191.177,
     "metabolites": [
      {
       "bigg_id": "mt_62968a0d8b",
@@ -794,24 +794,24 @@
     "segments": {
      "5": {
       "b1": {
-       "x": 619.572,
-       "y": 225.927
+       "x": 769.489,
+       "y": 272.667
       },
       "b2": {
-       "x": 600.971,
-       "y": 190.733
+       "x": 745.308,
+       "y": 226.916
       },
       "from_node_id": "12",
       "to_node_id": "20"
      },
      "6": {
       "b1": {
-       "x": 549.683,
-       "y": 131.136
+       "x": 678.634,
+       "y": 149.439
       },
       "b2": {
-       "x": 517.655,
-       "y": 107.498
+       "x": 636.998,
+       "y": 118.71
       },
       "from_node_id": "20",
       "to_node_id": "11"
@@ -822,8 +822,8 @@
     "bigg_id": "rx_NODE_11298",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 447.996,
-    "label_y": 190.76,
+    "label_x": 742.285,
+    "label_y": 108.651,
     "metabolites": [
      {
       "bigg_id": "mt_410bd09215",
@@ -863,8 +863,8 @@
     "bigg_id": "rx_NODE_11370",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 102.007,
-    "label_y": 179.235,
+    "label_x": 115.979,
+    "label_y": 211.068,
     "metabolites": [
      {
       "bigg_id": "mt_1137269b50",
@@ -880,24 +880,24 @@
     "segments": {
      "13": {
       "b1": {
-       "x": 127.156,
-       "y": 244.352
+       "x": 129.349,
+       "y": 296.62
       },
       "b2": {
-       "x": 143.075,
-       "y": 207.867
+       "x": 150.043,
+       "y": 249.189
       },
       "from_node_id": "5",
       "to_node_id": "22"
      },
      "14": {
       "b1": {
-       "x": 189.765,
-       "y": 144.603
+       "x": 210.741,
+       "y": 166.947
       },
       "b2": {
-       "x": 219.937,
-       "y": 118.638
+       "x": 249.964,
+       "y": 133.192
       },
       "from_node_id": "22",
       "to_node_id": "4"

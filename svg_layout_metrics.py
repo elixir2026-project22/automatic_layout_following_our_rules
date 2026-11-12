@@ -334,6 +334,8 @@ def semantics(boxes,labels,conns,info,by_box):
     return dict(cycles=cycles,placement=placement,tight_pairs=tight,min_clearance=round(mincl,1) if mincl is not None else None,
                 cycle_marks=marks,placement_marks=[ctr[r] for r,_ in bad])
 
+SHARED_BOX_TOL=27.0   # px (= 20 pt): where two lines that end at the same box meet, within this distance of that
+                      # box, is not a crossing - the same tolerance as sbml_pathway_layout.py uses
 def evaluate(svgfile,compare=None):
     src,shapes,texts,canvas=read(svgfile)
     boxes,labels,conns,heads=classify(shapes,texts,canvas)
@@ -380,6 +382,8 @@ def evaluate(svgfile,compare=None):
             if x is None or any(inside(x,bb,2.0) for bb in B): continue
             ei,ej=conns[i]['pts'],conns[j]['pts']
             if any(math.dist(x,e)<2.0 for e in (ei[0],ei[-1],ej[0],ej[-1])): continue
+            shared=(set(info[i]['ends'][0])|set(info[i]['ends'][1]))&(set(info[j]['ends'][0])|set(info[j]['ends'][1]))
+            if any(inside(x,B[k],SHARED_BOX_TOL) for k in shared): continue   # two lines meeting at the same box
             seen.add((i,j)); issues['crossings'].append(x)
     # --- lines through boxes that are not their own ends
     for i,c in enumerate(conns):
