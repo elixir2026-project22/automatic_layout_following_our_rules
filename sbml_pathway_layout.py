@@ -30,6 +30,7 @@ Usage: python3 sbml_pathway_layout.py model.xml[.gz] [--out NAME] [--max-cluster
        --legend  add a legend (only the elements used) at the bottom right of each drawing
        --ring-shape auto|circle|stadium, --stadium-above 6: long cycles as a stadium (two vertical lanes, round ends)
        --escher  also write each drawing as an Escher map, NAME.escher.json (https://escher.github.io)
+       --write-failing  also write drawings that break the rules, for inspection (exit code still 1)
        python3 sbml_pathway_layout.py [model.xml] --from-layout NAME.layout.json   # redraw a saved layout
 Writes NAME.svg/.png per drawing, NAME.layout.json (reusable layout) and, for SBML Level 3 models,
 NAME.layout.sbml (the model plus the SBML Layout package, readable by other SBML tools).
@@ -1371,6 +1372,8 @@ def main():
                     'doing the same step - in the same direction, or in the opposite one if reversible - are written in the step\'s box)')
     ap.add_argument('--shared-cofactors',action='store_true',help='--show cofactors as one shared box (breaks the rule "cofactors drawn as clones")')
     ap.add_argument('--escher',action='store_true',help='also write each drawing as an Escher map (NAME.escher.json)')
+    ap.add_argument('--write-failing',action='store_true',help='also write drawings that break the rules, for inspection: the rules\n'
+                    'they break are counted in NAME.layout.json (checks), and the exit code is still 1')
     a=ap.parse_args()
     global RING_SHAPE,STADIUM_ABOVE,SHARED_COFACTORS,COLLAPSE_ALT
     RING_SHAPE,STADIUM_ABOVE,SHARED_COFACTORS,COLLAPSE_ALT=a.ring_shape,a.stadium_above,a.shared_cofactors,not a.keep_alternatives
@@ -1437,9 +1440,12 @@ def main():
             repair(D,fixed); v=scale_until_clean(D)
         pv=placement_violations(D); v['placement']=len(pv)
         if getattr(D,'scaled',1.0)>2.0:                           # boxes became tiny relative to the drawing
-            print(f"  layout had to be enlarged {D.scaled:.1f}x to meet the rules - unreadable, not written"); v['enlarged']=1
+            print(f"  layout had to be enlarged {D.scaled:.1f}x to meet the rules - unreadable"); v['enlarged']=1
         for R,other,role in pv[:5]: print(f"  inconsistent placement: {D.info[R]['label']} - {role} {D.info[other]['label']} on the wrong side")
-        if any(v.values()): ok=False; print('  rules not met - drawing not written'); continue
+        if any(v.values()):
+            ok=False
+            if not a.write_failing: print('  rules not met - drawing not written'); continue
+            print('  rules not met - written anyway for inspection (--write-failing)')
         title=name+(f' \u2014 {cname}' if cname else '')
         render(D,fn+'.svg',title,a.legend); render(D,fn+'.png',title,a.legend)
         saved.append(drawing_to_dict(D,cname,title,v)); drawings.append((D,cname,title))
