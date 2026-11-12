@@ -285,7 +285,9 @@
   "hide": "",
   "legend": false,
   "max_cluster": 60,
-  "show": ""
+  "ring_shape": "auto",
+  "show": "",
+  "stadium_above": 6
  },
  "source": "brenda_coenzyme-a-metabolism.xml",
  "units": "points; x right, y up; boxes are centred on (x, y)",

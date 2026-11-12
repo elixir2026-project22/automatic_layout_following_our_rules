@@ -4,7 +4,7 @@
   hard  1. the rendering must be reproducible
         2. labels must have fixed positions, according to their type
         3. no line crossing
-        4. cycles look like cycles
+        4. cycles look like cycles (drawn as a closed loop in cycle order: circle, stadium, rounded rectangle...)
         5. consistent placement: substrates and products on opposite sides, catalysts beside
   soft  6. try to avoid long lines
         7. try to avoid line bends
@@ -297,17 +297,32 @@ def semantics(boxes,labels,conns,info,by_box):
                     M.add_edge(sm,pm); step.setdefault(frozenset((sm,pm)),[]).append(r)
     cand=[c for c in itertools.islice(nx.simple_cycles(M,length_bound=16),20000) if len(c)>=3] if M.number_of_edges() else []
     def shape(c):
-        pts=[]; mfit=_fit_circle([ctr[m] for m in c])
+        """Closed-loop test: the cycle's boxes in cycle order form a simple polygon that winds once around its
+        centre in one direction, without folding inwards (circle, stadium, rounded rectangle all qualify)."""
+        g=np.mean([ctr[m] for m in c],0); pts=[]
         for a,b in zip(c,c[1:]+c[:1]):
-            pts.append(ctr[a]); rs=step[frozenset((a,b))]
-            pts.append(ctr[min(rs,key=lambda r:abs(math.dist(ctr[r],mfit[0])-mfit[1]))])
+            pts.append(ctr[a]); rs=step[frozenset((a,b))]; want=(math.dist(ctr[a],g)+math.dist(ctr[b],g))/2
+            pts.append(ctr[min(rs,key=lambda r:abs(math.dist(ctr[r],g)-want))])   # the step's box ON the loop
+        cen=np.mean(pts,0)
+        th=np.unwrap([math.atan2(q[1]-cen[1],q[0]-cen[0]) for q in pts+[pts[0]]]); d=np.diff(th)
+        order_ok=bool(np.all(d>-1e-9) or np.all(d<1e-9)) and abs(abs(th[-1]-th[0])-2*math.pi)<0.5
+        E_=list(zip(pts,pts[1:]+pts[:1])); simple=True
+        for x in range(len(E_)):
+            for y in range(x+2,len(E_)):
+                if x==0 and y==len(E_)-1: continue
+                if _segx(*E_[x],*E_[y]) is not None: simple=False
+        turns=[]                                                   # folding inwards = turning the wrong way
+        for k in range(len(pts)):
+            a_,b_,c_=pts[k-1],pts[k],pts[(k+1)%len(pts)]
+            cr=(b_[0]-a_[0])*(c_[1]-b_[1])-(b_[1]-a_[1])*(c_[0]-b_[0]); n_=math.dist(a_,b_)*math.dist(b_,c_) or 1
+            turns.append(cr/n_)
+        main_sign=np.sign(sum(turns)) or 1
+        folds=sum(1 for t in turns if t*main_sign<-0.35)          # sharp turns against the loop direction
         (cx,cy),R=_fit_circle(pts); res=[abs(math.dist(q,(cx,cy))-R)/R for q in pts]
-        th=np.unwrap([math.atan2(q[1]-cy,q[0]-cx) for q in pts+[pts[0]]]); d=np.diff(th)
-        order_ok=bool(np.all(d>0) or np.all(d<0)) and abs(abs(th[-1]-th[0])-2*math.pi)<0.5
-        return pts,float(np.sqrt(np.mean(np.square(res)))),float(max(res)),order_ok
+        return pts,float(np.sqrt(np.mean(np.square(res)))),float(max(res)),order_ok and simple and folds==0
     shp={tuple(c):shape(c) for c in cand}
     cyc=[]; used=set(); pool=list(cand)
-    isround=lambda c:shp[tuple(c)][1]<=0.08 and shp[tuple(c)][2]<=0.2 and shp[tuple(c)][3]
+    isround=lambda c:shp[tuple(c)][3]                           # drawn as a closed loop in cycle order
     while pool:                                                   # main cycles: the longest one drawn round (if it is
         mx=max(len(c) for c in pool)                              # at least half as long as the longest loop), else the
         rnd=[c for c in pool if isround(c) and len(c)>=0.5*mx]    # longest loop, which is then judged not round
@@ -318,8 +333,8 @@ def semantics(boxes,labels,conns,info,by_box):
     rounds=[]; marks=[]
     for c in cyc:
         pts,rms,mx,order_ok=shp[tuple(c)]
-        ok=rms<=0.08 and mx<=0.2 and order_ok
-        rounds.append(dict(compounds=[name(m) for m in c],round=ok,rms_dev=round(rms,3),max_dev=round(mx,3),in_cycle_order=order_ok))
+        ok=order_ok
+        rounds.append(dict(compounds=[name(m) for m in c],round=ok,circle_rms_dev=round(rms,3),closed_loop_in_order=order_ok))
         if not ok: marks+=pts
     cycles=dict(cycles=len(rounds),round_cycles=sum(1 for x in rounds if x['round']),alternative_routes=alternative,detail=rounds)
     # crowding: boxes that do not overlap but almost touch
@@ -492,7 +507,7 @@ def verdicts(m):
             ('3 no crossing', 'PASS' if r3['line_crossings']==0 and r3['lines_through_boxes']==0 else 'FAIL',
              f"{r3['line_crossings']} crossings, {r3['lines_through_boxes']} lines through boxes"),
             ('4 cycles as cycles', 'PASS' if r4['round_cycles']==r4['cycles'] else 'FAIL',
-             f"{r4['cycles']} main metabolite cycle(s), {r4['round_cycles']} drawn round"+(" (none in this drawing)" if not r4['cycles'] else "")
+             f"{r4['cycles']} main metabolite cycle(s), {r4['round_cycles']} drawn as a closed loop in cycle order"+(" (none in this drawing)" if not r4['cycles'] else "")
              +(f"; {r4['alternative_routes']} alternative route(s) sharing metabolites with them (not judged)" if r4.get('alternative_routes') else '')),
             ('5 consistent placement', ('PASS' if r5['reactions_inconsistent']==0 else 'FAIL') if r5['reactions_checked'] else 'N/A',
              (f"{r5['reactions_checked']} reactions checked ({r5['role_detection']}), {r5['reactions_inconsistent']} with substrates/products not on opposite sides "
@@ -518,7 +533,7 @@ def annotate(geo,path,title):
     for L in labels: ax.add_patch(Rectangle(L['bbox'][:2],L['bbox'][2]-L['bbox'][0],L['bbox'][3]-L['bbox'][1],fc='#ffd76a',ec='none',alpha=0.35))
     mk=[('crossings','#e3262b','X',90,'crossing'),('line_through_box','#ff8c1a','s',60,'line through box'),('box_overlaps','#9b30d9','D',60,'box overlap'),
         ('label_overlaps','#7a4a00','o',40,'label overlap'),('label_crossed','#c2185b','^',40,'label crossed'),('bends','#00a07a','o',25,'bend'),
-        ('cycles','#ff00aa','h',70,'node of a cycle not drawn round'),('placement','#0b7285','P',90,'reaction with inconsistent sides')]
+        ('cycles','#ff00aa','h',70,'node of a cycle not drawn as a closed loop'),('placement','#0b7285','P',90,'reaction with inconsistent sides')]
     for key,col,m,s,lab in mk:
         if issues[key]: ax.scatter([p[0] for p in issues[key]],[p[1] for p in issues[key]],c=col,marker=m,s=s,label=f'{lab} ({len(issues[key])})',zorder=5)
     if issues['long']: ax.plot([],[],color='#2f6fd6',lw=2.4,label=f"long line ({len(issues['long'])})")
@@ -541,7 +556,7 @@ def main():
         print(f"    outline {t['style']['outline']:<8} fill {t['style']['fill']:<8} {t['style']['dash']:<10} {t['boxes']:>3} boxes, {t['unlabelled']} unlabelled, "
               f"offset {round(100*t['x_offset'],1)}% +/- {round(100*t['x_spread'],1)}%, top gap {t['top_gap_px']} +/- {t['top_gap_spread_px']} px")
     for c in m['rule4_cycles']['detail']:
-        print(f"  cycle {'round    ' if c['round'] else 'NOT round'} (deviation rms {c['rms_dev']}, max {c['max_dev']}, order {'ok' if c['in_cycle_order'] else 'broken'}): {' -> '.join(c['compounds'])}")
+        print(f"  cycle {'closed loop in order' if c['round'] else 'NOT a closed loop in order'} (deviation from a circle: rms {c['circle_rms_dev']}): {' -> '.join(c['compounds'])}")
     for t in m['rule5_placement']['inconsistent']: print(f"  inconsistent placement: {t}")
     d=m['drawing']; print(f"  drawing: {d['width']} x {d['height']} (aspect {d['aspect']}), boxes cover {round(100*d['box_area_share'],1)}% of the area")
     if a.json:

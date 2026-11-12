@@ -28,6 +28,7 @@ Usage: python3 sbml_pathway_layout.py model.xml[.gz] [--out NAME] [--max-cluster
        --show  draw these compounds as shared boxes connected to all their reactions (like main compounds)
        --hide  always write these compounds inside the reaction box (like cofactors)
        --legend  add a legend (only the elements used) at the bottom right of each drawing
+       --ring-shape auto|circle|stadium, --stadium-above 6: long cycles as a stadium (two vertical lanes, round ends)
        --escher  also write each drawing as an Escher map, NAME.escher.json (https://escher.github.io)
        python3 sbml_pathway_layout.py [model.xml] --from-layout NAME.layout.json   # redraw a saved layout
 Writes NAME.svg/.png per drawing, NAME.layout.json (reusable layout) and, for SBML Level 3 models,
@@ -241,6 +242,38 @@ def text_w(t,st):
     if k not in _tw: _tw[k]=TextPath((0,0),t,prop=FontProperties(family='DejaVu Sans',size=st['fs'],weight=st['weight'],style=st['style'])).get_extents().width
     return _tw[k]
 
+RING_SHAPE='auto'; STADIUM_ABOVE=6        # rings with more metabolites than this are drawn as a stadium
+class Stadium:
+    """Closed loop for long cycles: two straight vertical lanes joined by semicircular caps. Positions are
+    given by the arc length u along the outline, clockwise from the top."""
+    def __init__(s,c,r,hl): s.c=(float(c[0]),float(c[1])); s.r=float(r); s.hl=float(hl)
+    @property
+    def L(s): return 4*s.hl+2*math.pi*s.r
+    def point(s,u):
+        """(position, outward normal) at arc length u."""
+        cx,cy=s.c; r,hl=s.r,s.hl; u%=s.L; q=math.pi*r/2
+        if u<q: t=math.pi/2-u/r; return (cx+r*math.cos(t),cy+hl+r*math.sin(t)),(math.cos(t),math.sin(t))
+        u-=q
+        if u<2*hl: return (cx+r,cy+hl-u),(1.0,0.0)
+        u-=2*hl
+        if u<math.pi*r: t=-u/r; return (cx+r*math.cos(t),cy-hl+r*math.sin(t)),(math.cos(t),math.sin(t))
+        u-=math.pi*r
+        if u<2*hl: return (cx-r,cy-hl+u),(-1.0,0.0)
+        u-=2*hl; t=math.pi-u/r; return (cx+r*math.cos(t),cy+hl+r*math.sin(t)),(math.cos(t),math.sin(t))
+    def param(s,p):
+        us=np.linspace(0,s.L,721)[:-1]; P=np.array([s.point(u)[0] for u in us])
+        return float(us[int(np.argmin(((P-np.array(p))**2).sum(1)))])
+    def path(s,a,b):
+        ua,ub=s.param(a),s.param(b); d=(ub-ua+s.L/2)%s.L-s.L/2; n=max(3,int(abs(d)/6))
+        return [a]+[s.point(ua+d*i/n)[0] for i in range(1,n)]+[b]
+    def clear_y(s,x,m):                                       # half height of the shape (+margin) at x
+        dx=abs(x-s.c[0]); return s.hl+math.sqrt((s.r+m)**2-dx*dx) if dx<s.r+m else 0.0
+    def clear_x(s,y,m):                                       # half width of the shape (+margin) at y
+        dy=abs(y-s.c[1])
+        if dy<=s.hl: return s.r+m
+        e=dy-s.hl; return math.sqrt((s.r+m)**2-e*e) if e<s.r+m else 0.0
+    def scaled(s,f): return Stadium((s.c[0]*f,s.c[1]*f),s.r*f,s.hl*f)
+
 class Drawing:
     def __init__(s):
         s.info={}; s.P={}; s.links=[]; s.rings={}
@@ -262,6 +295,7 @@ class Drawing:
     def path(s,L):
         a,b=s.P[L['a']],s.P[L['b']]
         if L['ring'] is None: return [a,b]
+        if isinstance(s.rings[L['ring']],Stadium): return s.rings[L['ring']].path(a,b)
         (cx,cy),r=s.rings[L['ring']]
         t1,t2=math.atan2(a[1]-cy,a[0]-cx),math.atan2(b[1]-cy,b[0]-cx); d=(t2-t1+math.pi)%(2*math.pi)-math.pi
         n=max(3,int(abs(d)*30))
@@ -466,16 +500,46 @@ def layout_cluster(rxns,ring_scale=1.0):
         for k,m in enumerate(ring):
             items.append(D.size('M:'+m))
             items.append(D.size('R:'+steps[k][0]['id']) if k in steps else (10.0,10.0))
-        def need(rad):                                            # arc each box needs vs. arc available
-            tot=0.0
-            for j,(w,h) in enumerate(items):
-                t=2*math.pi*j/len(items); tot+=abs(w*math.sin(t))+abs(h*math.cos(t))+22
-            return tot/(2*math.pi)
-        rad=70.0
-        for _ in range(4): rad=max(70.0,need(rad))
-        rad*=ring_scale
+        def need(rad):                                            # arc each box needs vs. arc available, for the
+            worst=0.0                                             # least favourable rotation (the ring is rotated
+            for rot in range(36):                                 # towards its connections only afterwards)
+                tot=0.0; th0=2*math.pi*rot/36
+                for j,(w,h) in enumerate(items):
+                    t=th0+2*math.pi*j/len(items); tot+=abs(w*math.sin(t))+abs(h*math.cos(t))+22
+                    # neighbours must also clear each other: each gap is at least the larger half-width
+                worst=max(worst,tot)
+            pair=0.0                                              # boxes sit at equal angles, so every pair of
+            dlt=2*math.pi/len(items)                              # neighbours needs its own room too: chord between
+            for rot in range(36):                                 # them >= their half-extents along the ring + gap
+                th0=2*math.pi*rot/36
+                for j,(w,h) in enumerate(items):
+                    w2,h2=items[(j+1)%len(items)]; t1=th0+dlt*j; t2=t1+dlt
+                    sep=(abs(w*math.sin(t1))+abs(h*math.cos(t1)))/2+(abs(w2*math.sin(t2))+abs(h2*math.cos(t2)))/2+14
+                    pair=max(pair,sep/(2*math.sin(dlt/2)))
+            return max(worst/(2*math.pi),pair)
         mw=max(max(D.size('M:'+m)[0] for m in ring),max([D.size('R:'+r['id'])[0] for k in steps for r in steps[k]],default=0))
-        ring_steps[i]=dict(ring=ring,steps=steps,chords=chords,rad=rad,box=(2*rad*1.5+mw,2*rad*1.5+40))
+        stadium=RING_SHAPE=='stadium' or (RING_SHAPE=='auto' and len(ring)>STADIUM_ABOVE)
+        if not stadium:
+            rad=70.0
+            for _ in range(4): rad=max(70.0,need(rad))
+            rad*=ring_scale
+            ring_steps[i]=dict(ring=ring,steps=steps,chords=chords,rad=rad,shape='circle',box=(2*rad*1.5+mw,2*rad*1.5+40))
+        else:                                                     # stadium: lane gap leaves room for one alternative
+            altw=max([D.size('R:'+r['id'])[0] for k in steps for r in steps[k][1:]],default=100)
+            iw=max(it[0] for it in items); ih=max(it[1] for it in items)
+            r_=max(90.0,(iw+max(altw,100)+50)/2)*ring_scale; hl=0.0; N=len(items)
+            def fits(hl):                                         # neighbours clear each other for every rotation
+                st=Stadium((0,0),r_,hl); ds=st.L/N
+                for o in range(2*N):
+                    P=[st.point((j+o/2)*ds)[0] for j in range(N)]
+                    for j in range(N):
+                        (x1,y1),(w1,h1)=P[j],items[j]; (x2,y2),(w2,h2)=P[(j+1)%N],items[(j+1)%N]
+                        if abs(x1-x2)<(w1+w2)/2+14 and abs(y1-y2)<(h1+h2)/2+14: return False
+                return True
+            while not fits(hl) and hl<20000: hl+=10
+            hl*=ring_scale
+            ring_steps[i]=dict(ring=ring,steps=steps,chords=chords,rad=r_+hl,shape='stadium',r=r_,hl=hl,
+                               box=(2*r_+iw+2*(altw+70),2*hl+2*r_+ih+2*(ih+90)))
     # ---- which compounds get a real (shared) box: every main compound, and every secondary
     # compound used by two or more reactions; compounds used once stay private dashed copies
     appear={}
@@ -535,7 +599,9 @@ def layout_cluster(rxns,ring_scale=1.0):
         for n,p in pos.items():
             if n.startswith('__d'): D.add(n,'dummy')
             if not n.startswith('RING'): D.P[n]=(p[0]+dx,p[1])
-            else: D.rings[int(n[4:])]=((p[0]+dx,p[1]),ring_steps[int(n[4:])]['rad'])
+            else:
+                rs_=ring_steps[int(n[4:])]
+                D.rings[int(n[4:])]=Stadium((p[0]+dx,p[1]),rs_['r'],rs_['hl']) if rs_['shape']=='stadium' else ((p[0]+dx,p[1]),rs_['rad'])
         for (pts,rv),(e,m,sd) in zip(chains,ce):
             pts=list(pts)
             if rv: pts=pts[::-1]
@@ -562,7 +628,9 @@ def layout_cluster(rxns,ring_scale=1.0):
     piece_of_ring={i:set().union(*[set(c) for j,c in pieces if j==i]) if any(j==i for j,_ in pieces) else set() for i in ring_steps}
     # ---- expand rings, rotated towards their outside connections
     for i,rs in ring_steps.items():
-        (cx,cy),rad=D.rings[i]; ring=rs['ring']; n=len(ring)
+        ring=rs['ring']; n=len(ring); ST=D.rings[i] if isinstance(D.rings[i],Stadium) else None
+        if ST: (cx,cy),rad=ST.c,ST.r+ST.hl
+        else: (cx,cy),rad=D.rings[i]
         slot={'M:'+m:(j,1.0) for j,m in enumerate(ring)}         # node -> (angle slot, radius factor)
         for k,lst in rs['steps'].items():
             for j,r in enumerate(lst): slot['R:'+r['id']]=(k+0.5,1.0 if j==0 else 1+(-0.24 if j%2 else 0.24)*((j+1)//2))
@@ -572,8 +640,18 @@ def layout_cluster(rxns,ring_scale=1.0):
             for end,other in ((L['a'],L['b']),(L['b'],L['a'])):
                 if end in slot and other in D.P and other not in slot: ext.append((end,D.P[other]))
         anchors=sorted({x for n in piece_of_ring[i] for x in att.get(n,()) if x in slot})
-        best=None
-        for mir in (1,-1):
+        best=None; stad_pos={}
+        if ST:                                                    # stadium: members and step reactions at equal
+            N=2*n; ds=ST.L/N                                      # arc length; rotation = shift along the loop
+            for mir in (1,-1):
+                for o in range(2*N):
+                    pos_={}
+                    for j,m in enumerate(ring): pos_['M:'+m]=ST.point(mir*(2*j+o/2)*ds)
+                    for k_,lst in rs['steps'].items(): pos_['R:'+lst[0]['id']]=ST.point(mir*(2*k_+1+o/2)*ds)
+                    sc=sum(math.dist(pos_[e][0],q) for e,q in ext if e in pos_)
+                    if best is None or sc<best[0]-1e-6: best=(sc,pos_)
+            stad_pos=best[1]; best=(0,{m:stad_pos['M:'+m][0] for m in ring},0.0,1)
+        for mir in ((1,-1) if not ST else ()):
             for k in range(72):
                 th=2*math.pi*k/72
                 p={m:(cx+rad*math.cos(th+mir*2*math.pi*j/n),cy+rad*math.sin(th+mir*2*math.pi*j/n)) for j,m in enumerate(ring)}
@@ -583,26 +661,39 @@ def layout_cluster(rxns,ring_scale=1.0):
                 if best is None or sc<best[0]-1e-6: best=(sc,p,th,mir)
         _,p,th,mir=best
         for m in ring: D.P['M:'+m]=p[m]
-        for k,lst in rs['steps'].items():
-            t=th+mir*2*math.pi*(k+0.5)/n; ux,uy=math.cos(t),math.sin(t)
-            a,b='M:'+ring[k],'M:'+ring[(k+1)%n]; placed_alt=[]
+        alts=[]
+        for k,lst in rs['steps'].items():                         # 1. main reaction of each step, on the ring
+            if ST: (px_,py_),(ux,uy)=stad_pos['R:'+lst[0]['id']]
+            else:
+                t=th+mir*2*math.pi*(k+0.5)/n; ux,uy=math.cos(t),math.sin(t); px_,py_=cx+rad*ux,cy+rad*uy
             for j,r in enumerate(lst):
                 R='R:'+r['id']; s,pp='M:'+r['main'][0],'M:'+r['main'][1]
-                if j==0:
-                    D.P[R]=(cx+rad*ux,cy+rad*uy); D.link(s,R,arrow=True,ring=i); D.link(R,pp,arrow=True,ring=i)
-                else:                                             # alternative enzymes: the first one INSIDE the ring
-                    inward=(j%2==1)                               # (compact; the outside stays free for side
-                    ext_=lambda nm:abs(ux)*D.size(nm)[0]/2+abs(uy)*D.size(nm)[1]/2   # pathways), then alternate
-                    prev=[x for x in placed_alt if x[1]==inward]  # stack after earlier ones on the same side
-                    last=prev[-1][0] if prev else 'R:'+lst[0]['id']
-                    d=(abs(math.dist(D.P[last],(cx,cy))-rad) if prev else 0.0)+ext_(last)+ext_(R)+14
-                    f=max(0.25,1-d/rad) if inward else 1+d/rad
-                    D.P[R]=(cx+rad*f*ux,cy+rad*f*uy); placed_alt.append((R,inward)); D.info[R]['pinned']=True
-                    D.link(s,R,arrow=True); D.link(R,pp,arrow=True)
-        for r in rs['chords']:
+                if j==0: D.P[R]=(px_,py_); D.link(s,R,arrow=True,ring=i); D.link(R,pp,arrow=True,ring=i)
+                else: alts.append((j,ux,uy,R,s,pp))
+        for r in rs['chords']:                                    # 2. shortcuts across the ring
             R='R:'+r['id']; s,pp='M:'+r['main'][0],'M:'+r['main'][1]; D.info[R]['pinned']=True
             D.P[R]=((D.P[s][0]+D.P[pp][0])/2*0.82+cx*0.18,(D.P[s][1]+D.P[pp][1])/2*0.82+cy*0.18)
             D.link(s,R); D.link(R,pp)
+        lim_in=(1.6*ST.r) if ST else rad*0.7                     # how deep inside the loop is still free
+        for j,ux,uy,R,s,pp in alts:                               # 3. alternative enzymes: first free spot, inside
+            w,h=D.size(R); best=None                              #    the ring first (compact; outside stays free
+            here=[n for n in D.P if n!=R and D.info[n]['kind']!='dummy']   # for side pathways), then outside
+            HB=np.array([D.box(n) for n in here]) if here else np.zeros((0,4))
+            segs=[(D.P[L['a']],D.P[L['b']]) for L in D.links if L['ring'] is None and L['a'] in D.P and L['b'] in D.P]
+            R0=next(('R:'+lst[0]['id']) for k_,lst in rs['steps'].items() if R in {'R:'+x['id'] for x in lst})
+            b0=D.P[R0]                                            # step's main reaction: search along its normal
+            for side in ((-1,1) if j%2==1 else (1,-1)):
+                for d in range(40,int(max(lim_in,rad*0.75)),12):
+                    if side<0 and d>lim_in: break
+                    c=(b0[0]+side*d*ux,b0[1]+side*d*uy); bx=(c[0]-w/2,c[1]-h/2,c[0]+w/2,c[1]+h/2)
+                    if len(HB) and ((HB[:,0]<bx[2]+8)&(bx[0]<HB[:,2]+8)&(HB[:,1]<bx[3]+8)&(bx[1]<HB[:,3]+8)).any(): continue
+                    if any(seg_hits(a_,b_,[bx],4)[0] for a_,b_ in segs): continue
+                    own_hits=sum(int(seg_hits(c,D.P[e],HB,4).sum()) for e in (s,pp)) if len(HB) else 0
+                    if own_hits>2: continue                       # (its own two lines may touch only their ends)
+                    best=c; break
+                if best: break
+            D.P[R]=best or (b0[0]+0.5*rad*ux,b0[1]+0.5*rad*uy); D.info[R]['pinned']=best is not None
+            D.link(s,R,arrow=True); D.link(R,pp,arrow=True)
     for a,b in ring_side: D.link(a,b); D.links[-1]['side']=True
     # ---- side pathways: own top-to-bottom layout, above or below the ring, aligned with their anchor
     unplaced=set().union(*[set(c) for _,c in pieces]) if pieces else set()
@@ -616,7 +707,11 @@ def layout_cluster(rxns,ring_scale=1.0):
                 continue
             keep.append(L)
         D.links=keep
-        (cx,cy),rad=D.rings[i]
+        ST=D.rings[i] if isinstance(D.rings[i],Stadium) else None
+        if ST: (cx,cy),rad=ST.c,ST.r+ST.hl
+        else: (cx,cy),rad=D.rings[i]
+        clr_y=(lambda x:ST.clear_y(x,38)) if ST else (lambda x:math.sqrt(max(0.0,(rad+38)**2-(x-cx)**2)))
+        clr_x=(lambda y:ST.clear_x(y,38)) if ST else (lambda y:math.sqrt(max(0.0,(rad+38)**2-(y-cy)**2)))
         ce=[(e,m,sd) for e,m,sd in zip(edges,emeta,eside) if e[0] in cs and e[1] in cs]
         pos,chains=sugiyama(comp,[e for e,_,_ in ce],size,tag=f'p{pi}_')
         anc=[(n,x) for n in comp for x in sorted(att.get(n,())) if x in ringnodes[i]]
@@ -626,14 +721,14 @@ def layout_cluster(rxns,ring_scale=1.0):
         def boxes(P): return [(v[0]-sz(k)[0]/2,v[1]-sz(k)[1]/2,v[0]+sz(k)[0]/2,v[1]+sz(k)[1]/2) for k,v in P.items()]
         others=[D.box(n) for n in D.P if n not in cs and n not in unplaced and D.info[n]['kind']!='dummy']
         hit=lambda bx,dx,dy:any(b[0]+dx<o[2]+24 and o[0]<b[2]+dx+24 and b[1]+dy<o[3]+24 and o[1]<b[3]+dy+24 for b in bx for o in others)
-        vertical=abs(ay-cy)>=abs(ax-cx)                           # anchor at the top/bottom vs. at a side
+        vertical=(abs(ay-cy)>ST.hl) if ST else abs(ay-cy)>=abs(ax-cx)   # anchor on a cap / top or bottom vs. a side
         if vertical:                                              # above/below, anchor end facing the ring,
             up=ay>=cy                                             # lined up with the anchor -> vertical link
             my=float(np.mean([pos[n][1] for n in an])); oy=float(np.mean([v[1] for v in pos.values()]))
             if (up and my>oy+1e-6) or ((not up) and my<oy-1e-6): pos={k:(v[0],-v[1]) for k,v in pos.items()}
             dx=ax-float(np.mean([pos[n][0] for n in an])); pos={k:(v[0]+dx,v[1]) for k,v in pos.items()}
             bx=boxes(pos); x0,x1=min(b[0] for b in bx),max(b[2] for b in bx)
-            clear=max(math.sqrt(max(0.0,(rad+38)**2-(x-cx)**2)) for x in np.linspace(x0,x1,25))
+            clear=max(clr_y(x) for x in np.linspace(x0,x1,25))
             shift=(max(cy+clear,ay+40)-min(b[1] for b in bx)) if up else (min(cy-clear,ay-40)-max(b[3] for b in bx))
             for _ in range(400):
                 if not hit(bx,0,shift): break
@@ -643,7 +738,7 @@ def layout_cluster(rxns,ring_scale=1.0):
             right=ax>=cx                                          # anchor end level with the anchor -> horizontal link
             dy=ay-float(np.mean([pos[n][1] for n in an])); pos={k:(v[0],v[1]+dy) for k,v in pos.items()}
             bx=boxes(pos); y0,y1=min(b[1] for b in bx),max(b[3] for b in bx)
-            clear=max(math.sqrt(max(0.0,(rad+38)**2-(y-cy)**2)) for y in np.linspace(y0,y1,25))
+            clear=max(clr_x(y) for y in np.linspace(y0,y1,25))
             mx=float(np.mean([pos[n][0] for n in an]))
             shift=(max(cx+clear,ax+50)-min(b[0] for b in bx)) if right else (min(cx-clear,ax-50)-max(b[2] for b in bx))
             for _ in range(400):
@@ -711,6 +806,19 @@ def side_ok(axis,d,role,tol=70.0):
     if axis is None: return True
     d=np.array(d)/max(np.linalg.norm(d),1e-9); a=math.degrees(math.acos(max(-1,min(1,float(d@axis)))))
     return a<=tol if role=='product' else (a>=180-tol if role=='substrate' else 90-35<=a<=90+35)
+def placement_ok_near(D,n,tol=78.0):
+    """Consistent placement still holds at node n's own reaction(s) (used to vet repair moves)."""
+    Rs={n} if n.startswith('R:') else {L['b'] if L['a']==n else L['a'] for L in D.links if n in (L['a'],L['b'])}
+    for R in [r for r in Rs if r.startswith('R:') and r in D.P]:
+        ax=reaction_axis(D,R)
+        if ax is None: continue
+        x,y=D.P[R]
+        for L in D.links:
+            if R not in (L['a'],L['b']): continue
+            p=D.path(L); q=(p[1] if L['a']==R else p[-2]) if len(p)>1 else p[0]
+            role='catalyst' if L.get('cat') else ('product' if L['a']==R else 'substrate')
+            if not side_ok(ax,(q[0]-x,q[1]-y),role,tol): return False
+    return True
 def placement_violations(D,tol=80.0):
     """Reactions whose substrates and products are not on opposite sides, or whose catalysts are not beside."""
     bad=[]
@@ -890,7 +998,7 @@ def repair(D,fixed,rounds=20):
                 for k in range(16):
                     t=k*math.pi/8; q=(x0+dist*math.cos(t),y0+dist*math.sin(t))
                     D.P[n]=((x0+q[0])/2,(y0+q[1])/2); ok=not crossing_pairs(D,only=inc)
-                    if ok: D.P[n]=q; ok=not crossing_pairs(D,only=inc)
+                    if ok: D.P[n]=q; ok=not crossing_pairs(D,only=inc) and placement_ok_near(D,n)
                     c=score() if ok else None
                     D.P[n]=(x0,y0)
                     if ok and c<cur and (best is None or (c,dist)<best[:2]): best=(c,dist,q)
@@ -903,7 +1011,7 @@ def scale_until_clean(D,maxit=40):
     for _ in range(maxit):
         v=violations(D)
         if v['line_through_box']==0 and v['box_overlaps']==0: return v
-        f=1.1; D.P={n:(p[0]*f,p[1]*f) for n,p in D.P.items()}; D.rings={i:((c[0]*f,c[1]*f),r*f) for i,(c,r) in D.rings.items()}
+        f=1.1; D.P={n:(p[0]*f,p[1]*f) for n,p in D.P.items()}; D.rings={i:(v.scaled(f) if isinstance(v,Stadium) else ((v[0][0]*f,v[0][1]*f),v[1]*f)) for i,v in D.rings.items()}
         D.scaled*=f
     return violations(D)
 
@@ -969,7 +1077,10 @@ def render(D,path,title,legend=False):
         leg=(E,lx,ly)
     fig=plt.figure(figsize=((x1-x0)/72,(y1-y0)/72)); ax=fig.add_axes([0,0,1,1])
     ax.set_xlim(x0,x1); ax.set_ylim(y0,y1); ax.set_aspect('equal'); ax.axis('off')
-    for i,((cx,cy),r) in sorted(D.rings.items()): ax.add_patch(Circle((cx,cy),r,fc='#fbf6f5',ec='none',zorder=0))
+    for i,v in sorted(D.rings.items()):
+        if isinstance(v,Stadium):
+            ax.add_patch(FancyBboxPatch((v.c[0]-v.r,v.c[1]-v.hl-v.r),2*v.r,2*v.hl+2*v.r,boxstyle='round,pad=0,rounding_size=%g'%v.r,fc='#fbf6f5',ec='none',zorder=0))
+        else: ax.add_patch(Circle(v[0],v[1],fc='#fbf6f5',ec='none',zorder=0))
     def cut(P,b):
         inb=lambda p:b[0]<p[0]<b[2] and b[1]<p[1]<b[3]; i=0
         while i<len(P)-1 and inb(P[i+1]): i+=1
@@ -1016,7 +1127,7 @@ def drawing_to_dict(D,name,title,checks):
         nodes.append(dict(id=n,kind=D.info[n]['kind'],label=D.info[n]['label'],sub=D.info[n]['sub'],
                           x=D.P[n][0],y=D.P[n][1],w=round(w,3),h=round(h,3),sbml_type=t,sbml_id=ref))
     links=[dict(source=L['a'],target=L['b'],arrow=L['arrow'],ring=L['ring'],chain=L['chain'],own=sorted(L['own']),side=bool(L.get('side')),cat=bool(L.get('cat'))) for L in D.links]
-    rings=[dict(id=i,cx=c[0],cy=c[1],r=r) for i,(c,r) in sorted(D.rings.items())]
+    rings=[(dict(id=i,shape='stadium',cx=v.c[0],cy=v.c[1],r=v.r,hl=v.hl) if isinstance(v,Stadium) else dict(id=i,shape='circle',cx=v[0][0],cy=v[0][1],r=v[1])) for i,v in sorted(D.rings.items())]
     return dict(name=name,title=title,checks=checks,rings=rings,nodes=nodes,links=links)
 def drawing_from_dict(d):
     D=Drawing()
@@ -1025,7 +1136,7 @@ def drawing_from_dict(d):
         if n.get('sbml_type')=='species' and n.get('sbml_id'): SPECIES_ID.setdefault(n['label'],n['sbml_id'])
     for L in d['links']:
         D.links.append(dict(a=L['source'],b=L['target'],arrow=L['arrow'],ring=L['ring'],own=set(L['own']),chain=L['chain'],cut=True,side=L.get('side',False),cat=L.get('cat',False)))
-    D.rings={r['id']:((r['cx'],r['cy']),r['r']) for r in d['rings']}
+    D.rings={r['id']:(Stadium((r['cx'],r['cy']),r['r'],r['hl']) if r.get('shape')=='stadium' else ((r['cx'],r['cy']),r['r'])) for r in d['rings']}
     return D
 
 LNS='http://www.sbml.org/sbml/level3/version1/layout/version1'
@@ -1094,10 +1205,11 @@ def export_sbml_layout(src,dst,drawings):
             sr.set(q('speciesGlyph'),gid[S]); sr.set(q('role'),role)
             cv=ET.SubElement(ET.SubElement(sr,q('curve')),q('listOfCurveSegments'))
             for L in Ls:
-                if L['ring'] is None:
-                    a,b=D.P[L['a']],D.P[L['b']]
-                    seg=ET.SubElement(cv,q('curveSegment')); seg.set(f'{{{XSI}}}type','LineSegment')
-                    pt(seg,'start',tx(a[0]),ty(a[1])); pt(seg,'end',tx(b[0]),ty(b[1]))
+                if L['ring'] is None or isinstance(D.rings[L['ring']],Stadium):
+                    P_=D.path(L); P_=P_[::max(1,len(P_)//8)]+([P_[-1]] if (len(P_)-1)%max(1,len(P_)//8) else [])
+                    for a,b in zip(P_,P_[1:]):
+                        seg=ET.SubElement(cv,q('curveSegment')); seg.set(f'{{{XSI}}}type','LineSegment')
+                        pt(seg,'start',tx(a[0]),ty(a[1])); pt(seg,'end',tx(b[0]),ty(b[1]))
                 else:                                             # ring arc -> cubic Beziers of <= 90 degrees
                     (cx,cy),r=D.rings[L['ring']]; a,b=D.P[L['a']],D.P[L['b']]
                     t1=math.atan2(a[1]-cy,a[0]-cx); t2=math.atan2(b[1]-cy,b[0]-cx); dt=(t2-t1+math.pi)%(2*math.pi)-math.pi
@@ -1167,7 +1279,13 @@ def export_escher(D,title,rxn_by_id,path,map_id):
                 if e not in node_id:                              # bend point -> multimarker of this reaction
                     x,y=ex(D.P[e]); new_node(e,dict(node_type='multimarker',x=x,y=y))
             pieces=[(a,b,None,None)]
-            if L['ring'] is not None:                             # arc -> Bezier(s) of <= 90 degrees
+            if L['ring'] is not None and isinstance(D.rings[L['ring']],Stadium):
+                P_=D.path(L); idx=sorted(set(list(range(0,len(P_),max(1,len(P_)//6)))+[len(P_)-1])); prev=a; pieces=[]
+                for jj,ii in enumerate(idx[1:]):
+                    nxt=b if ii==len(P_)-1 else f'{a}|{b}|s{jj}'
+                    if nxt not in node_id: x,y=ex(P_[ii]); new_node(nxt,dict(node_type='multimarker',x=x,y=y))
+                    pieces.append((prev,nxt,None,None)); prev=nxt
+            elif L['ring'] is not None:                           # arc -> Bezier(s) of <= 90 degrees
                 (cx,cy),r=D.rings[L['ring']]; pa,pb=D.P[a],D.P[b]
                 t1=math.atan2(pa[1]-cy,pa[0]-cx); t2=math.atan2(pb[1]-cy,pb[0]-cx); dt=(t2-t1+math.pi)%(2*math.pi)-math.pi
                 m=max(1,int(math.ceil(abs(dt)/(math.pi/2)))); hstep=dt/m; kk=4/3*math.tan(hstep/4)*r; pieces=[]; prev=a
@@ -1227,8 +1345,12 @@ def main():
     ap.add_argument('--from-layout',default=None,help='redraw a saved NAME.layout.json (positions may have been edited) instead of computing a layout')
     ap.add_argument('--no-sbml-layout',action='store_true',help='do not write NAME.layout.sbml')
     ap.add_argument('--legend',action='store_true',help='add a legend at the bottom right of each drawing')
+    ap.add_argument('--ring-shape',choices=['auto','circle','stadium'],default='auto',
+                    help='cycles as circles, stadiums, or (auto) stadiums for cycles of more than --stadium-above metabolites')
+    ap.add_argument('--stadium-above',type=int,default=6)
     ap.add_argument('--escher',action='store_true',help='also write each drawing as an Escher map (NAME.escher.json)')
     a=ap.parse_args()
+    global RING_SHAPE,STADIUM_ABOVE; RING_SHAPE,STADIUM_ABOVE=a.ring_shape,a.stadium_above
     if a.from_layout:                                             # ---- reuse a saved layout
         saved=json.load(open(a.from_layout)); out=a.out or a.from_layout.replace('.layout.json','')+'_redrawn'
         ok=True; drawings=[]
@@ -1287,8 +1409,12 @@ def main():
                     k=next(i for i,L in enumerate(D.links) if other in (L['a'],L['b']) and R in (L['a'],L['b']))
                     into='cat' if D.links[k].get('cat') else D.links[k]['b']==other; D.links.pop(k); plant(D,other,R,into)
                 elif D.info.get(other,{}).get('kind')=='met': place_hubs(D,[other])
-            v=scale_until_clean(D)
+            cuts+=remove_crossings(D)                             # moved boxes: repair again before any scaling
+            fixed={n for n in D.P if D.info[n]['kind'] in ('core','dummy') or D.info[n].get('pinned')}|{e for L in D.links if L['ring'] is not None for e in (L['a'],L['b'])}
+            repair(D,fixed); v=scale_until_clean(D)
         pv=placement_violations(D); v['placement']=len(pv)
+        if getattr(D,'scaled',1.0)>2.0:                           # boxes became tiny relative to the drawing
+            print(f"  layout had to be enlarged {D.scaled:.1f}x to meet the rules - unreadable, not written"); v['enlarged']=1
         for R,other,role in pv[:5]: print(f"  inconsistent placement: {D.info[R]['label']} - {role} {D.info[other]['label']} on the wrong side")
         if any(v.values()): ok=False; print('  rules not met - drawing not written'); continue
         title=name+(f' \u2014 {cname}' if cname else '')
@@ -1298,7 +1424,7 @@ def main():
             export_escher(D,title,{r['id']:r for r in reactions},fn+'.escher.json',re.sub(r'[^A-Za-z0-9]+','_',os.path.basename(fn)))
             print('wrote',fn+'.escher.json')
     meta=dict(format='sbml-pathway-layout',version=1,source=os.path.basename(a.sbml),model=name,
-              settings=dict(max_cluster=a.max_cluster,show=a.show,hide=','.join(x for x in (a.hide,a.side) if x),legend=a.legend,escher=a.escher),
+              settings=dict(ring_shape=a.ring_shape,stadium_above=a.stadium_above,max_cluster=a.max_cluster,show=a.show,hide=','.join(x for x in (a.hide,a.side) if x),legend=a.legend,escher=a.escher),
               units='points; x right, y up; boxes are centred on (x, y)',drawings=saved)
     with open(out+'.layout.json','w') as fh: json.dump(meta,fh,indent=1,sort_keys=True)
     print('wrote',out+'.layout.json')

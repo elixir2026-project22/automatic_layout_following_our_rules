@@ -39,32 +39,6 @@
      "cat": false,
      "chain": null,
      "own": [
-      "M:2-oxoglutarate",
-      "R:R_rx_0aac87f3c2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:2-oxoglutarate",
-     "target": "R:R_rx_0aac87f3c2"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinyl-CoA",
-      "R:R_rx_0aac87f3c2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_0aac87f3c2",
-     "target": "M:succinyl-CoA"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
       "M:succinyl-CoA",
       "R:R_rx_2432fef40d"
      ],
@@ -91,84 +65,6 @@
      "cat": false,
      "chain": null,
      "own": [
-      "M:succinyl-CoA",
-      "R:R_rx_e5d9b4b716"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:succinyl-CoA",
-     "target": "R:R_rx_e5d9b4b716"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinate",
-      "R:R_rx_e5d9b4b716"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_e5d9b4b716",
-     "target": "M:succinate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinate",
-      "R:R_rx_2685246bd5"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:succinate",
-     "target": "R:R_rx_2685246bd5"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinyl-CoA",
-      "R:R_rx_2685246bd5"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_2685246bd5",
-     "target": "M:succinyl-CoA"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinate",
-      "R:R_rx_f64083be68"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:succinate",
-     "target": "R:R_rx_f64083be68"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinyl-CoA",
-      "R:R_rx_f64083be68"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_f64083be68",
-     "target": "M:succinyl-CoA"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
       "M:isocitrate",
       "R:R_rx_3726ad3344"
      ],
@@ -188,32 +84,6 @@
      "ring": 0,
      "side": false,
      "source": "R:R_rx_3726ad3344",
-     "target": "M:2-oxoglutarate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:isocitrate",
-      "R:R_rx_bf6797eac2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:isocitrate",
-     "target": "R:R_rx_bf6797eac2"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:2-oxoglutarate",
-      "R:R_rx_bf6797eac2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_bf6797eac2",
      "target": "M:2-oxoglutarate"
     },
     {
@@ -273,32 +143,6 @@
      "cat": false,
      "chain": null,
      "own": [
-      "M:succinate",
-      "R:R_rx_dee9b5c8f5"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:succinate",
-     "target": "R:R_rx_dee9b5c8f5"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:fumarate",
-      "R:R_rx_dee9b5c8f5"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_dee9b5c8f5",
-     "target": "M:fumarate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
       "M:oxaloacetate",
       "R:R_rx_681ee1ac1b"
      ],
@@ -325,32 +169,6 @@
      "cat": false,
      "chain": null,
      "own": [
-      "M:oxaloacetate",
-      "R:R_rx_b3a6f5a2c0"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:oxaloacetate",
-     "target": "R:R_rx_b3a6f5a2c0"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:citrate",
-      "R:R_rx_b3a6f5a2c0"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_b3a6f5a2c0",
-     "target": "M:citrate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
       "M:(S)-malate",
       "R:R_rx_6d4d806e97"
      ],
@@ -370,58 +188,6 @@
      "ring": 0,
      "side": false,
      "source": "R:R_rx_6d4d806e97",
-     "target": "M:oxaloacetate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:(S)-malate",
-      "R:R_rx_d24528dbec"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:(S)-malate",
-     "target": "R:R_rx_d24528dbec"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:oxaloacetate",
-      "R:R_rx_d24528dbec"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_d24528dbec",
-     "target": "M:oxaloacetate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:(S)-malate",
-      "R:R_rx_b53605d7d2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:(S)-malate",
-     "target": "R:R_rx_b53605d7d2"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:oxaloacetate",
-      "R:R_rx_b53605d7d2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_b53605d7d2",
      "target": "M:oxaloacetate"
     },
     {
@@ -505,6 +271,214 @@
     {
      "arrow": true,
      "cat": false,
+     "chain": null,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_0aac87f3c2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:2-oxoglutarate",
+     "target": "R:R_rx_0aac87f3c2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:succinyl-CoA",
+      "R:R_rx_0aac87f3c2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_0aac87f3c2",
+     "target": "M:succinyl-CoA"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_2685246bd5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:succinate",
+     "target": "R:R_rx_2685246bd5"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:succinyl-CoA",
+      "R:R_rx_2685246bd5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_2685246bd5",
+     "target": "M:succinyl-CoA"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_f64083be68"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:succinate",
+     "target": "R:R_rx_f64083be68"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:succinyl-CoA",
+      "R:R_rx_f64083be68"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_f64083be68",
+     "target": "M:succinyl-CoA"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:isocitrate",
+      "R:R_rx_bf6797eac2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:isocitrate",
+     "target": "R:R_rx_bf6797eac2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:2-oxoglutarate",
+      "R:R_rx_bf6797eac2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_bf6797eac2",
+     "target": "M:2-oxoglutarate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:succinate",
+      "R:R_rx_dee9b5c8f5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:succinate",
+     "target": "R:R_rx_dee9b5c8f5"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:fumarate",
+      "R:R_rx_dee9b5c8f5"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_dee9b5c8f5",
+     "target": "M:fumarate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:oxaloacetate",
+      "R:R_rx_b3a6f5a2c0"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:oxaloacetate",
+     "target": "R:R_rx_b3a6f5a2c0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:citrate",
+      "R:R_rx_b3a6f5a2c0"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b3a6f5a2c0",
+     "target": "M:citrate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:(S)-malate",
+      "R:R_rx_d24528dbec"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(S)-malate",
+     "target": "R:R_rx_d24528dbec"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:oxaloacetate",
+      "R:R_rx_d24528dbec"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_d24528dbec",
+     "target": "M:oxaloacetate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:(S)-malate",
+      "R:R_rx_b53605d7d2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "M:(S)-malate",
+     "target": "R:R_rx_b53605d7d2"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "M:oxaloacetate",
+      "R:R_rx_b53605d7d2"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_b53605d7d2",
+     "target": "M:oxaloacetate"
+    },
+    {
+     "arrow": true,
+     "cat": false,
      "chain": 100044,
      "own": [
       "M:(3S)-citryl-CoA",
@@ -553,19 +527,6 @@
      "side": false,
      "source": "R:R_rx_12438e6346",
      "target": "M:oxaloacetate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:citrate",
-      "R:R_rx_611050f494"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:citrate",
-     "target": "R:R_rx_611050f494"
     },
     {
      "arrow": true,
@@ -663,6 +624,19 @@
      "cat": false,
      "chain": null,
      "own": [
+      "A:R_rx_12438e6346:0",
+      "R:R_rx_12438e6346"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_12438e6346",
+     "target": "A:R_rx_12438e6346:0"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
       "A:R_rx_2432fef40d:1",
       "R:R_rx_2432fef40d"
      ],
@@ -728,6 +702,19 @@
      "cat": false,
      "chain": null,
      "own": [
+      "A:R_rx_e568d43995:1",
+      "R:R_rx_e568d43995"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_e568d43995",
+     "target": "A:R_rx_e568d43995:1"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
       "A:R_rx_e5d9b4b716:0",
       "R:R_rx_e5d9b4b716"
      ],
@@ -754,26 +741,39 @@
      "cat": false,
      "chain": null,
      "own": [
-      "A:R_rx_e568d43995:1",
-      "R:R_rx_e568d43995"
+      "A:cut0",
+      "R:R_rx_611050f494"
      ],
      "ring": null,
      "side": false,
-     "source": "R:R_rx_e568d43995",
-     "target": "A:R_rx_e568d43995:1"
+     "source": "A:cut0",
+     "target": "R:R_rx_611050f494"
     },
     {
      "arrow": true,
      "cat": false,
      "chain": null,
      "own": [
-      "A:R_rx_12438e6346:0",
-      "R:R_rx_12438e6346"
+      "A:cut1",
+      "R:R_rx_e5d9b4b716"
      ],
      "ring": null,
      "side": false,
-     "source": "R:R_rx_12438e6346",
-     "target": "A:R_rx_12438e6346:0"
+     "source": "A:cut1",
+     "target": "R:R_rx_e5d9b4b716"
+    },
+    {
+     "arrow": true,
+     "cat": false,
+     "chain": null,
+     "own": [
+      "A:cut2",
+      "R:R_rx_e5d9b4b716"
+     ],
+     "ring": null,
+     "side": false,
+     "source": "R:R_rx_e5d9b4b716",
+     "target": "A:cut2"
     }
    ],
    "name": "",
@@ -787,8 +787,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 9250.40705841237,
-     "y": -1860.4033174735455
+     "x": 624.8035710348902,
+     "y": -46.69147563283627
     },
     {
      "h": 13.5,
@@ -799,8 +799,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 7641.345545793179,
-     "y": -12145.766075682124
+     "x": 267.227672731533,
+     "y": -1231.7477793574444
     },
     {
      "h": 13.5,
@@ -811,8 +811,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 8921.561218159279,
-     "y": -4052.905645433341
+     "x": 701.2891868299449,
+     "y": -234.86778085126065
     },
     {
      "h": 13.5,
@@ -823,8 +823,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 47.942,
-     "x": 13593.888403538465,
-     "y": -6244.755543782679
+     "x": 360.39212905793755,
+     "y": -110.19644039928693
     },
     {
      "h": 13.5,
@@ -835,8 +835,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 9258.43519306617,
-     "y": -4885.753542505231
+     "x": 604.260211967481,
+     "y": -341.85442587731984
     },
     {
      "h": 13.5,
@@ -847,8 +847,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 8919.626433409792,
-     "y": -3379.814116612992
+     "x": 795.3148966484322,
+     "y": -256.0751166178954
     },
     {
      "h": 13.5,
@@ -859,8 +859,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 37.577,
-     "x": 9018.578363961333,
-     "y": -2888.0207719471373
+     "x": 750.5399523212346,
+     "y": -140.31906387340143
     },
     {
      "h": 13.5,
@@ -871,8 +871,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 58.441,
-     "x": 6755.056250771613,
-     "y": -11654.91872510325
+     "x": 682.9308418527571,
+     "y": -1338.2101830393726
     },
     {
      "h": 13.5,
@@ -883,8 +883,44 @@
      "sbml_type": "species",
      "sub": null,
      "w": 70.812,
-     "x": 7882.078612358928,
-     "y": -11737.843974284893
+     "x": 666.257976721432,
+     "y": -1206.9863973267402
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut0",
+     "kind": "alias",
+     "label": "citrate",
+     "sbml_id": "M_mt_7a3b1a04d2",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 33.569,
+     "x": 629.7744001877817,
+     "y": -213.570860494466
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut1",
+     "kind": "alias",
+     "label": "succinyl-CoA",
+     "sbml_id": "M_mt_70122f9a7f",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 57.461,
+     "x": 619.2786980606967,
+     "y": -1315.116457796179
+    },
+    {
+     "h": 13.5,
+     "id": "A:cut2",
+     "kind": "alias",
+     "label": "succinate",
+     "sbml_id": "M_mt_92e136de2e",
+     "sbml_type": "species",
+     "sub": null,
+     "w": 45.089,
+     "x": 734.7861131379472,
+     "y": -1217.1797741537043
     },
     {
      "h": 16.5,
@@ -895,8 +931,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 72.974,
-     "x": 8514.113837381532,
-     "y": -2283.0643626859332
+     "x": 691.2932828122069,
+     "y": -124.48641246541524
     },
     {
      "h": 19.5,
@@ -907,8 +943,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 69.153,
-     "x": 11617.821867027187,
-     "y": -6998.0679552072515
+     "x": 298.1786460941896,
+     "y": -430.7992073393387
     },
     {
      "h": 19.5,
@@ -919,8 +955,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 92.374,
-     "x": 3681.907101218907,
-     "y": -9886.504711635102
+     "x": 691.7596509839213,
+     "y": -1442.5403789212053
     },
     {
      "h": 16.5,
@@ -931,8 +967,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 44.619,
-     "x": 12243.45328230099,
-     "y": -9358.312796894921
+     "x": 179.26450000000003,
+     "y": -726.9273478434446
     },
     {
      "h": 16.5,
@@ -943,8 +979,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 43.253,
-     "x": 7144.422333297763,
-     "y": -11884.126647056208
+     "x": 282.127,
+     "y": -1352.613
     },
     {
      "h": 16.5,
@@ -955,8 +991,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 57.274,
-     "x": 12840.5759921139,
-     "y": -6469.876040467067
+     "x": 298.1786460941896,
+     "y": -97.36541153563098
     },
     {
      "h": 19.5,
@@ -967,8 +1003,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 82.142,
-     "x": 4639.095543603526,
-     "y": -4458.019300391026
+     "x": 771.585825,
+     "y": -775.6773478434445
     },
     {
      "h": 19.5,
@@ -979,8 +1015,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 48.641,
-     "x": 7395.209818008911,
-     "y": -3454.875742271275
+     "x": 769.9162101558104,
+     "y": -430.7992073393386
     },
     {
      "h": 19.5,
@@ -991,8 +1027,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 62.644,
-     "x": 11108.512534798909,
-     "y": -9886.504711635107
+     "x": 296.50903125,
+     "y": -775.6773478434446
     },
     {
      "h": 16.5,
@@ -1003,8 +1039,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 55.001,
-     "x": 6216.52531726296,
-     "y": -9559.96304043402
+     "x": 444.047,
+     "y": -1074.054
     },
     {
      "h": 19.5,
@@ -1015,8 +1051,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 63.688,
-     "x": 3172.597768990632,
-     "y": -6998.067955207248
+     "x": 771.585825,
+     "y": -1120.6215439696662
     },
     {
      "h": 19.5,
@@ -1027,8 +1063,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 82.403,
-     "x": 10151.324092414297,
-     "y": -4458.019300391026
+     "x": 534.047428125,
+     "y": -221.37499999999997
     },
     {
      "h": 19.5,
@@ -1039,8 +1075,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 64.144,
-     "x": 8861.707592621802,
-     "y": -11771.797909943207
+     "x": 296.50903125,
+     "y": -1120.6215439696662
     },
     {
      "h": 19.5,
@@ -1051,8 +1087,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 81.405,
-     "x": 5928.712043396016,
-     "y": -11771.797909943207
+     "x": 376.33520526607884,
+     "y": -1442.5403789212055
     },
     {
      "h": 20.25,
@@ -1063,8 +1099,8 @@
      "sbml_type": "reaction",
      "sub": "NAD+ + CoA \u2192 NADH + CO2",
      "w": 136.003,
-     "x": 5547.177963526317,
-     "y": -9945.026990321998
+     "x": 534.0474281250002,
+     "y": -1822.7209921875
     },
     {
      "h": 13.0,
@@ -1075,8 +1111,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 61.911,
-     "x": 9180.691051615113,
-     "y": -1837.7976971273952
+     "x": 691.2932828122069,
+     "y": -75.73641246541524
     },
     {
      "h": 13.0,
@@ -1087,8 +1123,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 131.163,
-     "x": 7395.209818008911,
-     "y": -12030.381034756383
+     "x": 298.1786460941897,
+     "y": -1293.0275864106616
     },
     {
      "h": 20.25,
@@ -1099,8 +1135,8 @@
      "sbml_type": "reaction",
      "sub": "ATP + CoA \u2192 phosphate + ADP",
      "w": 131.493,
-     "x": 7395.209818008911,
-     "y": -12362.193904272657
+     "x": 151.21891158469944,
+     "y": -1310.5443336229764
     },
     {
      "h": 20.25,
@@ -1111,8 +1147,8 @@
      "sbml_type": "reaction",
      "sub": "NAD+ \u2192 NADH + CO2",
      "w": 125.229,
-     "x": 3172.5977689906313,
-     "y": -8487.188821820402
+     "x": 769.9162101558104,
+     "y": -1293.0275864106613
     },
     {
      "h": 13.0,
@@ -1123,8 +1159,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 60.629,
-     "x": 6265.2029655027,
-     "y": -9089.318114644175
+     "x": 534.047428125,
+     "y": -1074.0540774926262
     },
     {
      "h": 20.25,
@@ -1135,8 +1171,8 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 77.692,
-     "x": 5928.712043396016,
-     "y": -3713.4588670844464
+     "x": 771.585825,
+     "y": -603.2052497803338
     },
     {
      "h": 20.25,
@@ -1147,8 +1183,8 @@
      "sbml_type": "reaction",
      "sub": "a quinone \u2192 a quinol",
      "w": 97.703,
-     "x": 10151.324092414297,
-     "y": -11027.237476636634
+     "x": 296.50903125,
+     "y": -948.1494459065556
     },
     {
      "h": 20.25,
@@ -1159,8 +1195,8 @@
      "sbml_type": "reaction",
      "sub": "ATP + CoA \u2192 phosphate + ADP",
      "w": 98.135,
-     "x": 7623.596015389438,
-     "y": -2933.4573356525457
+     "x": 641.7217778109379,
+     "y": -191.0035480891462
     },
     {
      "h": 20.25,
@@ -1171,8 +1207,8 @@
      "sbml_type": "reaction",
      "sub": "phosphate + ADP \u2192 ATP + CoA",
      "w": 97.803,
-     "x": 8861.707592621804,
-     "y": -3713.4588670844496
+     "x": 691.7596509839213,
+     "y": -281.2864148287946
     },
     {
      "h": 13.0,
@@ -1183,8 +1219,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 74.489,
-     "x": 12243.45328230099,
-     "y": -9886.504711635107
+     "x": 179.26450000000003,
+     "y": -775.6773478434446
     },
     {
      "h": 20.25,
@@ -1195,8 +1231,8 @@
      "sbml_type": "reaction",
      "sub": "NADP+ \u2192 NADPH",
      "w": 121.213,
-     "x": 11108.512534798909,
-     "y": -5598.752065392549
+     "x": 376.33520526607884,
+     "y": -281.2864148287945
     },
     {
      "h": 13.0,
@@ -1207,8 +1243,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 65.711,
-     "x": 12840.5759921139,
-     "y": -6998.0679552072515
+     "x": 224.26828349328667,
+     "y": -176.73008612483815
     },
     {
      "h": 20.25,
@@ -1219,8 +1255,8 @@
      "sbml_type": "reaction",
      "sub": "H2O \u2192 CoA",
      "w": 78.374,
-     "x": 8627.66809469378,
-     "y": -4356.477102902193
+     "x": 657.2345565294886,
+     "y": -320.1710885822479
     },
     {
      "h": 20.25,
@@ -1231,8 +1267,8 @@
      "sbml_type": "reaction",
      "sub": "NAD+ \u2192 NADH",
      "w": 137.574,
-     "x": 12386.33734954649,
-     "y": -4860.999564620853
+     "x": 309.9407928537082,
+     "y": -206.50819607215354
     },
     {
      "h": 20.25,
@@ -1243,8 +1279,8 @@
      "sbml_type": "reaction",
      "sub": "NADP+ \u2192 NADPH + CO2",
      "w": 129.45,
-     "x": 4697.583852813539,
-     "y": -8218.292630037486
+     "x": 420.3903551062119,
+     "y": -1251.366133581372
     },
     {
      "h": 20.25,
@@ -1255,8 +1291,8 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 76.844,
-     "x": 11617.821867027187,
-     "y": -8487.188821820406
+     "x": 296.50903125,
+     "y": -603.2052497803342
     },
     {
      "h": 20.25,
@@ -1267,8 +1303,8 @@
      "sbml_type": "reaction",
      "sub": "a quinone \u2192 a quinol",
      "w": 123.999,
-     "x": 9885.845684378603,
-     "y": -6304.659100611949
+     "x": 618.0108664471079,
+     "y": -553.4791311029676
     },
     {
      "h": 20.25,
@@ -1279,8 +1315,8 @@
      "sbml_type": "reaction",
      "sub": "FAD \u2192 FADH2",
      "w": 97.703,
-     "x": 9508.40722943998,
-     "y": -10261.038995447594
+     "x": 420.50903125,
+     "y": -948.1494459065556
     },
     {
      "h": 13.0,
@@ -1291,8 +1327,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 88.72,
-     "x": 9004.233136898638,
-     "y": -2933.4573356525457
+     "x": 755.006923437207,
+     "y": -176.86141246541524
     },
     {
      "h": 13.0,
@@ -1303,8 +1339,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 131.163,
-     "x": 7395.209818008911,
-     "y": -11737.843974284893
+     "x": 671.5358094426243,
+     "y": -1248.525579979375
     },
     {
      "h": 20.25,
@@ -1315,8 +1351,8 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 77.692,
-     "x": 3681.907101218907,
-     "y": -5598.752065392549
+     "x": 771.585825,
+     "y": -948.1494459065552
     },
     {
      "h": 20.25,
@@ -1327,8 +1363,8 @@
      "sbml_type": "reaction",
      "sub": "GTP + CoA \u2192 GDP + phosphate",
      "w": 132.129,
-     "x": 7395.209818008911,
-     "y": -11406.031104768625
+     "x": 8.231061791681896,
+     "y": -1327.5876552349587
     },
     {
      "h": 20.25,
@@ -1339,16 +1375,18 @@
      "sbml_type": "reaction",
      "sub": "2 oxidized ferredoxin + CoA \u2192 2 reduced ferredoxin + CO2",
      "w": 177.869,
-     "x": 4639.095543603526,
-     "y": -11027.23747663663
+     "x": 534.0474281250001,
+     "y": -1502.45179375
     }
    ],
    "rings": [
     {
-     "cx": 7395.209818008911,
-     "cy": -7742.628388513827,
+     "cx": 534.047428125,
+     "cy": -861.913396875,
+     "hl": 403.0,
      "id": 0,
-     "r": 4287.752646242554
+     "r": 237.53839687500002,
+     "shape": "stadium"
     }
    ],
    "title": "citric acid cycle"
@@ -1361,7 +1399,9 @@
   "hide": "",
   "legend": false,
   "max_cluster": 60,
-  "show": ""
+  "ring_shape": "auto",
+  "show": "",
+  "stadium_above": 6
  },
  "source": "brenda_citric-acid-cycle.xml",
  "units": "points; x right, y up; boxes are centred on (x, y)",

@@ -8,146 +8,146 @@
  },
  {
   "canvas": {
-   "height": 566.47,
-   "width": 736.772,
+   "height": 963.386,
+   "width": 1012.967,
    "x": 0.0,
    "y": 0.0
   },
   "nodes": {
    "1": {
     "bigg_id": "mt_23258e632a",
-    "label_x": 211.745,
-    "label_y": 417.377,
+    "label_x": 333.751,
+    "label_y": 787.923,
     "name": "L-serine",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 227.082,
-    "y": 398.627
+    "x": 349.088,
+    "y": 769.173
    },
    "10": {
     "bigg_id": "mt_4fd822ed16",
-    "label_x": 182.257,
-    "label_y": 298.689,
+    "label_x": 240.384,
+    "label_y": 637.479,
     "name": "glycine",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 199.016,
-    "y": 278.439
+    "x": 257.143,
+    "y": 617.229
    },
    "11": {
     "bigg_id": "mt_3aeb164db4",
-    "label_x": 263.154,
-    "label_y": 406.289,
+    "label_x": 461.612,
+    "label_y": 803.205,
     "name": "tetrahydrofolate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 310.311,
-    "y": 384.539
+    "x": 508.769,
+    "y": 781.455
    },
    "12": {
     "node_type": "midmarker",
-    "x": 199.016,
-    "y": 338.439
+    "x": 257.143,
+    "y": 677.228
    },
    "13": {
     "node_type": "midmarker",
-    "x": 199.016,
-    "y": 115.85
+    "x": 257.143,
+    "y": 173.977
    },
    "14": {
     "node_type": "midmarker",
-    "x": 421.605,
-    "y": 338.439
+    "x": 760.395,
+    "y": 677.228
    },
    "15": {
     "node_type": "midmarker",
-    "x": 421.605,
-    "y": 115.85
+    "x": 760.395,
+    "y": 173.977
    },
    "16": {
     "node_type": "midmarker",
-    "x": 310.311,
-    "y": 431.039
+    "x": 508.769,
+    "y": 827.955
    },
    "2": {
     "bigg_id": "mt_4fd822ed16",
-    "label_x": 491.736,
-    "label_y": 273.035,
+    "label_x": 869.797,
+    "label_y": 572.553,
     "name": "glycine",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 505.759,
-    "y": 254.285
+    "x": 883.82,
+    "y": 553.803
    },
    "3": {
     "bigg_id": "mt_69b688237d",
-    "label_x": 275.509,
-    "label_y": 367.021,
+    "label_x": 627.755,
+    "label_y": 794.902,
     "name": "Formiminoglycine",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 309.225,
-    "y": 348.271
+    "x": 661.471,
+    "y": 776.152
    },
    "4": {
     "bigg_id": "mt_60b2d749d1",
-    "label_x": 130.171,
-    "label_y": 518.47,
+    "label_x": 328.629,
+    "label_y": 915.386,
     "name": "beta-glycinamide ribonucleotide",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 191.352,
-    "y": 499.72
+    "x": 389.81,
+    "y": 896.636
    },
    "5": {
     "bigg_id": "mt_be5abbf66d",
-    "label_x": 545.51,
-    "label_y": 307.718,
+    "label_x": 525.138,
+    "label_y": 826.23,
     "name": "formylglycinamide ribonucleotide",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 609.141,
-    "y": 288.968
+    "x": 588.769,
+    "y": 807.48
    },
    "6": {
     "bigg_id": "mt_049fa82a22",
-    "label_x": 253.835,
-    "label_y": 500.039,
+    "label_x": 452.293,
+    "label_y": 896.955,
     "name": "10-formyltetrahydrofolate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 310.311,
-    "y": 479.789
+    "x": 508.769,
+    "y": 876.705
    },
    "7": {
     "bigg_id": "mt_2c28813661",
-    "label_x": 224.616,
+    "label_x": 423.074,
     "label_y": 91.5,
     "name": "5,10-methenyltetrahydrofolate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 310.311,
+    "x": 508.769,
     "y": 69.75
    },
    "8": {
     "bigg_id": "mt_42cdafbea5",
     "label_x": 64.0,
-    "label_y": 248.894,
+    "label_y": 447.353,
     "name": "5,10-methylenetetrahydrofolate",
     "node_is_primary": true,
     "node_type": "metabolite",
     "x": 152.916,
-    "y": 227.144
+    "y": 425.603
    },
    "9": {
     "bigg_id": "mt_368a0dc30c",
-    "label_x": 383.36,
-    "label_y": 248.894,
+    "label_x": 780.276,
+    "label_y": 447.353,
     "name": "5-formimidoyltetrahydrofolate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 467.705,
-    "y": 227.144
+    "x": 864.621,
+    "y": 425.603
    }
   },
   "reactions": {
@@ -155,8 +155,8 @@
     "bigg_id": "rx_26909b07d6",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 138.262,
-    "label_y": 341.439,
+    "label_x": 196.389,
+    "label_y": 680.228,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -185,11 +185,11 @@
      "1": {
       "b1": {
        "x": 152.916,
-       "y": 268.888
+       "y": 519.981
       },
       "b2": {
-       "x": 169.499,
-       "y": 308.922
+       "x": 190.408,
+       "y": 610.493
       },
       "from_node_id": "8",
       "to_node_id": "12"
@@ -208,12 +208,12 @@
      },
      "2": {
       "b1": {
-       "x": 228.533,
-       "y": 367.956
+       "x": 323.878,
+       "y": 743.964
       },
       "b2": {
-       "x": 268.567,
-       "y": 384.539
+       "x": 414.391,
+       "y": 781.455
       },
       "from_node_id": "12",
       "to_node_id": "11"
@@ -224,8 +224,8 @@
     "bigg_id": "rx_5d5a94a817",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 134.382,
-    "label_y": 118.85,
+    "label_x": 192.509,
+    "label_y": 176.977,
     "metabolites": [
      {
       "bigg_id": "mt_410bd09215",
@@ -254,22 +254,22 @@
      "3": {
       "b1": {
        "x": 152.916,
-       "y": 185.401
+       "y": 331.225
       },
       "b2": {
-       "x": 169.499,
-       "y": 145.367
+       "x": 190.408,
+       "y": 240.712
       },
       "from_node_id": "8",
       "to_node_id": "13"
      },
      "4": {
       "b1": {
-       "x": 228.533,
-       "y": 86.333
+       "x": 323.878,
+       "y": 107.242
       },
       "b2": {
-       "x": 268.567,
+       "x": 414.391,
        "y": 69.75
       },
       "from_node_id": "13",
@@ -281,8 +281,8 @@
     "bigg_id": "rx_7e337dc414",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 366.3,
-    "label_y": 341.439,
+    "label_x": 705.09,
+    "label_y": 680.228,
     "metabolites": [
      {
       "bigg_id": "mt_368a0dc30c",
@@ -318,24 +318,24 @@
      },
      "5": {
       "b1": {
-       "x": 467.705,
-       "y": 268.888
+       "x": 864.621,
+       "y": 519.981
       },
       "b2": {
-       "x": 451.123,
-       "y": 308.922
+       "x": 827.13,
+       "y": 610.493
       },
       "from_node_id": "9",
       "to_node_id": "14"
      },
      "6": {
       "b1": {
-       "x": 392.088,
-       "y": 367.956
+       "x": 693.659,
+       "y": 743.964
       },
       "b2": {
-       "x": 352.054,
-       "y": 384.539
+       "x": 603.147,
+       "y": 781.455
       },
       "from_node_id": "14",
       "to_node_id": "11"
@@ -346,8 +346,8 @@
     "bigg_id": "rx_8963fc40e6",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 360.258,
-    "label_y": 118.85,
+    "label_x": 699.048,
+    "label_y": 176.977,
     "metabolites": [
      {
       "bigg_id": "mt_368a0dc30c",
@@ -367,23 +367,23 @@
     "segments": {
      "7": {
       "b1": {
-       "x": 467.705,
-       "y": 185.401
+       "x": 864.621,
+       "y": 331.225
       },
       "b2": {
-       "x": 451.123,
-       "y": 145.367
+       "x": 827.13,
+       "y": 240.712
       },
       "from_node_id": "9",
       "to_node_id": "15"
      },
      "8": {
       "b1": {
-       "x": 392.088,
-       "y": 86.333
+       "x": 693.659,
+       "y": 107.242
       },
       "b2": {
-       "x": 352.054,
+       "x": 603.147,
        "y": 69.75
       },
       "from_node_id": "15",
@@ -395,8 +395,8 @@
     "bigg_id": "rx_a191bd20d2",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 246.005,
-    "label_y": 434.039,
+    "label_x": 444.463,
+    "label_y": 830.955,
     "metabolites": [
      {
       "bigg_id": "mt_049fa82a22",

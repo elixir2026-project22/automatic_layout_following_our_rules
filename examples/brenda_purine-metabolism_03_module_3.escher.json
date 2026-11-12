@@ -8,196 +8,196 @@
  },
  {
   "canvas": {
-   "height": 6327.057,
-   "width": 5840.016,
+   "height": 765.0,
+   "width": 833.054,
    "x": 0.0,
    "y": 0.0
   },
   "nodes": {
    "1": {
     "bigg_id": "mt_6834bd094a",
-    "label_x": 1010.286,
-    "label_y": 793.313,
+    "label_x": 170.816,
+    "label_y": 116.225,
     "name": "D-ribose",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 1026.478,
-    "y": 774.563
+    "x": 187.008,
+    "y": 97.475
    },
    "10": {
     "bigg_id": "mt_2fd3f5930f",
-    "label_x": 2080.744,
-    "label_y": 3183.778,
+    "label_x": 326.845,
+    "label_y": 402.75,
     "name": "dAMP",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 2094.2,
-    "y": 3163.528
+    "x": 340.301,
+    "y": 382.5
    },
    "11": {
     "bigg_id": "mt_9195e86598",
-    "label_x": 1990.209,
-    "label_y": 5247.297,
+    "label_x": 318.913,
+    "label_y": 612.25,
     "name": "dATP",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 2002.264,
-    "y": 5227.047
+    "x": 330.968,
+    "y": 592.0
    },
    "12": {
     "bigg_id": "mt_b91c3ffa6f",
-    "label_x": 1037.04,
-    "label_y": 3183.778,
+    "label_x": 206.44,
+    "label_y": 402.75,
     "name": "deoxyinosine",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 1066.571,
-    "y": 3163.528
+    "x": 235.971,
+    "y": 382.5
    },
    "13": {
     "bigg_id": "mt_da5826e6ef",
-    "label_x": 5696.382,
+    "label_x": 689.419,
     "label_y": 88.5,
     "name": "formate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 5714.853,
+    "x": 707.89,
     "y": 68.25
    },
    "14": {
     "bigg_id": "mt_de46869ffd",
-    "label_x": 1957.33,
-    "label_y": 6279.057,
+    "label_x": 286.034,
+    "label_y": 717.0,
     "name": "thioredoxin disulfide",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 2002.264,
-    "y": 6258.807
+    "x": 330.968,
+    "y": 696.75
    },
    "15": {
     "node_type": "midmarker",
-    "x": 1996.859,
-    "y": 3679.408
+    "x": 330.419,
+    "y": 434.875
    },
    "16": {
     "node_type": "midmarker",
-    "x": 1571.259,
-    "y": 584.13
+    "x": 287.21,
+    "y": 120.625
    },
    "17": {
     "node_type": "midmarker",
-    "x": 1640.642,
-    "y": 1615.889
+    "x": 294.254,
+    "y": 225.375
    },
    "18": {
     "node_type": "midmarker",
-    "x": 4323.426,
-    "y": 584.13
+    "x": 566.625,
+    "y": 120.625
    },
    "19": {
     "node_type": "midmarker",
-    "x": 2002.264,
-    "y": 5742.927
+    "x": 330.968,
+    "y": 644.375
    },
    "2": {
     "bigg_id": "mt_4875ee172c",
-    "label_x": 836.1,
-    "label_y": 1154.651,
+    "label_x": 131.247,
+    "label_y": 179.23,
     "name": "2-deoxy-D-ribose 1-phosphate",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 893.487,
-    "y": 1135.901
+    "x": 188.634,
+    "y": 160.48
    },
    "20": {
     "node_type": "midmarker",
     "x": 142.115,
-    "y": 584.13
+    "y": 120.625
    },
    "21": {
     "node_type": "midmarker",
-    "x": 2964.706,
-    "y": 584.13
+    "x": 428.68,
+    "y": 120.625
    },
    "22": {
     "node_type": "midmarker",
-    "x": 1782.727,
-    "y": 4711.168
+    "x": 308.679,
+    "y": 539.625
    },
    "23": {
     "node_type": "midmarker",
-    "x": 2180.036,
-    "y": 2647.649
+    "x": 349.016,
+    "y": 330.125
    },
    "24": {
     "node_type": "midmarker",
-    "x": 5714.853,
-    "y": 584.13
+    "x": 707.89,
+    "y": 120.625
    },
    "25": {
     "node_type": "midmarker",
-    "x": 1055.066,
-    "y": 2647.649
+    "x": 234.803,
+    "y": 330.125
    },
    "26": {
     "node_type": "multimarker",
-    "x": 5372.445,
-    "y": 1100.009
+    "x": 673.127,
+    "y": 173.0
    },
    "27": {
     "node_type": "multimarker",
-    "x": 5016.728,
-    "y": 1615.889
+    "x": 637.013,
+    "y": 225.375
    },
    "28": {
     "node_type": "multimarker",
-    "x": 4651.034,
-    "y": 2131.769
+    "x": 599.886,
+    "y": 277.75
    },
    "29": {
     "node_type": "multimarker",
-    "x": 4277.072,
-    "y": 2647.649
+    "x": 561.919,
+    "y": 330.125
    },
    "3": {
     "bigg_id": "mt_8edfd22915",
-    "label_x": 3122.307,
-    "label_y": 1247.736,
+    "label_x": 397.195,
+    "label_y": 204.844,
     "name": "alpha-D-ribose 1-phosphate",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 3175.159,
-    "y": 1228.986
+    "x": 450.047,
+    "y": 186.094
    },
    "30": {
     "node_type": "multimarker",
-    "x": 3896.422,
-    "y": 3163.528
+    "x": 523.273,
+    "y": 382.5
    },
    "31": {
     "node_type": "multimarker",
-    "x": 3510.506,
-    "y": 3679.408
+    "x": 484.093,
+    "y": 434.875
    },
    "32": {
     "node_type": "multimarker",
-    "x": 3120.577,
-    "y": 4195.288
+    "x": 444.505,
+    "y": 487.25
    },
    "33": {
     "node_type": "multimarker",
-    "x": 2727.753,
-    "y": 4711.168
+    "x": 404.623,
+    "y": 539.625
    },
    "4": {
     "bigg_id": "mt_488dd8bd43",
-    "label_x": 1613.12,
-    "label_y": 2152.019,
+    "label_x": 254.087,
+    "label_y": 298.0,
     "name": "2'-deoxyadenosine",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 1654.716,
-    "y": 2131.769
+    "x": 295.683,
+    "y": 277.75
    },
    "5": {
     "bigg_id": "mt_15981d019b",
@@ -211,43 +211,43 @@
    },
    "6": {
     "bigg_id": "mt_d3a4558c71",
-    "label_x": 4320.127,
-    "label_y": 1120.259,
+    "label_x": 551.369,
+    "label_y": 193.25,
     "name": "Inosine",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 4336.734,
-    "y": 1100.009
+    "x": 567.976,
+    "y": 173.0
    },
    "7": {
     "bigg_id": "mt_1e6bef36f9",
-    "label_x": 1733.282,
-    "label_y": 980.963,
+    "label_x": 280.442,
+    "label_y": 174.772,
     "name": "adenine",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 1751.901,
-    "y": 960.713
+    "x": 299.061,
+    "y": 154.522
    },
    "8": {
     "bigg_id": "mt_9a15888f59",
-    "label_x": 2941.273,
+    "label_x": 405.247,
     "label_y": 88.5,
     "name": "adenosine",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 2964.706,
+    "x": 428.68,
     "y": 68.25
    },
    "9": {
     "bigg_id": "mt_b748f088e6",
-    "label_x": 1879.052,
-    "label_y": 4215.538,
+    "label_x": 306.723,
+    "label_y": 507.5,
     "name": "dADP",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 1892.113,
-    "y": 4195.288
+    "x": 319.784,
+    "y": 487.25
    }
   },
   "reactions": {
@@ -255,8 +255,8 @@
     "bigg_id": "rx_1a1985edf3",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 1974.234,
-    "label_y": 3682.408,
+    "label_x": 307.794,
+    "label_y": 437.875,
     "metabolites": [
      {
       "bigg_id": "mt_2fd3f5930f",
@@ -296,8 +296,8 @@
     "bigg_id": "rx_f1f248fe2c",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 5652.689,
-    "label_y": 587.13,
+    "label_x": 645.726,
+    "label_y": 123.625,
     "metabolites": [
      {
       "bigg_id": "mt_82e3f482bf",
@@ -389,8 +389,8 @@
     "bigg_id": "rx_f550124ef6",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 1027.294,
-    "label_y": 2650.649,
+    "label_x": 207.031,
+    "label_y": 333.125,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -430,8 +430,8 @@
     "bigg_id": "rx_28809f586e",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 1528.631,
-    "label_y": 587.13,
+    "label_x": 244.582,
+    "label_y": 123.625,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -459,7 +459,7 @@
       "from_node_id": "8",
       "to_node_id": "16"
      },
-     "32": {
+     "31": {
       "b1": null,
       "b2": null,
       "from_node_id": "16",
@@ -477,8 +477,8 @@
     "bigg_id": "rx_52e4d1571a",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 1581.799,
-    "label_y": 1618.889,
+    "label_x": 235.411,
+    "label_y": 228.375,
     "metabolites": [
      {
       "bigg_id": "mt_1e6bef36f9",
@@ -500,7 +500,7 @@
     "name": "purine-nucleoside phosphorylase ( \u2192 phosphate)",
     "reversibility": true,
     "segments": {
-     "33": {
+     "32": {
       "b1": null,
       "b2": null,
       "from_node_id": "2",
@@ -524,8 +524,8 @@
     "bigg_id": "rx_74989996af",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 4284.324,
-    "label_y": 587.13,
+    "label_x": 527.523,
+    "label_y": 123.625,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -565,8 +565,8 @@
     "bigg_id": "rx_NODE_4549",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 1940.1,
-    "label_y": 5745.927,
+    "label_x": 268.804,
+    "label_y": 647.375,
     "metabolites": [
      {
       "bigg_id": "mt_9195e86598",
@@ -607,7 +607,7 @@
     "gene_reaction_rule": "",
     "genes": [],
     "label_x": 79.648,
-    "label_y": 587.13,
+    "label_y": 123.625,
     "metabolites": [
      {
       "bigg_id": "mt_15981d019b",
@@ -647,8 +647,8 @@
     "bigg_id": "rx_bad7d5c6fc",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 2905.863,
-    "label_y": 587.13,
+    "label_x": 369.837,
+    "label_y": 123.625,
     "metabolites": [
      {
       "bigg_id": "mt_3577006728",
@@ -682,7 +682,7 @@
       "from_node_id": "21",
       "to_node_id": "7"
      },
-     "31": {
+     "33": {
       "b1": null,
       "b2": null,
       "from_node_id": "21",
@@ -694,8 +694,8 @@
     "bigg_id": "rx_be1c9cee23",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 1727.783,
-    "label_y": 4714.168,
+    "label_x": 253.735,
+    "label_y": 542.625,
     "metabolites": [
      {
       "bigg_id": "mt_82e3f482bf",
@@ -735,8 +735,8 @@
     "bigg_id": "rx_de6667c782",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 2133.595,
-    "label_y": 2650.649,
+    "label_x": 302.575,
+    "label_y": 333.125,
     "metabolites": [
      {
       "bigg_id": "mt_488dd8bd43",
