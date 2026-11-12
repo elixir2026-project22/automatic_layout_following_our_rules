@@ -50,8 +50,10 @@ plt.rcParams['svg.hashsalt']='sbml-pathway-layout'; plt.rcParams['font.family']=
 def log(*a): print(*a,file=sys.stderr,flush=True)
 
 # ============================================================ names, formulas
+BASE={}                   # told-apart label "name (id)" -> "name", for everything that looks at names
 def _norm(n):
-    n=n.lower(); n=re.sub(r'\[[^\]]*\]$','',n); n=re.sub(r'_[a-z]$','',n)
+    n=BASE.get(n,n).lower()                                       # a told-apart label counts as its plain name
+    n=re.sub(r'\[[^\]]*\]$','',n); n=re.sub(r'_[a-z]$','',n)
     n=n.replace('(+)','+').replace('(-)','-').replace('(2+)','2+').replace('(3+)','3+')
     return re.sub(r"[\s_\-,'()]",'',n)
 SIDE={_norm(x) for x in r'''h2o water oh- hydroxide h+ proton hydron atp adp amp gtp gdp gmp utp udp ump ctp cdp cmp itp idp
@@ -113,7 +115,7 @@ def similarity(a,b,F):
     return _lcs(sa,sb)/max(len(sa),len(sb),1) if sa and sb else 0.0
 
 # ============================================================ SBML (levels 1-3)
-SPECIES_ID={}
+SPECIES_ID={}             # unique label -> SBML id (one to one)
 def _l(tag): return tag.rsplit('}',1)[-1]
 def _kids(e,name): return [c for c in e if _l(c.tag)==name]
 def _attr(e,name):
@@ -137,8 +139,22 @@ def read_sbml(path):
     for nm,ids in byname.items():
         if len({species[i]['comp'] for i in ids})>1:
             for i in ids: species[i]['name']=f"{nm} [{species[i]['comp']}]"
+    # Each species must stay its own node: the label used as the internal key must map to exactly one SBML id.
+    # Same name in the same compartment (e.g. two states of one protein, s_n24 and s_n23 both "PFKFB2") -> "name (id)".
+    global SPECIES_ID,BASE
+    bykey={}
+    for sid,s in species.items(): bykey.setdefault(s['name'],[]).append(sid)
+    BASE={}
+    for nm,ids in bykey.items():
+        if len(ids)>1:
+            for i in ids: species[i]['name']=f"{nm} ({i})"; BASE[species[i]['name']]=nm
+    seen={}
+    for sid,s in species.items():                                 # (a name that happens to look like a told-apart
+        while s['name'] in seen: s['name']=f"{s['name']} ({sid})"  #  label still gets its own key)
+        seen[s['name']]=sid
+    SPECIES_ID={s['name']:sid for sid,s in species.items()}
+    assert len(SPECIES_ID)==len(species), 'species labels must be unique'
     F={s['name']:s['formula'] for s in species.values()}
-    global SPECIES_ID; SPECIES_ID={s['name']:sid for sid,s in species.items()}
     groups=[]
     for e in model.iter():
         if _l(e.tag)=='group':
