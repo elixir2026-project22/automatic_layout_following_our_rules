@@ -16,8 +16,8 @@
   "nodes": {
    "1": {
     "bigg_id": "mt_d5814fc2ae",
-    "label_x": 96.157,
-    "label_y": 298.0,
+    "label_x": 153.609,
+    "label_y": 283.75,
     "name": "4-aminoimidazole",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -26,8 +26,8 @@
    },
    "2": {
     "bigg_id": "mt_0a3ae6685b",
-    "label_x": 64.198,
-    "label_y": 193.25,
+    "label_x": 153.684,
+    "label_y": 179.0,
     "name": "5-amino-4-imidazole carboxylate",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -36,8 +36,8 @@
    },
    "3": {
     "bigg_id": "mt_b77b7ab044",
-    "label_x": 64.0,
-    "label_y": 88.5,
+    "label_x": 153.709,
+    "label_y": 74.25,
     "name": "5-ureido-4-imidazole carboxylate",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -46,8 +46,8 @@
    },
    "4": {
     "bigg_id": "mt_69b688237d",
-    "label_x": 96.416,
-    "label_y": 500.25,
+    "label_x": 153.494,
+    "label_y": 486.0,
     "name": "Formiminoglycine",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -56,8 +56,8 @@
    },
    "5": {
     "bigg_id": "mt_aade1d68a1",
-    "label_x": 104.562,
-    "label_y": 402.75,
+    "label_x": 153.534,
+    "label_y": 388.5,
     "name": "imidazolinone",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -90,8 +90,8 @@
     "bigg_id": "rx_NODE_4439",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 114.023,
-    "label_y": 228.375,
+    "label_x": 147.649,
+    "label_y": 215.375,
     "metabolites": [
      {
       "bigg_id": "mt_0a3ae6685b",
@@ -127,8 +127,8 @@
     "bigg_id": "rx_NODE_4445",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 74.469,
-    "label_y": 123.625,
+    "label_x": 147.709,
+    "label_y": 110.625,
     "metabolites": [
      {
       "bigg_id": "mt_b77b7ab044",
@@ -168,8 +168,8 @@
     "bigg_id": "rx_NODE_8924",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 74.268,
-    "label_y": 434.25,
+    "label_x": 147.508,
+    "label_y": 421.25,
     "metabolites": [
      {
       "bigg_id": "mt_aade1d68a1",
@@ -201,8 +201,8 @@
     "bigg_id": "rx_c731c28fd2",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 103.189,
-    "label_y": 333.125,
+    "label_x": 147.569,
+    "label_y": 320.125,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",

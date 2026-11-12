@@ -8,276 +8,246 @@
  },
  {
   "canvas": {
-   "height": 841.617,
-   "width": 1392.474,
+   "height": 818.462,
+   "width": 1558.447,
    "x": 0.0,
    "y": 0.0
   },
   "nodes": {
    "1": {
     "bigg_id": "mt_5068da0e84",
-    "label_x": 826.497,
-    "label_y": 407.061,
+    "label_x": 1065.686,
+    "label_y": 394.311,
     "name": "dihydroxyacetone phosphate",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 881.713,
+    "x": 1047.686,
     "y": 388.311
    },
    "10": {
-    "bigg_id": "mt_dfef3a54ea",
-    "label_x": 626.571,
-    "label_y": 186.5,
-    "name": "D-fructose 6-phosphate",
-    "node_is_primary": true,
-    "node_type": "metabolite",
-    "x": 678.174,
-    "y": 166.25
-   },
-   "11": {
-    "bigg_id": "mt_5dbc9a97f4",
-    "label_x": 1192.993,
-    "label_y": 186.5,
-    "name": "D-glucose",
-    "node_is_primary": true,
-    "node_type": "metabolite",
-    "x": 1215.494,
-    "y": 166.25
-   },
-   "12": {
     "bigg_id": "mt_c40006a428",
-    "label_x": 1089.13,
-    "label_y": 291.25,
+    "label_x": 1323.675,
+    "label_y": 277.0,
     "name": "D-glucose 6-phosphate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 1139.702,
+    "x": 1305.675,
     "y": 271.0
    },
-   "13": {
+   "11": {
     "bigg_id": "mt_4d404b9e9f",
-    "label_x": 610.925,
-    "label_y": 395.25,
+    "label_x": 879.575,
+    "label_y": 379.5,
     "name": "D-glyceraldehyde 3-phosphate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 695.602,
+    "x": 861.575,
     "y": 373.5
    },
-   "14": {
+   "12": {
     "bigg_id": "mt_5068da0e84",
-    "label_x": 632.158,
-    "label_y": 88.5,
+    "label_x": 879.575,
+    "label_y": 74.25,
     "name": "dihydroxyacetone phosphate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 695.602,
+    "x": 861.575,
     "y": 68.25
    },
-   "15": {
+   "13": {
     "bigg_id": "mt_1a48495501",
-    "label_x": 182.164,
-    "label_y": 793.617,
+    "label_x": 129.731,
+    "label_y": 688.581,
     "name": "phosphoenolpyruvate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 229.895,
-    "y": 773.367
+    "x": 111.731,
+    "y": 682.581
    },
-   "16": {
+   "14": {
     "bigg_id": "mt_7dd2d3b76f",
-    "label_x": 64.0,
-    "label_y": 634.617,
+    "label_x": 565.934,
+    "label_y": 732.878,
     "name": "pyruvate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 84.443,
-    "y": 614.367
+    "x": 547.934,
+    "y": 726.878
+   },
+   "15": {
+    "node_type": "midmarker",
+    "x": 861.575,
+    "y": 323.375
+   },
+   "16": {
+    "node_type": "midmarker",
+    "x": 392.226,
+    "y": 715.983
    },
    "17": {
     "node_type": "midmarker",
-    "x": 695.602,
-    "y": 323.375
+    "x": 844.146,
+    "y": 218.625
    },
    "18": {
     "node_type": "midmarker",
-    "x": 138.2,
-    "y": 666.742
+    "x": 1454.024,
+    "y": 218.625
    },
    "19": {
     "node_type": "midmarker",
-    "x": 678.174,
-    "y": 218.625
-   },
-   "2": {
-    "bigg_id": "mt_1137269b50",
-    "label_x": 454.817,
-    "label_y": 386.269,
-    "name": "3-phosphoglycerate",
-    "node_is_primary": false,
-    "node_type": "metabolite",
-    "x": 492.756,
-    "y": 367.519
-   },
-   "20": {
-    "node_type": "midmarker",
-    "x": 1288.051,
-    "y": 218.625
-   },
-   "21": {
-    "node_type": "midmarker",
-    "x": 556.533,
+    "x": 722.506,
     "y": 323.375
    },
-   "22": {
-    "node_type": "midmarker",
-    "x": 695.602,
-    "y": 117.0
-   },
-   "23": {
-    "node_type": "midmarker",
-    "x": 479.352,
-    "y": 395.167
-   },
-   "24": {
-    "node_type": "midmarker",
-    "x": 210.299,
-    "y": 614.367
-   },
-   "25": {
-    "node_type": "midmarker",
-    "x": 472.863,
-    "y": 427.787
-   },
-   "26": {
-    "node_type": "midmarker",
-    "x": 364.983,
-    "y": 628.509
-   },
-   "27": {
-    "node_type": "midmarker",
-    "x": 556.538,
-    "y": 453.789
-   },
-   "28": {
-    "node_type": "midmarker",
-    "x": 982.619,
-    "y": 218.625
-   },
-   "29": {
-    "node_type": "midmarker",
-    "x": 1142.937,
-    "y": 218.625
-   },
-   "3": {
-    "bigg_id": "mt_1137269b50",
-    "label_x": 315.495,
-    "label_y": 438.15,
-    "name": "3-phosphoglycerate",
-    "node_is_primary": false,
-    "node_type": "metabolite",
-    "x": 353.434,
-    "y": 419.4
-   },
-   "30": {
-    "node_type": "midmarker",
-    "x": 267.833,
-    "y": 720.992
-   },
-   "31": {
-    "node_type": "midmarker",
-    "x": 834.666,
-    "y": 453.789
-   },
-   "32": {
-    "node_type": "midmarker",
-    "x": 521.09,
-    "y": 237.103
-   },
-   "33": {
-    "node_type": "midmarker",
-    "x": 834.277,
-    "y": 218.625
-   },
-   "34": {
-    "node_type": "midmarker",
-    "x": 695.602,
-    "y": 694.656
-   },
-   "35": {
-    "node_type": "multimarker",
-    "x": 176.598,
-    "y": 720.992
-   },
-   "36": {
-    "node_type": "multimarker",
-    "x": 482.693,
-    "y": 271.0
-   },
-   "37": {
-    "node_type": "multimarker",
-    "x": 412.089,
-    "y": 218.625
-   },
-   "4": {
+   "2": {
     "bigg_id": "mt_dfef3a54ea",
-    "label_x": 821.147,
-    "label_y": 198.463,
+    "label_x": 1049.887,
+    "label_y": 185.713,
     "name": "D-fructose 6-phosphate",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 865.914,
+    "x": 1031.887,
     "y": 179.713
    },
-   "5": {
+   "20": {
+    "node_type": "midmarker",
+    "x": 861.575,
+    "y": 117.0
+   },
+   "21": {
+    "node_type": "midmarker",
+    "x": 547.934,
+    "y": 678.128
+   },
+   "22": {
+    "node_type": "midmarker",
+    "x": 547.934,
+    "y": 631.128
+   },
+   "23": {
+    "node_type": "midmarker",
+    "x": 699.266,
+    "y": 467.209
+   },
+   "24": {
+    "node_type": "midmarker",
+    "x": 1148.592,
+    "y": 218.625
+   },
+   "25": {
+    "node_type": "midmarker",
+    "x": 1308.91,
+    "y": 218.625
+   },
+   "26": {
+    "node_type": "midmarker",
+    "x": 250.696,
+    "y": 660.075
+   },
+   "27": {
+    "node_type": "midmarker",
+    "x": 1023.884,
+    "y": 467.209
+   },
+   "28": {
+    "node_type": "midmarker",
+    "x": 687.063,
+    "y": 237.103
+   },
+   "29": {
+    "node_type": "midmarker",
+    "x": 1000.25,
+    "y": 218.625
+   },
+   "3": {
     "bigg_id": "mt_4d404b9e9f",
-    "label_x": 637.296,
-    "label_y": 165.0,
+    "label_x": 879.575,
+    "label_y": 152.25,
     "name": "D-glyceraldehyde 3-phosphate",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 695.602,
+    "x": 861.575,
     "y": 146.25
    },
-   "6": {
+   "30": {
+    "node_type": "midmarker",
+    "x": 861.575,
+    "y": 748.337
+   },
+   "31": {
+    "node_type": "multimarker",
+    "x": 250.696,
+    "y": 708.2
+   },
+   "32": {
+    "node_type": "multimarker",
+    "x": 648.666,
+    "y": 271.0
+   },
+   "33": {
+    "node_type": "multimarker",
+    "x": 578.062,
+    "y": 218.625
+   },
+   "4": {
     "bigg_id": "mt_2e9e6d89f7",
-    "label_x": 217.538,
-    "label_y": 686.992,
+    "label_x": 410.226,
+    "label_y": 666.075,
     "name": "2-phospho-D-glycerate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 267.833,
-    "y": 666.742
+    "x": 392.226,
+    "y": 660.075
    },
-   "7": {
+   "5": {
     "bigg_id": "mt_cbb28d5a93",
-    "label_x": 741.55,
-    "label_y": 636.117,
+    "label_x": 1041.884,
+    "label_y": 660.628,
     "name": "3-phospho-D-glyceroyl phosphate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 834.666,
-    "y": 614.367
+    "x": 1023.884,
+    "y": 654.628
    },
-   "8": {
+   "6": {
     "bigg_id": "mt_1137269b50",
-    "label_x": 500.691,
-    "label_y": 636.117,
+    "label_x": 717.266,
+    "label_y": 660.628,
     "name": "3-phosphoglycerate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 556.538,
-    "y": 614.367
+    "x": 699.266,
+    "y": 654.628
    },
-   "9": {
+   "7": {
     "bigg_id": "mt_759cb00988",
-    "label_x": 613.188,
-    "label_y": 291.25,
+    "label_x": 858.911,
+    "label_y": 277.0,
     "name": "D-fructose 1,6-bisphosphate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 674.938,
+    "x": 840.911,
     "y": 271.0
+   },
+   "8": {
+    "bigg_id": "mt_dfef3a54ea",
+    "label_x": 862.146,
+    "label_y": 172.25,
+    "name": "D-fructose 6-phosphate",
+    "node_is_primary": true,
+    "node_type": "metabolite",
+    "x": 844.146,
+    "y": 166.25
+   },
+   "9": {
+    "bigg_id": "mt_5dbc9a97f4",
+    "label_x": 1399.467,
+    "label_y": 172.25,
+    "name": "D-glucose",
+    "node_is_primary": true,
+    "node_type": "metabolite",
+    "x": 1381.467,
+    "y": 166.25
    }
   },
   "reactions": {
@@ -285,8 +255,8 @@
     "bigg_id": "rx_2c94bd36b3",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 640.208,
-    "label_y": 326.375,
+    "label_x": 873.575,
+    "label_y": 313.375,
     "metabolites": [
      {
       "bigg_id": "mt_759cb00988",
@@ -304,118 +274,32 @@
     "name": "fructose-bisphosphate aldolase",
     "reversibility": true,
     "segments": {
-     "18": {
+     "16": {
       "b1": null,
       "b2": null,
-      "from_node_id": "9",
-      "to_node_id": "17"
+      "from_node_id": "7",
+      "to_node_id": "15"
+     },
+     "32": {
+      "b1": null,
+      "b2": null,
+      "from_node_id": "15",
+      "to_node_id": "11"
      },
      "34": {
       "b1": null,
       "b2": null,
-      "from_node_id": "17",
-      "to_node_id": "13"
-     },
-     "36": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "17",
+      "from_node_id": "15",
       "to_node_id": "1"
      }
     }
    },
    "10": {
-    "bigg_id": "rx_NODE_8573",
-    "gene_reaction_rule": "",
-    "genes": [],
-    "label_x": 300.57,
-    "label_y": 631.509,
-    "metabolites": [
-     {
-      "bigg_id": "mt_1137269b50",
-      "coefficient": -1.0
-     },
-     {
-      "bigg_id": "mt_2e9e6d89f7",
-      "coefficient": 1.0
-     }
-    ],
-    "name": "phosphoglycerate mutase (2,3-diphosphoglycerate-dependent)",
-    "reversibility": true,
-    "segments": {
-     "13": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "26",
-      "to_node_id": "6"
-     },
-     "17": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "8",
-      "to_node_id": "26"
-     }
-    }
-   },
-   "11": {
-    "bigg_id": "rx_NODE_8708",
-    "gene_reaction_rule": "",
-    "genes": [],
-    "label_x": 490.436,
-    "label_y": 456.789,
-    "metabolites": [
-     {
-      "bigg_id": "mt_410bd09215",
-      "coefficient": -1.0
-     },
-     {
-      "bigg_id": "mt_4d404b9e9f",
-      "coefficient": -1.0
-     },
-     {
-      "bigg_id": "mt_1137269b50",
-      "coefficient": 1.0
-     },
-     {
-      "bigg_id": "mt_942f98c2ec",
-      "coefficient": 1.0
-     }
-    ],
-    "name": "glyceraldehyde-3-phosphate dehydrogenase (NADP+) (NADP+ \u2192 NADPH)",
-    "reversibility": true,
-    "segments": {
-     "1": {
-      "b1": {
-       "x": 638.233,
-       "y": 373.5
-      },
-      "b2": {
-       "x": 585.222,
-       "y": 404.106
-      },
-      "from_node_id": "13",
-      "to_node_id": "27"
-     },
-     "2": {
-      "b1": {
-       "x": 527.853,
-       "y": 503.472
-      },
-      "b2": {
-       "x": 527.853,
-       "y": 564.684
-      },
-      "from_node_id": "27",
-      "to_node_id": "8"
-     }
-    }
-   },
-   "12": {
     "bigg_id": "rx_b4196404be",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 925.991,
-    "label_y": 221.625,
+    "label_x": 1160.592,
+    "label_y": 208.625,
     "metabolites": [
      {
       "bigg_id": "mt_dfef3a54ea",
@@ -429,26 +313,26 @@
     "name": "glucose-6-phosphate isomerase",
     "reversibility": true,
     "segments": {
-     "27": {
+     "25": {
       "b1": null,
       "b2": null,
-      "from_node_id": "28",
-      "to_node_id": "12"
+      "from_node_id": "24",
+      "to_node_id": "10"
      },
-     "39": {
+     "35": {
       "b1": null,
       "b2": null,
-      "from_node_id": "4",
-      "to_node_id": "28"
+      "from_node_id": "2",
+      "to_node_id": "24"
      }
     }
    },
-   "13": {
+   "11": {
     "bigg_id": "rx_b55563ec26",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 1079.246,
-    "label_y": 221.625,
+    "label_x": 1320.91,
+    "label_y": 208.625,
     "metabolites": [
      {
       "bigg_id": "mt_5dbc9a97f4",
@@ -470,26 +354,26 @@
     "name": "ADP-specific glucose/glucosamine kinase (ADP \u2192 AMP)",
     "reversibility": true,
     "segments": {
-     "28": {
+     "26": {
       "b1": null,
       "b2": null,
-      "from_node_id": "11",
-      "to_node_id": "29"
+      "from_node_id": "9",
+      "to_node_id": "25"
      },
-     "29": {
+     "27": {
       "b1": null,
       "b2": null,
-      "from_node_id": "29",
-      "to_node_id": "12"
+      "from_node_id": "25",
+      "to_node_id": "10"
      }
     }
    },
-   "14": {
+   "12": {
     "bigg_id": "rx_c666ac0a6e",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 217.598,
-    "label_y": 723.992,
+    "label_x": 262.696,
+    "label_y": 650.075,
     "metabolites": [
      {
       "bigg_id": "mt_2e9e6d89f7",
@@ -507,26 +391,26 @@
     "name": "phosphopyruvate hydratase ( \u2192 H2O)",
     "reversibility": true,
     "segments": {
-     "14": {
+     "12": {
       "b1": null,
       "b2": null,
-      "from_node_id": "6",
-      "to_node_id": "30"
+      "from_node_id": "4",
+      "to_node_id": "26"
      },
-     "15": {
+     "13": {
       "b1": null,
       "b2": null,
-      "from_node_id": "30",
-      "to_node_id": "15"
+      "from_node_id": "26",
+      "to_node_id": "13"
      }
     }
    },
-   "15": {
+   "13": {
     "bigg_id": "rx_d81e1761ef",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 784.081,
-    "label_y": 456.789,
+    "label_x": 1035.884,
+    "label_y": 457.209,
     "metabolites": [
      {
       "bigg_id": "mt_3577006728",
@@ -558,36 +442,36 @@
     "segments": {
      "3": {
       "b1": {
-       "x": 752.971,
-       "y": 373.5
+       "x": 926.984,
+       "y": 374.605
       },
       "b2": {
-       "x": 805.982,
-       "y": 404.106
+       "x": 990.223,
+       "y": 411.116
       },
-      "from_node_id": "13",
-      "to_node_id": "31"
+      "from_node_id": "11",
+      "to_node_id": "27"
      },
      "4": {
       "b1": {
-       "x": 863.351,
-       "y": 503.472
+       "x": 1055.632,
+       "y": 524.408
       },
       "b2": {
-       "x": 863.351,
-       "y": 564.684
+       "x": 1055.632,
+       "y": 597.43
       },
-      "from_node_id": "31",
-      "to_node_id": "7"
+      "from_node_id": "27",
+      "to_node_id": "5"
      }
     }
    },
-   "16": {
+   "14": {
     "bigg_id": "rx_e5d6b78bbc",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 460.743,
-    "label_y": 240.103,
+    "label_x": 699.063,
+    "label_y": 227.103,
     "metabolites": [
      {
       "bigg_id": "mt_7133524672",
@@ -609,26 +493,26 @@
     "name": "ADP-specific phosphofructokinase (ADP \u2192 AMP)",
     "reversibility": true,
     "segments": {
-     "30": {
+     "28": {
       "b1": null,
       "b2": null,
-      "from_node_id": "10",
-      "to_node_id": "32"
+      "from_node_id": "8",
+      "to_node_id": "28"
      },
-     "31": {
+     "29": {
       "b1": null,
       "b2": null,
-      "from_node_id": "32",
-      "to_node_id": "9"
+      "from_node_id": "28",
+      "to_node_id": "7"
      }
     }
    },
-   "17": {
+   "15": {
     "bigg_id": "rx_ef72af6ccc",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 782.563,
-    "label_y": 221.625,
+    "label_x": 1012.25,
+    "label_y": 208.625,
     "metabolites": [
      {
       "bigg_id": "mt_82e3f482bf",
@@ -650,26 +534,26 @@
     "name": "tagatose-6-phosphate kinase (ATP \u2192 ADP)",
     "reversibility": true,
     "segments": {
-     "32": {
+     "30": {
       "b1": null,
       "b2": null,
-      "from_node_id": "10",
-      "to_node_id": "33"
+      "from_node_id": "8",
+      "to_node_id": "29"
      },
-     "33": {
+     "31": {
       "b1": null,
       "b2": null,
-      "from_node_id": "33",
-      "to_node_id": "9"
+      "from_node_id": "29",
+      "to_node_id": "7"
      }
     }
    },
-   "18": {
+   "16": {
     "bigg_id": "rx_f774c379a4",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 650.856,
-    "label_y": 697.656,
+    "label_x": 873.575,
+    "label_y": 738.337,
     "metabolites": [
      {
       "bigg_id": "mt_7133524672",
@@ -693,27 +577,27 @@
     "segments": {
      "5": {
       "b1": {
-       "x": 805.982,
-       "y": 664.05
+       "x": 990.223,
+       "y": 710.721
       },
       "b2": {
-       "x": 752.971,
-       "y": 694.656
+       "x": 926.984,
+       "y": 747.232
       },
-      "from_node_id": "7",
-      "to_node_id": "34"
+      "from_node_id": "5",
+      "to_node_id": "30"
      },
      "6": {
       "b1": {
-       "x": 638.233,
-       "y": 694.656
+       "x": 796.166,
+       "y": 747.232
       },
       "b2": {
-       "x": 585.222,
-       "y": 664.05
+       "x": 732.927,
+       "y": 710.721
       },
-      "from_node_id": "34",
-      "to_node_id": "8"
+      "from_node_id": "30",
+      "to_node_id": "6"
      }
     }
    },
@@ -721,8 +605,8 @@
     "bigg_id": "rx_5cc6fc2351",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 109.202,
-    "label_y": 669.742,
+    "label_x": 404.226,
+    "label_y": 705.983,
     "metabolites": [
      {
       "bigg_id": "mt_7dd2d3b76f",
@@ -744,23 +628,23 @@
     "name": "pyruvate kinase (ATP \u2192 ADP)",
     "reversibility": true,
     "segments": {
-     "10": {
+     "7": {
       "b1": null,
       "b2": null,
-      "from_node_id": "18",
-      "to_node_id": "35"
+      "from_node_id": "14",
+      "to_node_id": "16"
      },
-     "11": {
+     "8": {
       "b1": null,
       "b2": null,
-      "from_node_id": "35",
-      "to_node_id": "15"
+      "from_node_id": "16",
+      "to_node_id": "31"
      },
      "9": {
       "b1": null,
       "b2": null,
-      "from_node_id": "16",
-      "to_node_id": "18"
+      "from_node_id": "31",
+      "to_node_id": "13"
      }
     }
    },
@@ -768,8 +652,8 @@
     "bigg_id": "rx_8ac1b614ad",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 613.784,
-    "label_y": 221.625,
+    "label_x": 856.146,
+    "label_y": 208.625,
     "metabolites": [
      {
       "bigg_id": "mt_bdcc7261de",
@@ -791,17 +675,17 @@
     "name": "diphosphate-fructose-6-phosphate 1-phosphotransferase (diphosphate \u2192 phosphate)",
     "reversibility": true,
     "segments": {
-     "19": {
+     "17": {
       "b1": null,
       "b2": null,
-      "from_node_id": "10",
-      "to_node_id": "19"
+      "from_node_id": "8",
+      "to_node_id": "17"
      },
-     "20": {
+     "18": {
       "b1": null,
       "b2": null,
-      "from_node_id": "19",
-      "to_node_id": "9"
+      "from_node_id": "17",
+      "to_node_id": "7"
      }
     }
    },
@@ -809,8 +693,8 @@
     "bigg_id": "rx_92735d0939",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 1246.628,
-    "label_y": 221.625,
+    "label_x": 1466.024,
+    "label_y": 208.625,
     "metabolites": [
      {
       "bigg_id": "mt_5dbc9a97f4",
@@ -832,17 +716,17 @@
     "name": "glucose-6-phosphatase (ATP \u2192 ADP)",
     "reversibility": true,
     "segments": {
-     "21": {
+     "19": {
       "b1": null,
       "b2": null,
-      "from_node_id": "11",
-      "to_node_id": "20"
+      "from_node_id": "9",
+      "to_node_id": "18"
      },
-     "22": {
+     "20": {
       "b1": null,
       "b2": null,
-      "from_node_id": "20",
-      "to_node_id": "12"
+      "from_node_id": "18",
+      "to_node_id": "10"
      }
     }
    },
@@ -850,8 +734,8 @@
     "bigg_id": "rx_93ae42951f",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 512.858,
-    "label_y": 326.375,
+    "label_x": 734.506,
+    "label_y": 313.375,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -873,29 +757,29 @@
     "name": "fructose-bisphosphatase (H2O \u2192 phosphate)",
     "reversibility": true,
     "segments": {
+     "21": {
+      "b1": null,
+      "b2": null,
+      "from_node_id": "7",
+      "to_node_id": "19"
+     },
+     "22": {
+      "b1": null,
+      "b2": null,
+      "from_node_id": "19",
+      "to_node_id": "32"
+     },
      "23": {
       "b1": null,
       "b2": null,
-      "from_node_id": "9",
-      "to_node_id": "21"
+      "from_node_id": "32",
+      "to_node_id": "33"
      },
      "24": {
       "b1": null,
       "b2": null,
-      "from_node_id": "21",
-      "to_node_id": "36"
-     },
-     "25": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "36",
-      "to_node_id": "37"
-     },
-     "26": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "37",
-      "to_node_id": "10"
+      "from_node_id": "33",
+      "to_node_id": "8"
      }
     }
    },
@@ -903,8 +787,8 @@
     "bigg_id": "rx_9ab9f47716",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 646.129,
-    "label_y": 120.0,
+    "label_x": 873.575,
+    "label_y": 107.0,
     "metabolites": [
      {
       "bigg_id": "mt_4d404b9e9f",
@@ -918,67 +802,26 @@
     "name": "triose-phosphate isomerase",
     "reversibility": true,
     "segments": {
-     "35": {
+     "33": {
       "b1": null,
       "b2": null,
-      "from_node_id": "22",
-      "to_node_id": "14"
+      "from_node_id": "20",
+      "to_node_id": "12"
      },
-     "40": {
+     "36": {
       "b1": null,
       "b2": null,
-      "from_node_id": "5",
-      "to_node_id": "22"
+      "from_node_id": "3",
+      "to_node_id": "20"
      }
     }
    },
    "7": {
-    "bigg_id": "rx_NODE_2304",
-    "gene_reaction_rule": "",
-    "genes": [],
-    "label_x": 413.25,
-    "label_y": 398.167,
-    "metabolites": [
-     {
-      "bigg_id": "mt_4d404b9e9f",
-      "coefficient": -1.0
-     },
-     {
-      "bigg_id": "mt_62968a0d8b",
-      "coefficient": -1.0
-     },
-     {
-      "bigg_id": "mt_1137269b50",
-      "coefficient": 1.0
-     },
-     {
-      "bigg_id": "mt_19acfa327b",
-      "coefficient": 1.0
-     }
-    ],
-    "name": "glyceraldehyde-3-phosphate dehydrogenase [NAD(P)+] (NAD+ \u2192 NADH)",
-    "reversibility": true,
-    "segments": {
-     "37": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "23",
-      "to_node_id": "2"
-     },
-     "7": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "13",
-      "to_node_id": "23"
-     }
-    }
-   },
-   "8": {
     "bigg_id": "rx_NODE_2849",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 145.886,
-    "label_y": 617.367,
+    "label_x": 559.934,
+    "label_y": 668.128,
     "metabolites": [
      {
       "bigg_id": "mt_1137269b50",
@@ -992,29 +835,62 @@
     "name": "phosphoglycerate mutase (2,3-diphosphoglycerate-independent)",
     "reversibility": true,
     "segments": {
-     "12": {
+     "10": {
       "b1": null,
       "b2": null,
-      "from_node_id": "24",
-      "to_node_id": "6"
+      "from_node_id": "21",
+      "to_node_id": "4"
      },
-     "16": {
+     "14": {
       "b1": null,
       "b2": null,
-      "from_node_id": "8",
-      "to_node_id": "24"
+      "from_node_id": "6",
+      "to_node_id": "21"
+     }
+    }
+   },
+   "8": {
+    "bigg_id": "rx_NODE_8573",
+    "gene_reaction_rule": "",
+    "genes": [],
+    "label_x": 559.934,
+    "label_y": 621.128,
+    "metabolites": [
+     {
+      "bigg_id": "mt_1137269b50",
+      "coefficient": -1.0
+     },
+     {
+      "bigg_id": "mt_2e9e6d89f7",
+      "coefficient": 1.0
+     }
+    ],
+    "name": "phosphoglycerate mutase (2,3-diphosphoglycerate-dependent)",
+    "reversibility": true,
+    "segments": {
+     "11": {
+      "b1": null,
+      "b2": null,
+      "from_node_id": "22",
+      "to_node_id": "4"
+     },
+     "15": {
+      "b1": null,
+      "b2": null,
+      "from_node_id": "6",
+      "to_node_id": "22"
      }
     }
    },
    "9": {
-    "bigg_id": "rx_NODE_8284",
+    "bigg_id": "rx_NODE_8708",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 406.761,
-    "label_y": 430.787,
+    "label_x": 711.266,
+    "label_y": 457.209,
     "metabolites": [
      {
-      "bigg_id": "mt_3f71b18536",
+      "bigg_id": "mt_410bd09215",
       "coefficient": -1.0
      },
      {
@@ -1026,24 +902,36 @@
       "coefficient": 1.0
      },
      {
-      "bigg_id": "mt_86b2209667",
+      "bigg_id": "mt_942f98c2ec",
       "coefficient": 1.0
      }
     ],
-    "name": "glyceraldehyde-3-phosphate dehydrogenase (ferredoxin) (oxidized ferredoxin \u2192 reduced ferredoxin)",
+    "name": "glyceraldehyde-3-phosphate dehydrogenase (NADP+) (+2) (NADP+ \u2192 NADPH | also: glyceraldehyde-3-phosphate dehydrogenase [NAD(P)+]; glyceraldehyde-3-phosphate dehydrogenase (ferredoxin))",
     "reversibility": true,
     "segments": {
-     "38": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "25",
-      "to_node_id": "3"
+     "1": {
+      "b1": {
+       "x": 796.166,
+       "y": 374.605
+      },
+      "b2": {
+       "x": 732.927,
+       "y": 411.116
+      },
+      "from_node_id": "11",
+      "to_node_id": "23"
      },
-     "8": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "13",
-      "to_node_id": "25"
+     "2": {
+      "b1": {
+       "x": 667.518,
+       "y": 524.408
+      },
+      "b2": {
+       "x": 667.518,
+       "y": 597.43
+      },
+      "from_node_id": "23",
+      "to_node_id": "6"
      }
     }
    }

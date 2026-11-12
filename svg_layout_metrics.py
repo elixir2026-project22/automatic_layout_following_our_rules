@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """Quality metrics for a pathway/graph drawing in SVG, measured against the layout rules:
 
-  hard  1. the rendering must be reproducible
-        2. labels must have fixed positions, according to their type
-        3. no line crossing
-        4. cycles look like cycles (drawn as a closed loop in cycle order: circle, stadium, rounded rectangle...)
-        5. consistent placement: substrates and products on opposite sides, catalysts beside
-  soft  6. try to avoid long lines
-        7. try to avoid line bends
-        8. try to avoid overlapping nodes
+The rule set, definitions, thresholds and 0-100 scores are those of core.js (Biohackathon 2026 layout scorer), with the
+cycle rule taken from these Python tools (closed loop in cycle order) and the rules that only these tools had added:
+  hard  Reproducible rendering (--compare) | Labels at fixed positions per type | Cycles look like cycles (closed loop)
+        Cofactors drawn as clones | No crossings | No line through a node | Consistent participant placement | Aspect ratio
+  soft  Avoid long lines | Avoid bends | Density | No overlapping nodes
 
 The SVG carries no notion of "metabolite" or "reaction", so the drawing is reconstructed from its
 geometry (works for any SVG made of paths: matplotlib, Inkscape, Escher/Cytoscape exports, ...):
@@ -215,6 +212,12 @@ def seg_hits(a,b,Bx,margin=0.0):
         else: t1=np.minimum(t1,q/p)
     return ok&(t0<=t1)
 
+JS_CURRENCY=['atp','adp','amp','gtp','gdp','gmp','utp','udp','ump','ctp','cdp','nad','nad+','nadh','nadp','nadp+','nadph','fad',
+    'fadh2','fmn','h2o','water','co2','o2','h+','h','pi','ppi','phosphate','pyrophosphate','diphosphate','coa','coa-sh','coash','nh3',
+    'nh4+','ammonia','hco3-','bicarbonate','h2o2','e-','camp','sam','sah','acceptor','reduced acceptor','glutathione','nh4']
+def _is_cofactor(label):                                          # core.js normName + CURRENCY_DEFAULT
+    sub=str.maketrans('₀₁₂₃₄₅₆₇₈₉⁺⁻','0123456789+-'); n=re.sub(r'\s+',' ',(label or '').translate(sub).strip().lower())
+    return n in JS_CURRENCY
 def _fit_circle(P):
     """Least-squares (Kasa) circle through points; returns centre, radius."""
     P=np.asarray(P,float); A=np.c_[2*P[:,0],2*P[:,1],np.ones(len(P))]; b=(P**2).sum(1)
@@ -337,6 +340,26 @@ def semantics(boxes,labels,conns,info,by_box):
         rounds.append(dict(compounds=[name(m) for m in c],round=ok,circle_rms_dev=round(rms,3),closed_loop_in_order=order_ok))
         if not ok: marks+=pts
     cycles=dict(cycles=len(rounds),round_cycles=sum(1 for x in rounds if x['round']),alternative_routes=alternative,detail=rounds)
+    # core.js placement: centroid of the inputs vs centroid of the outputs, seen from the reaction: >= 120 degrees
+    opp=[]; perp=[]
+    for r in sorted(k for k,v in role.items() if v=='rxn'):
+        ins=[ctr[m] for m,_ in S.get(r,[])]; outs=[ctr[m] for m,_ in P.get(r,[])]
+        if not ins or not outs: continue
+        ci=np.mean(ins,0); co=np.mean(outs,0); vi=ci-np.array(ctr[r]); vo=co-np.array(ctr[r])
+        if np.linalg.norm(vi)>0 and np.linalg.norm(vo)>0:
+            opp.append(ang(vi/np.linalg.norm(vi),vo/np.linalg.norm(vo))>=120)
+        flow=vo-vi
+        if np.linalg.norm(flow)>0:
+            for m,_ in C.get(r,[]):
+                d=np.array(ctr[m])-np.array(ctr[r])
+                if np.linalg.norm(d)>0: perp.append(50<=ang(d/np.linalg.norm(d),flow/np.linalg.norm(flow))<=130 if False else 60<=ang(d/np.linalg.norm(d),flow/np.linalg.norm(flow))<=120)
+    placement.update(js_reactions_scored=len(opp),js_inout_opposite_share=round(float(np.mean(opp)),3) if opp else None,
+                     js_modifier_perpendicular_share=round(float(np.mean(perp)),3) if perp else None)
+    # core.js "cofactors drawn as clones": a cofactor box (not a clone) linked to more than one reaction
+    nbr={}
+    for i,a,b in E: nbr.setdefault(a,set()).add(b); nbr.setdefault(b,set()).add(a)
+    cof=[k for k in range(len(B)) if role.get(k)=='met' and _is_cofactor(name(k))]
+    hubs=[k for k in cof if boxes[k]['style'][2]=='solid' and len(nbr.get(k,()))>1]
     # crowding: boxes that do not overlap but almost touch
     tight=0; mincl=None
     for i in range(len(B)):
@@ -347,6 +370,7 @@ def semantics(boxes,labels,conns,info,by_box):
                 mincl=cl if mincl is None else min(mincl,cl)
                 if cl<6: tight+=1
     return dict(cycles=cycles,placement=placement,tight_pairs=tight,min_clearance=round(mincl,1) if mincl is not None else None,
+                cofactor_boxes=len(cof),cofactor_hubs=len(hubs),
                 cycle_marks=marks,placement_marks=[ctr[r] for r,_ in bad])
 
 SHARED_BOX_TOL=27.0   # px (= 20 pt): where two lines that end at the same box meet, within this distance of that
@@ -398,7 +422,7 @@ def evaluate(svgfile,compare=None):
             ei,ej=conns[i]['pts'],conns[j]['pts']
             if any(math.dist(x,e)<2.0 for e in (ei[0],ei[-1],ej[0],ej[-1])): continue
             shared=(set(info[i]['ends'][0])|set(info[i]['ends'][1]))&(set(info[j]['ends'][0])|set(info[j]['ends'][1]))
-            if any(inside(x,B[k],SHARED_BOX_TOL) for k in shared): continue   # two lines meeting at the same box
+            if shared: continue                                      # core.js: lines sharing an end node never count
             seen.add((i,j)); issues['crossings'].append(x)
     # --- lines through boxes that are not their own ends
     for i,c in enumerate(conns):
@@ -488,38 +512,60 @@ def evaluate(svgfile,compare=None):
                          curved_connections=len(info)-len(straight),
                          axis_aligned_share=round(sum(1 for x in straight if x['axis_dev']<=5)/len(straight),3) if straight else 0,
                          mean_axis_deviation_deg=round(float(np.mean([x['axis_dev'] for x in straight])),1) if straight else 0),
-        rule8_overlaps=dict(box_overlaps=len(issues['box_overlaps']),tight_pairs=sem['tight_pairs'],min_clearance=sem['min_clearance'],boxes=len(B)),
-        drawing=dict(width=round(canvas[2]-canvas[0],1),height=round(canvas[3]-canvas[1],1),aspect=round((canvas[2]-canvas[0])/max(canvas[3]-canvas[1],1),2),
+        rule8_overlaps=dict(box_overlaps=len(issues['box_overlaps']),tight_pairs=sem['tight_pairs'],min_clearance=sem['min_clearance'],boxes=len(B),
+                            cofactor_boxes=sem['cofactor_boxes'],cofactor_hubs=sem['cofactor_hubs']),
+        drawing=dict(node_aspect=round((max(b[2] for b in B)-min(b[0] for b in B))/max(1e-9,max(b[3] for b in B)-min(b[1] for b in B)),3) if B else 0.0,
+                     node_density=round(sum((b[2]-b[0])*(b[3]-b[1]) for b in B)/max(1e-9,(max(b[2] for b in B)-min(b[0] for b in B))*(max(b[3] for b in B)-min(b[1] for b in B))),4) if B else 0.0,
+                     width=round(canvas[2]-canvas[0],1),height=round(canvas[3]-canvas[1],1),aspect=round((canvas[2]-canvas[0])/max(canvas[3]-canvas[1],1),2),
                      box_area_share=round(sum((b[2]-b[0])*(b[3]-b[1]) for b in B)/max((canvas[2]-canvas[0])*(canvas[3]-canvas[1]),1),3)))
     issues['cycles']=sem['cycle_marks']; issues['placement']=sem['placement_marks']
     return out,(boxes,labels,conns,issues,canvas)
 
+T={'reproducible':dict(pass_=0,fail=1),'labels':dict(pass_=0.02,fail=0.2),'cycle':dict(pass_=1,fail=0.5),'clones':dict(pass_=0,fail=3),
+   'crossings':dict(pass_=0.02,fail=0.3),'through':dict(pass_=0,fail=5),'placement':dict(pass_=0.8,fail=0.5),
+   'aspect':dict(lo=0.5,hi=2,flo=0.25,fhi=4),'longlines':dict(pass_=6,fail=15),'bends':dict(pass_=0.5,fail=2),
+   'density':dict(lo=0.05,hi=0.3,flo=0.02,fhi=0.5),'overlaps':dict(pass_=0,fail=5),'weights':dict(hard=2,soft=1)}   # = core.js
+def _low(v,p,f): return 1.0 if v<=p else (0.0 if v>=f else (f-v)/(f-p))
+def _high(v,p,f): return 1.0 if v>=p else (0.0 if v<=f else (v-f)/(p-f))
+def _band(v,t,log):
+    F=math.log if log else (lambda x:x)
+    if t['lo']<=v<=t['hi']: return 1.0
+    if v<t['lo']: return 0.0 if v<=t['flo'] else (F(v)-F(t['flo']))/(F(t['lo'])-F(t['flo']))
+    return 0.0 if v>=t['fhi'] else (F(t['fhi'])-F(v))/(F(t['fhi'])-F(t['hi']))
 def verdicts(m):
+    """The 12 rules shared with core.js (same names, definitions, thresholds and 0-100 scores; cycles: closed-loop rule)."""
     r1=m['rule1_reproducible']; r2=m['rule2_labels']; r3=m['rule3_crossings']; r4=m['rule4_cycles']; r5=m['rule5_placement']
-    r6=m['rule6_long_lines']; r7=m['rule7_bends']; r8=m['rule8_overlaps']; n=max(1,m['reconstructed']['connections'])
-    rep_ok=(not r1['date_stamp'] and r1['random_like_ids']==0) if 'byte_identical' not in r1 else r1['byte_identical'] or r1['geometry_identical']
-    return [('1 reproducible', 'PASS' if rep_ok else 'CHECK',
-             (f"identical to {r1['compared_with']}: bytes {r1['byte_identical']}, geometry {r1['geometry_identical']}" if 'byte_identical' in r1
-              else f"single file: date stamp {r1['date_stamp']}, random-looking ids {r1['random_like_ids']} (use --compare to prove it)")),
-            ('2 fixed labels', 'PASS' if r2['worst_x_spread']<=0.02 and r2['worst_top_gap_spread_px']<=1.5 and r2['label_overlaps']==0 and r2['labels_crossed_by_lines']==0 else 'FAIL',
-             f"within each box type the label varies by <= {round(100*r2['worst_x_spread'],1)}% of box width sideways and {r2['worst_top_gap_spread_px']} px from the top; "
-             f"{r2['label_overlaps']} label overlaps; {r2['labels_crossed_by_lines']} labels crossed by lines"),
-            ('3 no crossing', 'PASS' if r3['line_crossings']==0 and r3['lines_through_boxes']==0 else 'FAIL',
-             f"{r3['line_crossings']} crossings, {r3['lines_through_boxes']} lines through boxes"),
-            ('4 cycles as cycles', 'PASS' if r4['round_cycles']==r4['cycles'] else 'FAIL',
-             f"{r4['cycles']} main metabolite cycle(s), {r4['round_cycles']} drawn as a closed loop in cycle order"+(" (none in this drawing)" if not r4['cycles'] else "")
-             +(f"; {r4['alternative_routes']} alternative route(s) sharing metabolites with them (not judged)" if r4.get('alternative_routes') else '')),
-            ('5 consistent placement', ('PASS' if r5['reactions_inconsistent']==0 else 'FAIL') if r5['reactions_checked'] else 'N/A',
-             (f"{r5['reactions_checked']} reactions checked ({r5['role_detection']}), {r5['reactions_inconsistent']} with substrates/products not on opposite sides "
-              f"or catalysts not beside; mean substrate-product angle {r5['mean_substrate_product_angle']} deg; {r5['catalyst_lines']} catalyst line(s)")
-             if r5['reactions_checked'] else "no reaction boxes recognised"),
-            ('6 avoid long lines', 'GOOD' if r6['over_2_5x_median']==0 else ('MODERATE' if r6['over_2_5x_median']<=0.05*n else 'POOR'),
-             f"median {r6['median']}, max {r6['max']} ({r6['max_over_median']}x median), {r6['over_2_5x_median']} lines > 2.5x median, CV {r6['cv']}"),
-            ('7 avoid bends', 'GOOD' if r7['bends']==0 else ('MODERATE' if r7['connections_with_bends']<=0.1*max(1,r7['straight_connections']) else 'POOR'),
-             f"{r7['bends']} sharp bends on {r7['connections_with_bends']} lines; {r7['straight_connections']} straight-segment lines, {r7['curved_connections']} smooth curves; "
-             f"{round(100*r7['axis_aligned_share'])}% of straight lines vertical/horizontal (mean deviation {r7['mean_axis_deviation_deg']} deg)"),
-            ('8 avoid overlapping nodes', 'GOOD' if r8['box_overlaps']==0 and r8['tight_pairs']==0 else ('MODERATE' if r8['box_overlaps']==0 and r8['tight_pairs']<=0.05*max(1,r8['boxes']) else 'POOR'),
-             f"{r8['box_overlaps']} overlapping box pairs, {r8['tight_pairs']} pairs closer than 6 px, smallest gap {r8['min_clearance']} px")]
+    r6=m['rule6_long_lines']; r7=m['rule7_bends']; r8=m['rule8_overlaps']; d=m['drawing']; rc=m['reconstructed']; out=[]
+    def add(rid,kind,name,s_,value,detail,na=False):
+        if na: out.append(dict(id=rid,kind=kind,name=name,status='na',score=None,value=value,detail=detail)); return
+        out.append(dict(id=rid,kind=kind,name=name,status='pass' if s_>=0.999 else ('fail' if s_<=0.001 else 'check'),score=round(100*s_),value=value,detail=detail))
+    if 'byte_identical' in r1:
+        v=0 if (r1['byte_identical'] or r1['geometry_identical']) else 1
+        add('reproducible','hard','Reproducible rendering',_low(v,**{'p':0,'f':1}) if False else (1.0 if v==0 else 0.0),'identical' if v==0 else 'differs',f"compared with {r1['compared_with']}: bytes {r1['byte_identical']}, geometry {r1['geometry_identical']}")
+    else: add('reproducible','hard','Reproducible rendering',None,'–','give a second rendering with --compare to check it',na=True)
+    lv=max(r2['worst_x_spread'],r2['worst_top_gap_spread_px']/75.0)+(0.2 if (r2['label_overlaps'] or r2['labels_crossed_by_lines']) else 0)
+    add('labels','hard','Labels at fixed positions per type',_low(lv,0.02,0.2),f"{lv:.3f}",
+        f"within each box type the label varies by {round(100*r2['worst_x_spread'],1)}% of box width sideways and {r2['worst_top_gap_spread_px']} px from the top; {r2['label_overlaps']} label overlaps, {r2['labels_crossed_by_lines']} labels crossed")
+    if r4['cycles']: add('cycle','hard','Cycles look like cycles',_high(r4['round_cycles']/r4['cycles'],1,0.5),f"{r4['round_cycles']}/{r4['cycles']} closed loops",
+                         "main metabolite cycles drawn as a closed loop in cycle order (circle, stadium, rounded rectangle...)"+(f"; {r4['alternative_routes']} alternative route(s) not judged" if r4.get('alternative_routes') else ''))
+    else: add('cycle','hard','Cycles look like cycles',None,'no cycle','no metabolite cycle in this drawing',na=True)
+    add('clones','hard','Cofactors drawn as clones',_low(r8['cofactor_hubs'],0,3),f"{r8['cofactor_hubs']} hubs",f"{r8['cofactor_boxes']} cofactor boxes (core.js list); {r8['cofactor_hubs']} shared by more than one reaction without being a clone")
+    per=r3['line_crossings']/max(1,rc['connections'])
+    add('crossings','hard','No crossings',_low(per,0.02,0.3),f"{r3['line_crossings']} crossings",f"{per:.3f} per line across {rc['connections']} lines (lines sharing an end node never count)")
+    add('through','hard','No line through a node',_low(r3['lines_through_boxes'],0,5),f"{r3['lines_through_boxes']} lines","lines passing through a box they do not connect (exact)")
+    sh=r5.get('js_inout_opposite_share')
+    if sh is not None: add('placement','hard','Consistent participant placement',_high(sh,0.8,0.5),f"{round(100*sh)}% opposite",
+                           f"substrates and products on opposite sides (>= 120 deg between their centroids) in {round(100*sh)}% of {r5['js_reactions_scored']} reactions; modifiers beside: {r5.get('js_modifier_perpendicular_share')}")
+    else: add('placement','hard','Consistent participant placement',None,'–','no reaction with both a substrate and a product',na=True)
+    asp=d['node_aspect']; add('aspect','hard','Aspect ratio',_band(asp,T['aspect'],True),f"{asp:.2f}","width / height of the nodes' extent; target 0.5-2")
+    ll=r6['max_over_median']; add('longlines','soft','Avoid long lines',_low(ll,6,15),f"{ll}x","longest line vs median")
+    bp=r7['bends']/max(1,rc['connections']); add('bends','soft','Avoid bends',_low(bp,0.5,2),f"{bp:.2f} per line",f"{r7['bends']} bend points on {rc['connections']} lines")
+    den=d['node_density']; add('density','soft','Density',_band(den,T['density'],False),f"{round(100*den)}%","node area / extent of the nodes; target 5-30%")
+    add('overlaps','soft','No overlapping nodes',_low(r8['box_overlaps'],0,5),str(r8['box_overlaps']),f"overlapping node pairs ({r8['tight_pairs']} more pairs closer than 6 px, for information)")
+    ws=sum(T['weights'][x['kind']]*x['score'] for x in out if x['score'] is not None); wt=sum(T['weights'][x['kind']] for x in out if x['score'] is not None)
+    m['overall']=round(ws/wt) if wt else None
+    m['hard_pass']=f"{sum(1 for x in out if x['kind']=='hard' and x['status']=='pass')}/{sum(1 for x in out if x['kind']=='hard' and x['status']!='na')}"
+    return out
 
 def annotate(geo,path,title):
     import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
@@ -550,7 +596,8 @@ def main():
     r=m['reconstructed']
     print(f"{a.svg}\n  reconstructed: {r['boxes']} boxes of {r['box_types']} types, {r['labels']} labels ({r['labels_inside_boxes']} inside boxes, {r['free_labels']} free), "
           f"{r['connections']} lines ({r['curved_connections']} curved), {r['arrowheads']} arrowheads"+(f"; {r['frames_ignored']} framed region(s) such as a legend ignored" if r['frames_ignored'] else ''))
-    for name,verdict,detail in verdicts(m): print(f"  {name:<26} {verdict:<8} {detail}")
+    V=verdicts(m); print(f"  overall {m['overall']}   hard rules passed {m['hard_pass']}")
+    for x in V: print(f"  {x['kind']:<4} {x['name']:<36} {x['status']:<5} {str(x['score']) if x['score'] is not None else '-':>4}  {x['value']}  ({x['detail']})")
     print(f"  label position per box type (sideways offset of the first text line from the box centre, as % of box width; gap to the box top in px):")
     for t in m['rule2_labels']['per_box_type']:
         print(f"    outline {t['style']['outline']:<8} fill {t['style']['fill']:<8} {t['style']['dash']:<10} {t['boxes']:>3} boxes, {t['unlabelled']} unlabelled, "
@@ -560,7 +607,7 @@ def main():
     for t in m['rule5_placement']['inconsistent']: print(f"  inconsistent placement: {t}")
     d=m['drawing']; print(f"  drawing: {d['width']} x {d['height']} (aspect {d['aspect']}), boxes cover {round(100*d['box_area_share'],1)}% of the area")
     if a.json:
-        m['verdicts']=[dict(rule=n,verdict=v,detail=t) for n,v,t in verdicts(m)]
+        m['verdicts']=verdicts(m)
         json.dump(m,open(a.json,'w'),indent=1)
     if a.annotate: annotate(geo,a.annotate,a.svg.split('/')[-1]+': problems marked')
 

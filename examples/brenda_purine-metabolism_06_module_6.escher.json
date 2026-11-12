@@ -16,8 +16,8 @@
   "nodes": {
    "1": {
     "bigg_id": "mt_de46869ffd",
-    "label_x": 277.641,
-    "label_y": 396.645,
+    "label_x": 334.524,
+    "label_y": 383.895,
     "name": "thioredoxin disulfide",
     "node_is_primary": false,
     "node_type": "metabolite",
@@ -61,8 +61,8 @@
    },
    "2": {
     "bigg_id": "mt_23258e632a",
-    "label_x": 138.394,
-    "label_y": 88.5,
+    "label_x": 174.643,
+    "label_y": 74.25,
     "name": "L-serine",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -71,8 +71,8 @@
    },
    "3": {
     "bigg_id": "mt_ddadea339f",
-    "label_x": 272.075,
-    "label_y": 88.5,
+    "label_x": 307.702,
+    "label_y": 74.25,
     "name": "acetate",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -81,8 +81,8 @@
    },
    "4": {
     "bigg_id": "mt_c5363dd012",
-    "label_x": 179.561,
-    "label_y": 402.75,
+    "label_x": 235.832,
+    "label_y": 388.5,
     "name": "acetyl phosphate",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -91,8 +91,8 @@
    },
    "5": {
     "bigg_id": "mt_4cb0ce6646",
-    "label_x": 139.572,
-    "label_y": 298.0,
+    "label_x": 182.209,
+    "label_y": 283.75,
     "name": "acetyl-CoA",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -101,8 +101,8 @@
    },
    "6": {
     "bigg_id": "mt_4fd822ed16",
-    "label_x": 201.073,
-    "label_y": 507.5,
+    "label_x": 235.832,
+    "label_y": 493.25,
     "name": "glycine",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -111,8 +111,8 @@
    },
    "7": {
     "bigg_id": "mt_7dd2d3b76f",
-    "label_x": 135.562,
-    "label_y": 193.25,
+    "label_x": 174.005,
+    "label_y": 179.0,
     "name": "pyruvate",
     "node_is_primary": true,
     "node_type": "metabolite",
@@ -135,8 +135,8 @@
     "bigg_id": "rx_0baec52a4a",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 160.343,
-    "label_y": 437.875,
+    "label_x": 229.832,
+    "label_y": 424.875,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -194,8 +194,8 @@
     "bigg_id": "rx_5b521e41a3",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 122.108,
-    "label_y": 333.125,
+    "label_x": 185.173,
+    "label_y": 320.125,
     "metabolites": [
      {
       "bigg_id": "mt_3577006728",
@@ -235,8 +235,8 @@
     "bigg_id": "rx_9977d8e344",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 263.285,
-    "label_y": 123.625,
+    "label_x": 301.702,
+    "label_y": 110.625,
     "metabolites": [
      {
       "bigg_id": "mt_82e3f482bf",
@@ -300,8 +300,8 @@
     "bigg_id": "rx_9fc44ed51f",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 63.0,
-    "label_y": 228.375,
+    "label_x": 167.088,
+    "label_y": 215.375,
     "metabolites": [
      {
       "bigg_id": "mt_3f71b18536",
@@ -353,8 +353,8 @@
     "bigg_id": "rx_fc05093f60",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 126.773,
-    "label_y": 123.625,
+    "label_x": 168.643,
+    "label_y": 110.625,
     "metabolites": [
      {
       "bigg_id": "mt_23258e632a",

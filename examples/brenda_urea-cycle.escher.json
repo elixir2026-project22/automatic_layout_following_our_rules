@@ -9,149 +9,144 @@
  {
   "canvas": {
    "height": 658.03,
-   "width": 812.873,
+   "width": 870.05,
    "x": 0.0,
    "y": 0.0
   },
   "nodes": {
    "1": {
     "bigg_id": "mt_0de283c3a3",
-    "label_x": 432.962,
-    "label_y": 606.655,
+    "label_x": 529.966,
+    "label_y": 593.905,
     "name": "L-aspartate",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 454.789,
+    "x": 511.966,
     "y": 587.905
    },
    "10": {
     "node_type": "midmarker",
-    "x": 548.333,
+    "x": 605.51,
     "y": 587.905
    },
    "11": {
     "node_type": "midmarker",
-    "x": 113.839,
-    "y": 279.327
+    "x": 130.226,
+    "y": 378.827
    },
    "12": {
     "node_type": "midmarker",
-    "x": 492.13,
+    "x": 761.712,
     "y": 431.702
    },
    "13": {
     "node_type": "midmarker",
-    "x": 704.535,
-    "y": 431.702
+    "x": 605.51,
+    "y": 275.5
    },
    "14": {
     "node_type": "midmarker",
-    "x": 548.333,
-    "y": 275.5
+    "x": 449.308,
+    "y": 431.702
    },
    "15": {
     "node_type": "midmarker",
-    "x": 392.13,
-    "y": 431.702
+    "x": 625.438,
+    "y": 174.875
    },
    "16": {
     "node_type": "midmarker",
-    "x": 568.261,
-    "y": 174.875
+    "x": 605.462,
+    "y": 70.125
    },
    "17": {
     "node_type": "midmarker",
-    "x": 548.285,
-    "y": 70.125
+    "x": 130.226,
+    "y": 324.577
    },
    "18": {
     "node_type": "midmarker",
-    "x": 271.904,
-    "y": 279.327
-   },
-   "19": {
-    "node_type": "midmarker",
-    "x": 448.405,
+    "x": 505.582,
     "y": 174.875
    },
    "2": {
     "bigg_id": "mt_6ea7392d87",
-    "label_x": 712.915,
-    "label_y": 378.032,
+    "label_x": 806.071,
+    "label_y": 365.282,
     "name": "fumarate",
     "node_is_primary": false,
     "node_type": "metabolite",
-    "x": 730.894,
+    "x": 788.071,
     "y": 359.282
    },
    "3": {
     "bigg_id": "mt_73617a0182",
-    "label_x": 144.444,
-    "label_y": 351.952,
+    "label_x": 304.88,
+    "label_y": 357.702,
     "name": "Carbamoyl phosphate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 192.871,
-    "y": 331.702
+    "x": 286.88,
+    "y": 351.702
    },
    "4": {
     "bigg_id": "mt_f25ff329c6",
-    "label_x": 629.263,
-    "label_y": 343.001,
+    "label_x": 733.961,
+    "label_y": 327.251,
     "name": "L-arginine",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 658.784,
+    "x": 715.961,
     "y": 321.251
    },
    "5": {
     "bigg_id": "mt_75d2d46d2f",
-    "label_x": 406.623,
-    "label_y": 563.904,
+    "label_x": 513.058,
+    "label_y": 548.154,
     "name": "L-citrulline",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 437.881,
+    "x": 495.058,
     "y": 542.154
    },
    "6": {
     "bigg_id": "mt_9e164fa705",
-    "label_x": 406.051,
-    "label_y": 343.001,
+    "label_x": 513.058,
+    "label_y": 327.251,
     "name": "L-ornithine",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 437.881,
+    "x": 495.058,
     "y": 321.251
    },
    "7": {
     "bigg_id": "mt_e5dc9628b1",
-    "label_x": 497.105,
-    "label_y": 247.5,
+    "label_x": 583.51,
+    "label_y": 233.25,
     "name": "Urea",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 508.333,
+    "x": 565.51,
     "y": 227.25
    },
    "8": {
     "bigg_id": "mt_6966c4a71e",
-    "label_x": 529.615,
-    "label_y": 142.75,
+    "label_x": 631.452,
+    "label_y": 128.5,
     "name": "allophanate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 556.275,
+    "x": 613.452,
     "y": 122.5
    },
    "9": {
     "bigg_id": "mt_98318d535e",
-    "label_x": 608.44,
-    "label_y": 563.904,
+    "label_x": 733.961,
+    "label_y": 548.154,
     "name": "argininosuccinate",
     "node_is_primary": true,
     "node_type": "metabolite",
-    "x": 658.784,
+    "x": 715.961,
     "y": 542.154
    }
   },
@@ -160,8 +155,8 @@
     "bigg_id": "rx_0e0c18dea9",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 499.616,
-    "label_y": 590.905,
+    "label_x": 617.51,
+    "label_y": 577.905,
     "metabolites": [
      {
       "bigg_id": "mt_0de283c3a3",
@@ -193,17 +188,17 @@
     "segments": {
      "1": {
       "b1": {
-       "x": 467.175,
-       "y": 571.448
+       "x": 524.462,
+       "y": 570.571
       },
       "b2": {
-       "x": 506.905,
-       "y": 587.905
+       "x": 564.624,
+       "y": 587.206
       },
       "from_node_id": "5",
       "to_node_id": "10"
      },
-     "19": {
+     "17": {
       "b1": null,
       "b2": null,
       "from_node_id": "1",
@@ -211,50 +206,15 @@
      },
      "2": {
       "b1": {
-       "x": 589.76,
-       "y": 587.905
+       "x": 646.395,
+       "y": 587.206
       },
       "b2": {
-       "x": 629.491,
-       "y": 571.448
+       "x": 686.557,
+       "y": 570.571
       },
       "from_node_id": "10",
       "to_node_id": "9"
-     }
-    }
-   },
-   "10": {
-    "bigg_id": "rx_fe4c1635af",
-    "gene_reaction_rule": "",
-    "genes": [],
-    "label_x": 417.951,
-    "label_y": 177.875,
-    "metabolites": [
-     {
-      "bigg_id": "mt_1b1223fff4",
-      "coefficient": -1.0
-     },
-     {
-      "bigg_id": "mt_e5dc9628b1",
-      "coefficient": -1.0
-     },
-     {
-      "bigg_id": "mt_9cf23c7e50",
-      "coefficient": 1.0
-     },
-     {
-      "bigg_id": "mt_a582428d9f",
-      "coefficient": 2.0
-     }
-    ],
-    "name": "urease (H2O \u2192 CO2 + 2 NH3)",
-    "reversibility": true,
-    "segments": {
-     "17": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "7",
-      "to_node_id": "19"
      }
     }
    },
@@ -262,8 +222,8 @@
     "bigg_id": "rx_189c95a8a7",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 63.0,
-    "label_y": 282.327,
+    "label_x": 142.226,
+    "label_y": 368.827,
     "metabolites": [
      {
       "bigg_id": "mt_74828531e0",
@@ -293,7 +253,7 @@
     "name": "carbamate kinase (HCO3- + ATP + NH3 \u2192 H2O + ADP)",
     "reversibility": true,
     "segments": {
-     "11": {
+     "9": {
       "b1": null,
       "b2": null,
       "from_node_id": "11",
@@ -302,56 +262,11 @@
     }
    },
    "3": {
-    "bigg_id": "rx_41bad020b6",
-    "gene_reaction_rule": "",
-    "genes": [],
-    "label_x": 464.443,
-    "label_y": 434.702,
-    "metabolites": [
-     {
-      "bigg_id": "mt_1b1223fff4",
-      "coefficient": -1.0
-     },
-     {
-      "bigg_id": "mt_75d2d46d2f",
-      "coefficient": -1.0
-     },
-     {
-      "bigg_id": "mt_9cf23c7e50",
-      "coefficient": 1.0
-     },
-     {
-      "bigg_id": "mt_9e164fa705",
-      "coefficient": 1.0
-     },
-     {
-      "bigg_id": "mt_a582428d9f",
-      "coefficient": 1.0
-     }
-    ],
-    "name": "citrullinase (H2O \u2192 CO2 + NH3)",
-    "reversibility": true,
-    "segments": {
-     "10": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "12",
-      "to_node_id": "6"
-     },
-     "9": {
-      "b1": null,
-      "b2": null,
-      "from_node_id": "5",
-      "to_node_id": "12"
-     }
-    }
-   },
-   "4": {
     "bigg_id": "rx_56b84e5a3a",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 662.477,
-    "label_y": 434.702,
+    "label_x": 773.712,
+    "label_y": 421.702,
     "metabolites": [
      {
       "bigg_id": "mt_98318d535e",
@@ -369,44 +284,44 @@
     "name": "argininosuccinate lyase",
     "reversibility": true,
     "segments": {
-     "20": {
+     "18": {
       "b1": null,
       "b2": null,
-      "from_node_id": "13",
+      "from_node_id": "12",
       "to_node_id": "2"
      },
      "5": {
       "b1": {
-       "x": 688.078,
-       "y": 512.86
+       "x": 744.378,
+       "y": 512.75
       },
       "b2": {
-       "x": 704.535,
-       "y": 473.13
+       "x": 761.014,
+       "y": 472.588
       },
       "from_node_id": "9",
-      "to_node_id": "13"
+      "to_node_id": "12"
      },
      "6": {
       "b1": {
-       "x": 704.535,
-       "y": 390.275
+       "x": 761.014,
+       "y": 390.817
       },
       "b2": {
-       "x": 688.078,
-       "y": 350.544
+       "x": 744.378,
+       "y": 350.655
       },
-      "from_node_id": "13",
+      "from_node_id": "12",
       "to_node_id": "4"
      }
     }
    },
-   "5": {
+   "4": {
     "bigg_id": "rx_66a617511c",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 532.515,
-    "label_y": 278.5,
+    "label_x": 617.51,
+    "label_y": 265.5,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -428,44 +343,44 @@
     "name": "arginase (H2O \u2192 )",
     "reversibility": true,
     "segments": {
-     "18": {
+     "16": {
       "b1": null,
       "b2": null,
-      "from_node_id": "14",
+      "from_node_id": "13",
       "to_node_id": "7"
      },
      "7": {
       "b1": {
-       "x": 629.491,
-       "y": 291.957
+       "x": 686.557,
+       "y": 292.834
       },
       "b2": {
-       "x": 589.76,
-       "y": 275.5
+       "x": 646.395,
+       "y": 276.198
       },
       "from_node_id": "4",
-      "to_node_id": "14"
+      "to_node_id": "13"
      },
      "8": {
       "b1": {
-       "x": 506.905,
-       "y": 275.5
+       "x": 564.624,
+       "y": 276.198
       },
       "b2": {
-       "x": 467.175,
-       "y": 291.957
+       "x": 524.462,
+       "y": 292.834
       },
-      "from_node_id": "14",
+      "from_node_id": "13",
       "to_node_id": "6"
      }
     }
    },
-   "6": {
+   "5": {
     "bigg_id": "rx_68b42c436c",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 336.216,
-    "label_y": 434.702,
+    "label_x": 461.308,
+    "label_y": 421.702,
     "metabolites": [
      {
       "bigg_id": "mt_73617a0182",
@@ -484,47 +399,47 @@
       "coefficient": 1.0
      }
     ],
-    "name": "ornithine carbamoyltransferase ( \u2192 phosphate)",
+    "name": "ornithine carbamoyltransferase (+1) ( \u2192 phosphate | also: citrullinase (reverse))",
     "reversibility": true,
     "segments": {
-     "13": {
+     "11": {
       "b1": null,
       "b2": null,
       "from_node_id": "3",
-      "to_node_id": "15"
+      "to_node_id": "14"
      },
      "3": {
       "b1": {
-       "x": 408.587,
-       "y": 350.544
+       "x": 466.641,
+       "y": 350.655
       },
       "b2": {
-       "x": 392.13,
-       "y": 390.275
+       "x": 450.006,
+       "y": 390.817
       },
       "from_node_id": "6",
-      "to_node_id": "15"
+      "to_node_id": "14"
      },
      "4": {
       "b1": {
-       "x": 392.13,
-       "y": 473.13
+       "x": 450.006,
+       "y": 472.588
       },
       "b2": {
-       "x": 408.587,
-       "y": 512.86
+       "x": 466.641,
+       "y": 512.75
       },
-      "from_node_id": "15",
+      "from_node_id": "14",
       "to_node_id": "5"
      }
     }
    },
-   "7": {
+   "6": {
     "bigg_id": "rx_8701f9a5ef",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 518.859,
-    "label_y": 177.875,
+    "label_x": 637.438,
+    "label_y": 164.875,
     "metabolites": [
      {
       "bigg_id": "mt_74828531e0",
@@ -554,26 +469,26 @@
     "name": "urea carboxylase (HCO3- + ATP \u2192 phosphate + ADP)",
     "reversibility": false,
     "segments": {
-     "14": {
+     "12": {
       "b1": null,
       "b2": null,
       "from_node_id": "7",
-      "to_node_id": "16"
+      "to_node_id": "15"
      },
-     "15": {
+     "13": {
       "b1": null,
       "b2": null,
-      "from_node_id": "16",
+      "from_node_id": "15",
       "to_node_id": "8"
      }
     }
    },
-   "8": {
+   "7": {
     "bigg_id": "rx_8bc6940100",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 508.582,
-    "label_y": 73.125,
+    "label_x": 617.462,
+    "label_y": 60.125,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -595,20 +510,20 @@
     "name": "allophanate hydrolase (H2O \u2192 2 CO2 + 2 NH3)",
     "reversibility": true,
     "segments": {
-     "16": {
+     "14": {
       "b1": null,
       "b2": null,
       "from_node_id": "8",
-      "to_node_id": "17"
+      "to_node_id": "16"
      }
     }
    },
-   "9": {
+   "8": {
     "bigg_id": "rx_a6d6f13f52",
     "gene_reaction_rule": "",
     "genes": [],
-    "label_x": 204.678,
-    "label_y": 282.327,
+    "label_x": 142.226,
+    "label_y": 314.577,
     "metabolites": [
      {
       "bigg_id": "mt_1b1223fff4",
@@ -642,11 +557,46 @@
     "name": "carbamoyl-phosphate synthase (ammonia) (H2O + ATP + CO2 + NH3 \u2192 phosphate + ADP)",
     "reversibility": false,
     "segments": {
-     "12": {
+     "10": {
       "b1": null,
       "b2": null,
-      "from_node_id": "18",
+      "from_node_id": "17",
       "to_node_id": "3"
+     }
+    }
+   },
+   "9": {
+    "bigg_id": "rx_fe4c1635af",
+    "gene_reaction_rule": "",
+    "genes": [],
+    "label_x": 517.582,
+    "label_y": 164.875,
+    "metabolites": [
+     {
+      "bigg_id": "mt_1b1223fff4",
+      "coefficient": -1.0
+     },
+     {
+      "bigg_id": "mt_e5dc9628b1",
+      "coefficient": -1.0
+     },
+     {
+      "bigg_id": "mt_9cf23c7e50",
+      "coefficient": 1.0
+     },
+     {
+      "bigg_id": "mt_a582428d9f",
+      "coefficient": 2.0
+     }
+    ],
+    "name": "urease (H2O \u2192 CO2 + 2 NH3)",
+    "reversibility": true,
+    "segments": {
+     "15": {
+      "b1": null,
+      "b2": null,
+      "from_node_id": "7",
+      "to_node_id": "18"
      }
     }
    }

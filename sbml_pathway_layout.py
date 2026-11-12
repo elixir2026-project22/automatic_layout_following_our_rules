@@ -64,6 +64,12 @@ flavinadeninedinucleotideoxidized flavinadeninedinucleotidereduced adenosinetrip
 adenosinemonophosphate atp(4-) adp(3-) adenosine5'-triphosphate adenosine5'-diphosphate adenosine5'-monophosphate
 guanosinetriphosphate guanosinediphosphate coenzyme-a ubiquinone-8 ubiquinol-8 menaquinone-8 menaquinol-8'''.split()}
 SIDE_RE=re.compile(r'^((ubi|mena|plasto)?quino(ne|l)\d*|(oxidized|reduced)(ferredoxin|thioredoxin|flavodoxin|cytochromec?)|cytochromec(ii+)?)$')
+JS_CURRENCY=['atp','adp','amp','gtp','gdp','gmp','utp','udp','ump','ctp','cdp','nad','nad+','nadh','nadp','nadp+','nadph','fad',
+    'fadh2','fmn','h2o','water','co2','o2','h+','h','pi','ppi','phosphate','pyrophosphate','diphosphate','coa','coa-sh','coash','nh3',
+    'nh4+','ammonia','hco3-','bicarbonate','h2o2','e-','camp','sam','sah','acceptor','reduced acceptor','glutathione','nh4']
+SIDE|={_norm(x) for x in JS_CURRENCY}                            # core.js's cofactor list (rule: cofactors drawn as clones)
+SHARED_COFACTORS=False; COLLAPSE_ALT=True
+def is_cofactor_name(name): return _norm(name) in SIDE or bool(SIDE_RE.match(_norm(name)))
 def curated_side(name,extra,keep):
     n=_norm(name)
     return n not in keep and (n in extra or n in SIDE or bool(SIDE_RE.match(n)))
@@ -496,6 +502,20 @@ def layout_cluster(rxns,ring_scale=1.0):
                 if (b-a)%len(ring)==1: steps.setdefault(a,[]).append(r)
                 elif (a-b)%len(ring)==1: steps.setdefault(b,[]).append(r)
         for k in steps: steps[k].sort(key=lambda r:(-1 if r['main'][0]==ring[k] else 0,len(r['name']),r['id']))
+        for k in steps:                                           # alternative enzymes doing the same step in the same
+            if not COLLAPSE_ALT: break                            # direction, with no compounds of their own: written in
+            m0=steps[k][0]; keep_=[m0]; merged=[]                 # the step's box (a parallel box can never have its
+            for r in steps[k][1:]:                                # substrate and product on opposite sides);
+                same=r['main']==m0['main']                        # a reverse-direction one too, if it is reversible
+                rev=r['main']==(m0['main'][1],m0['main'][0]) and r.get('reversible',False)
+                if (same or rev) and not r['secondary'] and not r.get('modifiers'):
+                    merged.append(r); r['collapsed']=m0['id']; r['collapsed_reverse']=rev
+                else: keep_.append(r)
+            if merged:
+                R0='R:'+m0['id']; D.info[R0]['label']=m0['name']+f' (+{len(merged)})'
+                D.info[R0]['sub']=(D.info[R0]['sub']+' | ' if D.info[R0]['sub'] else '')+'also: '+'; '.join(r['name']+(' (reverse)' if r.get('collapsed_reverse') else '') for r in merged)
+                D.info[R0]['merged']=[r['id'] for r in merged]
+            steps[k]=keep_
         items=[]                                                  # boxes around the circle, in order
         for k,m in enumerate(ring):
             items.append(D.size('M:'+m))
@@ -537,6 +557,9 @@ def layout_cluster(rxns,ring_scale=1.0):
                         if abs(x1-x2)<(w1+w2)/2+14 and abs(y1-y2)<(h1+h2)/2+14: return False
                 return True
             while not fits(hl) and hl<20000: hl+=10
+            while hl>1.1*r_ and r_<4000:                          # aspect rule: widen the stadium rather than let
+                r_+=20; hl=0.0                                    # it grow tall
+                while not fits(hl) and hl<20000: hl+=10
             hl*=ring_scale
             ring_steps[i]=dict(ring=ring,steps=steps,chords=chords,rad=r_+hl,shape='stadium',r=r_,hl=hl,
                                box=(2*r_+iw+2*(altw+70),2*hl+2*r_+ih+2*(ih+90)))
@@ -561,7 +584,8 @@ def layout_cluster(rxns,ring_scale=1.0):
                  key=lambda t:(-appear[t[0]],t[0],t[1]))
     for n,rid in cands:
         if find('M:'+n)!=find('R:'+rid): uf[find('M:'+n)]=find('R:'+rid); joins.add((n,rid))
-    joins|={(n,r['id']) for r in rxns for n,_ in r['secondary'] if _norm(n) in SHOW}   # then: shown compounds
+    joins|={(n,r['id']) for r in rxns for n,_ in r['secondary'] if _norm(n) in SHOW     # then: shown compounds;
+            and (SHARED_COFACTORS or not is_cofactor_name(n))}     # shown cofactors stay one copy per reaction (clones)
     real=mains|{n for n,_ in joins}
     for n in sorted(real):
         if 'M:'+n not in D.info: D.add('M:'+n,'core' if n in ringof else 'met',n)
@@ -734,8 +758,16 @@ def layout_cluster(rxns,ring_scale=1.0):
                 if not hit(bx,0,shift): break
                 shift+=30 if up else -30
             sx,sy=0.0,shift
-        else:                                                     # beside the ring, still top-to-bottom,
-            right=ax>=cx                                          # anchor end level with the anchor -> horizontal link
+        else:                                                     # beside the ring: the piece flows horizontally
+            right=ax>=cx                                          # towards/away from the ring, level with its anchor
+            szT={k:(v[1],v[0]) for k,v in size.items()}           # lay it out with swapped sizes, then transpose
+            posT,chainsT=sugiyama(comp,[e for e,_,_ in ce],szT,tag=f'q{pi}_')
+            pos={k:(-v[1],v[0]) for k,v in posT.items()}; chains=chainsT
+            for k in pos:
+                if k.startswith('__d') and k not in size: pass
+            mxa=float(np.mean([pos[n][0] for n in an])); mxo=float(np.mean([v[0] for v in pos.values()]))
+            if (right and mxa>mxo+1e-6) or ((not right) and mxa<mxo-1e-6):   # anchoring end must face the ring
+                pos={k:(-v[0],v[1]) for k,v in pos.items()}
             dy=ay-float(np.mean([pos[n][1] for n in an])); pos={k:(v[0],v[1]+dy) for k,v in pos.items()}
             bx=boxes(pos); y0,y1=min(b[1] for b in bx),max(b[3] for b in bx)
             clear=max(clr_x(y) for y in np.linspace(y0,y1,25))
@@ -774,6 +806,7 @@ def layout_cluster(rxns,ring_scale=1.0):
     k=0
     for r in rxns:
         R='R:'+r['id']
+        if r.get('collapsed'): continue                           # drawn inside its step's box
         if R not in D.P:                                          # touches no shared box at all
             D.P[R]=(xoff+150*k,300.0); k+=1
         for j,(n,sd) in enumerate(r['secondary']):
@@ -1139,6 +1172,14 @@ def drawing_from_dict(d):
     D.rings={r['id']:(Stadium((r['cx'],r['cy']),r['r'],r['hl']) if r.get('shape')=='stadium' else ((r['cx'],r['cy']),r['r'])) for r in d['rings']}
     return D
 
+def one_bezier(D,L):
+    """A ring arc (circle or stadium) as ONE cubic Bezier: end points + tangents along the outline."""
+    P=D.path(L); a,b=P[0],P[-1]
+    if len(P)<3: return a,a,b,b
+    def unit(u,v):
+        d=math.dist(u,v) or 1.0; return ((v[0]-u[0])/d,(v[1]-u[1])/d)
+    t0=unit(P[0],P[1]); t1=unit(P[-2],P[-1]); ln=sum(math.dist(u,v) for u,v in zip(P,P[1:]))/3
+    return a,(a[0]+t0[0]*ln,a[1]+t0[1]*ln),(b[0]-t1[0]*ln,b[1]-t1[1]*ln),b
 LNS='http://www.sbml.org/sbml/level3/version1/layout/version1'
 XSI='http://www.w3.org/2001/XMLSchema-instance'
 def export_sbml_layout(src,dst,drawings):
@@ -1204,23 +1245,16 @@ def export_sbml_layout(src,dst,drawings):
             sr=ET.SubElement(rglyph[R][1],q('speciesReferenceGlyph')); sr.set(q('id'),f'srg_{k+1}_{nref}'); nref+=1
             sr.set(q('speciesGlyph'),gid[S]); sr.set(q('role'),role)
             cv=ET.SubElement(ET.SubElement(sr,q('curve')),q('listOfCurveSegments'))
-            for L in Ls:
-                if L['ring'] is None or isinstance(D.rings[L['ring']],Stadium):
-                    P_=D.path(L); P_=P_[::max(1,len(P_)//8)]+([P_[-1]] if (len(P_)-1)%max(1,len(P_)//8) else [])
-                    for a,b in zip(P_,P_[1:]):
-                        seg=ET.SubElement(cv,q('curveSegment')); seg.set(f'{{{XSI}}}type','LineSegment')
-                        pt(seg,'start',tx(a[0]),ty(a[1])); pt(seg,'end',tx(b[0]),ty(b[1]))
-                else:                                             # ring arc -> cubic Beziers of <= 90 degrees
-                    (cx,cy),r=D.rings[L['ring']]; a,b=D.P[L['a']],D.P[L['b']]
-                    t1=math.atan2(a[1]-cy,a[0]-cx); t2=math.atan2(b[1]-cy,b[0]-cx); dt=(t2-t1+math.pi)%(2*math.pi)-math.pi
-                    m=max(1,int(math.ceil(abs(dt)/(math.pi/2)))); h=dt/m; kk=4/3*math.tan(h/4)*r
-                    for j in range(m):
-                        u,v=t1+h*j,t1+h*(j+1)
-                        P0=(cx+r*math.cos(u),cy+r*math.sin(u)); P3=(cx+r*math.cos(v),cy+r*math.sin(v))
-                        P1=(P0[0]-kk*math.sin(u),P0[1]+kk*math.cos(u)); P2=(P3[0]+kk*math.sin(v),P3[1]-kk*math.cos(v))
-                        seg=ET.SubElement(cv,q('curveSegment')); seg.set(f'{{{XSI}}}type','CubicBezier')
-                        pt(seg,'start',tx(P0[0]),ty(P0[1])); pt(seg,'end',tx(P3[0]),ty(P3[1]))
-                        pt(seg,'basePoint1',tx(P1[0]),ty(P1[1])); pt(seg,'basePoint2',tx(P2[0]),ty(P2[1]))
+            for L in Ls:                                          # one segment per drawn piece: straight -> line,
+                if L['ring'] is None:                             # ring arc -> a single cubic Bezier (a chain through
+                    a,b=D.P[L['a']],D.P[L['b']]                   # bend points keeps one segment per real bend)
+                    seg=ET.SubElement(cv,q('curveSegment')); seg.set(f'{{{XSI}}}type','LineSegment')
+                    pt(seg,'start',tx(a[0]),ty(a[1])); pt(seg,'end',tx(b[0]),ty(b[1]))
+                else:
+                    P0,P1,P2,P3=one_bezier(D,L)
+                    seg=ET.SubElement(cv,q('curveSegment')); seg.set(f'{{{XSI}}}type','CubicBezier')
+                    pt(seg,'start',tx(P0[0]),ty(P0[1])); pt(seg,'end',tx(P3[0]),ty(P3[1]))
+                    pt(seg,'basePoint1',tx(P1[0]),ty(P1[1])); pt(seg,'basePoint2',tx(P2[0]),ty(P2[1]))
         AG=None
         for g,lst in rglyph.values():                             # unconnected reaction -> generalGlyph
             if len(lst)==0:                                       # (a reactionGlyph needs >=1 connection)
@@ -1254,7 +1288,7 @@ def export_escher(D,title,rxn_by_id,path,map_id):
         if k not in ('core','met','alias'): continue               # (Escher maps have no catalysts)
         x,y=ex(D.P[n]); w,h=D.size(n)
         new_node(n,dict(node_type='metabolite',x=x,y=y,bigg_id=_bigg(SPECIES_ID.get(D.info[n]['label'],D.info[n]['label']),'M_'),
-                        name=D.info[n]['label'],label_x=round(x-w/2+4,3),label_y=round(y+h/2+12,3),node_is_primary=(k!='alias')))
+                        name=D.info[n]['label'],label_x=round(x+18,3),label_y=round(y+6,3),node_is_primary=(k!='alias')))
     for n in names:                                               # reactions: midmarker + stoichiometry
         if not n.startswith('R:'): continue
         rid=n[2:]; r=rxn_by_id.get(rid,{}); x,y=ex(D.P[n]); w,h=D.size(n)
@@ -1263,7 +1297,7 @@ def export_escher(D,title,rxn_by_id,path,map_id):
              [dict(bigg_id=_bigg(SPECIES_ID.get(m,m),'M_'),coefficient=st) for m,st in r.get('prods',[])]
         label=D.info[n]['label']+(' ('+D.info[n]['sub']+')' if D.info[n]['sub'] else '')
         reactions[str(len(reactions)+1)]=dict(name=label,bigg_id=_bigg(rid,'R_'),reversibility=bool(r.get('reversible',True)),
-            label_x=round(x-w/2+3,3),label_y=round(y+3,3),gene_reaction_rule='',genes=[],metabolites=mets,segments={},_mid=mid,_key=n)
+            label_x=round(x+12,3),label_y=round(y-10,3),gene_reaction_rule='',genes=[],metabolites=mets,segments={},_mid=mid,_key=n)
     by_key={v['_key']:v for v in reactions.values()}
     seg=itertools.count(1)
     conns={}
@@ -1279,23 +1313,8 @@ def export_escher(D,title,rxn_by_id,path,map_id):
                 if e not in node_id:                              # bend point -> multimarker of this reaction
                     x,y=ex(D.P[e]); new_node(e,dict(node_type='multimarker',x=x,y=y))
             pieces=[(a,b,None,None)]
-            if L['ring'] is not None and isinstance(D.rings[L['ring']],Stadium):
-                P_=D.path(L); idx=sorted(set(list(range(0,len(P_),max(1,len(P_)//6)))+[len(P_)-1])); prev=a; pieces=[]
-                for jj,ii in enumerate(idx[1:]):
-                    nxt=b if ii==len(P_)-1 else f'{a}|{b}|s{jj}'
-                    if nxt not in node_id: x,y=ex(P_[ii]); new_node(nxt,dict(node_type='multimarker',x=x,y=y))
-                    pieces.append((prev,nxt,None,None)); prev=nxt
-            elif L['ring'] is not None:                           # arc -> Bezier(s) of <= 90 degrees
-                (cx,cy),r=D.rings[L['ring']]; pa,pb=D.P[a],D.P[b]
-                t1=math.atan2(pa[1]-cy,pa[0]-cx); t2=math.atan2(pb[1]-cy,pb[0]-cx); dt=(t2-t1+math.pi)%(2*math.pi)-math.pi
-                m=max(1,int(math.ceil(abs(dt)/(math.pi/2)))); hstep=dt/m; kk=4/3*math.tan(hstep/4)*r; pieces=[]; prev=a
-                for j in range(m):
-                    u,v=t1+hstep*j,t1+hstep*(j+1)
-                    P0=(cx+r*math.cos(u),cy+r*math.sin(u)); P3=(cx+r*math.cos(v),cy+r*math.sin(v))
-                    P1=(P0[0]-kk*math.sin(u),P0[1]+kk*math.cos(u)); P2=(P3[0]+kk*math.sin(v),P3[1]-kk*math.cos(v))
-                    nxt=b if j==m-1 else f'{a}|{b}|{j}'
-                    if nxt not in node_id: x,y=ex(P3); new_node(nxt,dict(node_type='multimarker',x=x,y=y))
-                    pieces.append((prev,nxt,P1,P2)); prev=nxt
+            if L['ring'] is not None:                             # ring arc -> one Bezier segment
+                P0,P1,P2,P3=one_bezier(D,L); pieces=[(a,b,P1,P2)]
             for u,v,c1,c2 in pieces:
                 rx['segments'][str(next(seg))]=dict(from_node_id=node_id[u],to_node_id=node_id[v],
                     b1=None if c1 is None else dict(zip('xy',ex(c1))),b2=None if c2 is None else dict(zip('xy',ex(c2))))
@@ -1348,9 +1367,13 @@ def main():
     ap.add_argument('--ring-shape',choices=['auto','circle','stadium'],default='auto',
                     help='cycles as circles, stadiums, or (auto) stadiums for cycles of more than --stadium-above metabolites')
     ap.add_argument('--stadium-above',type=int,default=6)
+    ap.add_argument('--keep-alternatives',action='store_true',help='draw every alternative enzyme of a cycle step as its own box (by default those\n'
+                    'doing the same step - in the same direction, or in the opposite one if reversible - are written in the step\'s box)')
+    ap.add_argument('--shared-cofactors',action='store_true',help='--show cofactors as one shared box (breaks the rule "cofactors drawn as clones")')
     ap.add_argument('--escher',action='store_true',help='also write each drawing as an Escher map (NAME.escher.json)')
     a=ap.parse_args()
-    global RING_SHAPE,STADIUM_ABOVE; RING_SHAPE,STADIUM_ABOVE=a.ring_shape,a.stadium_above
+    global RING_SHAPE,STADIUM_ABOVE,SHARED_COFACTORS,COLLAPSE_ALT
+    RING_SHAPE,STADIUM_ABOVE,SHARED_COFACTORS,COLLAPSE_ALT=a.ring_shape,a.stadium_above,a.shared_cofactors,not a.keep_alternatives
     if a.from_layout:                                             # ---- reuse a saved layout
         saved=json.load(open(a.from_layout)); out=a.out or a.from_layout.replace('.layout.json','')+'_redrawn'
         ok=True; drawings=[]

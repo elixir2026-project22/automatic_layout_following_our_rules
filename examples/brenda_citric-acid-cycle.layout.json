@@ -273,26 +273,13 @@
      "cat": false,
      "chain": null,
      "own": [
-      "M:2-oxoglutarate",
-      "R:R_rx_0aac87f3c2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:2-oxoglutarate",
-     "target": "R:R_rx_0aac87f3c2"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
       "M:succinyl-CoA",
-      "R:R_rx_0aac87f3c2"
+      "R:R_rx_e5d9b4b716"
      ],
      "ring": null,
      "side": false,
-     "source": "R:R_rx_0aac87f3c2",
-     "target": "M:succinyl-CoA"
+     "source": "M:succinyl-CoA",
+     "target": "R:R_rx_e5d9b4b716"
     },
     {
      "arrow": true,
@@ -300,103 +287,12 @@
      "chain": null,
      "own": [
       "M:succinate",
-      "R:R_rx_2685246bd5"
+      "R:R_rx_e5d9b4b716"
      ],
      "ring": null,
      "side": false,
-     "source": "M:succinate",
-     "target": "R:R_rx_2685246bd5"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinyl-CoA",
-      "R:R_rx_2685246bd5"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_2685246bd5",
-     "target": "M:succinyl-CoA"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinate",
-      "R:R_rx_f64083be68"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:succinate",
-     "target": "R:R_rx_f64083be68"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinyl-CoA",
-      "R:R_rx_f64083be68"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_f64083be68",
-     "target": "M:succinyl-CoA"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:isocitrate",
-      "R:R_rx_bf6797eac2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:isocitrate",
-     "target": "R:R_rx_bf6797eac2"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:2-oxoglutarate",
-      "R:R_rx_bf6797eac2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_bf6797eac2",
-     "target": "M:2-oxoglutarate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:succinate",
-      "R:R_rx_dee9b5c8f5"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:succinate",
-     "target": "R:R_rx_dee9b5c8f5"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:fumarate",
-      "R:R_rx_dee9b5c8f5"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_dee9b5c8f5",
-     "target": "M:fumarate"
+     "source": "R:R_rx_e5d9b4b716",
+     "target": "M:succinate"
     },
     {
      "arrow": true,
@@ -427,59 +323,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": null,
-     "own": [
-      "M:(S)-malate",
-      "R:R_rx_d24528dbec"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:(S)-malate",
-     "target": "R:R_rx_d24528dbec"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:oxaloacetate",
-      "R:R_rx_d24528dbec"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_d24528dbec",
-     "target": "M:oxaloacetate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:(S)-malate",
-      "R:R_rx_b53605d7d2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:(S)-malate",
-     "target": "R:R_rx_b53605d7d2"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:oxaloacetate",
-      "R:R_rx_b53605d7d2"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_b53605d7d2",
-     "target": "M:oxaloacetate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": 100044,
+     "chain": 100030,
      "own": [
       "M:(3S)-citryl-CoA",
       "R:R_rx_12438e6346"
@@ -492,7 +336,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 100045,
+     "chain": 100031,
      "own": [
       "M:(3S)-citryl-CoA",
       "R:R_rx_611050f494"
@@ -505,7 +349,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 100046,
+     "chain": 100032,
      "own": [
       "M:(3S)-citryl-CoA",
       "R:R_rx_e568d43995"
@@ -544,7 +388,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 200048,
+     "chain": 200034,
      "own": [
       "M:Maleate",
       "R:R_rx_6aa5564e42"
@@ -583,7 +427,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 400048,
+     "chain": 400034,
      "own": [
       "M:acetyl-CoA",
       "R:R_rx_NODE_8880"
@@ -748,32 +592,6 @@
      "side": false,
      "source": "A:cut0",
      "target": "R:R_rx_611050f494"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "A:cut1",
-      "R:R_rx_e5d9b4b716"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "A:cut1",
-     "target": "R:R_rx_e5d9b4b716"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "A:cut2",
-      "R:R_rx_e5d9b4b716"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_e5d9b4b716",
-     "target": "A:cut2"
     }
    ],
    "name": "",
@@ -787,8 +605,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 624.8035710348902,
-     "y": -46.69147563283627
+     "x": 691.7947270796114,
+     "y": -19.90956447023692
     },
     {
      "h": 13.5,
@@ -799,8 +617,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 267.227672731533,
-     "y": -1231.7477793574444
+     "x": 247.8984049790211,
+     "y": -1099.2132593859033
     },
     {
      "h": 13.5,
@@ -811,8 +629,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 701.2891868299449,
-     "y": -234.86778085126065
+     "x": 692.8903331120943,
+     "y": -206.0524236638979
     },
     {
      "h": 13.5,
@@ -823,8 +641,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 47.942,
-     "x": 360.39212905793755,
-     "y": -110.19644039928693
+     "x": 390.27797507675086,
+     "y": -171.7507475470906
     },
     {
      "h": 13.5,
@@ -835,8 +653,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 604.260211967481,
-     "y": -341.85442587731984
+     "x": 637.3862701297885,
+     "y": -281.9042116179561
     },
     {
      "h": 13.5,
@@ -847,8 +665,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 49.948,
-     "x": 795.3148966484322,
-     "y": -256.0751166178954
+     "x": 865.2871555296615,
+     "y": -228.5623334705935
     },
     {
      "h": 13.5,
@@ -859,8 +677,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 37.577,
-     "x": 750.5399523212346,
-     "y": -140.31906387340143
+     "x": 817.479398052733,
+     "y": -111.17246992924682
     },
     {
      "h": 13.5,
@@ -871,8 +689,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 58.441,
-     "x": 682.9308418527571,
-     "y": -1338.2101830393726
+     "x": 475.0220522639912,
+     "y": -1220.9071968436856
     },
     {
      "h": 13.5,
@@ -883,8 +701,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 70.812,
-     "x": 666.257976721432,
-     "y": -1206.9863973267402
+     "x": 380.39335972328206,
+     "y": -1029.3099385825606
     },
     {
      "h": 13.5,
@@ -895,32 +713,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 33.569,
-     "x": 629.7744001877817,
-     "y": -213.570860494466
-    },
-    {
-     "h": 13.5,
-     "id": "A:cut1",
-     "kind": "alias",
-     "label": "succinyl-CoA",
-     "sbml_id": "M_mt_70122f9a7f",
-     "sbml_type": "species",
-     "sub": null,
-     "w": 57.461,
-     "x": 619.2786980606967,
-     "y": -1315.116457796179
-    },
-    {
-     "h": 13.5,
-     "id": "A:cut2",
-     "kind": "alias",
-     "label": "succinate",
-     "sbml_id": "M_mt_92e136de2e",
-     "sbml_type": "species",
-     "sub": null,
-     "w": 45.089,
-     "x": 734.7861131379472,
-     "y": -1217.1797741537043
+     "x": 697.5518726335728,
+     "y": -185.4571024094077
     },
     {
      "h": 16.5,
@@ -931,8 +725,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 72.974,
-     "x": 691.2932828122069,
-     "y": -124.48641246541524
+     "x": 751.4170866106962,
+     "y": -114.85024503058267
     },
     {
      "h": 19.5,
@@ -943,8 +737,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 69.153,
-     "x": 298.1786460941896,
-     "y": -430.7992073393387
+     "x": 328.0644921130029,
+     "y": -382.55980256916564
     },
     {
      "h": 19.5,
@@ -955,8 +749,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 92.374,
-     "x": 691.7596509839213,
-     "y": -1442.5403789212053
+     "x": 739.0300268442414,
+     "y": -1293.8665796555915
     },
     {
      "h": 16.5,
@@ -967,8 +761,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 44.619,
-     "x": 179.26450000000003,
-     "y": -726.9273478434446
+     "x": 87.82639062500003,
+     "y": -699.1453608707025
     },
     {
      "h": 16.5,
@@ -979,8 +773,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 43.253,
-     "x": 282.127,
-     "y": -1352.613
+     "x": 328.064,
+     "y": -1236.277
     },
     {
      "h": 16.5,
@@ -991,8 +785,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 57.274,
-     "x": 298.1786460941896,
-     "y": -97.36541153563098
+     "x": 328.0644921130029,
+     "y": -158.91971868343467
     },
     {
      "h": 19.5,
@@ -1003,8 +797,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 82.142,
-     "x": 771.585825,
-     "y": -775.6773478434445
+     "x": 874.7116718750001,
+     "y": -699.1453608707019
     },
     {
      "h": 19.5,
@@ -1015,8 +809,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 48.641,
-     "x": 769.9162101558104,
-     "y": -430.7992073393386
+     "x": 845.2720078869971,
+     "y": -382.55980256916547
     },
     {
      "h": 19.5,
@@ -1027,8 +821,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 62.644,
-     "x": 296.50903125,
-     "y": -775.6773478434446
+     "x": 298.624828125,
+     "y": -699.1453608707025
     },
     {
      "h": 16.5,
@@ -1039,8 +833,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 55.001,
-     "x": 444.047,
-     "y": -1074.054
+     "x": 515.1455906502257,
+     "y": -969.2363313526982
     },
     {
      "h": 19.5,
@@ -1051,8 +845,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 63.688,
-     "x": 771.585825,
-     "y": -1120.6215439696662
+     "x": 874.7116718750001,
+     "y": -1020.2376048878942
     },
     {
      "h": 19.5,
@@ -1063,8 +857,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 82.403,
-     "x": 534.047428125,
-     "y": -221.37499999999997
+     "x": 586.6682500000001,
+     "y": -221.375
     },
     {
      "h": 19.5,
@@ -1075,8 +869,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 64.144,
-     "x": 296.50903125,
-     "y": -1120.6215439696662
+     "x": 298.624828125,
+     "y": -1020.2376048878946
     },
     {
      "h": 19.5,
@@ -1087,20 +881,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 81.405,
-     "x": 376.33520526607884,
-     "y": -1442.5403789212055
-    },
-    {
-     "h": 20.25,
-     "id": "R:R_rx_0aac87f3c2",
-     "kind": "rxn",
-     "label": "2-oxoglutarate dehydrogenase system",
-     "sbml_id": "R_rx_0aac87f3c2",
-     "sbml_type": "reaction",
-     "sub": "NAD+ + CoA \u2192 NADH + CO2",
-     "w": 136.003,
-     "x": 534.0474281250002,
-     "y": -1822.7209921875
+     "x": 434.30647315575897,
+     "y": -1293.8665796555915
     },
     {
      "h": 13.0,
@@ -1111,44 +893,32 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 61.911,
-     "x": 691.2932828122069,
-     "y": -75.73641246541524
-    },
-    {
-     "h": 13.0,
-     "id": "R:R_rx_2432fef40d",
-     "kind": "rxn",
-     "label": "succinyl-CoA:acetate CoA-transferase",
-     "sbml_id": "R_rx_2432fef40d",
-     "sbml_type": "reaction",
-     "sub": null,
-     "w": 131.163,
-     "x": 298.1786460941897,
-     "y": -1293.0275864106616
+     "x": 759.070755257998,
+     "y": -47.62265438035695
     },
     {
      "h": 20.25,
-     "id": "R:R_rx_2685246bd5",
+     "id": "R:R_rx_2432fef40d",
      "kind": "rxn",
-     "label": "succinate-CoA ligase (ADP-forming)",
-     "sbml_id": "R_rx_2685246bd5",
+     "label": "succinyl-CoA:acetate CoA-transferase (+2)",
+     "sbml_id": "R_rx_2432fef40d",
      "sbml_type": "reaction",
-     "sub": "ATP + CoA \u2192 phosphate + ADP",
-     "w": 131.493,
-     "x": 151.21891158469944,
-     "y": -1310.5443336229764
+     "sub": "also: succinate-CoA ligase (ADP-forming) (reverse); succinate-CoA ligase (GDP-forming) (reverse)",
+     "w": 181.715,
+     "x": 328.06449211300315,
+     "y": -1176.2770411808349
     },
     {
      "h": 20.25,
      "id": "R:R_rx_3726ad3344",
      "kind": "rxn",
-     "label": "isocitrate dehydrogenase (NAD+)",
+     "label": "isocitrate dehydrogenase (NAD+) (+1)",
      "sbml_id": "R_rx_3726ad3344",
      "sbml_type": "reaction",
-     "sub": "NAD+ \u2192 NADH + CO2",
-     "w": 125.229,
-     "x": 769.9162101558104,
-     "y": -1293.0275864106613
+     "sub": "NAD+ \u2192 NADH + CO2 | also: isocitrate dehydrogenase (NADP+)",
+     "w": 193.571,
+     "x": 845.2720078869972,
+     "y": -1176.2770411808344
     },
     {
      "h": 13.0,
@@ -1159,8 +929,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 60.629,
-     "x": 534.047428125,
-     "y": -1074.0540774926262
+     "x": 586.6682500000001,
+     "y": -976.8901519455733
     },
     {
      "h": 20.25,
@@ -1171,20 +941,20 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 77.692,
-     "x": 771.585825,
-     "y": -603.2052497803338
+     "x": 874.7116718750001,
+     "y": -538.5992388621057
     },
     {
      "h": 20.25,
      "id": "R:R_rx_4a2da21816",
      "kind": "rxn",
-     "label": "succinate dehydrogenase",
+     "label": "succinate dehydrogenase (+1)",
      "sbml_id": "R_rx_4a2da21816",
      "sbml_type": "reaction",
-     "sub": "a quinone \u2192 a quinol",
-     "w": 97.703,
-     "x": 296.50903125,
-     "y": -948.1494459065556
+     "sub": "a quinone \u2192 a quinol | also: succinate dehydrogenase",
+     "w": 163.623,
+     "x": 298.624828125,
+     "y": -859.6914828792983
     },
     {
      "h": 20.25,
@@ -1195,8 +965,8 @@
      "sbml_type": "reaction",
      "sub": "ATP + CoA \u2192 phosphate + ADP",
      "w": 98.135,
-     "x": 641.7217778109379,
-     "y": -191.0035480891462
+     "x": 769.2674772339009,
+     "y": -179.36232896956417
     },
     {
      "h": 20.25,
@@ -1207,8 +977,8 @@
      "sbml_type": "reaction",
      "sub": "phosphate + ADP \u2192 ATP + CoA",
      "w": 97.803,
-     "x": 691.7596509839213,
-     "y": -281.2864148287946
+     "x": 739.0300268442413,
+     "y": -264.97026409440866
     },
     {
      "h": 13.0,
@@ -1219,20 +989,20 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 74.489,
-     "x": 179.26450000000003,
-     "y": -775.6773478434446
+     "x": 181.38029687500003,
+     "y": -699.1453608707025
     },
     {
      "h": 20.25,
      "id": "R:R_rx_6d4d806e97",
      "kind": "rxn",
-     "label": "malate dehydrogenase (NADP+)",
+     "label": "malate dehydrogenase (NADP+) (+2)",
      "sbml_id": "R_rx_6d4d806e97",
      "sbml_type": "reaction",
-     "sub": "NADP+ \u2192 NADPH",
-     "w": 121.213,
-     "x": 376.33520526607884,
-     "y": -281.2864148287945
+     "sub": "NADP+ \u2192 NADPH | also: malate dehydrogenase (quinone); (S)-malate dehydrogenase (NAD+, oxaloacetate-forming)",
+     "w": 194.924,
+     "x": 434.30647315575874,
+     "y": -264.9702640944088
     },
     {
      "h": 13.0,
@@ -1243,8 +1013,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 65.711,
-     "x": 224.26828349328667,
-     "y": -176.73008612483815
+     "x": 328.0644921130029,
+     "y": -207.66971868343467
     },
     {
      "h": 20.25,
@@ -1255,32 +1025,8 @@
      "sbml_type": "reaction",
      "sub": "H2O \u2192 CoA",
      "w": 78.374,
-     "x": 657.2345565294886,
-     "y": -320.1710885822479
-    },
-    {
-     "h": 20.25,
-     "id": "R:R_rx_b53605d7d2",
-     "kind": "rxn",
-     "label": "(S)-malate dehydrogenase (NAD+, oxaloacetate-forming)",
-     "sbml_id": "R_rx_b53605d7d2",
-     "sbml_type": "reaction",
-     "sub": "NAD+ \u2192 NADH",
-     "w": 137.574,
-     "x": 309.9407928537082,
-     "y": -206.50819607215354
-    },
-    {
-     "h": 20.25,
-     "id": "R:R_rx_bf6797eac2",
-     "kind": "rxn",
-     "label": "isocitrate dehydrogenase (NADP+)",
-     "sbml_id": "R_rx_bf6797eac2",
-     "sbml_type": "reaction",
-     "sub": "NADP+ \u2192 NADPH + CO2",
-     "w": 129.45,
-     "x": 420.3903551062119,
-     "y": -1251.366133581372
+     "x": 717.8718589746261,
+     "y": -298.9162790652588
     },
     {
      "h": 20.25,
@@ -1291,32 +1037,8 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 76.844,
-     "x": 296.50903125,
-     "y": -603.2052497803342
-    },
-    {
-     "h": 20.25,
-     "id": "R:R_rx_d24528dbec",
-     "kind": "rxn",
-     "label": "malate dehydrogenase (quinone)",
-     "sbml_id": "R_rx_d24528dbec",
-     "sbml_type": "reaction",
-     "sub": "a quinone \u2192 a quinol",
-     "w": 123.999,
-     "x": 618.0108664471079,
-     "y": -553.4791311029676
-    },
-    {
-     "h": 20.25,
-     "id": "R:R_rx_dee9b5c8f5",
-     "kind": "rxn",
-     "label": "succinate dehydrogenase",
-     "sbml_id": "R_rx_dee9b5c8f5",
-     "sbml_type": "reaction",
-     "sub": "FAD \u2192 FADH2",
-     "w": 97.703,
-     "x": 420.50903125,
-     "y": -948.1494459065556
+     "x": 298.624828125,
+     "y": -538.5992388621062
     },
     {
      "h": 13.0,
@@ -1327,8 +1049,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 88.72,
-     "x": 755.006923437207,
-     "y": -176.86141246541524
+     "x": 822.7843958829981,
+     "y": -148.74765438035695
     },
     {
      "h": 13.0,
@@ -1339,8 +1061,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 131.163,
-     "x": 671.5358094426243,
-     "y": -1248.525579979375
+     "x": 428.6174597690838,
+     "y": -1126.9505706446694
     },
     {
      "h": 20.25,
@@ -1351,41 +1073,29 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 77.692,
-     "x": 771.585825,
-     "y": -948.1494459065552
-    },
-    {
-     "h": 20.25,
-     "id": "R:R_rx_f64083be68",
-     "kind": "rxn",
-     "label": "succinate-CoA ligase (GDP-forming)",
-     "sbml_id": "R_rx_f64083be68",
-     "sbml_type": "reaction",
-     "sub": "GTP + CoA \u2192 GDP + phosphate",
-     "w": 132.129,
-     "x": 8.231061791681896,
-     "y": -1327.5876552349587
+     "x": 874.7116718750001,
+     "y": -859.6914828792981
     },
     {
      "h": 20.25,
      "id": "R:R_rx_fd1ad384ec",
      "kind": "rxn",
-     "label": "2-oxoglutarate synthase",
+     "label": "2-oxoglutarate synthase (+1)",
      "sbml_id": "R_rx_fd1ad384ec",
      "sbml_type": "reaction",
-     "sub": "2 oxidized ferredoxin + CoA \u2192 2 reduced ferredoxin + CO2",
-     "w": 177.869,
-     "x": 534.0474281250001,
-     "y": -1502.45179375
+     "sub": "2 oxidized ferredoxin + CoA \u2192 2 reduced ferredoxin + CO2 | also: 2-oxoglutarate dehydrogenase system",
+     "w": 187.38,
+     "x": 586.6682500000001,
+     "y": -1337.4618437500003
     }
    ],
    "rings": [
     {
-     "cx": 534.047428125,
-     "cy": -861.913396875,
-     "hl": 403.0,
+     "cx": 586.6682500000001,
+     "cy": -779.418421875,
+     "hl": 270.0,
      "id": 0,
-     "r": 237.53839687500002,
+     "r": 288.04342187500004,
      "shape": "stadium"
     }
    ],

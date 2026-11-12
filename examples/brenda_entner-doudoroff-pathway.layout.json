@@ -193,85 +193,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": null,
-     "own": [
-      "M:DL-glyceraldehyde",
-      "R:R_rx_NODE_8287"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:DL-glyceraldehyde",
-     "target": "R:R_rx_NODE_8287"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:D-glycerate",
-      "R:R_rx_NODE_8287"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_NODE_8287",
-     "target": "M:D-glycerate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:DL-glyceraldehyde",
-      "R:R_rx_NODE_11298"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:DL-glyceraldehyde",
-     "target": "R:R_rx_NODE_11298"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:D-glycerate",
-      "R:R_rx_NODE_11298"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_NODE_11298",
-     "target": "M:D-glycerate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:DL-glyceraldehyde",
-      "R:R_rx_NODE_2957"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "M:DL-glyceraldehyde",
-     "target": "R:R_rx_NODE_2957"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": null,
-     "own": [
-      "M:D-glycerate",
-      "R:R_rx_NODE_2957"
-     ],
-     "ring": null,
-     "side": false,
-     "source": "R:R_rx_NODE_2957",
-     "target": "M:D-glycerate"
-    },
-    {
-     "arrow": true,
-     "cat": false,
-     "chain": 100029,
+     "chain": 100023,
      "own": [
       "M:6-phosphogluconate",
       "R:R_rx_22845319ee"
@@ -297,7 +219,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 200023,
+     "chain": 200017,
      "own": [
       "M:D-glucose",
       "R:R_rx_48192a666d"
@@ -310,7 +232,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 200024,
+     "chain": 200018,
      "own": [
       "M:D-glucono-1,5-lactone",
       "R:R_rx_48192a666d"
@@ -323,7 +245,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 200025,
+     "chain": 200019,
      "own": [
       "M:D-glucose",
       "R:R_rx_627809f435"
@@ -336,7 +258,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 200026,
+     "chain": 200020,
      "own": [
       "M:D-glucono-1,5-lactone",
       "R:R_rx_627809f435"
@@ -349,7 +271,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 200027,
+     "chain": 200021,
      "own": [
       "M:D-glucono-1,5-lactone",
       "R:R_rx_832f1e61b1"
@@ -362,7 +284,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 200028,
+     "chain": 200022,
      "own": [
       "M:D-gluconate",
       "R:R_rx_832f1e61b1"
@@ -375,7 +297,7 @@
     {
      "arrow": true,
      "cat": false,
-     "chain": 200029,
+     "chain": 200023,
      "own": [
       "M:D-gluconate",
       "R:R_rx_bed4579fed"
@@ -436,8 +358,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 42.546,
-     "x": 436.6016299170949,
-     "y": -471.4131045416525
+     "x": 449.2782225547427,
+     "y": -410.4274712028019
     },
     {
      "h": 19.5,
@@ -448,8 +370,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 183.222,
-     "x": 336.05824999999993,
-     "y": -779.5708182476916
+     "x": 268.8163840333582,
+     "y": -665.8672363309589
     },
     {
      "h": 19.5,
@@ -460,8 +382,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 195.777,
-     "x": 336.05824999999993,
-     "y": -1201.4166335007703
+     "x": 267.88828125,
+     "y": -1041.4041360038534
     },
     {
      "h": 19.5,
@@ -472,8 +394,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 135.527,
-     "x": 757.7936093750001,
-     "y": -1201.4166335007696
+     "x": 773.6648437499999,
+     "y": -1041.4041360038536
     },
     {
      "h": 19.5,
@@ -484,8 +406,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 119.695,
-     "x": 724.3947974749793,
-     "y": -1616.8409966403601
+     "x": 691.7713748454955,
+     "y": -1393.828221457456
     },
     {
      "h": 16.5,
@@ -496,8 +418,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 98.001,
-     "x": 116.84449218749994,
-     "y": -1143.8041335007701
+     "x": -73.68289062500006,
+     "y": -1041.4041360038534
     },
     {
      "h": 16.5,
@@ -508,8 +430,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 62.502,
-     "x": 89.03762896098978,
-     "y": -721.9583182476915
+     "x": 268.8163839729679,
+     "y": -354.6762764436229
     },
     {
      "h": 16.5,
@@ -520,8 +442,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 105.135,
-     "x": 89.03762887590865,
-     "y": -606.7333182476915
+     "x": 268.8163838956214,
+     "y": -249.9262764436229
     },
     {
      "h": 16.5,
@@ -532,8 +454,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 53.002,
-     "x": 89.03773828124994,
-     "y": -491.50831824769153
+     "x": 268.81648335502257,
+     "y": -145.1762764436229
     },
     {
      "h": 19.5,
@@ -544,8 +466,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 177.354,
-     "x": 369.45706190002096,
-     "y": -1616.8409966403603
+     "x": 349.7817501545044,
+     "y": -1393.828221457456
     },
     {
      "h": 19.5,
@@ -556,8 +478,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 75.078,
-     "x": 757.7936093750001,
-     "y": -779.5708182476909
+     "x": 772.7367409666417,
+     "y": -665.8672363309588
     },
     {
      "h": 19.5,
@@ -568,8 +490,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 112.669,
-     "x": 546.9259296875,
-     "y": -478.08750000000003
+     "x": 520.7765625,
+     "y": -434.625
     },
     {
      "h": 16.5,
@@ -580,8 +502,8 @@
      "sbml_type": "species",
      "sub": null,
      "w": 48.886,
-     "x": 302.8278,
-     "y": -1450.6415000000002
+     "x": 253.184,
+     "y": -1348.115
     },
     {
      "h": 13.0,
@@ -592,8 +514,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 140.657,
-     "x": 336.05824999999993,
-     "y": -1412.3395411273098
+     "x": 268.8163840333582,
+     "y": -1229.1593261690412
     },
     {
      "h": 20.25,
@@ -604,8 +526,8 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 118.57,
-     "x": 116.84449218749994,
-     "y": -1201.4166335007703
+     "x": 68.60304687499996,
+     "y": -1041.4041360038534
     },
     {
      "h": 20.25,
@@ -616,8 +538,8 @@
      "sbml_type": "reaction",
      "sub": "NAD+ \u2192 NADH",
      "w": 126.509,
-     "x": 178.47835156249994,
-     "y": -549.1208182476915
+     "x": 350.1261317925226,
+     "y": -197.5512764436229
     },
     {
      "h": 20.25,
@@ -628,8 +550,8 @@
      "sbml_type": "reaction",
      "sub": "NADP+ \u2192 NADPH",
      "w": 130.73,
-     "x": -0.4028750000000713,
-     "y": -549.1208182476915
+     "x": 187.50683491752258,
+     "y": -197.5512764436229
     },
     {
      "h": 20.25,
@@ -640,8 +562,8 @@
      "sbml_type": "reaction",
      "sub": "ATP \u2192 ADP",
      "w": 124.755,
-     "x": 336.05824999999993,
-     "y": -990.4937258742306
+     "x": 267.88828125,
+     "y": -853.6224264961468
     },
     {
      "h": 20.25,
@@ -652,32 +574,20 @@
      "sbml_type": "reaction",
      "sub": "H2O \u2192 ",
      "w": 68.93,
-     "x": 89.03762887590865,
-     "y": -664.3458182476916
+     "x": 268.8163838956214,
+     "y": -302.3012764436229
     },
     {
      "h": 20.25,
      "id": "R:R_rx_NODE_10018",
      "kind": "rxn",
-     "label": "aldehyde dehydrogenase (NAD+)",
+     "label": "aldehyde dehydrogenase (NAD+) (+3)",
      "sbml_id": "R_rx_NODE_10018",
      "sbml_type": "reaction",
-     "sub": "NAD+ \u2192 NADH",
-     "w": 124.873,
-     "x": 724.3947974749791,
-     "y": -575.06936273464
-    },
-    {
-     "h": 20.25,
-     "id": "R:R_rx_NODE_11298",
-     "kind": "rxn",
-     "label": "D-glyceraldehyde dehydrogenase (NADP+)",
-     "sbml_id": "R_rx_NODE_11298",
-     "sbml_type": "reaction",
-     "sub": "NADP+ \u2192 NADPH",
-     "w": 137.168,
-     "x": 816.9721686755023,
-     "y": -515.6603538083791
+     "sub": "NAD+ \u2192 NADH | also: aldehyde ferredoxin oxidoreductase; D-glyceraldehyde dehydrogenase (NADP+); glyceraldehyde dehydrogenase (FAD-containing)",
+     "w": 191.797,
+     "x": 691.7713748454955,
+     "y": -501.1983410425441
     },
     {
      "h": 13.0,
@@ -688,32 +598,8 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 134.826,
-     "x": 757.7936093750001,
-     "y": -1412.3395411273093
-    },
-    {
-     "h": 20.25,
-     "id": "R:R_rx_NODE_2957",
-     "kind": "rxn",
-     "label": "glyceraldehyde dehydrogenase (FAD-containing)",
-     "sbml_id": "R_rx_NODE_2957",
-     "sbml_type": "reaction",
-     "sub": "acceptor \u2192 reduced acceptor",
-     "w": 137.619,
-     "x": 587.3802880982049,
-     "y": -662.9946959455062
-    },
-    {
-     "h": 20.25,
-     "id": "R:R_rx_NODE_8287",
-     "kind": "rxn",
-     "label": "aldehyde ferredoxin oxidoreductase",
-     "sbml_id": "R_rx_NODE_8287",
-     "sbml_type": "reaction",
-     "sub": "oxidized ferredoxin \u2192 reduced ferredoxin",
-     "w": 134.25,
-     "x": 665.1452799066443,
-     "y": -613.091128447447
+     "x": 772.7367409666417,
+     "y": -1229.1593261690414
     },
     {
      "h": 20.25,
@@ -724,8 +610,8 @@
      "sbml_type": "reaction",
      "sub": "NAD+ \u2192 NADH",
      "w": 124.873,
-     "x": 546.9259296875,
-     "y": -1713.8228593750005
+     "x": 520.7765625,
+     "y": -1460.4015625000002
     },
     {
      "h": 20.25,
@@ -736,8 +622,8 @@
      "sbml_type": "reaction",
      "sub": " \u2192 H2O",
      "w": 88.351,
-     "x": 89.03762902741911,
-     "y": -779.5708182476916
+     "x": 268.8163840333582,
+     "y": -407.0512764436229
     },
     {
      "h": 20.25,
@@ -748,8 +634,8 @@
      "sbml_type": "reaction",
      "sub": "ATP \u2192 ADP",
      "w": 72.251,
-     "x": 757.7936093750001,
-     "y": -990.4937258742302
+     "x": 773.6648437499999,
+     "y": -853.6224264961464
     },
     {
      "h": 13.0,
@@ -760,17 +646,17 @@
      "sbml_type": "reaction",
      "sub": null,
      "w": 133.038,
-     "x": 369.45706190002056,
-     "y": -575.0693627346404
+     "x": 349.78175015450427,
+     "y": -501.1983410425442
     }
    ],
    "rings": [
     {
-     "cx": 546.9259296875,
-     "cy": -1095.9551796875,
-     "hl": 407.00000000000006,
+     "cx": 520.7765625,
+     "cy": -947.51328125,
+     "hl": 260.0,
      "id": 0,
-     "r": 210.86767968750004,
+     "r": 252.88828125,
      "shape": "stadium"
     }
    ],
