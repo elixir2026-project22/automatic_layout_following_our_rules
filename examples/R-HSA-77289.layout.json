@@ -1,0 +1,17 @@
+{
+ "drawings": [],
+ "format": "sbml-pathway-layout",
+ "model": "Mitochondrial Fatty Acid Beta-Oxidation",
+ "settings": {
+  "escher": true,
+  "hide": "",
+  "legend": false,
+  "max_cluster": 60,
+  "ring_shape": "auto",
+  "show": "",
+  "stadium_above": 6
+ },
+ "source": "R-HSA-77289.sbml",
+ "units": "points; x right, y up; boxes are centred on (x, y)",
+ "version": 1
+}
