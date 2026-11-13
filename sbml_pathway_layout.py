@@ -632,9 +632,9 @@ def layout_cluster(rxns,ring_scale=1.0):
         size[n]=ring_steps[int(n[4:])]['box'] if n.startswith('RING') else D.size(n)
     comps=sorted((sorted(c) for c in nx.connected_components(nx.Graph([e for e in edges]+[(n,n) for n in nodes]))),key=lambda c:(-len(c),c))
     xoff=0.0
-    for comp in comps:
+    for ci,comp in enumerate(comps):
         cs=set(comp); ce=[(e,m,sd) for e,m,sd in zip(edges,emeta,eside) if e[0] in cs]
-        pos,chains=sugiyama(comp,[e for e,_,_ in ce],size)
+        pos,chains=sugiyama(comp,[e for e,_,_ in ce],size,tag='' if ci==0 else f'c{ci}_')   # bend-point names unique per part
         xs=[pos[n][0]-size.get(n,(8,0))[0]/2 for n in pos]; xe=[pos[n][0]+size.get(n,(8,0))[0]/2 for n in pos]
         dx=xoff-min(xs); xoff+=max(xe)-min(xs)+80
         for n,p in pos.items():
@@ -1018,7 +1018,8 @@ def remove_crossings(D):
             for e in (D.links[t]['a'],D.links[t]['b']):
                 if D.info.get(e,{}).get('kind')=='dummy': D.P.pop(e,None)
             D.links.pop(t)
-        a=f'A:cut{n_cut}'; D.add(a,'alias',D.info[m]['label']); n_cut+=1
+        D.n_cuts=getattr(D,'n_cuts',0)                            # copies are numbered per drawing, not per call
+        a=f'A:cut{D.n_cuts}'; D.add(a,'alias',D.info[m]['label']); n_cut+=1; D.n_cuts+=1
         plant(D,a,R,into)
     raise RuntimeError('could not remove crossings')
 
@@ -1449,6 +1450,9 @@ def main():
             if best is None or key<best[0]: best=(key,D,rings,cuts,v)
             if not rings or (not any(v.values()) and getattr(D,'scaled',1.0)<=1.35): break
         _,D,rings,cuts,v=best
+        lost=sorted({e for L in D.links for e in (L['a'],L['b']) if e not in D.P})
+        if lost:                                                  # internal consistency: every line needs both ends
+            print(f"  internal error: line(s) refer to node(s) without a position ({', '.join(lost[:5])}) - drawing skipped"); ok=False; continue
         fn=out if len(parts)==1 else f"{out}_{k+1:02d}_{re.sub(r'[^A-Za-z0-9]+','_',cname).strip('_')[:40]}"
         bends=sum(1 for L in D.links if L['ring'] is None and D.info[L['b']]['kind']=='dummy')
         print(f'{fn}: {len(rx)} reactions, rings {[len(r) for r in rings]}, {sum(1 for n in D.P if D.info[n]["kind"]=="alias")} side boxes ({cuts} added to avoid crossings), {bends} bends, {v}')
