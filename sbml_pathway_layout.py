@@ -1056,11 +1056,14 @@ def repair(D,fixed,rounds=20):
             if best: D.P[n]=best[2]; cur=best[0]; moved=True
             if cur==0: return
         if not moved: return
+SCALE_CAP=4.0             # total enlargement never goes beyond this: anything above 2x is refused anyway (or, with
+                          # --write-failing, written for inspection - which needs sane coordinates)
 def scale_until_clean(D,maxit=40):
     D.scaled=getattr(D,'scaled',1.0)
     for _ in range(maxit):
         v=violations(D)
         if v['line_through_box']==0 and v['box_overlaps']==0: return v
+        if D.scaled*1.1>SCALE_CAP: return v                       # scaling cannot fix what is left: stop here
         f=1.1; D.P={n:(p[0]*f,p[1]*f) for n,p in D.P.items()}; D.rings={i:(v.scaled(f) if isinstance(v,Stadium) else ((v[0][0]*f,v[0][1]*f),v[1]*f)) for i,v in D.rings.items()}
         D.scaled*=f
     return violations(D)
@@ -1114,6 +1117,12 @@ def render(D,path,title,legend=False):
     for L in D.links:
         for q in D.path(L): xs.append(q[0]); ys.append(q[1])
     x0,x1,y0,y1=min(xs)-30,max(xs)+30,min(ys)-30,max(ys)+50
+    if path.endswith('.png'):                                     # a PNG is capped at 7000 px: on a huge drawing (e.g.
+        dpi=min(110.0,7000*72/max(x1-x0,y1-y0))                   # one written with --write-failing) text would be < 1 px,
+        smallest=min([SUB['fs']]+[st['fs'] for st in STYLE.values() if st])   # which FreeType cannot draw
+        if smallest*dpi/72<1.0:
+            print(f"  {os.path.basename(path)} not written: the drawing is {x1-x0:.0f} x {y1-y0:.0f} pt, so its text would be "
+                  f"under 1 px in a PNG - see the SVG"); return False
     leg=None
     if legend:
         E=legend_entries(D); lw_,lh=legend_size(E)
