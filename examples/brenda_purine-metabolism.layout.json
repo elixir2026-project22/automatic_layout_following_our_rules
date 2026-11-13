@@ -4585,7 +4585,7 @@
      "ring": null,
      "side": true,
      "source": "R:R_rx_aa849eb0e2",
-     "target": "__d8_1"
+     "target": "__dc1_8_1"
     },
     {
      "arrow": true,
@@ -4597,7 +4597,7 @@
      ],
      "ring": null,
      "side": true,
-     "source": "__d8_1",
+     "source": "__dc1_8_1",
      "target": "M:dADP"
     },
     {
@@ -5662,7 +5662,7 @@
     },
     {
      "h": 0.0,
-     "id": "__d8_1",
+     "id": "__dc1_8_1",
      "kind": "dummy",
      "label": "",
      "sbml_id": null,
